@@ -1,0 +1,8 @@
+prefix=/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel
+exec_prefix=/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel
+includedir=${prefix}/include
+
+Name: mavlink
+Description: MAVLink micro air vehicle marshalling / communication library
+Version: 2021.3.3
+Cflags: -I${includedir}
