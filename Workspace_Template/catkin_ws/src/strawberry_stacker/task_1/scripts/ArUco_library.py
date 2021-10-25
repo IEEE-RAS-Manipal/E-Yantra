@@ -2,7 +2,7 @@
 '''
 This module is a library for ArUco detection in OpenCV.
 '''
-
+import numpy
 import math
 import cv2
 from cv2 import aruco
@@ -33,8 +33,7 @@ def Calculate_orientation_in_degree(Detected_ArUco_markers):
     Calculates the orientation of each detected ArUco.
     '''
     ArUco_marker_angles = {}
-    for key in Detected_ArUco_markers.items():
-        print(Detected_ArUco_markers[key][0][0])
+    for key, _ in Detected_ArUco_markers.items():
         x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
         x_1, y_1 = map(int, Detected_ArUco_markers[key][0][1])
         x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
