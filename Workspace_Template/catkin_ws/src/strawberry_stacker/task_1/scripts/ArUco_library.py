@@ -24,7 +24,7 @@ def detect_ArUco(img):
     aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250)
     parameters = aruco.DetectorParameters_create()
     corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = parameters)
-    print(ids)                                                                                #DELETEEEEEEEE
+    
     # verify *at least* one ArUco marker was detected
     if len(corners)>0 :
 			# flatten the ArUco IDs list
@@ -48,18 +48,21 @@ def Calculate_orientation_in_degree(Detected_ArUco_markers):
 	c = 0
 	for key,coordinates in Detected_ArUco_markers.items():
 		global x0,x1,x2,x3,y0,y1,y2,y3,mpx,mpy,cx,cy
-		x0, y0 = map(int, coordinates[c][0])
-		x1, y1 = map(int, coordinates[c][1])
-		x2, y2 = map(int, coordinates[c][2])
-		x3, y3 = map(int, coordinates[c][3])
+		print(Detected_ArUco_markers[key][0][0])
+		x0, y0 = map(int, Detected_ArUco_markers[key][0][0])
+		x1, y1 = map(int, Detected_ArUco_markers[key][0][1])
+		x2, y2 = map(int, Detected_ArUco_markers[key][0][2])
+		x3, y3 = map(int, Detected_ArUco_markers[key][0][3])
 		mpx, mpy = map(int,(((x0+x1)/2) , ((y0+y1)/2 )) )    #calculating midpoint between topleft and topright
 		cx = int((x0+x2)/2)
 		cy = int((y0+y2)/2 )
 		angle = int(math.degrees(math.atan2(mpy-cy,mpx-cx)))
 
 
-		if angle<0:
+		if angle>0:
 			angle = 360-angle
+		else:
+			angle = abs(angle)
 		ArUco_marker_angles[key] = angle
 
 	return ArUco_marker_angles	## returning the angles of the ArUco markers in degrees as a dictionary
@@ -74,6 +77,13 @@ def mark_ArUco(img,Detected_ArUco_markers,ArUco_marker_angles):
 
     ## enter your code here ##
     for arucoID,angle in ArUco_marker_angles.items():
+      x0, y0 = map(int, Detected_ArUco_markers[arucoID][0][0])
+      x1, y1 = map(int, Detected_ArUco_markers[arucoID][0][1])
+      x2, y2 = map(int, Detected_ArUco_markers[arucoID][0][2])
+      x3, y3 = map(int, Detected_ArUco_markers[arucoID][0][3])
+      mpx, mpy = map(int,(((x0+x1)/2) , ((y0+y1)/2 )) )    #calculating midpoint between topleft and topright
+      cx = int((x0+x2)/2)
+      cy = int((y0+y2)/2 )
       cv2.circle(img, (x0,y0) , 5, (125,125,125), -1)              #gray dot
       cv2.circle(img, (x1,y1) , 5, (0,255,0), -1)                  #green dot
       cv2.circle(img, (x2,y2) , 5, (180,105,255), -1)              #pink dot
@@ -81,8 +91,9 @@ def mark_ArUco(img,Detected_ArUco_markers,ArUco_marker_angles):
       cv2.circle(img, (cx,cy) , 5, (0,0,255), -1)                  #red dot at the centre
       cv2.line(img, (cx,cy), (mpx,mpy), (255,0,0), 5)              #blue line connecting the centre and the midpoint
 		
-      cv2.putText(img, str(arucoID), (cx+100,cy), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 1)          #printing ID on the right of centre
-      cv2.putText(img, str(angle), (cx-100,cy), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 1)            #printing orientation on left of centre
+      cv2.putText(img, str(arucoID), (cx+50,cy), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)          #printing ID on the right of centre
+      cv2.putText(img, str(angle), (cx-100,cy), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)            #printing orientation on left of centre
+      cv2.putText(img, "SS_1302", (40,40), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,0,255), 2)               #printing the team ID
     return img
 
 
