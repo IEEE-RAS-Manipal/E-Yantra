@@ -2,7 +2,7 @@
 '''
 This module is a library for ArUco detection in OpenCV.
 '''
-import numpy
+
 import math
 import cv2
 from cv2 import aruco
