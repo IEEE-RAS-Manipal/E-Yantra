@@ -12,6 +12,8 @@ def detect_ArUco(img):
     Detecting the Arucos in the image and extracting ID and coordinate values.
     '''
     Detected_ArUco_markers = {}
+    corners = []
+    ids = []
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250)
     parameters = aruco.DetectorParameters_create()
@@ -22,8 +24,8 @@ def detect_ArUco(img):
             # flatten the ArUco IDs list
         ids = ids.flatten()
             # loop over the detected ArUCo corners
-    for (marker_corner, marker_id) in zip(corners, ids):
-        Detected_ArUco_markers[marker_id] = marker_corner
+        for (marker_corner, marker_id) in zip(corners, ids):
+            Detected_ArUco_markers[marker_id] = marker_corner
 
     return Detected_ArUco_markers
 
