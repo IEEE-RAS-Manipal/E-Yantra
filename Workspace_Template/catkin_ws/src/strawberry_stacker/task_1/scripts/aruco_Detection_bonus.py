@@ -27,8 +27,6 @@ if (cap.isOpened()== False):
 
 while(True):
   ret, img = cap.read()
-  #img = cv2.blur(img,(10,10))
-  print(type(img))
 
 
   if ret == True: 
