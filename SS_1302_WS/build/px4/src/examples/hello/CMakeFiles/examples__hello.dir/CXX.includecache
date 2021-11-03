@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/app.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/app.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/defines.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/defines.h
 px4_platform_common/log.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/init.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/init.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/log.h
 qurt_log.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/qurt_log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/qurt_log.h
 inttypes.h
 -
 stdint.h
@@ -32,7 +32,7 @@ px4_platform_common/defines.h
 drivers/drv_hrt.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/tasks.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/tasks.h
 stdbool.h
 -
 sys/prctl.h
@@ -44,7 +44,7 @@ sched.h
 sys/prctl.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/time.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/time.h
 unistd.h
 -
 sys/types.h
@@ -54,7 +54,7 @@ time.h
 pthread.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/include/queue.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/include/queue.h
 sys/types.h
 -
 cstddef
@@ -62,7 +62,7 @@ cstddef
 stddef.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/drivers/drv_hrt.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/drivers/drv_hrt.h
 sys/ioctl.h
 -
 sys/types.h
@@ -76,9 +76,9 @@ px4_platform_common/time.h
 queue.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_example.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_example.cpp
 hello_example.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_example.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_example.h
 px4_platform_common/time.h
 -
 unistd.h
@@ -86,13 +86,13 @@ unistd.h
 stdio.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_example.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_example.h
 px4_platform_common/app.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_main.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_main.cpp
 hello_example.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_example.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_example.h
 px4_platform_common/app.h
 -
 px4_platform_common/init.h
@@ -100,9 +100,9 @@ px4_platform_common/init.h
 stdio.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_start.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_start.cpp
 hello_example.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/examples/hello/hello_example.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/examples/hello/hello_example.h
 px4_platform_common/log.h
 -
 px4_platform_common/app.h

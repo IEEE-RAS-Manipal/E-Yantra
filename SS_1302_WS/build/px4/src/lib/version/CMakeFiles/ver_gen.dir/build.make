@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for ver_gen.
 
@@ -56,11 +56,11 @@ include src/lib/version/CMakeFiles/ver_gen.dir/progress.make
 src/lib/version/CMakeFiles/ver_gen: src/lib/version/build_git_version.h
 
 
-src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/version/px_update_git_header.py
-src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/.git/HEAD
-src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/.git/index
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating git version header"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/version/px_update_git_header.py /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/version/build_git_version.h --validate
+src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/version/px_update_git_header.py
+src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/.git/HEAD
+src/lib/version/build_git_version.h: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/.git/index
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating git version header"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/version/px_update_git_header.py /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/version/build_git_version.h --validate
 
 ver_gen: src/lib/version/CMakeFiles/ver_gen
 ver_gen: src/lib/version/build_git_version.h
@@ -74,10 +74,10 @@ src/lib/version/CMakeFiles/ver_gen.dir/build: ver_gen
 .PHONY : src/lib/version/CMakeFiles/ver_gen.dir/build
 
 src/lib/version/CMakeFiles/ver_gen.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/version && $(CMAKE_COMMAND) -P CMakeFiles/ver_gen.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/version && $(CMAKE_COMMAND) -P CMakeFiles/ver_gen.dir/cmake_clean.cmake
 .PHONY : src/lib/version/CMakeFiles/ver_gen.dir/clean
 
 src/lib/version/CMakeFiles/ver_gen.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/version /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/version /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/version/CMakeFiles/ver_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/version /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/version /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/version/CMakeFiles/ver_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/lib/version/CMakeFiles/ver_gen.dir/depend
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmixer.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmixer.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmixer.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmixer.pdb"
   "CMakeFiles/mixer.dir/MixerGroup.cpp.o"
   "CMakeFiles/mixer.dir/load_mixer_file.cpp.o"
 )

@@ -7,9 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros/lib:$LD_LIBRARY_PATH"
-export PWD='/home/ch13f_1419/E-Yantra/ws_template/build/mavros'
-export PYTHONPATH="/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros/lib/python3/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib:$LD_LIBRARY_PATH"
+export PWD='/home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros'
+export PYTHONPATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib/python3/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros:$ROS_PACKAGE_PATH"

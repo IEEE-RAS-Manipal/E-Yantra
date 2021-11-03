@@ -43,18 +43,18 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for install_python_requirements.
 
 # Include the progress variables for this target.
 include CMakeFiles/install_python_requirements.dir/progress.make
 
-CMakeFiles/install_python_requirements: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/setup/requirements.txt
-	/usr/bin/python3.8 -m pip install --requirement /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/setup/requirements.txt
+CMakeFiles/install_python_requirements: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/setup/requirements.txt
+	/usr/bin/python3.8 -m pip install --requirement /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/setup/requirements.txt
 
 install_python_requirements: CMakeFiles/install_python_requirements
 install_python_requirements: CMakeFiles/install_python_requirements.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/install_python_requirements.dir/clean:
 .PHONY : CMakeFiles/install_python_requirements.dir/clean
 
 CMakeFiles/install_python_requirements.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles/install_python_requirements.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/install_python_requirements.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/install_python_requirements.dir/depend
 

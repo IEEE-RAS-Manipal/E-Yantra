@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/libmavconn/lib/libmavconn/mavconn-test"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/libmavconn/lib/libmavconn/mavconn-test.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/libmavconn/lib/libmavconn/mavconn-test"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/libmavconn/lib/libmavconn/mavconn-test.pdb"
   "CMakeFiles/mavconn-test.dir/test/test_mavconn.cpp.o"
 )
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/common/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/common/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 platforms/common/CMakeFiles/px4_platform.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/CMakeFiles/px4_platform.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/CMakeFiles/px4_platform.dir/rule
 .PHONY : platforms/common/CMakeFiles/px4_platform.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ px4_platform: platforms/common/CMakeFiles/px4_platform.dir/rule
 
 # fast build rule for target.
 px4_platform/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/build
 .PHONY : px4_platform/fast
 
 board_identity.o: board_identity.c.o
@@ -210,7 +210,7 @@ board_identity.o: board_identity.c.o
 
 # target to build an object file
 board_identity.c.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.o
 .PHONY : board_identity.c.o
 
 board_identity.i: board_identity.c.i
@@ -219,7 +219,7 @@ board_identity.i: board_identity.c.i
 
 # target to preprocess a source file
 board_identity.c.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.i
 .PHONY : board_identity.c.i
 
 board_identity.s: board_identity.c.s
@@ -228,7 +228,7 @@ board_identity.s: board_identity.c.s
 
 # target to generate assembly for a file
 board_identity.c.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/board_identity.c.s
 .PHONY : board_identity.c.s
 
 events.o: events.cpp.o
@@ -237,7 +237,7 @@ events.o: events.cpp.o
 
 # target to build an object file
 events.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.o
 .PHONY : events.cpp.o
 
 events.i: events.cpp.i
@@ -246,7 +246,7 @@ events.i: events.cpp.i
 
 # target to preprocess a source file
 events.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.i
 .PHONY : events.cpp.i
 
 events.s: events.cpp.s
@@ -255,7 +255,7 @@ events.s: events.cpp.s
 
 # target to generate assembly for a file
 events.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/events.cpp.s
 .PHONY : events.cpp.s
 
 external_reset_lockout.o: external_reset_lockout.cpp.o
@@ -264,7 +264,7 @@ external_reset_lockout.o: external_reset_lockout.cpp.o
 
 # target to build an object file
 external_reset_lockout.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.o
 .PHONY : external_reset_lockout.cpp.o
 
 external_reset_lockout.i: external_reset_lockout.cpp.i
@@ -273,7 +273,7 @@ external_reset_lockout.i: external_reset_lockout.cpp.i
 
 # target to preprocess a source file
 external_reset_lockout.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.i
 .PHONY : external_reset_lockout.cpp.i
 
 external_reset_lockout.s: external_reset_lockout.cpp.s
@@ -282,7 +282,7 @@ external_reset_lockout.s: external_reset_lockout.cpp.s
 
 # target to generate assembly for a file
 external_reset_lockout.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.s
 .PHONY : external_reset_lockout.cpp.s
 
 i2c.o: i2c.cpp.o
@@ -291,7 +291,7 @@ i2c.o: i2c.cpp.o
 
 # target to build an object file
 i2c.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.o
 .PHONY : i2c.cpp.o
 
 i2c.i: i2c.cpp.i
@@ -300,7 +300,7 @@ i2c.i: i2c.cpp.i
 
 # target to preprocess a source file
 i2c.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.i
 .PHONY : i2c.cpp.i
 
 i2c.s: i2c.cpp.s
@@ -309,7 +309,7 @@ i2c.s: i2c.cpp.s
 
 # target to generate assembly for a file
 i2c.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c.cpp.s
 .PHONY : i2c.cpp.s
 
 i2c_spi_buses.o: i2c_spi_buses.cpp.o
@@ -318,7 +318,7 @@ i2c_spi_buses.o: i2c_spi_buses.cpp.o
 
 # target to build an object file
 i2c_spi_buses.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.o
 .PHONY : i2c_spi_buses.cpp.o
 
 i2c_spi_buses.i: i2c_spi_buses.cpp.i
@@ -327,7 +327,7 @@ i2c_spi_buses.i: i2c_spi_buses.cpp.i
 
 # target to preprocess a source file
 i2c_spi_buses.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.i
 .PHONY : i2c_spi_buses.cpp.i
 
 i2c_spi_buses.s: i2c_spi_buses.cpp.s
@@ -336,7 +336,7 @@ i2c_spi_buses.s: i2c_spi_buses.cpp.s
 
 # target to generate assembly for a file
 i2c_spi_buses.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/i2c_spi_buses.cpp.s
 .PHONY : i2c_spi_buses.cpp.s
 
 module.o: module.cpp.o
@@ -345,7 +345,7 @@ module.o: module.cpp.o
 
 # target to build an object file
 module.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.o
 .PHONY : module.cpp.o
 
 module.i: module.cpp.i
@@ -354,7 +354,7 @@ module.i: module.cpp.i
 
 # target to preprocess a source file
 module.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.i
 .PHONY : module.cpp.i
 
 module.s: module.cpp.s
@@ -363,7 +363,7 @@ module.s: module.cpp.s
 
 # target to generate assembly for a file
 module.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/module.cpp.s
 .PHONY : module.cpp.s
 
 px4_cli.o: px4_cli.cpp.o
@@ -372,7 +372,7 @@ px4_cli.o: px4_cli.cpp.o
 
 # target to build an object file
 px4_cli.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.o
 .PHONY : px4_cli.cpp.o
 
 px4_cli.i: px4_cli.cpp.i
@@ -381,7 +381,7 @@ px4_cli.i: px4_cli.cpp.i
 
 # target to preprocess a source file
 px4_cli.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.i
 .PHONY : px4_cli.cpp.i
 
 px4_cli.s: px4_cli.cpp.s
@@ -390,7 +390,7 @@ px4_cli.s: px4_cli.cpp.s
 
 # target to generate assembly for a file
 px4_cli.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_cli.cpp.s
 .PHONY : px4_cli.cpp.s
 
 px4_getopt.o: px4_getopt.c.o
@@ -399,7 +399,7 @@ px4_getopt.o: px4_getopt.c.o
 
 # target to build an object file
 px4_getopt.c.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.o
 .PHONY : px4_getopt.c.o
 
 px4_getopt.i: px4_getopt.c.i
@@ -408,7 +408,7 @@ px4_getopt.i: px4_getopt.c.i
 
 # target to preprocess a source file
 px4_getopt.c.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.i
 .PHONY : px4_getopt.c.i
 
 px4_getopt.s: px4_getopt.c.s
@@ -417,7 +417,7 @@ px4_getopt.s: px4_getopt.c.s
 
 # target to generate assembly for a file
 px4_getopt.c.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_getopt.c.s
 .PHONY : px4_getopt.c.s
 
 px4_log.o: px4_log.cpp.o
@@ -426,7 +426,7 @@ px4_log.o: px4_log.cpp.o
 
 # target to build an object file
 px4_log.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.o
 .PHONY : px4_log.cpp.o
 
 px4_log.i: px4_log.cpp.i
@@ -435,7 +435,7 @@ px4_log.i: px4_log.cpp.i
 
 # target to preprocess a source file
 px4_log.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.i
 .PHONY : px4_log.cpp.i
 
 px4_log.s: px4_log.cpp.s
@@ -444,7 +444,7 @@ px4_log.s: px4_log.cpp.s
 
 # target to generate assembly for a file
 px4_log.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/px4_log.cpp.s
 .PHONY : px4_log.cpp.s
 
 shutdown.o: shutdown.cpp.o
@@ -453,7 +453,7 @@ shutdown.o: shutdown.cpp.o
 
 # target to build an object file
 shutdown.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.o
 .PHONY : shutdown.cpp.o
 
 shutdown.i: shutdown.cpp.i
@@ -462,7 +462,7 @@ shutdown.i: shutdown.cpp.i
 
 # target to preprocess a source file
 shutdown.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.i
 .PHONY : shutdown.cpp.i
 
 shutdown.s: shutdown.cpp.s
@@ -471,7 +471,7 @@ shutdown.s: shutdown.cpp.s
 
 # target to generate assembly for a file
 shutdown.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/shutdown.cpp.s
 .PHONY : shutdown.cpp.s
 
 spi.o: spi.cpp.o
@@ -480,7 +480,7 @@ spi.o: spi.cpp.o
 
 # target to build an object file
 spi.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.o
 .PHONY : spi.cpp.o
 
 spi.i: spi.cpp.i
@@ -489,7 +489,7 @@ spi.i: spi.cpp.i
 
 # target to preprocess a source file
 spi.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.i
 .PHONY : spi.cpp.i
 
 spi.s: spi.cpp.s
@@ -498,7 +498,7 @@ spi.s: spi.cpp.s
 
 # target to generate assembly for a file
 spi.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/CMakeFiles/px4_platform.dir/build.make platforms/common/CMakeFiles/px4_platform.dir/spi.cpp.s
 .PHONY : spi.cpp.s
 
 # Help Target
@@ -561,6 +561,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

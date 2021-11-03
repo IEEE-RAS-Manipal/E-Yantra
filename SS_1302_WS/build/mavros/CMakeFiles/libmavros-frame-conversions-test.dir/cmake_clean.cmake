@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros/lib/mavros/libmavros-frame-conversions-test"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros/lib/mavros/libmavros-frame-conversions-test.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib/mavros/libmavros-frame-conversions-test"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib/mavros/libmavros-frame-conversions-test.pdb"
   "CMakeFiles/libmavros-frame-conversions-test.dir/test/test_frame_conversions.cpp.o"
 )
 

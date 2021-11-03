@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for flighttasks_generated.
 
@@ -56,10 +56,10 @@ include src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/pro
 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated: src/modules/flight_mode_manager/FlightTasks_generated.cpp
 
 
-src/modules/flight_mode_manager/FlightTasks_generated.hpp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates/FlightTasks_generated.cpp.em
-src/modules/flight_mode_manager/FlightTasks_generated.hpp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates/FlightTasks_generated.hpp.em
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Flight Tasks"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager && /usr/bin/python3.8 generate_flight_tasks.py -t AutoFollowMe AutoLineSmoothVel Descend Failsafe ManualAcceleration ManualAltitude ManualAltitudeSmoothVel ManualPosition ManualPositionSmoothVel Transition Orbit -i /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates -o /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager -f FlightTasks_generated.hpp FlightTasks_generated.cpp -s Orbit
+src/modules/flight_mode_manager/FlightTasks_generated.hpp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates/FlightTasks_generated.cpp.em
+src/modules/flight_mode_manager/FlightTasks_generated.hpp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates/FlightTasks_generated.hpp.em
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Flight Tasks"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager && /usr/bin/python3.8 generate_flight_tasks.py -t AutoFollowMe AutoLineSmoothVel Descend Failsafe ManualAcceleration ManualAltitude ManualAltitudeSmoothVel ManualPosition ManualPositionSmoothVel Transition Orbit -i /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/Templates -o /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager -f FlightTasks_generated.hpp FlightTasks_generated.cpp -s Orbit
 
 src/modules/flight_mode_manager/FlightTasks_generated.cpp: src/modules/flight_mode_manager/FlightTasks_generated.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/modules/flight_mode_manager/FlightTasks_generated.cpp
@@ -77,10 +77,10 @@ src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build: flig
 .PHONY : src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build
 
 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager && $(CMAKE_COMMAND) -P CMakeFiles/flighttasks_generated.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager && $(CMAKE_COMMAND) -P CMakeFiles/flighttasks_generated.dir/cmake_clean.cmake
 .PHONY : src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/clean
 
 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/depend
 

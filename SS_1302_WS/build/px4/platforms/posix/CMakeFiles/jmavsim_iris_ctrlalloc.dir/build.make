@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for jmavsim_iris_ctrlalloc.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
 include platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/progress.make
 
 platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/tmp && /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/px4/px4 none jmavsim iris_ctrlalloc none /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/tmp && /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4 none jmavsim iris_ctrlalloc none /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 jmavsim_iris_ctrlalloc: platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc
 jmavsim_iris_ctrlalloc: platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/build.make
@@ -67,10 +67,10 @@ platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/build: jmavsim_iris_ctrlal
 .PHONY : platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/build
 
 platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/jmavsim_iris_ctrlalloc.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/jmavsim_iris_ctrlalloc.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/clean
 
 platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/jmavsim_iris_ctrlalloc.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/parameters/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/parameters/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/lib/parameters/CMakeFiles/parameters.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/CMakeFiles/parameters.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/CMakeFiles/parameters.dir/rule
 .PHONY : src/lib/parameters/CMakeFiles/parameters.dir/rule
 
 # Convenience name for target.
@@ -201,12 +201,12 @@ parameters: src/lib/parameters/CMakeFiles/parameters.dir/rule
 
 # fast build rule for target.
 parameters/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/build
 .PHONY : parameters/fast
 
 # Convenience name for target.
 src/lib/parameters/CMakeFiles/parameters_xml.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/CMakeFiles/parameters_xml.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/parameters/CMakeFiles/parameters_xml.dir/rule
 .PHONY : src/lib/parameters/CMakeFiles/parameters_xml.dir/rule
 
 # Convenience name for target.
@@ -216,7 +216,7 @@ parameters_xml: src/lib/parameters/CMakeFiles/parameters_xml.dir/rule
 
 # fast build rule for target.
 parameters_xml/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters_xml.dir/build.make src/lib/parameters/CMakeFiles/parameters_xml.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters_xml.dir/build.make src/lib/parameters/CMakeFiles/parameters_xml.dir/build
 .PHONY : parameters_xml/fast
 
 param_translation.o: param_translation.cpp.o
@@ -225,7 +225,7 @@ param_translation.o: param_translation.cpp.o
 
 # target to build an object file
 param_translation.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.o
 .PHONY : param_translation.cpp.o
 
 param_translation.i: param_translation.cpp.i
@@ -234,7 +234,7 @@ param_translation.i: param_translation.cpp.i
 
 # target to preprocess a source file
 param_translation.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.i
 .PHONY : param_translation.cpp.i
 
 param_translation.s: param_translation.cpp.s
@@ -243,7 +243,7 @@ param_translation.s: param_translation.cpp.s
 
 # target to generate assembly for a file
 param_translation.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/param_translation.cpp.s
 .PHONY : param_translation.cpp.s
 
 parameters.o: parameters.cpp.o
@@ -252,7 +252,7 @@ parameters.o: parameters.cpp.o
 
 # target to build an object file
 parameters.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.o
 .PHONY : parameters.cpp.o
 
 parameters.i: parameters.cpp.i
@@ -261,7 +261,7 @@ parameters.i: parameters.cpp.i
 
 # target to preprocess a source file
 parameters.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.i
 .PHONY : parameters.cpp.i
 
 parameters.s: parameters.cpp.s
@@ -270,7 +270,7 @@ parameters.s: parameters.cpp.s
 
 # target to generate assembly for a file
 parameters.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/parameters/CMakeFiles/parameters.dir/build.make src/lib/parameters/CMakeFiles/parameters.dir/parameters.cpp.s
 .PHONY : parameters.cpp.s
 
 # Help Target
@@ -307,6 +307,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

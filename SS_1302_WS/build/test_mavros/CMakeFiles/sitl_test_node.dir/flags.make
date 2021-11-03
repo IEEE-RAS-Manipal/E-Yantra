@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++14
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"test_mavros\"
 
-CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/test_mavros/include -I/usr/include/eigen3 -I/home/ch13f_1419/E-Yantra/ws_template/devel/include -I/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_msgs/include -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros_msgs/include -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/test_mavros/include -I/usr/include/eigen3 -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_msgs/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros_msgs/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

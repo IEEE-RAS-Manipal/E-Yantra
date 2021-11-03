@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__ekf2.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__ekf2.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__ekf2.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__ekf2.pdb"
   "CMakeFiles/modules__ekf2.dir/EKF/EKFGSF_yaw.cpp.o"
   "CMakeFiles/modules__ekf2.dir/EKF/airspeed_fusion.cpp.o"
   "CMakeFiles/modules__ekf2.dir/EKF/baro_bias_estimator.cpp.o"

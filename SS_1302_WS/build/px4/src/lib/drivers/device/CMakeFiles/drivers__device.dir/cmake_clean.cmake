@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__device.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__device.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__device.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__device.pdb"
   "CMakeFiles/drivers__device.dir/CDev.cpp.o"
   "CMakeFiles/drivers__device.dir/posix/I2C.cpp.o"
   "CMakeFiles/drivers__device.dir/posix/SPI.cpp.o"

@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++14   -DGTEST_HAS_PTHREAD=1
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DROS_BUILD_SHARED_LIBS=1
 
-CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/ws_template/build/libmavconn/catkin_generated/include -I/home/ch13f_1419/E-Yantra/ws_template/devel/include -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest 
+CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn/catkin_generated/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest 
 

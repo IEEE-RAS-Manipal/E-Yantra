@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__gyro_fft.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__gyro_fft.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__gyro_fft.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__gyro_fft.pdb"
   "CMakeFiles/modules__gyro_fft.dir/CMSIS_5/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_q15.c.o"
   "CMakeFiles/modules__gyro_fft.dir/CMSIS_5/CMSIS/DSP/Source/CommonTables/arm_common_tables.c.o"
   "CMakeFiles/modules__gyro_fft.dir/CMSIS_5/CMSIS/DSP/Source/CommonTables/arm_const_structs.c.o"

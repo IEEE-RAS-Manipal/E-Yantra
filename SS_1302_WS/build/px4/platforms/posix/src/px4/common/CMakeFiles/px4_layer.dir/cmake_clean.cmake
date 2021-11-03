@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_layer.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_layer.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_layer.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_layer.pdb"
   "CMakeFiles/px4_layer.dir/cpuload.cpp.o"
   "CMakeFiles/px4_layer.dir/drv_hrt.cpp.o"
   "CMakeFiles/px4_layer.dir/lib_crc32.c.o"

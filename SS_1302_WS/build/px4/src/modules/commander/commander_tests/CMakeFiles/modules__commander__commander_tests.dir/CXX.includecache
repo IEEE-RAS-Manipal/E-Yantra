@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/boards/px4/sitl/src/board_config.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/boards/px4/sitl/src/board_config.h
 system_config.h
 -
 px4_platform_common/board_common.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/libevents_definitions.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/libevents_definitions.h
 uORB/topics/event.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_log.h
 px4_platform_common/log.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/board_common.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/board_common.h
 errno.h
 -
 stdint.h
@@ -30,11 +30,11 @@ stdbool.h
 string.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/defines.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/defines.h
 px4_platform_common/log.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/events.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/events.h
 px4_platform_common/log.h
 -
 events/events_generated.h
@@ -44,9 +44,9 @@ libevents_definitions.h
 stdint.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/log.h
 qurt_log.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/qurt_log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/qurt_log.h
 inttypes.h
 -
 stdint.h
@@ -62,25 +62,25 @@ px4_platform_common/defines.h
 drivers/drv_hrt.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
 px4_arch/micro_hal.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/px4_config.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/px4_config.h
 nuttx/config.h
 -
 nuttx/arch.h
 -
 micro_hal.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
 board_config.h
 -
 micro_hal.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/micro_hal.h
 board_config.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/include/px4_platform_common/time.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/include/px4_platform_common/time.h
 unistd.h
 -
 sys/types.h
@@ -90,7 +90,7 @@ time.h
 pthread.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/common/uORB/uORB.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORB.h
 sys/types.h
 -
 stdint.h
@@ -98,7 +98,7 @@ stdint.h
 stdbool.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/include/queue.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/include/queue.h
 sys/types.h
 -
 cstddef
@@ -106,19 +106,19 @@ cstddef
 stddef.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/include/system_config.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/include/system_config.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/include/px4_platform/micro_hal.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/include/px4_platform/micro_hal.h
 stdint.h
 -
 stdbool.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include/px4_arch/micro_hal.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include/px4_arch/micro_hal.h
 px4_platform/micro_hal.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/drivers/drv_board_led.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/drivers/drv_board_led.h
 px4_platform_common/defines.h
 -
 stdint.h
@@ -126,7 +126,7 @@ stdint.h
 sys/ioctl.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/drivers/drv_hrt.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/drivers/drv_hrt.h
 sys/ioctl.h
 -
 sys/types.h
@@ -140,17 +140,17 @@ px4_platform_common/time.h
 queue.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/drivers/drv_led.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/drivers/drv_led.h
 uORB/topics/led_control.h
 -
 board_config.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/include/unit_test.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/include/unit_test.h
 px4_platform_common/log.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/systemlib/err.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/err.h
 px4_platform_common/log.h
 -
 stdarg.h
@@ -160,13 +160,13 @@ errno.h
 stdlib.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/systemlib/mavlink_log.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/mavlink_log.h
 px4_log.h
 -
 uORB/uORB.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
 uORB/topics/safety.h
 -
 uORB/topics/vehicle_status_flags.h
@@ -176,7 +176,7 @@ uORB/topics/vehicle_status.h
 drivers/drv_hrt.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.h
 uORB/uORB.h
 -
 uORB/topics/vehicle_status.h
@@ -190,25 +190,25 @@ drivers/drv_led.h
 drivers/drv_board_led.h
 -
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_tests/commander_tests.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/commander_tests.cpp
 systemlib/err.h
 -
 state_machine_helper_test.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.cpp
 state_machine_helper_test.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
 ../state_machine_helper.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
 unit_test.h
 -
 ../Arming/PreFlightCheck/PreFlightCheck.hpp
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
 px4_platform_common/px4_config.h
 -
 uORB/topics/vehicle_command.h
@@ -224,15 +224,15 @@ drivers/drv_hrt.h
 float.h
 -
 state_machine_helper.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
 commander_helper.h
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.h
 
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.h
 drivers/drv_hrt.h
 -
 Arming/PreFlightCheck/PreFlightCheck.hpp
-/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Arming/PreFlightCheck/PreFlightCheck.hpp
 uORB/uORB.h
 -
 uORB/topics/vehicle_status.h

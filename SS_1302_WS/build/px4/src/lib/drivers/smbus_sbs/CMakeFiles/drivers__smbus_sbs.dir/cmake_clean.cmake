@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__smbus_sbs.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__smbus_sbs.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__smbus_sbs.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__smbus_sbs.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

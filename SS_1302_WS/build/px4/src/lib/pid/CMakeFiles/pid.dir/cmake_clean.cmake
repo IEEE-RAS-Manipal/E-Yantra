@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpid.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpid.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpid.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpid.pdb"
   "CMakeFiles/pid.dir/pid.cpp.o"
 )
 

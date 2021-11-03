@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_extras/lib/mavros_extras/visualization"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_extras/lib/mavros_extras/visualization.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib/mavros_extras/visualization"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib/mavros_extras/visualization.pdb"
   "CMakeFiles/visualization.dir/src/visualization.cpp.o"
 )
 

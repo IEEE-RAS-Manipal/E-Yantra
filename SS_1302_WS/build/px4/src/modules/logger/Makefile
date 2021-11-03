@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/logger/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/logger/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/logger/CMakeFiles/modules__logger.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/CMakeFiles/modules__logger.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/logger/CMakeFiles/modules__logger.dir/rule
 .PHONY : src/modules/logger/CMakeFiles/modules__logger.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__logger: src/modules/logger/CMakeFiles/modules__logger.dir/rule
 
 # fast build rule for target.
 modules__logger/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/build
 .PHONY : modules__logger/fast
 
 log_writer.o: log_writer.cpp.o
@@ -210,7 +210,7 @@ log_writer.o: log_writer.cpp.o
 
 # target to build an object file
 log_writer.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.o
 .PHONY : log_writer.cpp.o
 
 log_writer.i: log_writer.cpp.i
@@ -219,7 +219,7 @@ log_writer.i: log_writer.cpp.i
 
 # target to preprocess a source file
 log_writer.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.i
 .PHONY : log_writer.cpp.i
 
 log_writer.s: log_writer.cpp.s
@@ -228,7 +228,7 @@ log_writer.s: log_writer.cpp.s
 
 # target to generate assembly for a file
 log_writer.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer.cpp.s
 .PHONY : log_writer.cpp.s
 
 log_writer_file.o: log_writer_file.cpp.o
@@ -237,7 +237,7 @@ log_writer_file.o: log_writer_file.cpp.o
 
 # target to build an object file
 log_writer_file.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.o
 .PHONY : log_writer_file.cpp.o
 
 log_writer_file.i: log_writer_file.cpp.i
@@ -246,7 +246,7 @@ log_writer_file.i: log_writer_file.cpp.i
 
 # target to preprocess a source file
 log_writer_file.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.i
 .PHONY : log_writer_file.cpp.i
 
 log_writer_file.s: log_writer_file.cpp.s
@@ -255,7 +255,7 @@ log_writer_file.s: log_writer_file.cpp.s
 
 # target to generate assembly for a file
 log_writer_file.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_file.cpp.s
 .PHONY : log_writer_file.cpp.s
 
 log_writer_mavlink.o: log_writer_mavlink.cpp.o
@@ -264,7 +264,7 @@ log_writer_mavlink.o: log_writer_mavlink.cpp.o
 
 # target to build an object file
 log_writer_mavlink.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.o
 .PHONY : log_writer_mavlink.cpp.o
 
 log_writer_mavlink.i: log_writer_mavlink.cpp.i
@@ -273,7 +273,7 @@ log_writer_mavlink.i: log_writer_mavlink.cpp.i
 
 # target to preprocess a source file
 log_writer_mavlink.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.i
 .PHONY : log_writer_mavlink.cpp.i
 
 log_writer_mavlink.s: log_writer_mavlink.cpp.s
@@ -282,7 +282,7 @@ log_writer_mavlink.s: log_writer_mavlink.cpp.s
 
 # target to generate assembly for a file
 log_writer_mavlink.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.s
 .PHONY : log_writer_mavlink.cpp.s
 
 logged_topics.o: logged_topics.cpp.o
@@ -291,7 +291,7 @@ logged_topics.o: logged_topics.cpp.o
 
 # target to build an object file
 logged_topics.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.o
 .PHONY : logged_topics.cpp.o
 
 logged_topics.i: logged_topics.cpp.i
@@ -300,7 +300,7 @@ logged_topics.i: logged_topics.cpp.i
 
 # target to preprocess a source file
 logged_topics.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.i
 .PHONY : logged_topics.cpp.i
 
 logged_topics.s: logged_topics.cpp.s
@@ -309,7 +309,7 @@ logged_topics.s: logged_topics.cpp.s
 
 # target to generate assembly for a file
 logged_topics.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logged_topics.cpp.s
 .PHONY : logged_topics.cpp.s
 
 logger.o: logger.cpp.o
@@ -318,7 +318,7 @@ logger.o: logger.cpp.o
 
 # target to build an object file
 logger.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.o
 .PHONY : logger.cpp.o
 
 logger.i: logger.cpp.i
@@ -327,7 +327,7 @@ logger.i: logger.cpp.i
 
 # target to preprocess a source file
 logger.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.i
 .PHONY : logger.cpp.i
 
 logger.s: logger.cpp.s
@@ -336,7 +336,7 @@ logger.s: logger.cpp.s
 
 # target to generate assembly for a file
 logger.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.s
 .PHONY : logger.cpp.s
 
 util.o: util.cpp.o
@@ -345,7 +345,7 @@ util.o: util.cpp.o
 
 # target to build an object file
 util.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.o
 .PHONY : util.cpp.o
 
 util.i: util.cpp.i
@@ -354,7 +354,7 @@ util.i: util.cpp.i
 
 # target to preprocess a source file
 util.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.i
 .PHONY : util.cpp.i
 
 util.s: util.cpp.s
@@ -363,7 +363,7 @@ util.s: util.cpp.s
 
 # target to generate assembly for a file
 util.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/util.cpp.s
 .PHONY : util.cpp.s
 
 watchdog.o: watchdog.cpp.o
@@ -372,7 +372,7 @@ watchdog.o: watchdog.cpp.o
 
 # target to build an object file
 watchdog.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.o
 .PHONY : watchdog.cpp.o
 
 watchdog.i: watchdog.cpp.i
@@ -381,7 +381,7 @@ watchdog.i: watchdog.cpp.i
 
 # target to preprocess a source file
 watchdog.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.i
 .PHONY : watchdog.cpp.i
 
 watchdog.s: watchdog.cpp.s
@@ -390,7 +390,7 @@ watchdog.s: watchdog.cpp.s
 
 # target to generate assembly for a file
 watchdog.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/logger/CMakeFiles/modules__logger.dir/build.make src/modules/logger/CMakeFiles/modules__logger.dir/watchdog.cpp.s
 .PHONY : watchdog.cpp.s
 
 # Help Target
@@ -441,6 +441,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

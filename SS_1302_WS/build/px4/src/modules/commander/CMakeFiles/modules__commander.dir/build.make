@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Include any dependencies generated for this target.
 include src/modules/commander/CMakeFiles/modules__commander.dir/depend.make
@@ -58,199 +58,199 @@ include src/modules/commander/CMakeFiles/modules__commander.dir/progress.make
 include src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
 
 src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp > CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp > CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp -o CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/accelerometer_calibration.cpp -o CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp > CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp > CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp -o CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/airspeed_calibration.cpp -o CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/calibration_routines.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/calibration_routines.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/calibration_routines.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp > CMakeFiles/modules__commander.dir/calibration_routines.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp > CMakeFiles/modules__commander.dir/calibration_routines.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/calibration_routines.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp -o CMakeFiles/modules__commander.dir/calibration_routines.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/calibration_routines.cpp -o CMakeFiles/modules__commander.dir/calibration_routines.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Commander.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/Commander.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Commander.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Commander.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/Commander.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Commander.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/Commander.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Commander.cpp > CMakeFiles/modules__commander.dir/Commander.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Commander.cpp > CMakeFiles/modules__commander.dir/Commander.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/Commander.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Commander.cpp -o CMakeFiles/modules__commander.dir/Commander.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Commander.cpp -o CMakeFiles/modules__commander.dir/Commander.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/commander_helper.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/commander_helper.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/commander_helper.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp > CMakeFiles/modules__commander.dir/commander_helper.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp > CMakeFiles/modules__commander.dir/commander_helper.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/commander_helper.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp -o CMakeFiles/modules__commander.dir/commander_helper.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_helper.cpp -o CMakeFiles/modules__commander.dir/commander_helper.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/esc_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/esc_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/esc_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp > CMakeFiles/modules__commander.dir/esc_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp > CMakeFiles/modules__commander.dir/esc_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/esc_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp -o CMakeFiles/modules__commander.dir/esc_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/esc_calibration.cpp -o CMakeFiles/modules__commander.dir/esc_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp > CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp > CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp -o CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/factory_calibration_storage.cpp -o CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/gyro_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp > CMakeFiles/modules__commander.dir/gyro_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp > CMakeFiles/modules__commander.dir/gyro_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/gyro_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp -o CMakeFiles/modules__commander.dir/gyro_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/gyro_calibration.cpp -o CMakeFiles/modules__commander.dir/gyro_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/level_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/level_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/level_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp > CMakeFiles/modules__commander.dir/level_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp > CMakeFiles/modules__commander.dir/level_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/level_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp -o CMakeFiles/modules__commander.dir/level_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/level_calibration.cpp -o CMakeFiles/modules__commander.dir/level_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/lm_fit.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/lm_fit.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/lm_fit.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp > CMakeFiles/modules__commander.dir/lm_fit.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp > CMakeFiles/modules__commander.dir/lm_fit.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/lm_fit.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp -o CMakeFiles/modules__commander.dir/lm_fit.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/lm_fit.cpp -o CMakeFiles/modules__commander.dir/lm_fit.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/mag_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/mag_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/mag_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp > CMakeFiles/modules__commander.dir/mag_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp > CMakeFiles/modules__commander.dir/mag_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/mag_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp -o CMakeFiles/modules__commander.dir/mag_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/mag_calibration.cpp -o CMakeFiles/modules__commander.dir/mag_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/ManualControl.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/ManualControl.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/ManualControl.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp > CMakeFiles/modules__commander.dir/ManualControl.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp > CMakeFiles/modules__commander.dir/ManualControl.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/ManualControl.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp -o CMakeFiles/modules__commander.dir/ManualControl.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/ManualControl.cpp -o CMakeFiles/modules__commander.dir/ManualControl.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/rc_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/rc_calibration.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/rc_calibration.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp > CMakeFiles/modules__commander.dir/rc_calibration.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp > CMakeFiles/modules__commander.dir/rc_calibration.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/rc_calibration.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp -o CMakeFiles/modules__commander.dir/rc_calibration.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/rc_calibration.cpp -o CMakeFiles/modules__commander.dir/rc_calibration.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/state_machine_helper.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp > CMakeFiles/modules__commander.dir/state_machine_helper.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp > CMakeFiles/modules__commander.dir/state_machine_helper.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/state_machine_helper.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp -o CMakeFiles/modules__commander.dir/state_machine_helper.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/state_machine_helper.cpp -o CMakeFiles/modules__commander.dir/state_machine_helper.cpp.s
 
 src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o: src/modules/commander/CMakeFiles/modules__commander.dir/flags.make
-src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/worker_thread.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp
+src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__commander.dir/worker_thread.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp
 
 src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__commander.dir/worker_thread.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp > CMakeFiles/modules__commander.dir/worker_thread.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp > CMakeFiles/modules__commander.dir/worker_thread.cpp.i
 
 src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__commander.dir/worker_thread.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp -o CMakeFiles/modules__commander.dir/worker_thread.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/worker_thread.cpp -o CMakeFiles/modules__commander.dir/worker_thread.cpp.s
 
 # Object files for target modules__commander
 modules__commander_OBJECTS = \
@@ -273,37 +273,37 @@ modules__commander_OBJECTS = \
 # External object files for target modules__commander
 modules__commander_EXTERNAL_OBJECTS =
 
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/build.make
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && $(CMAKE_COMMAND) -P CMakeFiles/modules__commander.dir/cmake_clean_target.cmake
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modules__commander.dir/link.txt --verbose=$(VERBOSE)
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/accelerometer_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/airspeed_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/calibration_routines.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/Commander.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/commander_helper.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/esc_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/factory_calibration_storage.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/gyro_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/level_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/lm_fit.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/mag_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/ManualControl.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/rc_calibration.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/state_machine_helper.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/worker_thread.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/build.make
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a: src/modules/commander/CMakeFiles/modules__commander.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && $(CMAKE_COMMAND) -P CMakeFiles/modules__commander.dir/cmake_clean_target.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modules__commander.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/modules/commander/CMakeFiles/modules__commander.dir/build: /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander.a
+src/modules/commander/CMakeFiles/modules__commander.dir/build: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__commander.a
 
 .PHONY : src/modules/commander/CMakeFiles/modules__commander.dir/build
 
 src/modules/commander/CMakeFiles/modules__commander.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander && $(CMAKE_COMMAND) -P CMakeFiles/modules__commander.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander && $(CMAKE_COMMAND) -P CMakeFiles/modules__commander.dir/cmake_clean.cmake
 .PHONY : src/modules/commander/CMakeFiles/modules__commander.dir/clean
 
 src/modules/commander/CMakeFiles/modules__commander.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander/CMakeFiles/modules__commander.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander/CMakeFiles/modules__commander.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/modules/commander/CMakeFiles/modules__commander.dir/depend
 

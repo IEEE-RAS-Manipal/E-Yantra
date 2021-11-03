@@ -1,8 +1,8 @@
-# Install script for directory: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/commander/Arming
+# Install script for directory: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/Arming
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/ws_template/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander/Arming/PreFlightCheck/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander/Arming/ArmAuthorization/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/commander/Arming/HealthFlags/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander/Arming/PreFlightCheck/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander/Arming/ArmAuthorization/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/commander/Arming/HealthFlags/cmake_install.cmake")
 
 endif()
 

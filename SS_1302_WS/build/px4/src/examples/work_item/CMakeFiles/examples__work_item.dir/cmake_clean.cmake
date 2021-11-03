@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__work_item.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__work_item.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libexamples__work_item.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libexamples__work_item.pdb"
   "CMakeFiles/examples__work_item.dir/WorkItemExample.cpp.o"
 )
 

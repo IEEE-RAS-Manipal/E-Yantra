@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libuORB.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libuORB.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libuORB.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libuORB.pdb"
   "CMakeFiles/uORB.dir/Subscription.cpp.o"
   "CMakeFiles/uORB.dir/uORB.cpp.o"
   "CMakeFiles/uORB.dir/uORBDeviceMaster.cpp.o"

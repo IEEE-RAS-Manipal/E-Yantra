@@ -67,14 +67,14 @@ set(libmavconn_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(libmavconn_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn)
-  set(libmavconn_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/ws_template/devel/.private/libmavconn)
+  set(libmavconn_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn)
+  set(libmavconn_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/libmavconn)
   set(libmavconn_INSTALL_PREFIX "")
   set(libmavconn_PREFIX ${libmavconn_DEVEL_PREFIX})
 else()
   set(libmavconn_SOURCE_PREFIX "")
   set(libmavconn_DEVEL_PREFIX "")
-  set(libmavconn_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/ws_template/install)
+  set(libmavconn_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/install)
   set(libmavconn_PREFIX ${libmavconn_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(libmavconn_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include;/usr/include;/home/ch13f_1419/E-Yantra/ws_template/devel/include " STREQUAL " ")
+if(NOT "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/include;/usr/include;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include " STREQUAL " ")
   set(libmavconn_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include;/usr/include;/home/ch13f_1419/E-Yantra/ws_template/devel/include")
+  set(_include_dirs "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/include;/usr/include;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include")
   if(NOT "https://github.com/mavlink/mavros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/mavlink/mavros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/mavros " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include;/usr
         message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/${idir}'.  ${_report}")
     endif()
     _list_append_unique(libmavconn_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ch13f_1419/E-Yantra/ws_template/devel/.private/libmavconn/lib;/home/ch13f_1419/E-Yantra/ws_template/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/libmavconn/lib;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

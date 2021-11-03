@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers_gyroscope.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers_gyroscope.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers_gyroscope.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers_gyroscope.pdb"
   "CMakeFiles/drivers_gyroscope.dir/PX4Gyroscope.cpp.o"
 )
 

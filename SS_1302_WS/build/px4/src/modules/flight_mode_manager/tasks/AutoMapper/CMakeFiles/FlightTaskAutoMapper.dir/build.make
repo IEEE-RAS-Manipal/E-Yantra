@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Include any dependencies generated for this target.
 include src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/depend.make
@@ -58,17 +58,17 @@ include src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAu
 include src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/flags.make
 
 src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/flags.make
-src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp
+src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp
 
 src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp > CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp > CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.i
 
 src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp -o CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper/FlightTaskAutoMapper.cpp -o CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.s
 
 # Object files for target FlightTaskAutoMapper
 FlightTaskAutoMapper_OBJECTS = \
@@ -77,23 +77,23 @@ FlightTaskAutoMapper_OBJECTS = \
 # External object files for target FlightTaskAutoMapper
 FlightTaskAutoMapper_EXTERNAL_OBJECTS =
 
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/build.make
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoMapper.a"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -P CMakeFiles/FlightTaskAutoMapper.dir/cmake_clean_target.cmake
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FlightTaskAutoMapper.dir/link.txt --verbose=$(VERBOSE)
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/FlightTaskAutoMapper.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/build.make
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoMapper.a: src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoMapper.a"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -P CMakeFiles/FlightTaskAutoMapper.dir/cmake_clean_target.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FlightTaskAutoMapper.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/build: /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoMapper.a
+src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/build: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoMapper.a
 
 .PHONY : src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/build
 
 src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -P CMakeFiles/FlightTaskAutoMapper.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper && $(CMAKE_COMMAND) -P CMakeFiles/FlightTaskAutoMapper.dir/cmake_clean.cmake
 .PHONY : src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/clean
 
 src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoMapper /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/modules/flight_mode_manager/tasks/AutoMapper/CMakeFiles/FlightTaskAutoMapper.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,7 +83,7 @@ install/local/fast: preinstall/fast
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -127,7 +127,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/wind_estimator/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/wind_estimator/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/rule
 .PHONY : src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ wind_estimator: src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/rule
 
 # fast build rule for target.
 wind_estimator/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build
 .PHONY : wind_estimator/fast
 
 WindEstimator.o: WindEstimator.cpp.o
@@ -210,7 +210,7 @@ WindEstimator.o: WindEstimator.cpp.o
 
 # target to build an object file
 WindEstimator.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.o
 .PHONY : WindEstimator.cpp.o
 
 WindEstimator.i: WindEstimator.cpp.i
@@ -219,7 +219,7 @@ WindEstimator.i: WindEstimator.cpp.i
 
 # target to preprocess a source file
 WindEstimator.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.i
 .PHONY : WindEstimator.cpp.i
 
 WindEstimator.s: WindEstimator.cpp.s
@@ -228,7 +228,7 @@ WindEstimator.s: WindEstimator.cpp.s
 
 # target to generate assembly for a file
 WindEstimator.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/build.make src/lib/wind_estimator/CMakeFiles/wind_estimator.dir/WindEstimator.cpp.s
 .PHONY : WindEstimator.cpp.s
 
 # Help Target
@@ -261,6 +261,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoLineSmoothVel.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAutoLineSmoothVel.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoLineSmoothVel.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoLineSmoothVel.pdb"
   "CMakeFiles/FlightTaskAutoLineSmoothVel.dir/FlightTaskAutoLineSmoothVel.cpp.o"
 )
 

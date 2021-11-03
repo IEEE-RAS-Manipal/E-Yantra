@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/cdev/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/cdev/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/lib/cdev/CMakeFiles/cdev.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/CMakeFiles/cdev.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/lib/cdev/CMakeFiles/cdev.dir/rule
 .PHONY : src/lib/cdev/CMakeFiles/cdev.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ cdev: src/lib/cdev/CMakeFiles/cdev.dir/rule
 
 # fast build rule for target.
 cdev/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/build
 .PHONY : cdev/fast
 
 CDev.o: CDev.cpp.o
@@ -210,7 +210,7 @@ CDev.o: CDev.cpp.o
 
 # target to build an object file
 CDev.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.o
 .PHONY : CDev.cpp.o
 
 CDev.i: CDev.cpp.i
@@ -219,7 +219,7 @@ CDev.i: CDev.cpp.i
 
 # target to preprocess a source file
 CDev.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.i
 .PHONY : CDev.cpp.i
 
 CDev.s: CDev.cpp.s
@@ -228,7 +228,7 @@ CDev.s: CDev.cpp.s
 
 # target to generate assembly for a file
 CDev.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.s
 .PHONY : CDev.cpp.s
 
 posix/cdev_platform.o: posix/cdev_platform.cpp.o
@@ -237,7 +237,7 @@ posix/cdev_platform.o: posix/cdev_platform.cpp.o
 
 # target to build an object file
 posix/cdev_platform.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.o
 .PHONY : posix/cdev_platform.cpp.o
 
 posix/cdev_platform.i: posix/cdev_platform.cpp.i
@@ -246,7 +246,7 @@ posix/cdev_platform.i: posix/cdev_platform.cpp.i
 
 # target to preprocess a source file
 posix/cdev_platform.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.i
 .PHONY : posix/cdev_platform.cpp.i
 
 posix/cdev_platform.s: posix/cdev_platform.cpp.s
@@ -255,7 +255,7 @@ posix/cdev_platform.s: posix/cdev_platform.cpp.s
 
 # target to generate assembly for a file
 posix/cdev_platform.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/posix/cdev_platform.cpp.s
 .PHONY : posix/cdev_platform.cpp.s
 
 # Help Target
@@ -291,6 +291,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

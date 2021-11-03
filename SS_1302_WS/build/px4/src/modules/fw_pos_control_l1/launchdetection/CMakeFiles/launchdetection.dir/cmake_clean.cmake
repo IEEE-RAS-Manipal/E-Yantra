@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblaunchdetection.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblaunchdetection.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblaunchdetection.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblaunchdetection.pdb"
   "CMakeFiles/launchdetection.dir/CatapultLaunchMethod.cpp.o"
   "CMakeFiles/launchdetection.dir/LaunchDetector.cpp.o"
 )

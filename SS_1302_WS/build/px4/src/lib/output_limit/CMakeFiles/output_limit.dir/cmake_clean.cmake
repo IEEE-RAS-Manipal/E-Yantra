@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liboutput_limit.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liboutput_limit.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liboutput_limit.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liboutput_limit.pdb"
   "CMakeFiles/output_limit.dir/output_limit.cpp.o"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for gazebo_plane_catapult__sonoma_raceway.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
 include platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/progress.make
 
 platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/tmp && /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/px4/px4 none gazebo plane_catapult sonoma_raceway /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/tmp && /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4 none gazebo plane_catapult sonoma_raceway /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 gazebo_plane_catapult__sonoma_raceway: platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway
 gazebo_plane_catapult__sonoma_raceway: platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/build.make
@@ -67,10 +67,10 @@ platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/build: gaze
 .PHONY : platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/build
 
 platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/clean
 
 platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/gazebo_plane_catapult__sonoma_raceway.dir/depend
 

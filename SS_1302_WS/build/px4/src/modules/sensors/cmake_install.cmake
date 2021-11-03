@@ -1,8 +1,8 @@
-# Install script for directory: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/sensors
+# Install script for directory: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/sensors
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/ws_template/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,13 +39,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/data_validator/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_acceleration/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_angular_velocity/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_air_data/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_gps_position/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_imu/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/vehicle_magnetometer/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/data_validator/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_acceleration/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_angular_velocity/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_air_data/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_gps_position/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_imu/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/vehicle_magnetometer/cmake_install.cmake")
 
 endif()
 

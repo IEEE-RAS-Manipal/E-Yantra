@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libuorb_msgs.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libuorb_msgs.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libuorb_msgs.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libuorb_msgs.pdb"
   "CMakeFiles/uorb_msgs.dir/topics_sources/actuator_armed.cpp.o"
   "CMakeFiles/uorb_msgs.dir/topics_sources/actuator_controls.cpp.o"
   "CMakeFiles/uorb_msgs.dir/topics_sources/actuator_controls_status.cpp.o"

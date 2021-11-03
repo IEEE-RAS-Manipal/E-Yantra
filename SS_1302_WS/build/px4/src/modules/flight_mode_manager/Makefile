@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/rule
 .PHONY : src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/rule
 
 # Convenience name for target.
@@ -201,12 +201,12 @@ modules__flight_mode_manager: src/modules/flight_mode_manager/CMakeFiles/modules
 
 # fast build rule for target.
 modules__flight_mode_manager/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build
 .PHONY : modules__flight_mode_manager/fast
 
 # Convenience name for target.
 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/rule
 .PHONY : src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/rule
 
 # Convenience name for target.
@@ -216,7 +216,7 @@ flighttasks_generated: src/modules/flight_mode_manager/CMakeFiles/flighttasks_ge
 
 # fast build rule for target.
 flighttasks_generated/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build.make src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build.make src/modules/flight_mode_manager/CMakeFiles/flighttasks_generated.dir/build
 .PHONY : flighttasks_generated/fast
 
 FlightModeManager.o: FlightModeManager.cpp.o
@@ -225,7 +225,7 @@ FlightModeManager.o: FlightModeManager.cpp.o
 
 # target to build an object file
 FlightModeManager.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.o
 .PHONY : FlightModeManager.cpp.o
 
 FlightModeManager.i: FlightModeManager.cpp.i
@@ -234,7 +234,7 @@ FlightModeManager.i: FlightModeManager.cpp.i
 
 # target to preprocess a source file
 FlightModeManager.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.i
 .PHONY : FlightModeManager.cpp.i
 
 FlightModeManager.s: FlightModeManager.cpp.s
@@ -243,7 +243,7 @@ FlightModeManager.s: FlightModeManager.cpp.s
 
 # target to generate assembly for a file
 FlightModeManager.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightModeManager.cpp.s
 .PHONY : FlightModeManager.cpp.s
 
 FlightTasks_generated.o: FlightTasks_generated.cpp.o
@@ -252,7 +252,7 @@ FlightTasks_generated.o: FlightTasks_generated.cpp.o
 
 # target to build an object file
 FlightTasks_generated.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.o
 .PHONY : FlightTasks_generated.cpp.o
 
 FlightTasks_generated.i: FlightTasks_generated.cpp.i
@@ -261,7 +261,7 @@ FlightTasks_generated.i: FlightTasks_generated.cpp.i
 
 # target to preprocess a source file
 FlightTasks_generated.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.i
 .PHONY : FlightTasks_generated.cpp.i
 
 FlightTasks_generated.s: FlightTasks_generated.cpp.s
@@ -270,7 +270,7 @@ FlightTasks_generated.s: FlightTasks_generated.cpp.s
 
 # target to generate assembly for a file
 FlightTasks_generated.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/build.make src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/FlightTasks_generated.cpp.s
 .PHONY : FlightTasks_generated.cpp.s
 
 # Help Target
@@ -307,6 +307,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

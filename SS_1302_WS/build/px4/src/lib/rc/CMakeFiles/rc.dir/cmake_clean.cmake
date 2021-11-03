@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/librc.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/librc.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/librc.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/librc.pdb"
   "CMakeFiles/rc.dir/common_rc.cpp.o"
   "CMakeFiles/rc.dir/crsf.cpp.o"
   "CMakeFiles/rc.dir/dsm.cpp.o"

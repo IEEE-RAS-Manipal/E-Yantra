@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Include any dependencies generated for this target.
 include platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/depend.make
@@ -58,82 +58,82 @@ include platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/prog
 include platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/pxh.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/pxh.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/pxh.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp > CMakeFiles/px4_daemon.dir/pxh.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp > CMakeFiles/px4_daemon.dir/pxh.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/pxh.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp -o CMakeFiles/px4_daemon.dir/pxh.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/pxh.cpp -o CMakeFiles/px4_daemon.dir/pxh.cpp.s
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/history.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/history.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/history.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp > CMakeFiles/px4_daemon.dir/history.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp > CMakeFiles/px4_daemon.dir/history.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/history.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp -o CMakeFiles/px4_daemon.dir/history.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/history.cpp -o CMakeFiles/px4_daemon.dir/history.cpp.s
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/client.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/client.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/client.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp > CMakeFiles/px4_daemon.dir/client.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp > CMakeFiles/px4_daemon.dir/client.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/client.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp -o CMakeFiles/px4_daemon.dir/client.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/client.cpp -o CMakeFiles/px4_daemon.dir/client.cpp.s
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/server.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/server.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/server.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp > CMakeFiles/px4_daemon.dir/server.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp > CMakeFiles/px4_daemon.dir/server.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/server.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp -o CMakeFiles/px4_daemon.dir/server.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server.cpp -o CMakeFiles/px4_daemon.dir/server.cpp.s
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/server_io.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/server_io.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/server_io.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp > CMakeFiles/px4_daemon.dir/server_io.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp > CMakeFiles/px4_daemon.dir/server_io.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/server_io.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp -o CMakeFiles/px4_daemon.dir/server_io.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/server_io.cpp -o CMakeFiles/px4_daemon.dir/server_io.cpp.s
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/flags.make
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/px4_daemon.dir/sock_protocol.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp > CMakeFiles/px4_daemon.dir/sock_protocol.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp > CMakeFiles/px4_daemon.dir/sock_protocol.cpp.i
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/px4_daemon.dir/sock_protocol.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp -o CMakeFiles/px4_daemon.dir/sock_protocol.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon/sock_protocol.cpp -o CMakeFiles/px4_daemon.dir/sock_protocol.cpp.s
 
 # Object files for target px4_daemon
 px4_daemon_OBJECTS = \
@@ -147,28 +147,28 @@ px4_daemon_OBJECTS = \
 # External object files for target px4_daemon
 px4_daemon_EXTERNAL_OBJECTS =
 
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/build.make
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -P CMakeFiles/px4_daemon.dir/cmake_clean_target.cmake
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/px4_daemon.dir/link.txt --verbose=$(VERBOSE)
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/pxh.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/history.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/client.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/server_io.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/sock_protocol.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/build.make
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a: platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -P CMakeFiles/px4_daemon.dir/cmake_clean_target.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/px4_daemon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/build: /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_daemon.a
+platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/build: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_daemon.a
 
 .PHONY : platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/build
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -P CMakeFiles/px4_daemon.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon && $(CMAKE_COMMAND) -P CMakeFiles/px4_daemon.dir/cmake_clean.cmake
 .PHONY : platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/clean
 
 platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix/src/px4/common/px4_daemon /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/src/px4/common/px4_daemon/CMakeFiles/px4_daemon.dir/depend
 

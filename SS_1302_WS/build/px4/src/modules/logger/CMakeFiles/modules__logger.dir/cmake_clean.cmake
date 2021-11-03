@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__logger.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__logger.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__logger.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__logger.pdb"
   "CMakeFiles/modules__logger.dir/log_writer.cpp.o"
   "CMakeFiles/modules__logger.dir/log_writer_file.cpp.o"
   "CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.o"

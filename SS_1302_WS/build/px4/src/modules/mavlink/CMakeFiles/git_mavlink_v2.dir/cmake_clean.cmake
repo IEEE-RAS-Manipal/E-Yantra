@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/git_mavlink_v2"
-  "git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp"
+  "git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libTakeoff.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libTakeoff.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libTakeoff.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libTakeoff.pdb"
   "CMakeFiles/Takeoff.dir/Takeoff.cpp.o"
 )
 

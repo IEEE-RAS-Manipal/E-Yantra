@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libwork_queue.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libwork_queue.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libwork_queue.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libwork_queue.pdb"
   "CMakeFiles/work_queue.dir/dq_addlast.c.o"
   "CMakeFiles/work_queue.dir/dq_rem.c.o"
   "CMakeFiles/work_queue.dir/dq_remfirst.c.o"

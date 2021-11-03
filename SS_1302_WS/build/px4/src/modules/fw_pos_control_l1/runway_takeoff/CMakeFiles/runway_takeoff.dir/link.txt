@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/librunway_takeoff.a  CMakeFiles/runway_takeoff.dir/RunwayTakeoff.cpp.o
-/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/librunway_takeoff.a
+/usr/bin/ar qc /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/librunway_takeoff.a  CMakeFiles/runway_takeoff.dir/RunwayTakeoff.cpp.o
+/usr/bin/ranlib /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/librunway_takeoff.a

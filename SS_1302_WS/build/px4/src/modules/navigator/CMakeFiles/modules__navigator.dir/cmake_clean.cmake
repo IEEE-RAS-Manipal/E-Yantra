@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__navigator.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__navigator.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__navigator.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__navigator.pdb"
   "CMakeFiles/modules__navigator.dir/enginefailure.cpp.o"
   "CMakeFiles/modules__navigator.dir/follow_target.cpp.o"
   "CMakeFiles/modules__navigator.dir/geofence.cpp.o"

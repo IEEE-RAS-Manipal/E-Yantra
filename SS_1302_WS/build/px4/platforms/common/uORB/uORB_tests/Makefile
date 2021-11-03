@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/common/uORB/uORB_tests/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/common/uORB/uORB_tests/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/rule
 .PHONY : platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__uORB__uORB_tests: platforms/common/uORB/uORB_tests/CMakeFiles/modules__
 
 # fast build rule for target.
 modules__uORB__uORB_tests/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build
 .PHONY : modules__uORB__uORB_tests/fast
 
 uORBTest_UnitTest.o: uORBTest_UnitTest.cpp.o
@@ -210,7 +210,7 @@ uORBTest_UnitTest.o: uORBTest_UnitTest.cpp.o
 
 # target to build an object file
 uORBTest_UnitTest.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.o
 .PHONY : uORBTest_UnitTest.cpp.o
 
 uORBTest_UnitTest.i: uORBTest_UnitTest.cpp.i
@@ -219,7 +219,7 @@ uORBTest_UnitTest.i: uORBTest_UnitTest.cpp.i
 
 # target to preprocess a source file
 uORBTest_UnitTest.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.i
 .PHONY : uORBTest_UnitTest.cpp.i
 
 uORBTest_UnitTest.s: uORBTest_UnitTest.cpp.s
@@ -228,7 +228,7 @@ uORBTest_UnitTest.s: uORBTest_UnitTest.cpp.s
 
 # target to generate assembly for a file
 uORBTest_UnitTest.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORBTest_UnitTest.cpp.s
 .PHONY : uORBTest_UnitTest.cpp.s
 
 uORB_tests_main.o: uORB_tests_main.cpp.o
@@ -237,7 +237,7 @@ uORB_tests_main.o: uORB_tests_main.cpp.o
 
 # target to build an object file
 uORB_tests_main.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.o
 .PHONY : uORB_tests_main.cpp.o
 
 uORB_tests_main.i: uORB_tests_main.cpp.i
@@ -246,7 +246,7 @@ uORB_tests_main.i: uORB_tests_main.cpp.i
 
 # target to preprocess a source file
 uORB_tests_main.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.i
 .PHONY : uORB_tests_main.cpp.i
 
 uORB_tests_main.s: uORB_tests_main.cpp.s
@@ -255,7 +255,7 @@ uORB_tests_main.s: uORB_tests_main.cpp.s
 
 # target to generate assembly for a file
 uORB_tests_main.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/build.make platforms/common/uORB/uORB_tests/CMakeFiles/modules__uORB__uORB_tests.dir/uORB_tests_main.cpp.s
 .PHONY : uORB_tests_main.cpp.s
 
 # Help Target
@@ -291,6 +291,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

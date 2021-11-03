@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblanding_slope.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblanding_slope.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblanding_slope.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblanding_slope.pdb"
   "CMakeFiles/landing_slope.dir/Landingslope.cpp.o"
 )
 

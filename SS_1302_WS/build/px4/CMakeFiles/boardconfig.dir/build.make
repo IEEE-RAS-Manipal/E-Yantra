@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for boardconfig.
 
@@ -54,11 +54,11 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
 include CMakeFiles/boardconfig.dir/progress.make
 
 CMakeFiles/boardconfig:
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E env PYTHON_EXECUTABLE=/usr/bin/python3.8 KCONFIG_CONFIG=/home/ch13f_1419/E-Yantra/ws_template/build/px4/boardconfig PLATFORM= VENDOR=px4 MODEL=sitl LABEL=default TOOLCHAIN= ARCHITECTURE= ROMFSROOT= /usr/bin/python3.8 -m menuconfig Kconfig
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E env PYTHON_EXECUTABLE=/usr/bin/python3.8 KCONFIG_CONFIG=/home/ch13f_1419/E-Yantra/ws_template/build/px4/boardconfig PLATFORM= VENDOR=px4 MODEL=sitl LABEL=default TOOLCHAIN= ARCHITECTURE= ROMFSROOT= /usr/bin/python3.8 -m savedefconfig
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E copy defconfig /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/boards/px4/sitl/default.px4board
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E remove defconfig
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E remove /home/ch13f_1419/E-Yantra/ws_template/build/px4/NuttX/apps_copy.stamp
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E env PYTHON_EXECUTABLE=/usr/bin/python3.8 KCONFIG_CONFIG=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boardconfig PLATFORM= VENDOR=px4 MODEL=sitl LABEL=default TOOLCHAIN= ARCHITECTURE= ROMFSROOT= /usr/bin/python3.8 -m menuconfig Kconfig
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E env PYTHON_EXECUTABLE=/usr/bin/python3.8 KCONFIG_CONFIG=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boardconfig PLATFORM= VENDOR=px4 MODEL=sitl LABEL=default TOOLCHAIN= ARCHITECTURE= ROMFSROOT= /usr/bin/python3.8 -m savedefconfig
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E copy defconfig /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/boards/px4/sitl/default.px4board
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E remove defconfig
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E remove /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/NuttX/apps_copy.stamp
 
 boardconfig: CMakeFiles/boardconfig
 boardconfig: CMakeFiles/boardconfig.dir/build.make
@@ -75,6 +75,6 @@ CMakeFiles/boardconfig.dir/clean:
 .PHONY : CMakeFiles/boardconfig.dir/clean
 
 CMakeFiles/boardconfig.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles/boardconfig.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/boardconfig.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/boardconfig.dir/depend
 

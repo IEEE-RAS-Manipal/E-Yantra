@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for logs_symlink.
 
@@ -57,8 +57,8 @@ platforms/posix/CMakeFiles/logs_symlink: logs
 
 
 logs:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../logs"
-	/usr/bin/cmake -E create_symlink /home/ch13f_1419/E-Yantra/ws_template/build/px4/tmp/rootfs/log logs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../logs"
+	/usr/bin/cmake -E create_symlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/tmp/rootfs/log logs
 
 logs_symlink: platforms/posix/CMakeFiles/logs_symlink
 logs_symlink: logs
@@ -72,10 +72,10 @@ platforms/posix/CMakeFiles/logs_symlink.dir/build: logs_symlink
 .PHONY : platforms/posix/CMakeFiles/logs_symlink.dir/build
 
 platforms/posix/CMakeFiles/logs_symlink.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/logs_symlink.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/logs_symlink.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/logs_symlink.dir/clean
 
 platforms/posix/CMakeFiles/logs_symlink.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/logs_symlink.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/logs_symlink.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/logs_symlink.dir/depend
 

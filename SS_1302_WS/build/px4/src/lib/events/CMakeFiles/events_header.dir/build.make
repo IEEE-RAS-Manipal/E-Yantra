@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for events_header.
 
@@ -57,18 +57,18 @@ src/lib/events/CMakeFiles/events_header: events/events_generated.h
 
 
 events/events_generated.h: events/common_with_enums.json
-events/events_generated.h: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/libevents/libs/cpp/templates/events_generated.h.jinja
-events/events_generated.h: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/libevents/scripts/generate.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating px4 event header file"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/events
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events && /usr/bin/python3.8 libevents/scripts/generate.py --template libevents/libs/cpp/templates/events_generated.h.jinja --output /home/ch13f_1419/E-Yantra/ws_template/build/px4/events /home/ch13f_1419/E-Yantra/ws_template/build/px4/events/common_with_enums.json
+events/events_generated.h: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/libevents/libs/cpp/templates/events_generated.h.jinja
+events/events_generated.h: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/libevents/scripts/generate.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating px4 event header file"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events && /usr/bin/python3.8 libevents/scripts/generate.py --template libevents/libs/cpp/templates/events_generated.h.jinja --output /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events/common_with_enums.json
 
-events/common_with_enums.json: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/enums.json
-events/common_with_enums.json: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/libevents/events/common.json
-events/common_with_enums.json: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/libevents/scripts/combine.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating combined event json file"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/events
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events && /usr/bin/python3.8 libevents/scripts/combine.py enums.json libevents/events/common.json --output /home/ch13f_1419/E-Yantra/ws_template/build/px4/events/common_with_enums.json
+events/common_with_enums.json: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/enums.json
+events/common_with_enums.json: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/libevents/events/common.json
+events/common_with_enums.json: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/libevents/scripts/combine.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating combined event json file"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events && /usr/bin/python3.8 libevents/scripts/combine.py enums.json libevents/events/common.json --output /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events/common_with_enums.json
 
 events_header: src/lib/events/CMakeFiles/events_header
 events_header: events/events_generated.h
@@ -83,10 +83,10 @@ src/lib/events/CMakeFiles/events_header.dir/build: events_header
 .PHONY : src/lib/events/CMakeFiles/events_header.dir/build
 
 src/lib/events/CMakeFiles/events_header.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events && $(CMAKE_COMMAND) -P CMakeFiles/events_header.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events && $(CMAKE_COMMAND) -P CMakeFiles/events_header.dir/cmake_clean.cmake
 .PHONY : src/lib/events/CMakeFiles/events_header.dir/clean
 
 src/lib/events/CMakeFiles/events_header.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events/CMakeFiles/events_header.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events/CMakeFiles/events_header.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/lib/events/CMakeFiles/events_header.dir/depend
 

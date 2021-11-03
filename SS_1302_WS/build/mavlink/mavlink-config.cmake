@@ -21,7 +21,7 @@ set(mavlink2_DIALECTS ASLUAV;all;ardupilotmega;autoquad;common;icarous;matrixpil
 foreach(lib )
   set(onelib "${lib}-NOTFOUND")
   find_library(onelib ${lib}
-      PATHS "/home/ch13f_1419/E-Yantra/ws_template/devel/lib"
+      PATHS "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib"
     NO_DEFAULT_PATH
     )
   if(NOT onelib)

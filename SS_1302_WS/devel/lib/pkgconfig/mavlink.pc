@@ -1,5 +1,5 @@
-prefix=/home/ch13f_1419/E-Yantra/ws_template/devel
-exec_prefix=/home/ch13f_1419/E-Yantra/ws_template/devel
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel
+exec_prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel
 includedir=${prefix}/include
 
 Name: mavlink

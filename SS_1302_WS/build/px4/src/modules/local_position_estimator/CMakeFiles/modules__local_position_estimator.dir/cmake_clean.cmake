@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__local_position_estimator.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__local_position_estimator.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__local_position_estimator.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__local_position_estimator.pdb"
   "CMakeFiles/modules__local_position_estimator.dir/BlockLocalPositionEstimator.cpp.o"
   "CMakeFiles/modules__local_position_estimator.dir/sensors/baro.cpp.o"
   "CMakeFiles/modules__local_position_estimator.dir/sensors/flow.cpp.o"

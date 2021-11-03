@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblockstep_scheduler.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblockstep_scheduler.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblockstep_scheduler.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblockstep_scheduler.pdb"
   "CMakeFiles/lockstep_scheduler.dir/src/lockstep_components.cpp.o"
   "CMakeFiles/lockstep_scheduler.dir/src/lockstep_scheduler.cpp.o"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblib__work_queue__test__wqueue_test.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblib__work_queue__test__wqueue_test.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblib__work_queue__test__wqueue_test.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/liblib__work_queue__test__wqueue_test.pdb"
   "CMakeFiles/lib__work_queue__test__wqueue_test.dir/wqueue_main.cpp.o"
   "CMakeFiles/lib__work_queue__test__wqueue_test.dir/wqueue_scheduled_test.cpp.o"
   "CMakeFiles/lib__work_queue__test__wqueue_test.dir/wqueue_start.cpp.o"

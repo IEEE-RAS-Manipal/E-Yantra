@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,7 +83,7 @@ install/local/fast: preinstall/fast
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -127,7 +127,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/navigator/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/navigator/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/navigator/CMakeFiles/modules__navigator.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/CMakeFiles/modules__navigator.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/navigator/CMakeFiles/modules__navigator.dir/rule
 .PHONY : src/modules/navigator/CMakeFiles/modules__navigator.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__navigator: src/modules/navigator/CMakeFiles/modules__navigator.dir/rule
 
 # fast build rule for target.
 modules__navigator/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/build
 .PHONY : modules__navigator/fast
 
 enginefailure.o: enginefailure.cpp.o
@@ -210,7 +210,7 @@ enginefailure.o: enginefailure.cpp.o
 
 # target to build an object file
 enginefailure.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.o
 .PHONY : enginefailure.cpp.o
 
 enginefailure.i: enginefailure.cpp.i
@@ -219,7 +219,7 @@ enginefailure.i: enginefailure.cpp.i
 
 # target to preprocess a source file
 enginefailure.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.i
 .PHONY : enginefailure.cpp.i
 
 enginefailure.s: enginefailure.cpp.s
@@ -228,7 +228,7 @@ enginefailure.s: enginefailure.cpp.s
 
 # target to generate assembly for a file
 enginefailure.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/enginefailure.cpp.s
 .PHONY : enginefailure.cpp.s
 
 follow_target.o: follow_target.cpp.o
@@ -237,7 +237,7 @@ follow_target.o: follow_target.cpp.o
 
 # target to build an object file
 follow_target.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.o
 .PHONY : follow_target.cpp.o
 
 follow_target.i: follow_target.cpp.i
@@ -246,7 +246,7 @@ follow_target.i: follow_target.cpp.i
 
 # target to preprocess a source file
 follow_target.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.i
 .PHONY : follow_target.cpp.i
 
 follow_target.s: follow_target.cpp.s
@@ -255,7 +255,7 @@ follow_target.s: follow_target.cpp.s
 
 # target to generate assembly for a file
 follow_target.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/follow_target.cpp.s
 .PHONY : follow_target.cpp.s
 
 geofence.o: geofence.cpp.o
@@ -264,7 +264,7 @@ geofence.o: geofence.cpp.o
 
 # target to build an object file
 geofence.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.o
 .PHONY : geofence.cpp.o
 
 geofence.i: geofence.cpp.i
@@ -273,7 +273,7 @@ geofence.i: geofence.cpp.i
 
 # target to preprocess a source file
 geofence.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.i
 .PHONY : geofence.cpp.i
 
 geofence.s: geofence.cpp.s
@@ -282,7 +282,7 @@ geofence.s: geofence.cpp.s
 
 # target to generate assembly for a file
 geofence.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/geofence.cpp.s
 .PHONY : geofence.cpp.s
 
 gpsfailure.o: gpsfailure.cpp.o
@@ -291,7 +291,7 @@ gpsfailure.o: gpsfailure.cpp.o
 
 # target to build an object file
 gpsfailure.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.o
 .PHONY : gpsfailure.cpp.o
 
 gpsfailure.i: gpsfailure.cpp.i
@@ -300,7 +300,7 @@ gpsfailure.i: gpsfailure.cpp.i
 
 # target to preprocess a source file
 gpsfailure.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.i
 .PHONY : gpsfailure.cpp.i
 
 gpsfailure.s: gpsfailure.cpp.s
@@ -309,7 +309,7 @@ gpsfailure.s: gpsfailure.cpp.s
 
 # target to generate assembly for a file
 gpsfailure.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/gpsfailure.cpp.s
 .PHONY : gpsfailure.cpp.s
 
 land.o: land.cpp.o
@@ -318,7 +318,7 @@ land.o: land.cpp.o
 
 # target to build an object file
 land.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.o
 .PHONY : land.cpp.o
 
 land.i: land.cpp.i
@@ -327,7 +327,7 @@ land.i: land.cpp.i
 
 # target to preprocess a source file
 land.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.i
 .PHONY : land.cpp.i
 
 land.s: land.cpp.s
@@ -336,7 +336,7 @@ land.s: land.cpp.s
 
 # target to generate assembly for a file
 land.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/land.cpp.s
 .PHONY : land.cpp.s
 
 loiter.o: loiter.cpp.o
@@ -345,7 +345,7 @@ loiter.o: loiter.cpp.o
 
 # target to build an object file
 loiter.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.o
 .PHONY : loiter.cpp.o
 
 loiter.i: loiter.cpp.i
@@ -354,7 +354,7 @@ loiter.i: loiter.cpp.i
 
 # target to preprocess a source file
 loiter.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.i
 .PHONY : loiter.cpp.i
 
 loiter.s: loiter.cpp.s
@@ -363,7 +363,7 @@ loiter.s: loiter.cpp.s
 
 # target to generate assembly for a file
 loiter.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/loiter.cpp.s
 .PHONY : loiter.cpp.s
 
 mission.o: mission.cpp.o
@@ -372,7 +372,7 @@ mission.o: mission.cpp.o
 
 # target to build an object file
 mission.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.o
 .PHONY : mission.cpp.o
 
 mission.i: mission.cpp.i
@@ -381,7 +381,7 @@ mission.i: mission.cpp.i
 
 # target to preprocess a source file
 mission.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.i
 .PHONY : mission.cpp.i
 
 mission.s: mission.cpp.s
@@ -390,7 +390,7 @@ mission.s: mission.cpp.s
 
 # target to generate assembly for a file
 mission.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission.cpp.s
 .PHONY : mission.cpp.s
 
 mission_block.o: mission_block.cpp.o
@@ -399,7 +399,7 @@ mission_block.o: mission_block.cpp.o
 
 # target to build an object file
 mission_block.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.o
 .PHONY : mission_block.cpp.o
 
 mission_block.i: mission_block.cpp.i
@@ -408,7 +408,7 @@ mission_block.i: mission_block.cpp.i
 
 # target to preprocess a source file
 mission_block.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.i
 .PHONY : mission_block.cpp.i
 
 mission_block.s: mission_block.cpp.s
@@ -417,7 +417,7 @@ mission_block.s: mission_block.cpp.s
 
 # target to generate assembly for a file
 mission_block.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_block.cpp.s
 .PHONY : mission_block.cpp.s
 
 mission_feasibility_checker.o: mission_feasibility_checker.cpp.o
@@ -426,7 +426,7 @@ mission_feasibility_checker.o: mission_feasibility_checker.cpp.o
 
 # target to build an object file
 mission_feasibility_checker.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.o
 .PHONY : mission_feasibility_checker.cpp.o
 
 mission_feasibility_checker.i: mission_feasibility_checker.cpp.i
@@ -435,7 +435,7 @@ mission_feasibility_checker.i: mission_feasibility_checker.cpp.i
 
 # target to preprocess a source file
 mission_feasibility_checker.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.i
 .PHONY : mission_feasibility_checker.cpp.i
 
 mission_feasibility_checker.s: mission_feasibility_checker.cpp.s
@@ -444,7 +444,7 @@ mission_feasibility_checker.s: mission_feasibility_checker.cpp.s
 
 # target to generate assembly for a file
 mission_feasibility_checker.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.s
 .PHONY : mission_feasibility_checker.cpp.s
 
 navigator_main.o: navigator_main.cpp.o
@@ -453,7 +453,7 @@ navigator_main.o: navigator_main.cpp.o
 
 # target to build an object file
 navigator_main.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.o
 .PHONY : navigator_main.cpp.o
 
 navigator_main.i: navigator_main.cpp.i
@@ -462,7 +462,7 @@ navigator_main.i: navigator_main.cpp.i
 
 # target to preprocess a source file
 navigator_main.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.i
 .PHONY : navigator_main.cpp.i
 
 navigator_main.s: navigator_main.cpp.s
@@ -471,7 +471,7 @@ navigator_main.s: navigator_main.cpp.s
 
 # target to generate assembly for a file
 navigator_main.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_main.cpp.s
 .PHONY : navigator_main.cpp.s
 
 navigator_mode.o: navigator_mode.cpp.o
@@ -480,7 +480,7 @@ navigator_mode.o: navigator_mode.cpp.o
 
 # target to build an object file
 navigator_mode.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.o
 .PHONY : navigator_mode.cpp.o
 
 navigator_mode.i: navigator_mode.cpp.i
@@ -489,7 +489,7 @@ navigator_mode.i: navigator_mode.cpp.i
 
 # target to preprocess a source file
 navigator_mode.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.i
 .PHONY : navigator_mode.cpp.i
 
 navigator_mode.s: navigator_mode.cpp.s
@@ -498,7 +498,7 @@ navigator_mode.s: navigator_mode.cpp.s
 
 # target to generate assembly for a file
 navigator_mode.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/navigator_mode.cpp.s
 .PHONY : navigator_mode.cpp.s
 
 precland.o: precland.cpp.o
@@ -507,7 +507,7 @@ precland.o: precland.cpp.o
 
 # target to build an object file
 precland.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.o
 .PHONY : precland.cpp.o
 
 precland.i: precland.cpp.i
@@ -516,7 +516,7 @@ precland.i: precland.cpp.i
 
 # target to preprocess a source file
 precland.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.i
 .PHONY : precland.cpp.i
 
 precland.s: precland.cpp.s
@@ -525,7 +525,7 @@ precland.s: precland.cpp.s
 
 # target to generate assembly for a file
 precland.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/precland.cpp.s
 .PHONY : precland.cpp.s
 
 rtl.o: rtl.cpp.o
@@ -534,7 +534,7 @@ rtl.o: rtl.cpp.o
 
 # target to build an object file
 rtl.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.o
 .PHONY : rtl.cpp.o
 
 rtl.i: rtl.cpp.i
@@ -543,7 +543,7 @@ rtl.i: rtl.cpp.i
 
 # target to preprocess a source file
 rtl.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.i
 .PHONY : rtl.cpp.i
 
 rtl.s: rtl.cpp.s
@@ -552,7 +552,7 @@ rtl.s: rtl.cpp.s
 
 # target to generate assembly for a file
 rtl.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/rtl.cpp.s
 .PHONY : rtl.cpp.s
 
 takeoff.o: takeoff.cpp.o
@@ -561,7 +561,7 @@ takeoff.o: takeoff.cpp.o
 
 # target to build an object file
 takeoff.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.o
 .PHONY : takeoff.cpp.o
 
 takeoff.i: takeoff.cpp.i
@@ -570,7 +570,7 @@ takeoff.i: takeoff.cpp.i
 
 # target to preprocess a source file
 takeoff.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.i
 .PHONY : takeoff.cpp.i
 
 takeoff.s: takeoff.cpp.s
@@ -579,7 +579,7 @@ takeoff.s: takeoff.cpp.s
 
 # target to generate assembly for a file
 takeoff.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/navigator/CMakeFiles/modules__navigator.dir/build.make src/modules/navigator/CMakeFiles/modules__navigator.dir/takeoff.cpp.s
 .PHONY : takeoff.cpp.s
 
 # Help Target
@@ -651,6 +651,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

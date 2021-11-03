@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_extras/lib/libmavros_extras.pdb"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_extras/lib/libmavros_extras.so"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib/libmavros_extras.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib/libmavros_extras.so"
   "CMakeFiles/mavros_extras.dir/src/plugins/adsb.cpp.o"
   "CMakeFiles/mavros_extras.dir/src/plugins/cam_imu_sync.cpp.o"
   "CMakeFiles/mavros_extras.dir/src/plugins/companion_process_status.cpp.o"

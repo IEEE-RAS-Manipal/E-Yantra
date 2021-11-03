@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for mavsdk_tests.
 
@@ -64,52 +64,52 @@ platforms/posix/CMakeFiles/mavsdk_tests-complete: external/Stamp/mavsdk_tests/ma
 platforms/posix/CMakeFiles/mavsdk_tests-complete: external/Stamp/mavsdk_tests/mavsdk_tests-configure
 platforms/posix/CMakeFiles/mavsdk_tests-complete: external/Stamp/mavsdk_tests/mavsdk_tests-build
 platforms/posix/CMakeFiles/mavsdk_tests-complete: external/Stamp/mavsdk_tests/mavsdk_tests-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/mavsdk_tests-complete
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/mavsdk_tests-complete
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-done
 
 external/Stamp/mavsdk_tests/mavsdk_tests-install: external/Stamp/mavsdk_tests/mavsdk_tests-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests && /usr/bin/cmake -E echo_append
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests && /usr/bin/cmake -E echo_append
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-install
 
 external/Stamp/mavsdk_tests/mavsdk_tests-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/test/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Install/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/tmp/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Download/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/test/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Install/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/tmp/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Download/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-mkdir
 
 external/Stamp/mavsdk_tests/mavsdk_tests-download: external/Stamp/mavsdk_tests/mavsdk_tests-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-download
 
 external/Stamp/mavsdk_tests/mavsdk_tests-update: external/Stamp/mavsdk_tests/mavsdk_tests-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-update
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-update
 
 external/Stamp/mavsdk_tests/mavsdk_tests-patch: external/Stamp/mavsdk_tests/mavsdk_tests-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-patch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E echo_append
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-patch
 
 external/Stamp/mavsdk_tests/mavsdk_tests-configure: external/tmp/mavsdk_tests/mavsdk_tests-cfgcmd.txt
 external/Stamp/mavsdk_tests/mavsdk_tests-configure: external/Stamp/mavsdk_tests/mavsdk_tests-update
 external/Stamp/mavsdk_tests/mavsdk_tests-configure: external/Stamp/mavsdk_tests/mavsdk_tests-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests && /usr/bin/cmake -DCMAKE_INSTALL_PREFIX=/home/ch13f_1419/E-Yantra/ws_template/install "-GUnix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/test/mavsdk_tests
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests && /usr/bin/cmake -DCMAKE_INSTALL_PREFIX=/home/ch13f_1419/E-Yantra/SS_1302_WS/install "-GUnix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/test/mavsdk_tests
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/external/Stamp/mavsdk_tests/mavsdk_tests-configure
 
 external/Stamp/mavsdk_tests/mavsdk_tests-build: external/Stamp/mavsdk_tests/mavsdk_tests-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'mavsdk_tests'"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/mavsdk_tests && $(MAKE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'mavsdk_tests'"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/mavsdk_tests && $(MAKE)
 
 mavsdk_tests: platforms/posix/CMakeFiles/mavsdk_tests
 mavsdk_tests: platforms/posix/CMakeFiles/mavsdk_tests-complete
@@ -130,10 +130,10 @@ platforms/posix/CMakeFiles/mavsdk_tests.dir/build: mavsdk_tests
 .PHONY : platforms/posix/CMakeFiles/mavsdk_tests.dir/build
 
 platforms/posix/CMakeFiles/mavsdk_tests.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/mavsdk_tests.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/mavsdk_tests.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/mavsdk_tests.dir/clean
 
 platforms/posix/CMakeFiles/mavsdk_tests.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/mavsdk_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/mavsdk_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/mavsdk_tests.dir/depend
 

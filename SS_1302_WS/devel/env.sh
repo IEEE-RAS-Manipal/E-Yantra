@@ -1,1 +1,1 @@
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/catkin_tools_prebuild/env.sh
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/catkin_tools_prebuild/env.sh

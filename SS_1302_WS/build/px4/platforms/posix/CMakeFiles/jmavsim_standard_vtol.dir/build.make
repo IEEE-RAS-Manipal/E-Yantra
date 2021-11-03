@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for jmavsim_standard_vtol.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
 include platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/progress.make
 
 platforms/posix/CMakeFiles/jmavsim_standard_vtol:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/tmp && /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/px4/px4 none jmavsim standard_vtol none /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/tmp && /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_run.sh /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4 none jmavsim standard_vtol none /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 jmavsim_standard_vtol: platforms/posix/CMakeFiles/jmavsim_standard_vtol
 jmavsim_standard_vtol: platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/build.make
@@ -67,10 +67,10 @@ platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/build: jmavsim_standard_vto
 .PHONY : platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/build
 
 platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/jmavsim_standard_vtol.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/jmavsim_standard_vtol.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/clean
 
 platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/jmavsim_standard_vtol.dir/depend
 

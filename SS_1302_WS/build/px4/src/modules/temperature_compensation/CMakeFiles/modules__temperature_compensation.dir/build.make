@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Include any dependencies generated for this target.
 include src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/depend.make
@@ -58,82 +58,82 @@ include src/modules/temperature_compensation/CMakeFiles/modules__temperature_com
 include src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp > CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp > CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensationModule.cpp -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.s
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp > CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp > CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp -o CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.s
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/accel.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.s
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/baro.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.s
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/gyro.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.s
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/flags.make
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o -c /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o -c /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.i"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp > CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.i
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.s"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/temperature_calibration/task.cpp -o CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.s
 
 # Object files for target modules__temperature_compensation
 modules__temperature_compensation_OBJECTS = \
@@ -147,28 +147,28 @@ modules__temperature_compensation_OBJECTS = \
 # External object files for target modules__temperature_compensation
 modules__temperature_compensation_EXTERNAL_OBJECTS =
 
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/build.make
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -P CMakeFiles/modules__temperature_compensation.dir/cmake_clean_target.cmake
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modules__temperature_compensation.dir/link.txt --verbose=$(VERBOSE)
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensationModule.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/TemperatureCompensation.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/accel.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/baro.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/gyro.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/temperature_calibration/task.cpp.o
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/build.make
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a: src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -P CMakeFiles/modules__temperature_compensation.dir/cmake_clean_target.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modules__temperature_compensation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/build: /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__temperature_compensation.a
+src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/build: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libmodules__temperature_compensation.a
 
 .PHONY : src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/build
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -P CMakeFiles/modules__temperature_compensation.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation && $(CMAKE_COMMAND) -P CMakeFiles/modules__temperature_compensation.dir/cmake_clean.cmake
 .PHONY : src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/clean
 
 src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/temperature_compensation /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/modules/temperature_compensation/CMakeFiles/modules__temperature_compensation.dir/depend
 

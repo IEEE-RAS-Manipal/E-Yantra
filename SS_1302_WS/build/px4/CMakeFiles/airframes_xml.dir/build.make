@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for airframes_xml.
 
@@ -56,9 +56,9 @@ include CMakeFiles/airframes_xml.dir/progress.make
 CMakeFiles/airframes_xml: airframes.xml
 
 
-airframes.xml: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/px_process_airframes.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating airframes.xml"
-	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/px_process_airframes.py --airframes-path /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --board CONFIG_ARCH_BOARD_px4_sitl --xml /home/ch13f_1419/E-Yantra/ws_template/build/px4/airframes.xml
+airframes.xml: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/px_process_airframes.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating airframes.xml"
+	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/px_process_airframes.py --airframes-path /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --board CONFIG_ARCH_BOARD_px4_sitl --xml /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/airframes.xml
 
 airframes_xml: CMakeFiles/airframes_xml
 airframes_xml: airframes.xml
@@ -76,6 +76,6 @@ CMakeFiles/airframes_xml.dir/clean:
 .PHONY : CMakeFiles/airframes_xml.dir/clean
 
 CMakeFiles/airframes_xml.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles/airframes_xml.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/airframes_xml.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/airframes_xml.dir/depend
 

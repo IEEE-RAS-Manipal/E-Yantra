@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libHealthFlags.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libHealthFlags.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libHealthFlags.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libHealthFlags.pdb"
   "CMakeFiles/HealthFlags.dir/HealthFlags.cpp.o"
 )
 

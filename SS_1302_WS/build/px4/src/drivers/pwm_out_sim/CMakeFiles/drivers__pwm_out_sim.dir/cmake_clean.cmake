@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__pwm_out_sim.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__pwm_out_sim.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__pwm_out_sim.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__pwm_out_sim.pdb"
   "CMakeFiles/drivers__pwm_out_sim.dir/PWMSim.cpp.o"
 )
 

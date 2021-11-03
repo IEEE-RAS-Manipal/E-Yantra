@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/libmavconn/lib;/opt/ros/noetic/lib")
+set(ORDERED_PATHS "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/libmavconn/lib;/opt/ros/noetic/lib")

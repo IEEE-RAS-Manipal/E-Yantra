@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libsystemcmds__esc_calib.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libsystemcmds__esc_calib.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libsystemcmds__esc_calib.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libsystemcmds__esc_calib.pdb"
   "CMakeFiles/systemcmds__esc_calib.dir/esc_calib.c.o"
 )
 

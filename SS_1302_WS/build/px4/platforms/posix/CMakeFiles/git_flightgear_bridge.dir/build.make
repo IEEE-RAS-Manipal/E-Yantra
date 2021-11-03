@@ -43,27 +43,27 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for git_flightgear_bridge.
 
 # Include the progress variables for this target.
 include platforms/posix/CMakeFiles/git_flightgear_bridge.dir/progress.make
 
-platforms/posix/CMakeFiles/git_flightgear_bridge: platforms/posix/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
+platforms/posix/CMakeFiles/git_flightgear_bridge: platforms/posix/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
 
 
-platforms/posix/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_Tools_flightgear_bridge.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/.gitmodules
-platforms/posix/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_Tools_flightgear_bridge.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/flightgear_bridge/.git
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule Tools/flightgear_bridge"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && Tools/check_submodules.sh Tools/flightgear_bridge
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
+platforms/posix/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_Tools_flightgear_bridge.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/.gitmodules
+platforms/posix/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_Tools_flightgear_bridge.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/flightgear_bridge/.git
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule Tools/flightgear_bridge"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && Tools/check_submodules.sh Tools/flightgear_bridge
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
 
 git_flightgear_bridge: platforms/posix/CMakeFiles/git_flightgear_bridge
-git_flightgear_bridge: platforms/posix/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
+git_flightgear_bridge: platforms/posix/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_Tools_flightgear_bridge.stamp
 git_flightgear_bridge: platforms/posix/CMakeFiles/git_flightgear_bridge.dir/build.make
 
 .PHONY : git_flightgear_bridge
@@ -74,10 +74,10 @@ platforms/posix/CMakeFiles/git_flightgear_bridge.dir/build: git_flightgear_bridg
 .PHONY : platforms/posix/CMakeFiles/git_flightgear_bridge.dir/build
 
 platforms/posix/CMakeFiles/git_flightgear_bridge.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/git_flightgear_bridge.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix && $(CMAKE_COMMAND) -P CMakeFiles/git_flightgear_bridge.dir/cmake_clean.cmake
 .PHONY : platforms/posix/CMakeFiles/git_flightgear_bridge.dir/clean
 
 platforms/posix/CMakeFiles/git_flightgear_bridge.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/ws_template/build/px4/platforms/posix/CMakeFiles/git_flightgear_bridge.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/platforms/posix/CMakeFiles/git_flightgear_bridge.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : platforms/posix/CMakeFiles/git_flightgear_bridge.dir/depend
 

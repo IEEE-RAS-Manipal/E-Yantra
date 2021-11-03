@@ -1,4 +1,4 @@
-prefix=/home/ch13f_1419/E-Yantra/ws_template/devel/.private/catkin_tools_prebuild
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/catkin_tools_prebuild
 
 Name: catkin_tools_prebuild
 Description: Description of catkin_tools_prebuild

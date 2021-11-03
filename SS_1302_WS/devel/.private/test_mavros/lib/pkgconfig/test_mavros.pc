@@ -1,4 +1,4 @@
-prefix=/home/ch13f_1419/E-Yantra/ws_template/devel/.private/test_mavros
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros
 
 Name: test_mavros
 Description: Description of test_mavros

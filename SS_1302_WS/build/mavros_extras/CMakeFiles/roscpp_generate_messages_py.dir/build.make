@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros_extras
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros_extras
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/mavros_extras
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/roscpp_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/mavros_extras && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros_extras /home/ch13f_1419/E-Yantra/ws_template/src/mavros/mavros_extras /home/ch13f_1419/E-Yantra/ws_template/build/mavros_extras /home/ch13f_1419/E-Yantra/ws_template/build/mavros_extras /home/ch13f_1419/E-Yantra/ws_template/build/mavros_extras/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros_extras /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros_extras /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/roscpp_generate_messages_py.dir/depend
 

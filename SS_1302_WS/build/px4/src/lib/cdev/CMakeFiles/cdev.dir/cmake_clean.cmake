@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libcdev.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libcdev.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libcdev.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libcdev.pdb"
   "CMakeFiles/cdev.dir/CDev.cpp.o"
   "CMakeFiles/cdev.dir/posix/cdev_platform.cpp.o"
 )

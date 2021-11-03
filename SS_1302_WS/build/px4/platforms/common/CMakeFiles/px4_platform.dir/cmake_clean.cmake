@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_platform.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libpx4_platform.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_platform.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libpx4_platform.pdb"
   "CMakeFiles/px4_platform.dir/board_identity.c.o"
   "CMakeFiles/px4_platform.dir/events.cpp.o"
   "CMakeFiles/px4_platform.dir/external_reset_lockout.cpp.o"

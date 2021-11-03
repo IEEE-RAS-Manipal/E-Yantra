@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++14 -fPIC
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DROS_BUILD_SHARED_LIBS=1 -Dmavconn_EXPORTS
 
-CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/ws_template/build/libmavconn/catkin_generated/include -I/home/ch13f_1419/E-Yantra/ws_template/devel/include 
+CXX_INCLUDES = -I/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn/catkin_generated/include -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include 
 

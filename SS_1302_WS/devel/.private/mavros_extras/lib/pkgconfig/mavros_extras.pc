@@ -1,4 +1,4 @@
-prefix=/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_extras
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras
 
 Name: mavros_extras
 Description: Description of mavros_extras

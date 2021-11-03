@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/land_detector/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/land_detector/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/land_detector/CMakeFiles/modules__land_detector.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/CMakeFiles/modules__land_detector.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/land_detector/CMakeFiles/modules__land_detector.dir/rule
 .PHONY : src/modules/land_detector/CMakeFiles/modules__land_detector.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__land_detector: src/modules/land_detector/CMakeFiles/modules__land_detec
 
 # fast build rule for target.
 modules__land_detector/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build
 .PHONY : modules__land_detector/fast
 
 AirshipLandDetector.o: AirshipLandDetector.cpp.o
@@ -210,7 +210,7 @@ AirshipLandDetector.o: AirshipLandDetector.cpp.o
 
 # target to build an object file
 AirshipLandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.o
 .PHONY : AirshipLandDetector.cpp.o
 
 AirshipLandDetector.i: AirshipLandDetector.cpp.i
@@ -219,7 +219,7 @@ AirshipLandDetector.i: AirshipLandDetector.cpp.i
 
 # target to preprocess a source file
 AirshipLandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.i
 .PHONY : AirshipLandDetector.cpp.i
 
 AirshipLandDetector.s: AirshipLandDetector.cpp.s
@@ -228,7 +228,7 @@ AirshipLandDetector.s: AirshipLandDetector.cpp.s
 
 # target to generate assembly for a file
 AirshipLandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/AirshipLandDetector.cpp.s
 .PHONY : AirshipLandDetector.cpp.s
 
 FixedwingLandDetector.o: FixedwingLandDetector.cpp.o
@@ -237,7 +237,7 @@ FixedwingLandDetector.o: FixedwingLandDetector.cpp.o
 
 # target to build an object file
 FixedwingLandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.o
 .PHONY : FixedwingLandDetector.cpp.o
 
 FixedwingLandDetector.i: FixedwingLandDetector.cpp.i
@@ -246,7 +246,7 @@ FixedwingLandDetector.i: FixedwingLandDetector.cpp.i
 
 # target to preprocess a source file
 FixedwingLandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.i
 .PHONY : FixedwingLandDetector.cpp.i
 
 FixedwingLandDetector.s: FixedwingLandDetector.cpp.s
@@ -255,7 +255,7 @@ FixedwingLandDetector.s: FixedwingLandDetector.cpp.s
 
 # target to generate assembly for a file
 FixedwingLandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/FixedwingLandDetector.cpp.s
 .PHONY : FixedwingLandDetector.cpp.s
 
 LandDetector.o: LandDetector.cpp.o
@@ -264,7 +264,7 @@ LandDetector.o: LandDetector.cpp.o
 
 # target to build an object file
 LandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.o
 .PHONY : LandDetector.cpp.o
 
 LandDetector.i: LandDetector.cpp.i
@@ -273,7 +273,7 @@ LandDetector.i: LandDetector.cpp.i
 
 # target to preprocess a source file
 LandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.i
 .PHONY : LandDetector.cpp.i
 
 LandDetector.s: LandDetector.cpp.s
@@ -282,7 +282,7 @@ LandDetector.s: LandDetector.cpp.s
 
 # target to generate assembly for a file
 LandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/LandDetector.cpp.s
 .PHONY : LandDetector.cpp.s
 
 MulticopterLandDetector.o: MulticopterLandDetector.cpp.o
@@ -291,7 +291,7 @@ MulticopterLandDetector.o: MulticopterLandDetector.cpp.o
 
 # target to build an object file
 MulticopterLandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.o
 .PHONY : MulticopterLandDetector.cpp.o
 
 MulticopterLandDetector.i: MulticopterLandDetector.cpp.i
@@ -300,7 +300,7 @@ MulticopterLandDetector.i: MulticopterLandDetector.cpp.i
 
 # target to preprocess a source file
 MulticopterLandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.i
 .PHONY : MulticopterLandDetector.cpp.i
 
 MulticopterLandDetector.s: MulticopterLandDetector.cpp.s
@@ -309,7 +309,7 @@ MulticopterLandDetector.s: MulticopterLandDetector.cpp.s
 
 # target to generate assembly for a file
 MulticopterLandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/MulticopterLandDetector.cpp.s
 .PHONY : MulticopterLandDetector.cpp.s
 
 RoverLandDetector.o: RoverLandDetector.cpp.o
@@ -318,7 +318,7 @@ RoverLandDetector.o: RoverLandDetector.cpp.o
 
 # target to build an object file
 RoverLandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.o
 .PHONY : RoverLandDetector.cpp.o
 
 RoverLandDetector.i: RoverLandDetector.cpp.i
@@ -327,7 +327,7 @@ RoverLandDetector.i: RoverLandDetector.cpp.i
 
 # target to preprocess a source file
 RoverLandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.i
 .PHONY : RoverLandDetector.cpp.i
 
 RoverLandDetector.s: RoverLandDetector.cpp.s
@@ -336,7 +336,7 @@ RoverLandDetector.s: RoverLandDetector.cpp.s
 
 # target to generate assembly for a file
 RoverLandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/RoverLandDetector.cpp.s
 .PHONY : RoverLandDetector.cpp.s
 
 VtolLandDetector.o: VtolLandDetector.cpp.o
@@ -345,7 +345,7 @@ VtolLandDetector.o: VtolLandDetector.cpp.o
 
 # target to build an object file
 VtolLandDetector.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.o
 .PHONY : VtolLandDetector.cpp.o
 
 VtolLandDetector.i: VtolLandDetector.cpp.i
@@ -354,7 +354,7 @@ VtolLandDetector.i: VtolLandDetector.cpp.i
 
 # target to preprocess a source file
 VtolLandDetector.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.i
 .PHONY : VtolLandDetector.cpp.i
 
 VtolLandDetector.s: VtolLandDetector.cpp.s
@@ -363,7 +363,7 @@ VtolLandDetector.s: VtolLandDetector.cpp.s
 
 # target to generate assembly for a file
 VtolLandDetector.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/VtolLandDetector.cpp.s
 .PHONY : VtolLandDetector.cpp.s
 
 land_detector_main.o: land_detector_main.cpp.o
@@ -372,7 +372,7 @@ land_detector_main.o: land_detector_main.cpp.o
 
 # target to build an object file
 land_detector_main.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.o
 .PHONY : land_detector_main.cpp.o
 
 land_detector_main.i: land_detector_main.cpp.i
@@ -381,7 +381,7 @@ land_detector_main.i: land_detector_main.cpp.i
 
 # target to preprocess a source file
 land_detector_main.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.i
 .PHONY : land_detector_main.cpp.i
 
 land_detector_main.s: land_detector_main.cpp.s
@@ -390,7 +390,7 @@ land_detector_main.s: land_detector_main.cpp.s
 
 # target to generate assembly for a file
 land_detector_main.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/land_detector/CMakeFiles/modules__land_detector.dir/build.make src/modules/land_detector/CMakeFiles/modules__land_detector.dir/land_detector_main.cpp.s
 .PHONY : land_detector_main.cpp.s
 
 # Help Target
@@ -441,6 +441,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

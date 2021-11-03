@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -138,7 +138,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -149,7 +149,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -159,14 +159,14 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/boards/px4/sitl/src/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boards/px4/sitl/src/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 boards/px4/sitl/src/CMakeFiles/drivers_board.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/CMakeFiles/drivers_board.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 boards/px4/sitl/src/CMakeFiles/drivers_board.dir/rule
 .PHONY : boards/px4/sitl/src/CMakeFiles/drivers_board.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ drivers_board: boards/px4/sitl/src/CMakeFiles/drivers_board.dir/rule
 
 # fast build rule for target.
 drivers_board/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build
 .PHONY : drivers_board/fast
 
 board_shutdown.o: board_shutdown.cpp.o
@@ -210,7 +210,7 @@ board_shutdown.o: board_shutdown.cpp.o
 
 # target to build an object file
 board_shutdown.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.o
 .PHONY : board_shutdown.cpp.o
 
 board_shutdown.i: board_shutdown.cpp.i
@@ -219,7 +219,7 @@ board_shutdown.i: board_shutdown.cpp.i
 
 # target to preprocess a source file
 board_shutdown.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.i
 .PHONY : board_shutdown.cpp.i
 
 board_shutdown.s: board_shutdown.cpp.s
@@ -228,7 +228,7 @@ board_shutdown.s: board_shutdown.cpp.s
 
 # target to generate assembly for a file
 board_shutdown.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.s
 .PHONY : board_shutdown.cpp.s
 
 i2c.o: i2c.cpp.o
@@ -237,7 +237,7 @@ i2c.o: i2c.cpp.o
 
 # target to build an object file
 i2c.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.o
 .PHONY : i2c.cpp.o
 
 i2c.i: i2c.cpp.i
@@ -246,7 +246,7 @@ i2c.i: i2c.cpp.i
 
 # target to preprocess a source file
 i2c.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.i
 .PHONY : i2c.cpp.i
 
 i2c.s: i2c.cpp.s
@@ -255,7 +255,7 @@ i2c.s: i2c.cpp.s
 
 # target to generate assembly for a file
 i2c.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.s
 .PHONY : i2c.cpp.s
 
 sitl_led.o: sitl_led.c.o
@@ -264,7 +264,7 @@ sitl_led.o: sitl_led.c.o
 
 # target to build an object file
 sitl_led.c.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.o
 .PHONY : sitl_led.c.o
 
 sitl_led.i: sitl_led.c.i
@@ -273,7 +273,7 @@ sitl_led.i: sitl_led.c.i
 
 # target to preprocess a source file
 sitl_led.c.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.i
 .PHONY : sitl_led.c.i
 
 sitl_led.s: sitl_led.c.s
@@ -282,7 +282,7 @@ sitl_led.s: sitl_led.c.s
 
 # target to generate assembly for a file
 sitl_led.c.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.s
 .PHONY : sitl_led.c.s
 
 spi.o: spi.cpp.o
@@ -291,7 +291,7 @@ spi.o: spi.cpp.o
 
 # target to build an object file
 spi.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.o
 .PHONY : spi.cpp.o
 
 spi.i: spi.cpp.i
@@ -300,7 +300,7 @@ spi.i: spi.cpp.i
 
 # target to preprocess a source file
 spi.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.i
 .PHONY : spi.cpp.i
 
 spi.s: spi.cpp.s
@@ -309,7 +309,7 @@ spi.s: spi.cpp.s
 
 # target to generate assembly for a file
 spi.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.s
 .PHONY : spi.cpp.s
 
 # Help Target
@@ -351,6 +351,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

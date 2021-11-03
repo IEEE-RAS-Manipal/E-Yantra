@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for git_libevents.
 
@@ -56,11 +56,11 @@ include src/lib/events/CMakeFiles/git_libevents.dir/progress.make
 src/lib/events/CMakeFiles/git_libevents: src/lib/events/git_init_libevents.stamp
 
 
-src/lib/events/git_init_libevents.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/.gitmodules
-src/lib/events/git_init_libevents.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events/libevents/.git
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule src/lib/events/libevents"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && Tools/check_submodules.sh src/lib/events/libevents
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events/git_init_libevents.stamp
+src/lib/events/git_init_libevents.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/.gitmodules
+src/lib/events/git_init_libevents.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events/libevents/.git
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule src/lib/events/libevents"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && Tools/check_submodules.sh src/lib/events/libevents
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events/git_init_libevents.stamp
 
 git_libevents: src/lib/events/CMakeFiles/git_libevents
 git_libevents: src/lib/events/git_init_libevents.stamp
@@ -74,10 +74,10 @@ src/lib/events/CMakeFiles/git_libevents.dir/build: git_libevents
 .PHONY : src/lib/events/CMakeFiles/git_libevents.dir/build
 
 src/lib/events/CMakeFiles/git_libevents.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events && $(CMAKE_COMMAND) -P CMakeFiles/git_libevents.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events && $(CMAKE_COMMAND) -P CMakeFiles/git_libevents.dir/cmake_clean.cmake
 .PHONY : src/lib/events/CMakeFiles/git_libevents.dir/clean
 
 src/lib/events/CMakeFiles/git_libevents.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/events /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/events/CMakeFiles/git_libevents.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/events /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/events/CMakeFiles/git_libevents.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/lib/events/CMakeFiles/git_libevents.dir/depend
 

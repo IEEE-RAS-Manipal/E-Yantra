@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn
 
 # Utility rule file for clean_test_results_libmavconn.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn
 include CMakeFiles/clean_test_results_libmavconn.dir/progress.make
 
 CMakeFiles/clean_test_results_libmavconn:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn/test_results/libmavconn
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn/test_results/libmavconn
 
 clean_test_results_libmavconn: CMakeFiles/clean_test_results_libmavconn
 clean_test_results_libmavconn: CMakeFiles/clean_test_results_libmavconn.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results_libmavconn.dir/clean:
 .PHONY : CMakeFiles/clean_test_results_libmavconn.dir/clean
 
 CMakeFiles/clean_test_results_libmavconn.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn /home/ch13f_1419/E-Yantra/ws_template/src/mavros/libmavconn /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn /home/ch13f_1419/E-Yantra/ws_template/build/libmavconn/CMakeFiles/clean_test_results_libmavconn.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/libmavconn /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn /home/ch13f_1419/E-Yantra/SS_1302_WS/build/libmavconn/CMakeFiles/clean_test_results_libmavconn.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results_libmavconn.dir/depend
 

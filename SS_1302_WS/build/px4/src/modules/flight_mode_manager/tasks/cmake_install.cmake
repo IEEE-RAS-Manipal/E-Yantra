@@ -1,8 +1,8 @@
-# Install script for directory: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks
+# Install script for directory: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/ws_template/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,21 +39,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/FlightTask/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Utility/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Auto/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoFollowMe/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Descend/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Failsafe/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/ManualAcceleration/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/ManualAltitude/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/ManualAltitudeSmoothVel/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/ManualPosition/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/ManualPositionSmoothVel/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Transition/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/flight_mode_manager/tasks/Orbit/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/FlightTask/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Utility/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Auto/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoMapper/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoFollowMe/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Descend/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Failsafe/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/ManualAcceleration/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/ManualAltitude/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/ManualAltitudeSmoothVel/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/ManualPosition/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/ManualPositionSmoothVel/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Transition/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Orbit/cmake_install.cmake")
 
 endif()
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for metadata_airframes.
 
@@ -54,10 +54,10 @@ CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
 include CMakeFiles/metadata_airframes.dir/progress.make
 
 CMakeFiles/metadata_airframes:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating full airframe metadata (markdown and xml)"
-	/usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/ws_template/build/px4/docs
-	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/px_process_airframes.py -v -a /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --markdown /home/ch13f_1419/E-Yantra/ws_template/build/px4/docs/airframes.md
-	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/px_process_airframes.py -v -a /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --xml /home/ch13f_1419/E-Yantra/ws_template/build/px4/docs/airframes.xml
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating full airframe metadata (markdown and xml)"
+	/usr/bin/cmake -E make_directory /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/docs
+	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/px_process_airframes.py -v -a /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --markdown /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/docs/airframes.md
+	/usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/px_process_airframes.py -v -a /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/ROMFS/px4fmu_common/init.d --xml /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/docs/airframes.xml
 
 metadata_airframes: CMakeFiles/metadata_airframes
 metadata_airframes: CMakeFiles/metadata_airframes.dir/build.make
@@ -74,6 +74,6 @@ CMakeFiles/metadata_airframes.dir/clean:
 .PHONY : CMakeFiles/metadata_airframes.dir/clean
 
 CMakeFiles/metadata_airframes.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles/metadata_airframes.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/metadata_airframes.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/metadata_airframes.dir/depend
 

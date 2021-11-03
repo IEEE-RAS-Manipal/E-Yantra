@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for component_general_json.
 
@@ -56,13 +56,13 @@ include src/lib/component_information/CMakeFiles/component_general_json.dir/prog
 src/lib/component_information/CMakeFiles/component_general_json: component_general.json
 
 
-component_general.json: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/component_information/generate_component_general.py
+component_general.json: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/component_information/generate_component_general.py
 component_general.json: parameters.json.xz
 component_general.json: events/all_events.json.xz
-component_general.json: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/component_information/generate_crc.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating component_general.json and checksums.h"
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/component_information/generate_component_general.py /home/ch13f_1419/E-Yantra/ws_template/build/px4/component_general.json --compress --type 1,/home/ch13f_1419/E-Yantra/ws_template/build/px4/parameters.json.xz,mftp://etc/extras/parameters.json.xz,https://px4-travis.s3.amazonaws.com/Firmware/{version}/px4_sitl_default/parameters.json.xz, --type 4,/home/ch13f_1419/E-Yantra/ws_template/build/px4/events/all_events.json.xz,mftp://etc/extras/all_events.json.xz,https://px4-travis.s3.amazonaws.com/Firmware/{version}/px4_sitl_default/all_events.json.xz, --version-file /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/version/build_git_version.h
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/component_information/generate_crc.py /home/ch13f_1419/E-Yantra/ws_template/build/px4/component_general.json --output /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information/checksums.h
+component_general.json: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/component_information/generate_crc.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating component_general.json and checksums.h"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/component_information/generate_component_general.py /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/component_general.json --compress --type 1,/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/parameters.json.xz,mftp://etc/extras/parameters.json.xz,https://px4-travis.s3.amazonaws.com/Firmware/{version}/px4_sitl_default/parameters.json.xz, --type 4,/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/events/all_events.json.xz,mftp://etc/extras/all_events.json.xz,https://px4-travis.s3.amazonaws.com/Firmware/{version}/px4_sitl_default/all_events.json.xz, --version-file /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/version/build_git_version.h
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information && /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/component_information/generate_crc.py /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/component_general.json --output /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information/checksums.h
 
 component_general.json.xz: component_general.json
 	@$(CMAKE_COMMAND) -E touch_nocreate component_general.json.xz
@@ -84,10 +84,10 @@ src/lib/component_information/CMakeFiles/component_general_json.dir/build: compo
 .PHONY : src/lib/component_information/CMakeFiles/component_general_json.dir/build
 
 src/lib/component_information/CMakeFiles/component_general_json.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information && $(CMAKE_COMMAND) -P CMakeFiles/component_general_json.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information && $(CMAKE_COMMAND) -P CMakeFiles/component_general_json.dir/cmake_clean.cmake
 .PHONY : src/lib/component_information/CMakeFiles/component_general_json.dir/clean
 
 src/lib/component_information/CMakeFiles/component_general_json.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/component_information /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/component_information/CMakeFiles/component_general_json.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/component_information /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/component_information/CMakeFiles/component_general_json.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/lib/component_information/CMakeFiles/component_general_json.dir/depend
 

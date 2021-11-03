@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__gps.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libdrivers__gps.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__gps.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libdrivers__gps.pdb"
   "CMakeFiles/drivers__gps.dir/devices/src/ashtech.cpp.o"
   "CMakeFiles/drivers__gps.dir/devices/src/emlid_reach.cpp.o"
   "CMakeFiles/drivers__gps.dir/devices/src/femtomes.cpp.o"

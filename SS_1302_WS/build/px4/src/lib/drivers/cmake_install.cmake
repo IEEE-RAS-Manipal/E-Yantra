@@ -1,8 +1,8 @@
-# Install script for directory: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/lib/drivers
+# Install script for directory: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/drivers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/ws_template/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/accelerometer/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/airspeed/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/barometer/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/device/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/gyroscope/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/led/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/magnetometer/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/rangefinder/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/smbus/cmake_install.cmake")
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/src/lib/drivers/smbus_sbs/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/accelerometer/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/airspeed/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/barometer/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/device/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/gyroscope/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/led/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/magnetometer/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/rangefinder/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/smbus/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/lib/drivers/smbus_sbs/cmake_install.cmake")
 
 endif()
 

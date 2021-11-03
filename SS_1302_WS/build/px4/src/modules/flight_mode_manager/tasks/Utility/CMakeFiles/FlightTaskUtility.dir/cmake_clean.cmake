@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskUtility.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskUtility.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskUtility.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskUtility.pdb"
   "CMakeFiles/FlightTaskUtility.dir/ManualVelocitySmoothingXY.cpp.o"
   "CMakeFiles/FlightTaskUtility.dir/ManualVelocitySmoothingZ.cpp.o"
   "CMakeFiles/FlightTaskUtility.dir/StickAccelerationXY.cpp.o"

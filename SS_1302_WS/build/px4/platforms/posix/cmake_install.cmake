@@ -1,8 +1,8 @@
-# Install script for directory: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/platforms/posix
+# Install script for directory: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/posix
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/ws_template/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,64 +39,64 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4" TYPE DIRECTORY FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/posix-configs"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/test"
-    "/home/ch13f_1419/E-Yantra/ws_template/build/px4/etc"
-    "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/px4"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/posix-configs"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/test"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/etc"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4"
     USE_SOURCE_PERMISSIONS)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4" TYPE DIRECTORY FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/integrationtests"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/launch"
-    "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/px4"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/integrationtests"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/launch"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4"
     USE_SOURCE_PERMISSIONS)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4" TYPE FILE FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/CMakeLists.txt"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/package.xml"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/CMakeLists.txt"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/package.xml"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/Tools" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/ecl_ekf" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/Tools" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/ecl_ekf" USE_SOURCE_PERMISSIONS)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/Tools" TYPE PROGRAM FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/setup_gazebo.bash"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/upload_log.py"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/setup_gazebo.bash"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/upload_log.py"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/build/px4_sitl_default" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/ws_template/build/px4/etc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/build/px4_sitl_default" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/etc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/build/px4_sitl_default" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/ws_template/build/px4/build_gazebo" FILES_MATCHING REGEX "/CMakeFiles$" EXCLUDE REGEX "/[^/]*\\.so$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/build/px4_sitl_default" TYPE DIRECTORY FILES "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_gazebo" FILES_MATCHING REGEX "/CMakeFiles$" EXCLUDE REGEX "/[^/]*\\.so$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/Tools/sitl_gazebo" TYPE DIRECTORY FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_gazebo/models"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_gazebo/worlds"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_gazebo/models"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_gazebo/worlds"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/px4/Tools/sitl_gazebo" TYPE FILE FILES
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_gazebo/CMakeLists.txt"
-    "/home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/Tools/sitl_gazebo/package.xml"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_gazebo/CMakeLists.txt"
+    "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/Tools/sitl_gazebo/package.xml"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ch13f_1419/E-Yantra/ws_template/build/px4/ROMFS/cmake_install.cmake")
+  include("/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/ROMFS/cmake_install.cmake")
 
 endif()
 

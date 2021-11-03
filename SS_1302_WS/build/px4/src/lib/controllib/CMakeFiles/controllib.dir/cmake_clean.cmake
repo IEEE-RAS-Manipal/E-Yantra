@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libcontrollib.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libcontrollib.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libcontrollib.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libcontrollib.pdb"
   "CMakeFiles/controllib.dir/BlockDerivative.cpp.o"
   "CMakeFiles/controllib.dir/BlockHighPass.cpp.o"
   "CMakeFiles/controllib.dir/BlockIntegral.cpp.o"

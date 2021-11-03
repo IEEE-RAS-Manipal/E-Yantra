@@ -43,27 +43,27 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 # Utility rule file for git_mavlink_v2.
 
 # Include the progress variables for this target.
 include src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/progress.make
 
-src/modules/mavlink/CMakeFiles/git_mavlink_v2: src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
+src/modules/mavlink/CMakeFiles/git_mavlink_v2: src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
 
 
-src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/.gitmodules
-src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp: /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/mavlink/include/mavlink/v2.0/.git
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule mavlink/include/mavlink/v2.0"
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && Tools/check_submodules.sh mavlink/include/mavlink/v2.0
-	cd /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
+src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/.gitmodules
+src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/mavlink/include/mavlink/v2.0/.git
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "git submodule mavlink/include/mavlink/v2.0"
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && Tools/check_submodules.sh mavlink/include/mavlink/v2.0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot && /usr/bin/cmake -E touch /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
 
 git_mavlink_v2: src/modules/mavlink/CMakeFiles/git_mavlink_v2
-git_mavlink_v2: src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_ws_template_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
+git_mavlink_v2: src/modules/mavlink/git_init__home_ch13f_1419_E-Yantra_SS_1302_WS_src_PX4-Autopilot_mavlink_include_mavlink_v2_0.stamp
 git_mavlink_v2: src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/build.make
 
 .PHONY : git_mavlink_v2
@@ -74,10 +74,10 @@ src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/build: git_mavlink_v2
 .PHONY : src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/build
 
 src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/mavlink && $(CMAKE_COMMAND) -P CMakeFiles/git_mavlink_v2.dir/cmake_clean.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/mavlink && $(CMAKE_COMMAND) -P CMakeFiles/git_mavlink_v2.dir/cmake_clean.cmake
 .PHONY : src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/clean
 
 src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot/src/modules/mavlink /home/ch13f_1419/E-Yantra/ws_template/build/px4 /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/mavlink /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/modules/mavlink/CMakeFiles/git_mavlink_v2.dir/depend
 

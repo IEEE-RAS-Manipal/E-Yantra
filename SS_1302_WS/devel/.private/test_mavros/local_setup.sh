@@ -3,7 +3,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/ch13f_1419/E-Yantra/ws_template/devel/.private/test_mavros}
+: ${_CATKIN_SETUP_DIR:=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros}
 CATKIN_SETUP_UTIL_ARGS="--extend --local"
 . "$_CATKIN_SETUP_DIR/setup.sh"
 unset CATKIN_SETUP_UTIL_ARGS

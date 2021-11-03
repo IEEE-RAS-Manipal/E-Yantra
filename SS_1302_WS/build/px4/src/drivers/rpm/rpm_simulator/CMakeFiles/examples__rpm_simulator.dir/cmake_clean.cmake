@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__rpm_simulator.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__rpm_simulator.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libexamples__rpm_simulator.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libexamples__rpm_simulator.pdb"
   "CMakeFiles/examples__rpm_simulator.dir/rpm_simulator.cpp.o"
 )
 

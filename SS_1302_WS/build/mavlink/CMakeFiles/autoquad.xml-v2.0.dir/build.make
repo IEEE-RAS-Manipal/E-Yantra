@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/mavlink
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/mavlink
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink
 
 # Utility rule file for autoquad.xml-v2.0.
 
@@ -56,11 +56,11 @@ include CMakeFiles/autoquad.xml-v2.0.dir/progress.make
 CMakeFiles/autoquad.xml-v2.0: autoquad-v2.0-cxx-stamp
 
 
-autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/ws_template/src/mavlink/message_definitions/v1.0/autoquad.xml
-autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/ws_template/src/mavlink/message_definitions/v1.0/common.xml
-autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/ws_template/src/mavlink/pymavlink/tools/mavgen.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/ws_template/build/mavlink/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating autoquad-v2.0-cxx-stamp"
-	/usr/bin/env PYTHONPATH="/home/ch13f_1419/E-Yantra/ws_template/src/mavlink:/opt/ros/noetic/lib/python3/dist-packages" /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/ws_template/src/mavlink/pymavlink/tools/mavgen.py --lang=C++11 --wire-protocol=2.0 --output=include/v2.0 /home/ch13f_1419/E-Yantra/ws_template/src/mavlink/message_definitions/v1.0/autoquad.xml
+autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink/message_definitions/v1.0/autoquad.xml
+autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink/message_definitions/v1.0/common.xml
+autoquad-v2.0-cxx-stamp: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink/pymavlink/tools/mavgen.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating autoquad-v2.0-cxx-stamp"
+	/usr/bin/env PYTHONPATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink:/opt/ros/noetic/lib/python3/dist-packages" /usr/bin/python3.8 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink/pymavlink/tools/mavgen.py --lang=C++11 --wire-protocol=2.0 --output=include/v2.0 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink/message_definitions/v1.0/autoquad.xml
 	touch autoquad-v2.0-cxx-stamp
 
 autoquad.xml-v2.0: CMakeFiles/autoquad.xml-v2.0
@@ -79,6 +79,6 @@ CMakeFiles/autoquad.xml-v2.0.dir/clean:
 .PHONY : CMakeFiles/autoquad.xml-v2.0.dir/clean
 
 CMakeFiles/autoquad.xml-v2.0.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/mavlink && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/mavlink /home/ch13f_1419/E-Yantra/ws_template/src/mavlink /home/ch13f_1419/E-Yantra/ws_template/build/mavlink /home/ch13f_1419/E-Yantra/ws_template/build/mavlink /home/ch13f_1419/E-Yantra/ws_template/build/mavlink/CMakeFiles/autoquad.xml-v2.0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink /home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink/CMakeFiles/autoquad.xml-v2.0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/autoquad.xml-v2.0.dir/depend
 

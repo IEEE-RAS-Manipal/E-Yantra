@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libWeatherVane.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libWeatherVane.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libWeatherVane.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libWeatherVane.pdb"
   "CMakeFiles/WeatherVane.dir/WeatherVane.cpp.o"
 )
 

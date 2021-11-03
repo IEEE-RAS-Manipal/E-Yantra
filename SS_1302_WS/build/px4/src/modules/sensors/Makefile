@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/sensors/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/sensors/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/sensors/CMakeFiles/modules__sensors.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/CMakeFiles/modules__sensors.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/sensors/CMakeFiles/modules__sensors.dir/rule
 .PHONY : src/modules/sensors/CMakeFiles/modules__sensors.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__sensors: src/modules/sensors/CMakeFiles/modules__sensors.dir/rule
 
 # fast build rule for target.
 modules__sensors/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/build
 .PHONY : modules__sensors/fast
 
 sensors.o: sensors.cpp.o
@@ -210,7 +210,7 @@ sensors.o: sensors.cpp.o
 
 # target to build an object file
 sensors.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.o
 .PHONY : sensors.cpp.o
 
 sensors.i: sensors.cpp.i
@@ -219,7 +219,7 @@ sensors.i: sensors.cpp.i
 
 # target to preprocess a source file
 sensors.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.i
 .PHONY : sensors.cpp.i
 
 sensors.s: sensors.cpp.s
@@ -228,7 +228,7 @@ sensors.s: sensors.cpp.s
 
 # target to generate assembly for a file
 sensors.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/sensors.cpp.s
 .PHONY : sensors.cpp.s
 
 voted_sensors_update.o: voted_sensors_update.cpp.o
@@ -237,7 +237,7 @@ voted_sensors_update.o: voted_sensors_update.cpp.o
 
 # target to build an object file
 voted_sensors_update.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.o
 .PHONY : voted_sensors_update.cpp.o
 
 voted_sensors_update.i: voted_sensors_update.cpp.i
@@ -246,7 +246,7 @@ voted_sensors_update.i: voted_sensors_update.cpp.i
 
 # target to preprocess a source file
 voted_sensors_update.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.i
 .PHONY : voted_sensors_update.cpp.i
 
 voted_sensors_update.s: voted_sensors_update.cpp.s
@@ -255,7 +255,7 @@ voted_sensors_update.s: voted_sensors_update.cpp.s
 
 # target to generate assembly for a file
 voted_sensors_update.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/sensors/CMakeFiles/modules__sensors.dir/build.make src/modules/sensors/CMakeFiles/modules__sensors.dir/voted_sensors_update.cpp.s
 .PHONY : voted_sensors_update.cpp.s
 
 # Help Target
@@ -291,6 +291,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/mavros/test_mavros
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/test_mavros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/test_mavros
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/test_mavros
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/test_mavros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/ws_template/src/mavros/test_mavros /home/ch13f_1419/E-Yantra/ws_template/src/mavros/test_mavros /home/ch13f_1419/E-Yantra/ws_template/build/test_mavros /home/ch13f_1419/E-Yantra/ws_template/build/test_mavros /home/ch13f_1419/E-Yantra/ws_template/build/test_mavros/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/test_mavros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/test_mavros /home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/test_mavros /home/ch13f_1419/E-Yantra/SS_1302_WS/build/test_mavros /home/ch13f_1419/E-Yantra/SS_1302_WS/build/test_mavros /home/ch13f_1419/E-Yantra/SS_1302_WS/build/test_mavros/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 

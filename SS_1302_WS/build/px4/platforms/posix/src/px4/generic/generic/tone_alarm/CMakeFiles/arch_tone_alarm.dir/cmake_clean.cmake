@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libarch_tone_alarm.a"
-  "/home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libarch_tone_alarm.pdb"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libarch_tone_alarm.a"
+  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libarch_tone_alarm.pdb"
   "CMakeFiles/arch_tone_alarm.dir/ToneAlarmInterface.cpp.o"
 )
 

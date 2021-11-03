@@ -67,14 +67,14 @@ set(px4_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(px4_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot)
-  set(px4_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4)
+  set(px4_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot)
+  set(px4_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4)
   set(px4_INSTALL_PREFIX "")
   set(px4_PREFIX ${px4_DEVEL_PREFIX})
 else()
   set(px4_SOURCE_PREFIX "")
   set(px4_DEVEL_PREFIX "")
-  set(px4_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/ws_template/install)
+  set(px4_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/install)
   set(px4_PREFIX ${px4_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ch13f_1419/E-Yantra/ws_template/install/lib;/home/ch13f_1419/E-Yantra/ws_template/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ch13f_1419/E-Yantra/SS_1302_WS/install/lib;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

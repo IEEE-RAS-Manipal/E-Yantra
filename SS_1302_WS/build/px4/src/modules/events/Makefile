@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/ws_template/src/PX4-Autopilot
+CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/ws_template/build/px4
+CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/ws_template/build/px4/CPackSourceConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -149,7 +149,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/ws_template/build/px4/src/modules/events/CMakeFiles/progress.marks
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/ws_template/build/px4/CMakeFiles 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/events/CMakeFiles/progress.marks
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/clean
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/preinstall
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/modules/events/CMakeFiles/modules__events.dir/rule:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/CMakeFiles/modules__events.dir/rule
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f CMakeFiles/Makefile2 src/modules/events/CMakeFiles/modules__events.dir/rule
 .PHONY : src/modules/events/CMakeFiles/modules__events.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ modules__events: src/modules/events/CMakeFiles/modules__events.dir/rule
 
 # fast build rule for target.
 modules__events/fast:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/build
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/build
 .PHONY : modules__events/fast
 
 rc_loss_alarm.o: rc_loss_alarm.cpp.o
@@ -210,7 +210,7 @@ rc_loss_alarm.o: rc_loss_alarm.cpp.o
 
 # target to build an object file
 rc_loss_alarm.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.o
 .PHONY : rc_loss_alarm.cpp.o
 
 rc_loss_alarm.i: rc_loss_alarm.cpp.i
@@ -219,7 +219,7 @@ rc_loss_alarm.i: rc_loss_alarm.cpp.i
 
 # target to preprocess a source file
 rc_loss_alarm.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.i
 .PHONY : rc_loss_alarm.cpp.i
 
 rc_loss_alarm.s: rc_loss_alarm.cpp.s
@@ -228,7 +228,7 @@ rc_loss_alarm.s: rc_loss_alarm.cpp.s
 
 # target to generate assembly for a file
 rc_loss_alarm.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/rc_loss_alarm.cpp.s
 .PHONY : rc_loss_alarm.cpp.s
 
 send_event.o: send_event.cpp.o
@@ -237,7 +237,7 @@ send_event.o: send_event.cpp.o
 
 # target to build an object file
 send_event.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.o
 .PHONY : send_event.cpp.o
 
 send_event.i: send_event.cpp.i
@@ -246,7 +246,7 @@ send_event.i: send_event.cpp.i
 
 # target to preprocess a source file
 send_event.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.i
 .PHONY : send_event.cpp.i
 
 send_event.s: send_event.cpp.s
@@ -255,7 +255,7 @@ send_event.s: send_event.cpp.s
 
 # target to generate assembly for a file
 send_event.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/send_event.cpp.s
 .PHONY : send_event.cpp.s
 
 set_leds.o: set_leds.cpp.o
@@ -264,7 +264,7 @@ set_leds.o: set_leds.cpp.o
 
 # target to build an object file
 set_leds.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.o
 .PHONY : set_leds.cpp.o
 
 set_leds.i: set_leds.cpp.i
@@ -273,7 +273,7 @@ set_leds.i: set_leds.cpp.i
 
 # target to preprocess a source file
 set_leds.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.i
 .PHONY : set_leds.cpp.i
 
 set_leds.s: set_leds.cpp.s
@@ -282,7 +282,7 @@ set_leds.s: set_leds.cpp.s
 
 # target to generate assembly for a file
 set_leds.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/set_leds.cpp.s
 .PHONY : set_leds.cpp.s
 
 status_display.o: status_display.cpp.o
@@ -291,7 +291,7 @@ status_display.o: status_display.cpp.o
 
 # target to build an object file
 status_display.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.o
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.o
 .PHONY : status_display.cpp.o
 
 status_display.i: status_display.cpp.i
@@ -300,7 +300,7 @@ status_display.i: status_display.cpp.i
 
 # target to preprocess a source file
 status_display.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.i
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.i
 .PHONY : status_display.cpp.i
 
 status_display.s: status_display.cpp.s
@@ -309,7 +309,7 @@ status_display.s: status_display.cpp.s
 
 # target to generate assembly for a file
 status_display.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.s
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f src/modules/events/CMakeFiles/modules__events.dir/build.make src/modules/events/CMakeFiles/modules__events.dir/status_display.cpp.s
 .PHONY : status_display.cpp.s
 
 # Help Target
@@ -351,6 +351,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ch13f_1419/E-Yantra/ws_template/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
