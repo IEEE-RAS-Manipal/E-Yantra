@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblaunchdetection.a  CMakeFiles/launchdetection.dir/LaunchDetector.cpp.o CMakeFiles/launchdetection.dir/CatapultLaunchMethod.cpp.o
+/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/liblaunchdetection.a

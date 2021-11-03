@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAuto.a  CMakeFiles/FlightTaskAuto.dir/FlightTaskAuto.cpp.o
+/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libFlightTaskAuto.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libparameters.a  CMakeFiles/parameters.dir/parameters.cpp.o CMakeFiles/parameters.dir/param_translation.cpp.o
+/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libparameters.a
