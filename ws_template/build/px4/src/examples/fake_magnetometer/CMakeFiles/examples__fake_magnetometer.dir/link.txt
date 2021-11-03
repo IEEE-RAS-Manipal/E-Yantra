@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__fake_magnetometer.a  CMakeFiles/examples__fake_magnetometer.dir/FakeMagnetometer.cpp.o
+/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libexamples__fake_magnetometer.a

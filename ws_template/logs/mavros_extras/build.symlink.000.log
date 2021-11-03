@@ -1,0 +1,6 @@
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/share/mavros_extras/cmake/mavros_extrasConfig.cmake
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/libmavros_extras.so
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/pkgconfig/mavros_extras.pc
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/mavros_extras/visualization
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/mavros_extras/servo_state_publisher

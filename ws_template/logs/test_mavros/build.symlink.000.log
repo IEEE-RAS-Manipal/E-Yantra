@@ -1,0 +1,5 @@
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/libmavros_sitl_test.so
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/test_mavros/sitl_test_node
+Symlinking /home/ch13f_1419/E-Yantra/ws_template/devel/lib/pkgconfig/test_mavros.pc

@@ -1,0 +1,1 @@
+/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_msgs/share/gennodejs/ros/mavros_msgs/srv/FileRemoveDir.js
