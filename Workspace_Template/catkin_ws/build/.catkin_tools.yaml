@@ -1,6 +1,0 @@
-devel_space: /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel
-install: false
-install_space: /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/install
-profile: default
-source_space: /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/src
-workspace: /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws

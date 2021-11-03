@@ -1,7 +1,0 @@
-mavros/libmavconn
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/cmake.lock /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/./cmake.lock
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig-version.cmake /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/share/libmavconn/cmake/libmavconn-extras.cmake /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/share/libmavconn/cmake/libmavconn-extras.cmake
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig.cmake /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/share/libmavconn/cmake/libmavconnConfig.cmake
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/lib/libmavconn.so /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/lib/libmavconn.so
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/libmavconn/lib/pkgconfig/libmavconn.pc /home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/lib/pkgconfig/libmavconn.pc

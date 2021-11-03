@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/mavros_msgs/share/common-lisp/ros/mavros_msgs/srv/_package_MessageInterval.lisp

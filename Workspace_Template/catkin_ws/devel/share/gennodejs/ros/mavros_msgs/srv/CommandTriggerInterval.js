@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/Workspace_Template/catkin_ws/devel/.private/mavros_msgs/share/gennodejs/ros/mavros_msgs/srv/CommandTriggerInterval.js
