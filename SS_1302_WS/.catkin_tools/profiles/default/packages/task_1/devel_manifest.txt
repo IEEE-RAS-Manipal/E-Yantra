@@ -1,0 +1,20 @@
+strawberry_stacker/task_1
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/cmake.lock /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/./cmake.lock
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/common-lisp/ros/task_1/msg/task_1-msg.asd /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/common-lisp/ros/task_1/msg/task_1-msg.asd
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/common-lisp/ros/task_1/msg/Marker.lisp /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/common-lisp/ros/task_1/msg/Marker.lisp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/common-lisp/ros/task_1/msg/_package.lisp /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/common-lisp/ros/task_1/msg/_package.lisp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/common-lisp/ros/task_1/msg/_package_Marker.lisp /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/common-lisp/ros/task_1/msg/_package_Marker.lisp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/task_1/cmake/task_1-msg-extras.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_1/cmake/task_1-msg-extras.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/task_1/cmake/task_1-msg-paths.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_1/cmake/task_1-msg-paths.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/task_1/cmake/task_1Config.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_1/cmake/task_1Config.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/task_1/cmake/task_1Config-version.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_1/cmake/task_1Config-version.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/gennodejs/ros/task_1/_index.js /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/gennodejs/ros/task_1/_index.js
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/gennodejs/ros/task_1/msg/_index.js /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/gennodejs/ros/task_1/msg/_index.js
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/gennodejs/ros/task_1/msg/Marker.js /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/gennodejs/ros/task_1/msg/Marker.js
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/manifest.l /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/roseus/ros/task_1/manifest.l
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/msg/Marker.l /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/roseus/ros/task_1/msg/Marker.l
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/lib/pkgconfig/task_1.pc /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/pkgconfig/task_1.pc
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/lib/python3/dist-packages/task_1/__init__.py /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/python3/dist-packages/task_1/__init__.py
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/lib/python3/dist-packages/task_1/msg/_Marker.py /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/python3/dist-packages/task_1/msg/_Marker.py
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/lib/python3/dist-packages/task_1/msg/__init__.py /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/python3/dist-packages/task_1/msg/__init__.py
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/include/task_1/Marker.h /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/include/task_1/Marker.h

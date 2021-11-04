@@ -1,0 +1,8 @@
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/ss_1302_task_1
+
+Name: ss_1302_task_1
+Description: Description of ss_1302_task_1
+Version: 0.0.0
+Cflags: -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/ss_1302_task_1/include
+Libs: -L${prefix}/lib 
+Requires: 
