@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmathlib.a  CMakeFiles/mathlib.dir/math/test/test.cpp.o
-/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmathlib.a

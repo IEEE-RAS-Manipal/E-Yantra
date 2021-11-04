@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__simulator__battery_simulator.a  CMakeFiles/modules__simulator__battery_simulator.dir/BatterySimulator.cpp.o
-/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__simulator__battery_simulator.a

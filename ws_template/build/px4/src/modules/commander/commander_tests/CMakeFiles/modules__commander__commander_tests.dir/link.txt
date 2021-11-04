@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander__commander_tests.a  CMakeFiles/modules__commander__commander_tests.dir/commander_tests.cpp.o CMakeFiles/modules__commander__commander_tests.dir/state_machine_helper_test.cpp.o CMakeFiles/modules__commander__commander_tests.dir/__/state_machine_helper.cpp.o
-/usr/bin/ranlib /home/ch13f_1419/E-Yantra/ws_template/devel/.private/px4/lib/libmodules__commander__commander_tests.a

@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/mavros_msgs/lib/python3/dist-packages/mavros_msgs/srv/_FileRemoveDir.py

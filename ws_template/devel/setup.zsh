@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/ws_template/devel/.private/catkin_tools_prebuild/setup.zsh

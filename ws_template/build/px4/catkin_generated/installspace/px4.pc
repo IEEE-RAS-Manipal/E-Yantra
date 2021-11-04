@@ -1,8 +1,0 @@
-prefix=/home/ch13f_1419/E-Yantra/ws_template/install
-
-Name: px4
-Description: Description of px4
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
