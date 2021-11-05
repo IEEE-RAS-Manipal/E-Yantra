@@ -97,7 +97,7 @@ class ImageProc():
             # Filling in message data
             self.marker_msg.x = c_x
             self.marker_msg.y = c_y
-            self.marker_msg.z = int(key)
+            self.marker_msg.id = int(key)
             self.marker_msg.yaw = angle
             self.publish_data()  # Publishing data
 
