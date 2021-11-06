@@ -78,10 +78,9 @@ class ImageProc():
         '''
         Calculates the position and orientation of the marker (centre position).
         '''
-        for key, coods in self.detected_aruco_markers.items():
+        for _, coods in self.detected_aruco_markers.items():
             # Calculating relevant point coordinates
             x_0, y_0 = map(int, coods[0][0])
-            x_1, y_1 = map(int, coods[0][1])
             x_2, y_2 = map(int, coods[0][2])
 
             # Calculating centre position
@@ -96,16 +95,16 @@ class ImageProc():
             angle = int((top_right_angle + 45) % 360)
 
             # Filling in message data
+            self.marker_msg.id = int(ids)
             self.marker_msg.x = c_x
             self.marker_msg.y = c_y
-            self.marker_msg.id = int(key)
             self.marker_msg.yaw = angle
             self.publish_data()  # Publishing data
 
 
 if __name__ == '__main__':
     image_proc_obj = ImageProc()  # Creating object
-    rospy.sleep(5) # 5 sec Delay for syncing
+    rospy.sleep(3) # 3 sec Delay for syncing
     try:
         while not rospy.is_shutdown():  # Will run till node active
             image_proc_obj.rate.sleep()  # Delay
