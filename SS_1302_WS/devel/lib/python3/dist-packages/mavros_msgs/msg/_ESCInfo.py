@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_msgs/lib/python3/dist-packages/mavros_msgs/msg/_ESCInfo.py

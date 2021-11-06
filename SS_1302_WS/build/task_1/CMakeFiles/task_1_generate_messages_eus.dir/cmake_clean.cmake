@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/manifest.l"
-  "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/msg/Marker.l"
+  "/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/manifest.l"
+  "/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/share/roseus/ros/task_1/msg/Marker.l"
   "CMakeFiles/task_1_generate_messages_eus"
 )
 

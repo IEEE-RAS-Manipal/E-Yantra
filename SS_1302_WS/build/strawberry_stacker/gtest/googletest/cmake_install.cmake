@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ch13f_1419/E-Yantra/SS_1302_WS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/apex_18/E-Yantra/SS_1302_WS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

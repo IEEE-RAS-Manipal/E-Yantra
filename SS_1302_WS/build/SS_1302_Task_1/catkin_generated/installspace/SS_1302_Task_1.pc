@@ -1,8 +1,0 @@
-prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/install
-
-Name: SS_1302_Task_1
-Description: Description of SS_1302_Task_1
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

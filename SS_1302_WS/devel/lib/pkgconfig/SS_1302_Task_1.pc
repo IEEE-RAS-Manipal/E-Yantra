@@ -1,1 +1,0 @@
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/SS_1302_Task_1/lib/pkgconfig/SS_1302_Task_1.pc

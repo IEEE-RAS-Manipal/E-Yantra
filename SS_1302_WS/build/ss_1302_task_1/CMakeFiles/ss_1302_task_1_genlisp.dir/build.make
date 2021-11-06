@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1
+CMAKE_SOURCE_DIR = /home/apex_18/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ch13f_1419/E-Yantra/SS_1302_WS/build/ss_1302_task_1
+CMAKE_BINARY_DIR = /home/apex_18/E-Yantra/SS_1302_WS/build/ss_1302_task_1
 
 # Utility rule file for ss_1302_task_1_genlisp.
 
@@ -67,6 +67,6 @@ CMakeFiles/ss_1302_task_1_genlisp.dir/clean:
 .PHONY : CMakeFiles/ss_1302_task_1_genlisp.dir/clean
 
 CMakeFiles/ss_1302_task_1_genlisp.dir/depend:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/ss_1302_task_1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ch13f_1419/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/ss_1302_task_1 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/ss_1302_task_1 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/ss_1302_task_1/CMakeFiles/ss_1302_task_1_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/apex_18/E-Yantra/SS_1302_WS/build/ss_1302_task_1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/apex_18/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1 /home/apex_18/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1 /home/apex_18/E-Yantra/SS_1302_WS/build/ss_1302_task_1 /home/apex_18/E-Yantra/SS_1302_WS/build/ss_1302_task_1 /home/apex_18/E-Yantra/SS_1302_WS/build/ss_1302_task_1/CMakeFiles/ss_1302_task_1_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ss_1302_task_1_genlisp.dir/depend
 

@@ -1,8 +1,8 @@
-prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1
+prefix=/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1
 
 Name: task_1
 Description: Description of task_1
 Version: 0.0.0
-Cflags: -I/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/include
+Cflags: -I/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/include
 Libs: -L${prefix}/lib 
 Requires: 

@@ -1,62 +1,119 @@
 #!/usr/bin/env python3
-
-
 '''
-This is a boiler plate script that contains an example on how to subscribe a rostopic containing camera frames 
-and store it into an OpenCV image to use it further for image processing tasks.
-Use this code snippet in your code or you can also continue adding your code in the same file
-
-
-This python file runs a ROS-node of name marker_detection which detects a moving ArUco marker.
-This node publishes and subsribes the following topics:
-
-	Subsriptions					Publications
-	/camera/camera/image_raw			/marker_info
+This module conducts marker detection of a moving ArUco marker.
 '''
+
+import math
+from rospy.exceptions import ROSInterruptException
 from sensor_msgs.msg import Image
 from task_1.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
-import cv2
+from cv2 import aruco
 import numpy as np
 import rospy
 
 
-class image_proc():
+class ImageProc():
+    '''
+    This class contains functions for ArUco marker processing.
+    '''
 
-	# Initialise everything
-	def __init__(self):
-		rospy.init_node('marker_detection') #Initialise rosnode 
-		
-		# Making a publisher 
-		
-		self.marker_pub = rospy.Publisher('/marker_info', Marker, queue_size=1)
-		
-		# ------------------------Add other ROS Publishers here-----------------------------------------------------
-	
-        	# Subscribing to /camera/camera/image_raw
+    # Initialise everything
+    def __init__(self):
+        # This will contain your image frame from camera
+        self.img = np.empty([])
+        self.bridge = CvBridge()
+        self.detected_aruco_markers = {}
 
-		self.image_sub = rospy.Subscriber("/camera/camera/image_raw", Image, self.image_callback) #Subscribing to the camera topic
-		
-	        # -------------------------Add other ROS Subscribers here----------------------------------------------------
-        
-		self.img = np.empty([]) # This will contain your image frame from camera
-		self.bridge = CvBridge()
-		
-		self.marker_msg=Marker()  # This will contain the message structure of message type task_1/Marker
+        # Initialise rosnode
+        rospy.init_node('marker_detection', anonymous=True)
+        self.rate = rospy.Rate(10)
+        # This will contain the message structure of message type ss_1302_task_1/Marker
+        self.marker_msg = Marker()
 
+        # Making a publisher
+        self.marker_pub = rospy.Publisher(
+            '/marker_info', Marker, queue_size=1)
+        # Subscribing to the camera topic /camera/camera/image_raw
+        self.image_sub = rospy.Subscriber(
+            "/camera/camera/image_raw", Image, self.image_callback)
 
-	# Callback function of amera topic
-	def image_callback(self, data):
-	# Note: Do not make this function lenghty, do all the processing outside this callback function
-		try:
-			self.img = self.bridge.imgmsg_to_cv2(data, "bgr8") # Converting the image to OpenCV standard image
-		except CvBridgeError as e:
-			print(e)
-			return
-			
-	def publish_data(self):
-		self.marker_pub.publish(self.marker_msg)
+    def detect_aruco(self, img):
+        '''
+        Detecting the Arucos in the image and extracting ID and coordinate values.
+        '''
+        corners = []
+        ids = []
+        aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250)
+        parameters = aruco.DetectorParameters_create()
+        corners, ids, _ = aruco.detectMarkers(
+            img, aruco_dict, parameters=parameters)
+
+        # verify *at least* one ArUco marker was detected
+        if len(corners) > 0:
+            # flatten the ArUco IDs list
+            ids = ids.flatten()
+            # loop over the detected ArUCo corners
+            for (marker_corner, marker_id) in zip(corners, ids):
+                self.detected_aruco_markers[marker_id] = marker_corner
+
+    def image_callback(self, data):
+        '''
+        Callback function of the camera topic.
+        '''
+        try:
+            # Converting the image to OpenCV standard image
+            self.img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        except CvBridgeError as err:
+            print(err)
+            return
+
+    def publish_data(self):
+        '''
+        Publishes the marker data.
+        '''
+        self.marker_pub.publish(self.marker_msg)
+
+    def marker_pos(self):
+        '''
+        Calculates the position and orientation of the marker (centre position).
+        '''
+        for key, coods in self.detected_aruco_markers.items():
+            # Calculating relevant point coordinates
+            x_0, y_0 = map(int, coods[0][0])
+            x_1, y_1 = map(int, coods[0][1])
+            x_2, y_2 = map(int, coods[0][2])
+
+            # Calculating centre position
+            c_x = int((x_0+x_2)/2)
+            c_y = int((y_0+y_2)/2)
+
+            # Calculating orientation angle
+        for ids, corner in self.detected_aruco_markers.items():
+            corner = corner[0]
+        	# Since angle is atan2(-y,x), then converting that to degrees
+            top_right_angle = (math.degrees(math.atan2(-corner[1][1] + corner[3][1], corner[1][0] - corner[3][0]))) % 360
+            angle = int((top_right_angle + 45) % 360)
+
+            # Filling in message data
+            self.marker_msg.x = c_x
+            self.marker_msg.y = c_y
+            self.marker_msg.id = int(key)
+            self.marker_msg.yaw = angle
+            self.publish_data()  # Publishing data
+
 
 if __name__ == '__main__':
-    image_proc_obj = image_proc()
+    image_proc_obj = ImageProc()  # Creating object
+    rospy.sleep(5) # 5 sec Delay for syncing
+    try:
+        while not rospy.is_shutdown():  # Will run till node active
+            image_proc_obj.rate.sleep()  # Delay
+            # Detecting ArUco marker
+            image_proc_obj.detect_aruco(image_proc_obj.img)
+            # Calculating and publishing position/orientation data
+            image_proc_obj.marker_pos()
+    except ROSInterruptException:
+        pass
+
     rospy.spin()

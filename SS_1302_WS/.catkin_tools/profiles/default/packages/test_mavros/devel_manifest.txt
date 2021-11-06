@@ -1,7 +1,0 @@
-mavros/test_mavros
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/cmake.lock /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/./cmake.lock
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig-version.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/lib/libmavros_sitl_test.so /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/libmavros_sitl_test.so
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/lib/test_mavros/sitl_test_node /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/test_mavros/sitl_test_node
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/test_mavros/lib/pkgconfig/test_mavros.pc /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/pkgconfig/test_mavros.pc

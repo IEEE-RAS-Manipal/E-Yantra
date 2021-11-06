@@ -67,14 +67,14 @@ set(ss_1302_task_1_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ss_1302_task_1_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1)
-  set(ss_1302_task_1_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/ss_1302_task_1)
+  set(ss_1302_task_1_SOURCE_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/src/SS_1302_PKGS/ss_1302_task_1)
+  set(ss_1302_task_1_DEVEL_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/devel/.private/ss_1302_task_1)
   set(ss_1302_task_1_INSTALL_PREFIX "")
   set(ss_1302_task_1_PREFIX ${ss_1302_task_1_DEVEL_PREFIX})
 else()
   set(ss_1302_task_1_SOURCE_PREFIX "")
   set(ss_1302_task_1_DEVEL_PREFIX "")
-  set(ss_1302_task_1_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/install)
+  set(ss_1302_task_1_INSTALL_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/install)
   set(ss_1302_task_1_PREFIX ${ss_1302_task_1_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ch13f_1419/E-Yantra/SS_1302_WS/install/lib;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/apex_18/E-Yantra/SS_1302_WS/install/lib;/home/apex_18/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

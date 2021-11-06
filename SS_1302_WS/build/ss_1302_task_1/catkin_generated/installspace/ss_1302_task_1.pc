@@ -1,4 +1,4 @@
-prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/install
+prefix=/home/apex_18/E-Yantra/SS_1302_WS/install
 
 Name: ss_1302_task_1
 Description: Description of ss_1302_task_1

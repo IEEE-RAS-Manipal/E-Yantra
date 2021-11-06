@@ -19,9 +19,9 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/catkin_tools_prebuild/env.sh')
+code = generate_environment_script('/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/catkin_tools_prebuild/env.sh')
 
-output_filename = '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/catkin_tools_prebuild/catkin_generated/setup_cached.sh'
+output_filename = '/home/apex_18/E-Yantra/SS_1302_WS/build/catkin_tools_prebuild/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))
