@@ -67,14 +67,14 @@ set(task_1_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(task_1_SOURCE_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/src/strawberry_stacker/task_1)
-  set(task_1_DEVEL_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1)
+  set(task_1_SOURCE_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/src/strawberry_stacker/task_1)
+  set(task_1_DEVEL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1)
   set(task_1_INSTALL_PREFIX "")
   set(task_1_PREFIX ${task_1_DEVEL_PREFIX})
 else()
   set(task_1_SOURCE_PREFIX "")
   set(task_1_DEVEL_PREFIX "")
-  set(task_1_INSTALL_PREFIX /home/apex_18/E-Yantra/SS_1302_WS/install)
+  set(task_1_INSTALL_PREFIX /home/ch13f_1419/E-Yantra/SS_1302_WS/install)
   set(task_1_PREFIX ${task_1_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(task_1_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/include " STREQUAL " ")
+if(NOT "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/include " STREQUAL " ")
   set(task_1_INCLUDE_DIRS "")
-  set(_include_dirs "/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/include")
+  set(_include_dirs "/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/include " STREQU
         message(FATAL_ERROR "Project 'task_1' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'task_1' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/apex_18/E-Yantra/SS_1302_WS/src/strawberry_stacker/task_1/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'task_1' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ch13f_1419/E-Yantra/SS_1302_WS/src/strawberry_stacker/task_1/${idir}'.  ${_report}")
     endif()
     _list_append_unique(task_1_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/apex_18/E-Yantra/SS_1302_WS/devel/.private/task_1/lib;/home/apex_18/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_1/lib;/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

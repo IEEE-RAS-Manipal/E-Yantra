@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp
+Change Dir: /home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_dc2ad/fast && /usr/bin/make -f CMakeFiles/cmTC_dc2ad.dir/build.make CMakeFiles/cmTC_dc2ad.dir/build
-make[1]: Entering directory '/home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dc2ad.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_dc2ad.dir/src.c.o   -c /home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_dc2ad
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc2ad.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_dc2ad.dir/src.c.o  -o cmTC_dc2ad 
-/usr/bin/ld: CMakeFiles/cmTC_dc2ad.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/bin/make cmTC_48569/fast && /usr/bin/make -f CMakeFiles/cmTC_48569.dir/build.make CMakeFiles/cmTC_48569.dir/build
+make[1]: Entering directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48569.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_48569.dir/src.c.o   -c /home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_48569
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48569.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_48569.dir/src.c.o  -o cmTC_48569 
+/usr/bin/ld: CMakeFiles/cmTC_48569.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_dc2ad.dir/build.make:87: cmTC_dc2ad] Error 1
-make[1]: Leaving directory '/home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_dc2ad/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_48569.dir/build.make:87: cmTC_48569] Error 1
+make[1]: Leaving directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_48569/fast] Error 2
 
 
 Source file was:
@@ -39,20 +39,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp
+Change Dir: /home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4acf2/fast && /usr/bin/make -f CMakeFiles/cmTC_4acf2.dir/build.make CMakeFiles/cmTC_4acf2.dir/build
-make[1]: Entering directory '/home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4acf2.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4acf2.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4acf2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4acf2.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4acf2.dir/CheckFunctionExists.c.o  -o cmTC_4acf2  -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_f73c4/fast && /usr/bin/make -f CMakeFiles/cmTC_f73c4.dir/build.make CMakeFiles/cmTC_f73c4.dir/build
+make[1]: Entering directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f73c4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f73c4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f73c4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f73c4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f73c4.dir/CheckFunctionExists.c.o  -o cmTC_f73c4  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_4acf2.dir/build.make:87: cmTC_4acf2] Error 1
-make[1]: Leaving directory '/home/apex_18/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_4acf2/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_f73c4.dir/build.make:87: cmTC_f73c4] Error 1
+make[1]: Leaving directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/strawberry_stacker/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_f73c4/fast] Error 2
 
 
 

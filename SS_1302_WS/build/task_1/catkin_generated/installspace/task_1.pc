@@ -1,4 +1,4 @@
-prefix=/home/apex_18/E-Yantra/SS_1302_WS/install
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/install
 
 Name: task_1
 Description: Description of task_1

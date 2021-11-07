@@ -4,13 +4,12 @@ This module conducts marker detection of a moving ArUco marker.
 '''
 
 import math
-from rospy.exceptions import ROSInterruptException
-from sensor_msgs.msg import Image
-from task_1.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 from cv2 import aruco
 import numpy as np
 import rospy
+from sensor_msgs.msg import Image
+from task_1.msg import Marker
 
 
 class ImageProc():
@@ -90,8 +89,9 @@ class ImageProc():
             # Calculating orientation angle
         for ids, corner in self.detected_aruco_markers.items():
             corner = corner[0]
-        	# Since angle is atan2(-y,x), then converting that to degrees
-            top_right_angle = (math.degrees(math.atan2(-corner[1][1] + corner[3][1], corner[1][0] - corner[3][0]))) % 360
+            # Since angle is atan2(-y,x), then converting that to degrees
+            top_right_angle = (math.degrees(
+                math.atan2(-corner[1][1] + corner[3][1], corner[1][0] - corner[3][0]))) % 360
             angle = int((top_right_angle + 45) % 360)
 
             # Filling in message data
@@ -104,7 +104,7 @@ class ImageProc():
 
 if __name__ == '__main__':
     image_proc_obj = ImageProc()  # Creating object
-    rospy.sleep(3) # 3 sec Delay for syncing
+    rospy.sleep(3)  # 3 sec Delay for syncing
     try:
         while not rospy.is_shutdown():  # Will run till node active
             image_proc_obj.rate.sleep()  # Delay
@@ -112,7 +112,7 @@ if __name__ == '__main__':
             image_proc_obj.detect_aruco(image_proc_obj.img)
             # Calculating and publishing position/orientation data
             image_proc_obj.marker_pos()
-    except ROSInterruptException:
+    except rospy.ROSInterruptException:
         pass
 
     rospy.spin()
