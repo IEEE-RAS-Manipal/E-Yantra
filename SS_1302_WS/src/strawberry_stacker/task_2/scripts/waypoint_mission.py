@@ -11,7 +11,7 @@ This python file runs a ROS-node of name waypoint_Mission which sends the waypoi
 in mission mode.
 This node publishes and subsribes the following topics:
 
-	 Services to be called         Subscriptions				
+    Services to be called         Subscriptions			
 	/mavros/cmd/arming             /mavros/state
     /mavros/set_mode
     /mavros/mission/push
@@ -31,10 +31,10 @@ class Modes:
 
     # Calling to /mavros/cmd/arming to arm the drone and print fail message on failure
     def setArm(self):
-        rospy.wait_for_service('mavros/cmd/arming')  # Waiting untill the service starts 
+        rospy.wait_for_service('mavros/cmd/arming')  # Waiting untill the service starts
         try:
-            # Creating a proxy service for the rosservice named /mavros/cmd/arming for arming the drone 
-            armService = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool) 
+            #Creating a proxy service for rosservice named /mavros/cmd/arming for arming the drone
+            armService = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
             armService(True)
         except rospy.ServiceException as e:
             print ("Service arming call failed: %s"%e)
@@ -62,7 +62,7 @@ class Modes:
         except rospy.ServiceException as e:
             # and print fail message on failure
             print("Service takeoff call failed: %s"%e)
- 
+
 class stateMoniter:
     def __init__(self):
         self.state = State()
@@ -81,7 +81,7 @@ class wpMissionCnt:
     def setWaypoints(self,frame,command,is_current,autocontinue,param1,param2,param3,param4,x_lat,y_long,z_alt):
         #  FRAME_GLOBAL_REL_ALT = 3 for more visit http://docs.ros.og/api/mavros_msgs/html/msg/Waypoint.html
         self.wp.frame =frame 
-        #VTOL TAKEOFF = 84,NAV_WAYPOINT = 16, TAKE_OFF=22 for checking out other parameters go to https://github.com/mavlink/mavros/blob/master/mavros_msgs/msg/CommandCode.msg'''
+        #VTOL TAKEOFF = 84,NAV_WAYPOINT = 16, TAKE_OFF=22 for other parameters go to https://github.com/mavlink/mavros/blob/master/mavros_msgs/msg/CommandCode.msg
         self.wp.command = command
         self.wp.is_current= is_current
         # enable taking and following upcoming waypoints automatically 
@@ -113,8 +113,7 @@ def main():
     wayp2 = wpMissionCnt()
     wayp3 = wpMissionCnt()
     # Add more waypoints here
-
-    
+  
     wps = [] #List to story waypoints
     
     w = wayp0.setWaypoints(3,22,True,True,0.0,0.0,0.0,float('nan'),19.134641,72.911706,10)
@@ -148,7 +147,7 @@ def main():
 
 
 if __name__ == '__main__':
-    
+
     try:
         main()
     except rospy.ROSInterruptException:
