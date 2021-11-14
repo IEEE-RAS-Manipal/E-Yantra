@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="record" default="false"/>
+	<arg name="record" default="true"/>
     <arg name="duration" default="300"/>
     <arg name="rec_name" default="waypoint_mission.bag"/>
 
@@ -14,7 +14,7 @@
 	<include file="$(find px4)/launch/posix_sitl.launch">
 		<arg name="world" value="$(find task_2)/worlds/task2_1.world"/>
 	</include>
-
+<node name="waypoint_mission" type="waypoint_mission.py" pkg="task_2" />
 	<group if="$(arg record)">
 		<node name="rosbag_record_waypoint_misson" pkg="rosbag" type="record"
 		   args="record -O $(find task_2)/bag_files/$(arg rec_name) --duration=$(arg duration) --chunksize=10 /mavros/global_position/global mavros/mission/waypoint" output="screen"/>
