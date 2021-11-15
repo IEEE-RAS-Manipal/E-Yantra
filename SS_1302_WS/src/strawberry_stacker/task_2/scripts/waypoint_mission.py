@@ -11,7 +11,7 @@ This python file runs a ROS-node of name waypoint_Mission which sends the waypoi
 in mission mode.
 This node publishes and subsribes the following topics:
 
-    Services to be called         Subscriptions			
+    Services to be called         Subscriptions		
 	/mavros/cmd/arming             /mavros/state
     /mavros/set_mode
     /mavros/mission/push
@@ -24,6 +24,7 @@ from mavros_msgs.srv import *
 
 
 class Modes:
+    ''' This class is used to call rosservices '''
     def __init__(self):
         pass
 
@@ -39,25 +40,23 @@ class Modes:
         except rospy.ServiceException as e:
             print ("Service arming call failed: %s"%e)
 
-   
     def auto_set_mode(self):
-
         # Call /mavros/set_mode to set the mode the drone to AUTO.MISSION
         rospy.wait_for_service('/mavros/set_mode')
         try:
             flightModeService = rospy.ServiceProxy('/mavros/set_mode', mavros_msgs.srv.SetMode)
-            flightModeService(custom_mode='AUTO.MISSION')  
+            flightModeService(custom_mode='AUTO.MISSION')
         except rospy.ServiceException as e:
             # and print fail message on failure
             print("service set_mode call failed: %s. AUTO.MISSION Mode could not be set. Check that GPS is enabled %s" % e)
-    
+
     def wpPush(self,index,wps):
         # Call /mavros/mission/push to push the waypoints
         rospy.wait_for_service('mavros/mission/push')
         try:
             wpPushService = rospy.ServiceProxy('mavros/mission/push', WaypointPush,persistent=True)
             #start_index = the index at which we want the mission to start
-            wpPushService(start_index=0,waypoints=wps)#start_index = the index at which we want the mission to start
+            wpPushService(start_index=0,waypoints=wps)
             print("Waypoint Pushed")
         except rospy.ServiceException as e:
             # and print fail message on failure
@@ -68,7 +67,7 @@ class stateMoniter:
         self.state = State()
         # Instantiate a setpoints message
         self.sp = PositionTarget()
-      
+
     def stateCb(self, msg):
         # Callback function for topic /mavros/state
         self.state = msg
@@ -77,16 +76,24 @@ class wpMissionCnt:
 
     def __init__(self):
         self.wp =Waypoint()
-        
+
     def setWaypoints(self,frame,command,is_current,autocontinue,param1,param2,param3,param4,x_lat,y_long,z_alt):
-        #  FRAME_GLOBAL_REL_ALT = 3 for more visit http://docs.ros.og/api/mavros_msgs/html/msg/Waypoint.html
-        self.wp.frame =frame 
-        #VTOL TAKEOFF = 84,NAV_WAYPOINT = 16, TAKE_OFF=22 for other parameters go to https://github.com/mavlink/mavros/blob/master/mavros_msgs/msg/CommandCode.msg
+        #FRAME_GLOBAL_REL_ALT = 3 
+        #for more visit http://docs.ros.og/api/mavros_msgs/html/msg/Waypoint.html
+        self.wp.frame =frame
+        '''
+        VTOL TAKEOFF = 84,NAV_WAYPOINT = 16, TAKE_OFF=22
+        for other parameters
+        go to https://github.com/mavlink/mavros/blob/master/mavros_msgs/msg/CommandCode.msg
+        '''
         self.wp.command = command
         self.wp.is_current= is_current
-        # enable taking and following upcoming waypoints automatically 
+        # enable taking and following upcoming waypoints automatically
         self.wp.autocontinue = autocontinue
-        # To know more about these params, visit https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT
+        '''
+        To know more about these params,
+        visit https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT
+        '''
         self.wp.param1=param1
         self.wp.param2=param2
         self.wp.param3=param3
@@ -99,23 +106,22 @@ class wpMissionCnt:
 
 
 def main():
-
+    ''' Initializing the node and setting wayPoints '''
     rospy.init_node('waypoint_Mission', anonymous=True) #Initialise rosnode
     rate = rospy.Rate(20.0)
 
-    stateMt = stateMoniter()
+    state_mt = stateMoniter()
     md = Modes()
     
-    rospy.Subscriber("/mavros/state",State, stateMt.stateCb)
+    rospy.Subscriber("/mavros/state",State, state_mt.stateCb)
 
     wayp0 = wpMissionCnt()
     wayp1 = wpMissionCnt()
     wayp2 = wpMissionCnt()
     wayp3 = wpMissionCnt()
-    # Add more waypoints here
-  
-    wps = [] #List to story waypoints
-    
+
+    wps = [] #List to store waypoints
+
     w = wayp0.setWaypoints(3,22,True,True,0.0,0.0,0.0,float('nan'),19.134641,72.911706,10)
     wps.append(w)
 
@@ -127,20 +133,18 @@ def main():
 
     w = wayp3.setWaypoints(3,21,False,True,0.0,0.0,0.0,float('nan'),19.134423, 72.911763, 10)
     wps.append(w)
-    #3,21,true,true for the next line
 
     print (wps)
     md.wpPush(0,wps)
 
-
     # Arming the drone
-    while not stateMt.state.armed:
+    while not state_mt.state.armed:
         md.setArm()
         rate.sleep()
         print("ARM!!")
 
     # Switching the state to auto mode
-    while not stateMt.state.mode=="AUTO.MISSION":
+    while not state_mt.state.mode=="AUTO.MISSION":
         md.auto_set_mode()
         rate.sleep()
         print ("AUTO.MISSION")
