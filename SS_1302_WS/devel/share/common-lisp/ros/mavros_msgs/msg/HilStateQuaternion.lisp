@@ -1,0 +1,1 @@
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_msgs/share/common-lisp/ros/mavros_msgs/msg/HilStateQuaternion.lisp

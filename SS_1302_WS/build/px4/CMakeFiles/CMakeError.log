@@ -1,0 +1,58 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f70ce/fast && /usr/bin/make -f CMakeFiles/cmTC_f70ce.dir/build.make CMakeFiles/cmTC_f70ce.dir/build
+make[1]: Entering directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f70ce.dir/src.c.o
+/usr/bin/cc -DcmTC_f70ce_EXPORTS  -DCMAKE_HAVE_LIBC_PTHREAD -fPIE   -o CMakeFiles/cmTC_f70ce.dir/src.c.o   -c /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f70ce
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f70ce.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD   -fuse-ld=gold  -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_f70ce.dir/src.c.o  -o cmTC_f70ce 
+CMakeFiles/cmTC_f70ce.dir/src.c.o:src.c:function main: error: undefined reference to 'pthread_create'
+CMakeFiles/cmTC_f70ce.dir/src.c.o:src.c:function main: error: undefined reference to 'pthread_detach'
+CMakeFiles/cmTC_f70ce.dir/src.c.o:src.c:function main: error: undefined reference to 'pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f70ce.dir/build.make:87: cmTC_f70ce] Error 1
+make[1]: Leaving directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_f70ce/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ca15f/fast && /usr/bin/make -f CMakeFiles/cmTC_ca15f.dir/build.make CMakeFiles/cmTC_ca15f.dir/build
+make[1]: Entering directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ca15f.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DcmTC_ca15f_EXPORTS  -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE   -o CMakeFiles/cmTC_ca15f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ca15f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca15f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create   -fuse-ld=gold  -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_ca15f.dir/CheckFunctionExists.c.o  -o cmTC_ca15f  -lpthreads 
+/usr/bin/ld.gold: error: cannot find -lpthreads
+CMakeFiles/cmTC_ca15f.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:function main: error: undefined reference to 'pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_ca15f.dir/build.make:87: cmTC_ca15f] Error 1
+make[1]: Leaving directory '/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_ca15f/fast] Error 2
+
+
+
