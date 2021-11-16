@@ -194,16 +194,16 @@ CMakeFiles/icarous.xml-v2.0.dir/clean:
 # Target rules for target CMakeFiles/common.xml-v2.0.dir
 
 # All Build rule for target.
+CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/standard.xml-v2.0.dir/all
+CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/ASLUAV.xml-v2.0.dir/all
+CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/all.xml-v2.0.dir/all
+CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/paparazzi.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/icarous.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/autoquad.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/ardupilotmega.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/ualberta.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/uAvionix.xml-v2.0.dir/all
 CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/matrixpilot.xml-v2.0.dir/all
-CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/standard.xml-v2.0.dir/all
-CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/paparazzi.xml-v2.0.dir/all
-CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/ASLUAV.xml-v2.0.dir/all
-CMakeFiles/common.xml-v2.0.dir/all: CMakeFiles/all.xml-v2.0.dir/all
 	$(MAKE) -f CMakeFiles/common.xml-v2.0.dir/build.make CMakeFiles/common.xml-v2.0.dir/depend
 	$(MAKE) -f CMakeFiles/common.xml-v2.0.dir/build.make CMakeFiles/common.xml-v2.0.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavlink/CMakeFiles --progress-num=10 "Built target common.xml-v2.0"

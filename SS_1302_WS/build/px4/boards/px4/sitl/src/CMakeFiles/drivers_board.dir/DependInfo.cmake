@@ -39,8 +39,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/boards/px4/sitl/src/board_shutdown.cpp" "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.o"
-  "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/boards/px4/sitl/src/i2c.cpp" "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.o"
-  "/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/boards/px4/sitl/src/spi.cpp" "/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1763,19 +1763,6 @@ FlightTaskAutoFollowMe/fast:
 .PHONY : FlightTaskAutoFollowMe/fast
 
 #=============================================================================
-# Target rules for targets named FlightTaskAutoLineSmoothVel
-
-# Build rule for target.
-FlightTaskAutoLineSmoothVel: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FlightTaskAutoLineSmoothVel
-.PHONY : FlightTaskAutoLineSmoothVel
-
-# fast build rule for target.
-FlightTaskAutoLineSmoothVel/fast:
-	$(MAKE) -f src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/FlightTaskAutoLineSmoothVel.dir/build.make src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/FlightTaskAutoLineSmoothVel.dir/build
-.PHONY : FlightTaskAutoLineSmoothVel/fast
-
-#=============================================================================
 # Target rules for targets named FlightTaskDescend
 
 # Build rule for target.
@@ -31304,7 +31291,6 @@ help:
 	@echo "... FlightTaskUtility"
 	@echo "... FlightTaskAuto"
 	@echo "... FlightTaskAutoFollowMe"
-	@echo "... FlightTaskAutoLineSmoothVel"
 	@echo "... FlightTaskDescend"
 	@echo "... FlightTaskFailsafe"
 	@echo "... FlightTaskManualAcceleration"

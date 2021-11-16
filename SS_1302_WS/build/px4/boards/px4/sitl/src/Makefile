@@ -231,33 +231,6 @@ board_shutdown.cpp.s:
 	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/board_shutdown.cpp.s
 .PHONY : board_shutdown.cpp.s
 
-i2c.o: i2c.cpp.o
-
-.PHONY : i2c.o
-
-# target to build an object file
-i2c.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.o
-.PHONY : i2c.cpp.o
-
-i2c.i: i2c.cpp.i
-
-.PHONY : i2c.i
-
-# target to preprocess a source file
-i2c.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.i
-.PHONY : i2c.cpp.i
-
-i2c.s: i2c.cpp.s
-
-.PHONY : i2c.s
-
-# target to generate assembly for a file
-i2c.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/i2c.cpp.s
-.PHONY : i2c.cpp.s
-
 sitl_led.o: sitl_led.c.o
 
 .PHONY : sitl_led.o
@@ -285,33 +258,6 @@ sitl_led.c.s:
 	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/sitl_led.c.s
 .PHONY : sitl_led.c.s
 
-spi.o: spi.cpp.o
-
-.PHONY : spi.o
-
-# target to build an object file
-spi.cpp.o:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.o
-.PHONY : spi.cpp.o
-
-spi.i: spi.cpp.i
-
-.PHONY : spi.i
-
-# target to preprocess a source file
-spi.cpp.i:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.i
-.PHONY : spi.cpp.i
-
-spi.s: spi.cpp.s
-
-.PHONY : spi.s
-
-# target to generate assembly for a file
-spi.cpp.s:
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4 && $(MAKE) -f boards/px4/sitl/src/CMakeFiles/drivers_board.dir/build.make boards/px4/sitl/src/CMakeFiles/drivers_board.dir/spi.cpp.s
-.PHONY : spi.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -331,15 +277,9 @@ help:
 	@echo "... board_shutdown.o"
 	@echo "... board_shutdown.i"
 	@echo "... board_shutdown.s"
-	@echo "... i2c.o"
-	@echo "... i2c.i"
-	@echo "... i2c.s"
 	@echo "... sitl_led.o"
 	@echo "... sitl_led.i"
 	@echo "... sitl_led.s"
-	@echo "... spi.o"
-	@echo "... spi.i"
-	@echo "... spi.s"
 .PHONY : help
 
 

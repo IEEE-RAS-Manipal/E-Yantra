@@ -479,6 +479,9 @@ NOSETESTS:FILEPATH=/usr/bin/nosetests3
 //Dependencies for the target
 NullMixer_LIB_DEPENDS:STATIC=general;MixerBase;
 
+//PX4 binary directory
+PX4_BINARY_DIR:FILEPATH=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4
+
 //PX4 board
 PX4_BOARD:STRING=px4_sitl
 
@@ -517,6 +520,9 @@ PX4_CONFIG_FILE:FILEPATH=/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/
 
 //PX4 board OS
 PX4_PLATFORM:STRING=posix
+
+//PX4 source directory
+PX4_SOURCE_DIR:FILEPATH=/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot
 
 //Python code coverage
 PYTHON_COVERAGE:BOOL=OFF
@@ -845,7 +851,7 @@ modules__fake_gps_LIB_DEPENDS:STATIC=general;px4_layer;general;px4_platform;gene
 modules__fake_imu_LIB_DEPENDS:STATIC=general;px4_layer;general;px4_platform;general;systemlib;general;drivers_accelerometer;general;drivers_gyroscope;general;px4_work_queue;
 
 //Dependencies for the target
-modules__flight_mode_manager_LIB_DEPENDS:STATIC=general;px4_layer;general;px4_platform;general;systemlib;general;px4_work_queue;general;WeatherVane;general;FlightTaskAutoFollowMe;general;FlightTaskAutoLineSmoothVel;general;FlightTaskDescend;general;FlightTaskFailsafe;general;FlightTaskManualAcceleration;general;FlightTaskManualAltitude;general;FlightTaskManualAltitudeSmoothVel;general;FlightTaskManualPosition;general;FlightTaskManualPositionSmoothVel;general;FlightTaskTransition;general;FlightTaskOrbit;
+modules__flight_mode_manager_LIB_DEPENDS:STATIC=general;px4_layer;general;px4_platform;general;systemlib;general;px4_work_queue;general;WeatherVane;general;FlightTaskAuto;general;FlightTaskAutoFollowMe;general;FlightTaskDescend;general;FlightTaskFailsafe;general;FlightTaskManualAcceleration;general;FlightTaskManualAltitude;general;FlightTaskManualAltitudeSmoothVel;general;FlightTaskManualPosition;general;FlightTaskManualPositionSmoothVel;general;FlightTaskTransition;general;FlightTaskOrbit;
 
 //Dependencies for the target
 modules__fw_att_control_LIB_DEPENDS:STATIC=general;px4_layer;general;px4_platform;general;systemlib;general;px4_work_queue;
@@ -1238,7 +1244,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=206
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=205
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

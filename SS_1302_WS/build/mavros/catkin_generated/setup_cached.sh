@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros'
 export PYTHONPATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"

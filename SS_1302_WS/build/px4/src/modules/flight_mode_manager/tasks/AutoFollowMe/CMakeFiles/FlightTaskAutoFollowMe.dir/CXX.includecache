@@ -528,6 +528,18 @@ cstdlib
 inttypes.h
 -
 
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/PositionSmoothing.hpp
+cmath
+-
+motion_planning/VelocitySmoothing.hpp
+-
+matrix/matrix/math.hpp
+-
+px4_defines.h
+-
+
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/VelocitySmoothing.hpp
+
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/parameters/param.h
 stdint.h
 -
@@ -536,6 +548,12 @@ stdbool.h
 sys/types.h
 -
 cstdio
+-
+
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/slew_rate/SlewRate.hpp
+mathlib/mathlib.h
+-
+matrix/math.hpp
 -
 
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/err.h
@@ -575,6 +593,14 @@ lib/geo/geo.h
 -
 lib/mathlib/math/filter/AlphaFilter.hpp
 -
+lib/motion_planning/PositionSmoothing.hpp
+-
+Sticks.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Auto/Sticks.hpp
+StickAccelerationXY.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Auto/StickAccelerationXY.hpp
+StickYaw.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Auto/StickYaw.hpp
 lib/avoidance/ObstacleAvoidance_dummy.hpp
 -
 lib/avoidance/ObstacleAvoidance.hpp
@@ -620,6 +646,36 @@ lib/geo/geo.h
 lib/weather_vane/WeatherVane.hpp
 -
 
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickAccelerationXY.hpp
+px4_platform_common/module_params.h
+-
+lib/mathlib/math/filter/AlphaFilter.hpp
+-
+matrix/math.hpp
+-
+uORB/Subscription.hpp
+-
+uORB/topics/takeoff_status.h
+-
+SlewRate.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/SlewRate.hpp
+
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickYaw.hpp
+SlewRate.hpp
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/SlewRate.hpp
+
+/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/Sticks.hpp
+px4_platform_common/module_params.h
+-
+matrix/matrix/math.hpp
+-
+uORB/Subscription.hpp
+-
+uORB/topics/manual_control_setpoint.h
+-
+uORB/topics/vehicle_status.h
+-
+
 src/lib/parameters/px4_parameters.hpp
 math.h
 -
@@ -656,6 +712,10 @@ uORB/topics/position_setpoint.h
 uORB/topics/position_setpoint.h
 -
 uORB/topics/position_setpoint.h
+-
+
+uORB/topics/takeoff_status.h
+uORB/uORB.h
 -
 
 uORB/topics/trajectory_bezier.h

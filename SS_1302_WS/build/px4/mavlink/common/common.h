@@ -546,8 +546,66 @@ typedef enum COMP_METADATA_TYPE
    COMP_METADATA_TYPE_COMMANDS=2, /* Meta data that specifies which commands and command parameters the vehicle supports. (WIP) | */
    COMP_METADATA_TYPE_PERIPHERALS=3, /* Meta data that specifies external non-MAVLink peripherals. | */
    COMP_METADATA_TYPE_EVENTS=4, /* Meta data for the events interface. | */
-   COMP_METADATA_TYPE_ENUM_END=5, /*  | */
+   COMP_METADATA_TYPE_ACTUATORS=5, /* Meta data for actuator configuration (motors, servos and vehicle geometry) and testing. | */
+   COMP_METADATA_TYPE_ENUM_END=6, /*  | */
 } COMP_METADATA_TYPE;
+#endif
+
+/** @brief Actuator configuration, used to change a setting on an actuator. Component information metadata can be used to know which outputs support which commands. */
+#ifndef HAVE_ENUM_ACTUATOR_CONFIGURATION
+#define HAVE_ENUM_ACTUATOR_CONFIGURATION
+typedef enum ACTUATOR_CONFIGURATION
+{
+   ACTUATOR_CONFIGURATION_NONE=0, /* Do nothing. | */
+   ACTUATOR_CONFIGURATION_BEEP=1, /* Command the actuator to beep now. | */
+   ACTUATOR_CONFIGURATION_3D_MODE_ON=2, /* Permanently set the actuator (ESC) to 3D mode (reversible thrust). | */
+   ACTUATOR_CONFIGURATION_3D_MODE_OFF=3, /* Permanently set the actuator (ESC) to non 3D mode (non-reversible thrust). | */
+   ACTUATOR_CONFIGURATION_SPIN_DIRECTION1=4, /* Permanently set the actuator (ESC) to spin direction 1 (which can be clockwise or counter-clockwise). | */
+   ACTUATOR_CONFIGURATION_SPIN_DIRECTION2=5, /* Permanently set the actuator (ESC) to spin direction 2 (opposite of direction 1). | */
+   ACTUATOR_CONFIGURATION_ENUM_END=6, /*  | */
+} ACTUATOR_CONFIGURATION;
+#endif
+
+/** @brief Actuator output function. Values greater or equal to 1000 are autopilot-specific. */
+#ifndef HAVE_ENUM_ACTUATOR_OUTPUT_FUNCTION
+#define HAVE_ENUM_ACTUATOR_OUTPUT_FUNCTION
+typedef enum ACTUATOR_OUTPUT_FUNCTION
+{
+   ACTUATOR_OUTPUT_FUNCTION_NONE=0, /* No function (disabled). | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR1=1, /* Motor 1 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR2=2, /* Motor 2 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR3=3, /* Motor 3 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR4=4, /* Motor 4 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR5=5, /* Motor 5 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR6=6, /* Motor 6 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR7=7, /* Motor 7 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR8=8, /* Motor 8 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR9=9, /* Motor 9 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR10=10, /* Motor 10 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR11=11, /* Motor 11 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR12=12, /* Motor 12 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR13=13, /* Motor 13 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR14=14, /* Motor 14 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR15=15, /* Motor 15 | */
+   ACTUATOR_OUTPUT_FUNCTION_MOTOR16=16, /* Motor 16 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO1=33, /* Servo 1 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO2=34, /* Servo 2 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO3=35, /* Servo 3 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO4=36, /* Servo 4 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO5=37, /* Servo 5 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO6=38, /* Servo 6 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO7=39, /* Servo 7 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO8=40, /* Servo 8 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO9=41, /* Servo 9 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO10=42, /* Servo 10 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO11=43, /* Servo 11 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO12=44, /* Servo 12 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO13=45, /* Servo 13 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO14=46, /* Servo 14 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO15=47, /* Servo 15 | */
+   ACTUATOR_OUTPUT_FUNCTION_SERVO16=48, /* Servo 16 | */
+   ACTUATOR_OUTPUT_FUNCTION_ENUM_END=49, /*  | */
+} ACTUATOR_OUTPUT_FUNCTION;
 #endif
 
 /** @brief A data stream is not a fixed set of messages, but rather a

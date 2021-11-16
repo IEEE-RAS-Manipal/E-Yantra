@@ -6,42 +6,438 @@
       "event_groups": {
         "default": {
           "events": {
-            "15869512": {
-              "name": "vtol_att_ctrl_quadchute_tout",
-              "message": "Quadchute triggered, due to transition timeout"
+            "9351472": {
+              "name": "rtl_unsupported_mav_frame",
+              "message": "RTL: unsupported MAV_FRAME ({1})",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
             },
-            "1410140": {
-              "name": "vtol_att_ctrl_quadchute_ext_cmd",
-              "message": "Quadchute triggered, due to external command"
+            "11157417": {
+              "name": "rtl_land_at_home",
+              "message": "RTL: landing at home position"
             },
-            "15900704": {
-              "name": "vtol_att_ctrl_quadchute_min_alt",
-              "message": "Quadchute triggered, due to minimum altitude breach"
+            "14005080": {
+              "name": "rtl_land_at_mission",
+              "message": "RTL: landing at mission landing"
             },
-            "9476947": {
-              "name": "vtol_att_ctrl_quadchute_alt_loss",
-              "message": "Quadchute triggered, due to loss of altitude"
+            "15432474": {
+              "name": "rtl_land_at_safe_point",
+              "message": "RTL: landing at safe landing point"
             },
-            "15429427": {
-              "name": "vtol_att_ctrl_quadchute_alt_err",
-              "message": "Quadchute triggered, due to large altitude error"
+            "4513795": {
+              "name": "rtl_using_mission_landing",
+              "message": "RTL: using mission landing"
             },
-            "6006807": {
-              "name": "vtol_att_ctrl_quadchute_max_pitch",
-              "message": "Quadchute triggered, due to maximum pitch angle exceeded"
+            "10406957": {
+              "name": "rtl_not_using_mission_landing",
+              "message": "RTL: unable to use mission landing, doing regular RTL"
             },
-            "6847604": {
-              "name": "vtol_att_ctrl_quadchute_max_roll",
-              "message": "Quadchute triggered, due to maximum roll angle exceeded"
+            "9210889": {
+              "name": "rtl_climb_to",
+              "message": "RTL: climb to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
             },
-            "9862982": {
-              "name": "vtol_att_ctrl_ol_trans_too_large",
-              "message": "Open loop transition time set larger than minimum transition time",
-              "description": "<param>VT_F_TR_OL_TM</param> set to {1:.1}.",
+            "16133968": {
+              "name": "rtl_return_at",
+              "message": "RTL: return at {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "12128736": {
+              "name": "rtl_descend_to",
+              "message": "RTL: descend to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "11851609": {
+              "name": "rtl_loiter",
+              "message": "RTL: loiter {1:.1}s",
               "arguments": [
                 {
                   "type": "float",
                   "name": "arg0"
+                }
+              ]
+            },
+            "16725343": {
+              "name": "rtl_completed_loiter",
+              "message": "RTL: completed, loitering"
+            },
+            "185258": {
+              "name": "rtl_land_at_destination",
+              "message": "RTL: land at destination"
+            },
+            "9421773": {
+              "name": "sensor_failover_baro",
+              "message": "Baro sensor #{1} failure: {2}",
+              "description": "Land immediately and check the system.",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "px4::sensor_failover_reason_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "16048801": {
+              "name": "logger_storage_full",
+              "message": "Not logging, storage is almost full: {1} MiB",
+              "description": "Either manually free up some space, or enable automatic log rotation via <param>SDLOG_DIRS_MAX</param>.",
+              "arguments": [
+                {
+                  "type": "uint32_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "9537079": {
+              "name": "col_prev_unsup_frame",
+              "message": "Obstacle message received in unsupported frame {1}",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "10452355": {
+              "name": "runway_takeoff_reached_airspeed",
+              "message": "Takeoff airspeed reached"
+            },
+            "14742592": {
+              "name": "runway_takeoff_climbout",
+              "message": "Climbout"
+            },
+            "9527914": {
+              "name": "runway_takeoff_nav_to_wp",
+              "message": "Navigating to waypoint"
+            },
+            "3611313": {
+              "name": "mavlink_mission_storage_write_failure",
+              "message": "Mission: Unable to write to storage"
+            },
+            "12500025": {
+              "name": "mavlink_mission_storage_write_failure2",
+              "message": "Mission: Unable to write to storage"
+            },
+            "12499622": {
+              "name": "mavlink_mission_storage_write_failure3",
+              "message": "Mission: Unable to write to storage"
+            },
+            "3321936": {
+              "name": "mavlink_mission_wp_index_out_of_bounds",
+              "message": "Waypoint index out of bounds ({1} \\< {2})",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "5911339": {
+              "name": "mavlink_mission_recv_unknown_mis_type",
+              "message": "Received unknown mission type, abort"
+            },
+            "11664376": {
+              "name": "mavlink_mission_storage_read_failure",
+              "message": "Mission: Unable to read from storage"
+            },
+            "2659830": {
+              "name": "mavlink_mission_wp_index_exceeds_list",
+              "message": "Waypoint index eceeds list capacity (maximum: {1})",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "8520304": {
+              "name": "mavlink_mission_op_timeout",
+              "message": "Operation timeout, aborting transfer"
+            },
+            "4089486": {
+              "name": "mavlink_mission_partner_id_mismatch",
+              "message": "Rejecting waypoint command, component or system ID mismatch"
+            },
+            "7126042": {
+              "name": "mavlink_mission_err_id",
+              "message": "Failed to write current mission ID to storage"
+            },
+            "13568553": {
+              "name": "mavlink_mission_seq_out_of_bounds",
+              "message": "New mission waypoint sequence out of bounds"
+            },
+            "8935528": {
+              "name": "mavlink_mission_state_busy",
+              "message": "Mission manager currently busy, ignoring new waypoint index"
+            },
+            "15283212": {
+              "name": "mavlink_mission_req_ignored",
+              "message": "Mission download request ignored, already active"
+            },
+            "6974862": {
+              "name": "mavlink_mission_wp_unexpected",
+              "message": "Unexpected waypoint index, aborting transfer"
+            },
+            "9092852": {
+              "name": "mavlink_mission_wp_unexpected2",
+              "message": "Unexpected waypoint index, aborting mission transfer"
+            },
+            "9013084": {
+              "name": "mavlink_mission_mis_req_ignored_busy",
+              "message": "Ignoring mission request, currently busy"
+            },
+            "3914228": {
+              "name": "mavlink_mission_partner_id_mismatch2",
+              "message": "Rejecting mission request command, component or system ID mismatch"
+            },
+            "4796299": {
+              "name": "mavlink_mission_getlist_busy",
+              "message": "Mission upload busy, already receiving waypoint"
+            },
+            "2754873": {
+              "name": "mavlink_mission_ignore_mis_count",
+              "message": "Mission upload busy, ignoring MISSION_COUNT"
+            },
+            "439666": {
+              "name": "mavlink_mission_no_transfer",
+              "message": "Ignoring mission item, no transfer in progress"
+            },
+            "8546752": {
+              "name": "mavlink_mission_mis_item_busy",
+              "message": "Ignoring mission item, busy"
+            },
+            "16691824": {
+              "name": "mavlink_mission_mis_item_invalid",
+              "message": "Ignoring mission item, invalid item"
+            },
+            "3038268": {
+              "name": "mavlink_mission_unknown_mis_type",
+              "message": "Received unknown mission type, abort"
+            },
+            "11085221": {
+              "name": "mavlink_mission_storage_failure",
+              "message": "Mission: unable to write to storage"
+            },
+            "4202815": {
+              "name": "mavlink_mission_ignore_clear",
+              "message": "Ignoring mission clear command, busy"
+            },
+            "13495236": {
+              "name": "navigator_reposition_outside_geofence",
+              "message": "Reposition is outside geofence"
+            },
+            "6835962": {
+              "name": "navigator_rtl_mission_activated",
+              "message": "RTL Mission activated, continue mission"
+            },
+            "8716192": {
+              "name": "navigator_rtl_mission_activated_rev",
+              "message": "RTL Mission activated, fly mission in reverse"
+            },
+            "124372": {
+              "name": "navigator_rtl_mission_activated_home",
+              "message": "RTL Mission activated, fly to home"
+            },
+            "1344123": {
+              "name": "navigator_rtl_home_activated",
+              "message": "RTL activated"
+            },
+            "13944665": {
+              "name": "navigator_transition_descend",
+              "message": "Transition to hover mode and descend"
+            },
+            "13102530": {
+              "name": "navigator_approach_geofence",
+              "message": "Approaching on Geofence"
+            },
+            "10236960": {
+              "name": "navigator_traffic",
+              "message": "Traffic alert",
+              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
+              "arguments": [
+                {
+                  "type": "uint64_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "int16_t",
+                  "name": "arg2"
+                }
+              ]
+            },
+            "10664053": {
+              "name": "navigator_traffic_rtl",
+              "message": "Traffic alert, returning home",
+              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
+              "arguments": [
+                {
+                  "type": "uint64_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "int16_t",
+                  "name": "arg2"
+                }
+              ]
+            },
+            "7144644": {
+              "name": "navigator_traffic_land",
+              "message": "Traffic alert, landing",
+              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
+              "arguments": [
+                {
+                  "type": "uint64_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "int16_t",
+                  "name": "arg2"
+                }
+              ]
+            },
+            "1801328": {
+              "name": "navigator_traffic_hold",
+              "message": "Traffic alert, holding position",
+              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
+              "arguments": [
+                {
+                  "type": "uint64_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "int16_t",
+                  "name": "arg2"
+                }
+              ]
+            },
+            "710679": {
+              "name": "navigator_mission_failure_heading",
+              "message": "Mission failure: unable to reach heading within timeout"
+            },
+            "14415650": {
+              "name": "navigator_takeoff_min_alt",
+              "message": "Using minimum takeoff altitude: {1:.2m}",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "2321600": {
+              "name": "navigator_takeoff_already_higher",
+              "message": "Already higher than takeoff altitude (not descending)"
+            },
+            "1203183": {
+              "name": "logger_open_file_time",
+              "message": "logging: opening log file {1}-{2}-{3}/{4}_{5}_{6}.ulg",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg2"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg3"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg4"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg5"
+                }
+              ]
+            },
+            "4535132": {
+              "name": "logger_open_file_sess",
+              "message": "logging: opening log file sess{1}/log{2}.ulg",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint16_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "5371654": {
+              "name": "sensor_failover_mag",
+              "message": "Magnetometer sensor #{1} failure: {2}",
+              "description": "Land immediately and check the system.",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "px4::sensor_failover_reason_t",
+                  "name": "arg1"
                 }
               ]
             },
@@ -277,341 +673,44 @@
                 }
               ]
             },
-            "2718537": {
-              "name": "enginefailure_loitering",
-              "message": "Engine failure. Loitering down"
+            "15869512": {
+              "name": "vtol_att_ctrl_quadchute_tout",
+              "message": "Quadchute triggered, due to transition timeout"
             },
-            "5371654": {
-              "name": "sensor_failover_mag",
-              "message": "Magnetometer sensor #{1} failure: {2}",
-              "description": "Land immediately and check the system.",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "px4::sensor_failover_reason_t",
-                  "name": "arg1"
-                }
-              ]
+            "1410140": {
+              "name": "vtol_att_ctrl_quadchute_ext_cmd",
+              "message": "Quadchute triggered, due to external command"
             },
-            "14415650": {
-              "name": "navigator_takeoff_min_alt",
-              "message": "Using minimum takeoff altitude: {1:.2m}",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                }
-              ]
+            "15900704": {
+              "name": "vtol_att_ctrl_quadchute_min_alt",
+              "message": "Quadchute triggered, due to minimum altitude breach"
             },
-            "2321600": {
-              "name": "navigator_takeoff_already_higher",
-              "message": "Already higher than takeoff altitude (not descending)"
+            "9476947": {
+              "name": "vtol_att_ctrl_quadchute_alt_loss",
+              "message": "Quadchute triggered, due to loss of altitude"
             },
-            "10974457": {
-              "name": "mc_rate_control_not_retract_landing_gear_landed",
-              "message": "Landed, unable to retract landing gear"
+            "15429427": {
+              "name": "vtol_att_ctrl_quadchute_alt_err",
+              "message": "Quadchute triggered, due to large altitude error"
             },
-            "12907101": {
-              "name": "commander_transition_denied",
-              "message": "Arming state transition denied: {1} to {2}",
-              "arguments": [
-                {
-                  "type": "px4::arming_state_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "px4::arming_state_t",
-                  "name": "arg1"
-                }
-              ]
+            "6006807": {
+              "name": "vtol_att_ctrl_quadchute_max_pitch",
+              "message": "Quadchute triggered, due to maximum pitch angle exceeded"
             },
-            "10269283": {
-              "name": "commander_enable_failsafe",
-              "message": "Failsafe enabled: {1}",
-              "arguments": [
-                {
-                  "type": "px4::failsafe_reason_t",
-                  "name": "arg0"
-                }
-              ]
+            "6847604": {
+              "name": "vtol_att_ctrl_quadchute_max_roll",
+              "message": "Quadchute triggered, due to maximum roll angle exceeded"
             },
-            "100336": {
-              "name": "commander_bat_low",
-              "message": "Low battery level! Return advised"
-            },
-            "7127974": {
-              "name": "commander_bat_crit",
-              "message": "Critical battery level! Landing advised"
-            },
-            "316595": {
-              "name": "commander_bat_crit_rtl",
-              "message": "Critical battery level! Executing RTL"
-            },
-            "8523199": {
-              "name": "commander_bat_crit_no_rtl_land",
-              "message": "Critical battery level! Cannot execute RTL, landing instead"
-            },
-            "8421110": {
-              "name": "commander_bat_crit_land",
-              "message": "Critical battery level! Landing now"
-            },
-            "15093385": {
-              "name": "commander_bat_emerg_warn",
-              "message": "Dangerous battery level! Please land immediately"
-            },
-            "429013": {
-              "name": "commander_bat_emerg_rtl",
-              "message": "Dangerous battery level! Executing RTL"
-            },
-            "14071709": {
-              "name": "commander_bat_emerg_no_rtl_land",
-              "message": "Dangerous battery level! Cannot execute RTL, landing instead"
-            },
-            "14671524": {
-              "name": "commander_bat_emerg_land",
-              "message": "Dangerous battery level! Landing now"
-            },
-            "6632984": {
-              "name": "commander_bat_failure",
-              "message": "Battery failure detected"
-            },
-            "13495236": {
-              "name": "navigator_reposition_outside_geofence",
-              "message": "Reposition is outside geofence"
-            },
-            "6835962": {
-              "name": "navigator_rtl_mission_activated",
-              "message": "RTL Mission activated, continue mission"
-            },
-            "8716192": {
-              "name": "navigator_rtl_mission_activated_rev",
-              "message": "RTL Mission activated, fly mission in reverse"
-            },
-            "124372": {
-              "name": "navigator_rtl_mission_activated_home",
-              "message": "RTL Mission activated, fly to home"
-            },
-            "1344123": {
-              "name": "navigator_rtl_home_activated",
-              "message": "RTL activated"
-            },
-            "13944665": {
-              "name": "navigator_transition_descend",
-              "message": "Transition to hover mode and descend"
-            },
-            "13102530": {
-              "name": "navigator_approach_geofence",
-              "message": "Approaching on Geofence"
-            },
-            "10236960": {
-              "name": "navigator_traffic",
-              "message": "Traffic alert",
-              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
-              "arguments": [
-                {
-                  "type": "uint64_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                },
-                {
-                  "type": "int16_t",
-                  "name": "arg2"
-                }
-              ]
-            },
-            "10664053": {
-              "name": "navigator_traffic_rtl",
-              "message": "Traffic alert, returning home",
-              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
-              "arguments": [
-                {
-                  "type": "uint64_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                },
-                {
-                  "type": "int16_t",
-                  "name": "arg2"
-                }
-              ]
-            },
-            "7144644": {
-              "name": "navigator_traffic_land",
-              "message": "Traffic alert, landing",
-              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
-              "arguments": [
-                {
-                  "type": "uint64_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                },
-                {
-                  "type": "int16_t",
-                  "name": "arg2"
-                }
-              ]
-            },
-            "1801328": {
-              "name": "navigator_traffic_hold",
-              "message": "Traffic alert, holding position",
-              "description": "- ID: {1}\n- Distance: {2m}\n- Direction: {3} degrees",
-              "arguments": [
-                {
-                  "type": "uint64_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                },
-                {
-                  "type": "int16_t",
-                  "name": "arg2"
-                }
-              ]
-            },
-            "710679": {
-              "name": "navigator_mission_failure_heading",
-              "message": "Mission failure: unable to reach heading within timeout"
-            },
-            "1203183": {
-              "name": "logger_open_file_time",
-              "message": "logging: opening log file {1}-{2}-{3}/{4}_{5}_{6}.ulg",
-              "arguments": [
-                {
-                  "type": "uint16_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg1"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg2"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg3"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg4"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg5"
-                }
-              ]
-            },
-            "4535132": {
-              "name": "logger_open_file_sess",
-              "message": "logging: opening log file sess{1}/log{2}.ulg",
-              "arguments": [
-                {
-                  "type": "uint16_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "uint16_t",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "1569033": {
-              "name": "mavlink_param_rc_chan_out_of_bounds",
-              "message": "parameter_rc_channel_index out of bounds"
-            },
-            "8833276": {
-              "name": "commander_cal_no_inputs",
-              "message": "No inputs, aborting RC trim calibration"
-            },
-            "697858": {
-              "name": "commander_cal_trim_param_set_failed",
-              "message": "RC trim calibration: failed to set parameters"
-            },
-            "6415112": {
-              "name": "commander_cal_trim_done",
-              "message": "RC trim calibration completed"
-            },
-            "14581325": {
-              "name": "mc_pos_ctrl_tilt_set",
-              "message": "Maximum tilt limit has been constrained to a safe value",
-              "description": "<param>MPC_TILTMAX_AIR</param> is set to {1:.0}.",
+            "9862982": {
+              "name": "vtol_att_ctrl_ol_trans_too_large",
+              "message": "Open loop transition time set larger than minimum transition time",
+              "description": "<param>VT_F_TR_OL_TM</param> set to {1:.1}.",
               "arguments": [
                 {
                   "type": "float",
                   "name": "arg0"
                 }
               ]
-            },
-            "3939705": {
-              "name": "mc_pos_ctrl_land_tilt_set",
-              "message": "Land tilt limit has been constrained by maximum tilt",
-              "description": "<param>MPC_TILTMAX_LND</param> is set to {1:.0}.",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "15909593": {
-              "name": "mc_pos_ctrl_cruise_set",
-              "message": "Cruise speed has been constrained by maximum speed",
-              "description": "<param>MPC_XY_CRUISE</param> is set to {1:.0}.",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "14153224": {
-              "name": "mc_pos_ctrl_man_vel_set",
-              "message": "Manual speed has been constrained by maximum speed",
-              "description": "<param>MPC_VEL_MANUAL</param> is set to {1:.0}.",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "3779911": {
-              "name": "mc_pos_ctrl_hover_thrust_set",
-              "message": "Hover thrust has been constrained by min/max thrust",
-              "description": "<param>MPC_THR_HOVER</param> is set to {1:.0}.",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "10452355": {
-              "name": "runway_takeoff_reached_airspeed",
-              "message": "Takeoff airspeed reached"
-            },
-            "14742592": {
-              "name": "runway_takeoff_climbout",
-              "message": "Climbout"
-            },
-            "9527914": {
-              "name": "runway_takeoff_nav_to_wp",
-              "message": "Navigating to waypoint"
             },
             "12894058": {
               "name": "sensor_failover",
@@ -629,259 +728,6 @@
                 {
                   "type": "px4::sensor_failover_reason_t",
                   "name": "arg2"
-                }
-              ]
-            },
-            "15456613": {
-              "name": "vehicle_imu_accel_clipping",
-              "message": "Accel {1} clipping, not safe to fly!",
-              "description": "Land now, and check the vehicle setup. Clipping can lead to fly-aways.",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "15098248": {
-              "name": "mavlink_iridium_disable",
-              "message": "Disabling transmitting with IRIDIUM mavlink on instance {1}",
-              "arguments": [
-                {
-                  "type": "int8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "10834203": {
-              "name": "mavlink_iridium_enable",
-              "message": "Enabling transmitting with IRIDIUM mavlink on instance {1}",
-              "arguments": [
-                {
-                  "type": "int8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "1047676": {
-              "name": "mavlink_iridium_enable_cmd",
-              "message": "Enabling transmitting with IRIDIUM mavlink on instance {1} by command",
-              "arguments": [
-                {
-                  "type": "int8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "2566971": {
-              "name": "mavlink_iridium_disable_cmd",
-              "message": "Disabling transmitting with IRIDIUM mavlink on instance {1} by command",
-              "arguments": [
-                {
-                  "type": "int8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "8673473": {
-              "name": "mavlink_log_not_enough_bw",
-              "message": "Not enough bandwidth to enable log streaming ({1} \\< 5000)",
-              "arguments": [
-                {
-                  "type": "uint32_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "11552065": {
-              "name": "mavlink_rcv_sp_target_unsup_coord",
-              "message": "SET_POSITION_TARGET_LOCAL_NED: coordinate frame {1} unsupported",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "12815955": {
-              "name": "mavlink_rcv_sp_target_unsup_force",
-              "message": "SET_POSITION_TARGET_LOCAL_NED: FORCE is not supported"
-            },
-            "5650341": {
-              "name": "mavlink_rcv_sp_target_invalid",
-              "message": "SET_POSITION_TARGET_LOCAL_NED: invalid, missing position, velocity or acceleration"
-            },
-            "10962739": {
-              "name": "mavlink_rcv_sp_target_gl_invalid_coord",
-              "message": "SET_POSITION_TARGET_GLOBAL_INT invalid coordinate frame {1}",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "10658115": {
-              "name": "mavlink_rcv_sp_target_gl_unsup_force",
-              "message": "SET_POSITION_TARGET_GLOBAL_INT: FORCE is not supported"
-            },
-            "12221094": {
-              "name": "mavlink_rcv_lnd_target_unsup_coord",
-              "message": "landing target: unsupported coordinate frame {1}",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "16048801": {
-              "name": "logger_storage_full",
-              "message": "Not logging, storage is almost full: {1} MiB",
-              "description": "Either manually free up some space, or enable automatic log rotation via <param>SDLOG_DIRS_MAX</param>.",
-              "arguments": [
-                {
-                  "type": "uint32_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "3623245": {
-              "name": "fixedwing_position_control_conf_invalid_airspeed",
-              "message": "Invalid configuration: Airspeed max smaller than min",
-              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                },
-                {
-                  "type": "float",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "15317431": {
-              "name": "fixedwing_position_control_conf_invalid_airspeed_bounds",
-              "message": "Invalid configuration: Airspeed max \\< 5 m/s or min \\> 100 m/s",
-              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                },
-                {
-                  "type": "float",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "11318591": {
-              "name": "fixedwing_position_control_conf_invalid_cruise_bounds",
-              "message": "Invalid configuration: Airspeed cruise out of min or max bounds",
-              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}\n- <param>FW_AIRSPD_TRIM</param>: {3:.1}",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                },
-                {
-                  "type": "float",
-                  "name": "arg1"
-                },
-                {
-                  "type": "float",
-                  "name": "arg2"
-                }
-              ]
-            },
-            "1119664": {
-              "name": "fixedwing_position_control_conf_invalid_stall",
-              "message": "Invalid configuration: Stall airspeed higher than 90% of minimum airspeed",
-              "description": "- <param>FW_AIRSPD_MIN</param>: {1:.1}\n- <param>FW_AIRSPD_STALL</param>: {2:.1}",
-              "arguments": [
-                {
-                  "type": "float",
-                  "name": "arg0"
-                },
-                {
-                  "type": "float",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "5199406": {
-              "name": "fixedwing_position_control_land_aborted",
-              "message": "Landing aborted"
-            },
-            "4163547": {
-              "name": "fixedwing_position_control_fb_loiter",
-              "message": "Start loiter with fixed bank angle"
-            },
-            "12957883": {
-              "name": "fixedwing_position_control_descend",
-              "message": "Start descending"
-            },
-            "1369685": {
-              "name": "fixedwing_position_control_takeoff",
-              "message": "Takeoff on runway"
-            },
-            "8928464": {
-              "name": "fixedwing_position_control_launch_detection",
-              "message": "Launch detection running"
-            },
-            "2035442": {
-              "name": "fixedwing_position_control_landing",
-              "message": "Landing, heading hold"
-            },
-            "6180799": {
-              "name": "fixedwing_position_control_landing_limit_throttle",
-              "message": "Landing, limiting throttle"
-            },
-            "3237806": {
-              "name": "fixedwing_position_control_landing_flaring",
-              "message": "Landing, flaring"
-            },
-            "48662": {
-              "name": "fixedwing_position_control_landing_on_slope",
-              "message": "Landing, on slope"
-            },
-            "7138874": {
-              "name": "fixedwing_position_control_invalid_offboard_sp",
-              "message": "Invalid offboard setpoint"
-            },
-            "5158211": {
-              "name": "airspeed_selector_switch",
-              "message": "No airspeed sensor detected, switching to non-airspeed mode"
-            },
-            "12320347": {
-              "name": "airspeed_selector_prim_too_high",
-              "message": "Primary airspeed index bigger than number connected sensors, taking last sensor"
-            },
-            "10493596": {
-              "name": "airspeed_selector_sensor_failure",
-              "message": "Airspeed sensor failure detected. Return to launch (RTL) is advised"
-            },
-            "8280920": {
-              "name": "airspeed_selector_estimation_invalid",
-              "message": "Airspeed estimation invalid"
-            },
-            "6363289": {
-              "name": "airspeed_selector_estimation_valid",
-              "message": "Airspeed estimation valid"
-            },
-            "7791755": {
-              "name": "airspeed_selector_estimation_regain",
-              "message": "Airspeed sensor healthy, start using again",
-              "description": "Previously selected sensor index: {1}, current sensor index: {2}.",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "uint8_t",
-                  "name": "arg1"
                 }
               ]
             },
@@ -1232,246 +1078,157 @@
                 }
               ]
             },
-            "9351472": {
-              "name": "rtl_unsupported_mav_frame",
-              "message": "RTL: unsupported MAV_FRAME ({1})",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "11157417": {
-              "name": "rtl_land_at_home",
-              "message": "RTL: landing at home position"
-            },
-            "14005080": {
-              "name": "rtl_land_at_mission",
-              "message": "RTL: landing at mission landing"
-            },
-            "15432474": {
-              "name": "rtl_land_at_safe_point",
-              "message": "RTL: landing at safe landing point"
-            },
-            "4513795": {
-              "name": "rtl_using_mission_landing",
-              "message": "RTL: using mission landing"
-            },
-            "10406957": {
-              "name": "rtl_not_using_mission_landing",
-              "message": "RTL: unable to use mission landing, doing regular RTL"
-            },
-            "9210889": {
-              "name": "rtl_climb_to",
-              "message": "RTL: climb to {1m_v} ({2m_v} above destination)",
-              "arguments": [
-                {
-                  "type": "int32_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "16133968": {
-              "name": "rtl_return_at",
-              "message": "RTL: return at {1m_v} ({2m_v} above destination)",
-              "arguments": [
-                {
-                  "type": "int32_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "12128736": {
-              "name": "rtl_descend_to",
-              "message": "RTL: descend to {1m_v} ({2m_v} above destination)",
-              "arguments": [
-                {
-                  "type": "int32_t",
-                  "name": "arg0"
-                },
-                {
-                  "type": "int32_t",
-                  "name": "arg1"
-                }
-              ]
-            },
-            "11851609": {
-              "name": "rtl_loiter",
-              "message": "RTL: loiter {1:.1}s",
+            "3623245": {
+              "name": "fixedwing_position_control_conf_invalid_airspeed",
+              "message": "Invalid configuration: Airspeed max smaller than min",
+              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}",
               "arguments": [
                 {
                   "type": "float",
                   "name": "arg0"
-                }
-              ]
-            },
-            "16725343": {
-              "name": "rtl_completed_loiter",
-              "message": "RTL: completed, loitering"
-            },
-            "185258": {
-              "name": "rtl_land_at_destination",
-              "message": "RTL: land at destination"
-            },
-            "3611313": {
-              "name": "mavlink_mission_storage_write_failure",
-              "message": "Mission: Unable to write to storage"
-            },
-            "12500025": {
-              "name": "mavlink_mission_storage_write_failure2",
-              "message": "Mission: Unable to write to storage"
-            },
-            "12499622": {
-              "name": "mavlink_mission_storage_write_failure3",
-              "message": "Mission: Unable to write to storage"
-            },
-            "3321936": {
-              "name": "mavlink_mission_wp_index_out_of_bounds",
-              "message": "Waypoint index out of bounds ({1} \\< {2})",
-              "arguments": [
-                {
-                  "type": "int32_t",
-                  "name": "arg0"
                 },
                 {
-                  "type": "int32_t",
+                  "type": "float",
                   "name": "arg1"
                 }
               ]
             },
-            "5911339": {
-              "name": "mavlink_mission_recv_unknown_mis_type",
-              "message": "Received unknown mission type, abort"
-            },
-            "11664376": {
-              "name": "mavlink_mission_storage_read_failure",
-              "message": "Mission: Unable to read from storage"
-            },
-            "2659830": {
-              "name": "mavlink_mission_wp_index_exceeds_list",
-              "message": "Waypoint index eceeds list capacity (maximum: {1})",
+            "15317431": {
+              "name": "fixedwing_position_control_conf_invalid_airspeed_bounds",
+              "message": "Invalid configuration: Airspeed max \\< 5 m/s or min \\> 100 m/s",
+              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}",
               "arguments": [
                 {
-                  "type": "uint16_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "8520304": {
-              "name": "mavlink_mission_op_timeout",
-              "message": "Operation timeout, aborting transfer"
-            },
-            "4089486": {
-              "name": "mavlink_mission_partner_id_mismatch",
-              "message": "Rejecting waypoint command, component or system ID mismatch"
-            },
-            "7126042": {
-              "name": "mavlink_mission_err_id",
-              "message": "Failed to write current mission ID to storage"
-            },
-            "13568553": {
-              "name": "mavlink_mission_seq_out_of_bounds",
-              "message": "New mission waypoint sequence out of bounds"
-            },
-            "8935528": {
-              "name": "mavlink_mission_state_busy",
-              "message": "Mission manager currently busy, ignoring new waypoint index"
-            },
-            "15283212": {
-              "name": "mavlink_mission_req_ignored",
-              "message": "Mission download request ignored, already active"
-            },
-            "6974862": {
-              "name": "mavlink_mission_wp_unexpected",
-              "message": "Unexpected waypoint index, aborting transfer"
-            },
-            "9092852": {
-              "name": "mavlink_mission_wp_unexpected2",
-              "message": "Unexpected waypoint index, aborting mission transfer"
-            },
-            "9013084": {
-              "name": "mavlink_mission_mis_req_ignored_busy",
-              "message": "Ignoring mission request, currently busy"
-            },
-            "3914228": {
-              "name": "mavlink_mission_partner_id_mismatch2",
-              "message": "Rejecting mission request command, component or system ID mismatch"
-            },
-            "4796299": {
-              "name": "mavlink_mission_getlist_busy",
-              "message": "Mission upload busy, already receiving waypoint"
-            },
-            "2754873": {
-              "name": "mavlink_mission_ignore_mis_count",
-              "message": "Mission upload busy, ignoring MISSION_COUNT"
-            },
-            "439666": {
-              "name": "mavlink_mission_no_transfer",
-              "message": "Ignoring mission item, no transfer in progress"
-            },
-            "8546752": {
-              "name": "mavlink_mission_mis_item_busy",
-              "message": "Ignoring mission item, busy"
-            },
-            "16691824": {
-              "name": "mavlink_mission_mis_item_invalid",
-              "message": "Ignoring mission item, invalid item"
-            },
-            "3038268": {
-              "name": "mavlink_mission_unknown_mis_type",
-              "message": "Received unknown mission type, abort"
-            },
-            "11085221": {
-              "name": "mavlink_mission_storage_failure",
-              "message": "Mission: unable to write to storage"
-            },
-            "4202815": {
-              "name": "mavlink_mission_ignore_clear",
-              "message": "Ignoring mission clear command, busy"
-            },
-            "9537079": {
-              "name": "col_prev_unsup_frame",
-              "message": "Obstacle message received in unsupported frame {1}",
-              "arguments": [
-                {
-                  "type": "uint8_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "5734437": {
-              "name": "commander_cal_cmd_denied",
-              "message": "Command denied during calibration: {1}",
-              "arguments": [
-                {
-                  "type": "uint32_t",
-                  "name": "arg0"
-                }
-              ]
-            },
-            "9421773": {
-              "name": "sensor_failover_baro",
-              "message": "Baro sensor #{1} failure: {2}",
-              "description": "Land immediately and check the system.",
-              "arguments": [
-                {
-                  "type": "uint8_t",
+                  "type": "float",
                   "name": "arg0"
                 },
                 {
-                  "type": "px4::sensor_failover_reason_t",
+                  "type": "float",
                   "name": "arg1"
                 }
               ]
+            },
+            "11318591": {
+              "name": "fixedwing_position_control_conf_invalid_cruise_bounds",
+              "message": "Invalid configuration: Airspeed cruise out of min or max bounds",
+              "description": "- <param>FW_AIRSPD_MAX</param>: {1:.1}\n- <param>FW_AIRSPD_MIN</param>: {2:.1}\n- <param>FW_AIRSPD_TRIM</param>: {3:.1}",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                },
+                {
+                  "type": "float",
+                  "name": "arg1"
+                },
+                {
+                  "type": "float",
+                  "name": "arg2"
+                }
+              ]
+            },
+            "1119664": {
+              "name": "fixedwing_position_control_conf_invalid_stall",
+              "message": "Invalid configuration: Stall airspeed higher than 90% of minimum airspeed",
+              "description": "- <param>FW_AIRSPD_MIN</param>: {1:.1}\n- <param>FW_AIRSPD_STALL</param>: {2:.1}",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                },
+                {
+                  "type": "float",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "5199406": {
+              "name": "fixedwing_position_control_land_aborted",
+              "message": "Landing aborted"
+            },
+            "4163547": {
+              "name": "fixedwing_position_control_fb_loiter",
+              "message": "Start loiter with fixed bank angle"
+            },
+            "12957883": {
+              "name": "fixedwing_position_control_descend",
+              "message": "Start descending"
+            },
+            "1369685": {
+              "name": "fixedwing_position_control_takeoff",
+              "message": "Takeoff on runway"
+            },
+            "8928464": {
+              "name": "fixedwing_position_control_launch_detection",
+              "message": "Launch detection running"
+            },
+            "2035442": {
+              "name": "fixedwing_position_control_landing",
+              "message": "Landing, heading hold"
+            },
+            "6180799": {
+              "name": "fixedwing_position_control_landing_limit_throttle",
+              "message": "Landing, limiting throttle"
+            },
+            "3237806": {
+              "name": "fixedwing_position_control_landing_flaring",
+              "message": "Landing, flaring"
+            },
+            "48662": {
+              "name": "fixedwing_position_control_landing_on_slope",
+              "message": "Landing, on slope"
+            },
+            "7138874": {
+              "name": "fixedwing_position_control_invalid_offboard_sp",
+              "message": "Invalid offboard setpoint"
+            },
+            "2718537": {
+              "name": "enginefailure_loitering",
+              "message": "Engine failure. Loitering down"
+            },
+            "15098248": {
+              "name": "mavlink_iridium_disable",
+              "message": "Disabling transmitting with IRIDIUM mavlink on instance {1}",
+              "arguments": [
+                {
+                  "type": "int8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "10834203": {
+              "name": "mavlink_iridium_enable",
+              "message": "Enabling transmitting with IRIDIUM mavlink on instance {1}",
+              "arguments": [
+                {
+                  "type": "int8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "1047676": {
+              "name": "mavlink_iridium_enable_cmd",
+              "message": "Enabling transmitting with IRIDIUM mavlink on instance {1} by command",
+              "arguments": [
+                {
+                  "type": "int8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "2566971": {
+              "name": "mavlink_iridium_disable_cmd",
+              "message": "Disabling transmitting with IRIDIUM mavlink on instance {1} by command",
+              "arguments": [
+                {
+                  "type": "int8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "1569033": {
+              "name": "mavlink_param_rc_chan_out_of_bounds",
+              "message": "parameter_rc_channel_index out of bounds"
             },
             "10398259": {
               "name": "mission_execute_rev",
@@ -1574,6 +1331,160 @@
               "name": "mission_cannot_read_mission",
               "message": "Could not read mission"
             },
+            "5158211": {
+              "name": "airspeed_selector_switch",
+              "message": "No airspeed sensor detected, switching to non-airspeed mode"
+            },
+            "12320347": {
+              "name": "airspeed_selector_prim_too_high",
+              "message": "Primary airspeed index bigger than number connected sensors, taking last sensor"
+            },
+            "10493596": {
+              "name": "airspeed_selector_sensor_failure",
+              "message": "Airspeed sensor failure detected. Return to launch (RTL) is advised"
+            },
+            "8280920": {
+              "name": "airspeed_selector_estimation_invalid",
+              "message": "Airspeed estimation invalid"
+            },
+            "6363289": {
+              "name": "airspeed_selector_estimation_valid",
+              "message": "Airspeed estimation valid"
+            },
+            "7791755": {
+              "name": "airspeed_selector_estimation_regain",
+              "message": "Airspeed sensor healthy, start using again",
+              "description": "Previously selected sensor index: {1}, current sensor index: {2}.",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "12907101": {
+              "name": "commander_transition_denied",
+              "message": "Arming state transition denied: {1} to {2}",
+              "arguments": [
+                {
+                  "type": "px4::arming_state_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "px4::arming_state_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "10269283": {
+              "name": "commander_enable_failsafe",
+              "message": "Failsafe enabled: {1}",
+              "arguments": [
+                {
+                  "type": "px4::failsafe_reason_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "100336": {
+              "name": "commander_bat_low",
+              "message": "Low battery level! Return advised"
+            },
+            "7127974": {
+              "name": "commander_bat_crit",
+              "message": "Critical battery level! Landing advised"
+            },
+            "316595": {
+              "name": "commander_bat_crit_rtl",
+              "message": "Critical battery level! Executing RTL"
+            },
+            "8523199": {
+              "name": "commander_bat_crit_no_rtl_land",
+              "message": "Critical battery level! Cannot execute RTL, landing instead"
+            },
+            "8421110": {
+              "name": "commander_bat_crit_land",
+              "message": "Critical battery level! Landing now"
+            },
+            "15093385": {
+              "name": "commander_bat_emerg_warn",
+              "message": "Dangerous battery level! Please land immediately"
+            },
+            "429013": {
+              "name": "commander_bat_emerg_rtl",
+              "message": "Dangerous battery level! Executing RTL"
+            },
+            "14071709": {
+              "name": "commander_bat_emerg_no_rtl_land",
+              "message": "Dangerous battery level! Cannot execute RTL, landing instead"
+            },
+            "14671524": {
+              "name": "commander_bat_emerg_land",
+              "message": "Dangerous battery level! Landing now"
+            },
+            "6632984": {
+              "name": "commander_bat_failure",
+              "message": "Battery failure detected"
+            },
+            "14581325": {
+              "name": "mc_pos_ctrl_tilt_set",
+              "message": "Maximum tilt limit has been constrained to a safe value",
+              "description": "<param>MPC_TILTMAX_AIR</param> is set to {1:.0}.",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "3939705": {
+              "name": "mc_pos_ctrl_land_tilt_set",
+              "message": "Land tilt limit has been constrained by maximum tilt",
+              "description": "<param>MPC_TILTMAX_LND</param> is set to {1:.0}.",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "15909593": {
+              "name": "mc_pos_ctrl_cruise_set",
+              "message": "Cruise speed has been constrained by maximum speed",
+              "description": "<param>MPC_XY_CRUISE</param> is set to {1:.0}.",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "14153224": {
+              "name": "mc_pos_ctrl_man_vel_set",
+              "message": "Manual speed has been constrained by maximum speed",
+              "description": "<param>MPC_VEL_MANUAL</param> is set to {1:.0}.",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "3779911": {
+              "name": "mc_pos_ctrl_hover_thrust_set",
+              "message": "Hover thrust has been constrained by min/max thrust",
+              "description": "<param>MPC_THR_HOVER</param> is set to {1:.0}.",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
             "1438136": {
               "name": "navigator_geofence_max_dist_from_home",
               "message": "Geofence: maximum distance from home reached ({1:.0m})",
@@ -1601,6 +1512,95 @@
             "8865457": {
               "name": "navigator_geofence_import_failed",
               "message": "Geofence: import error"
+            },
+            "10974457": {
+              "name": "mc_rate_control_not_retract_landing_gear_landed",
+              "message": "Landed, unable to retract landing gear"
+            },
+            "8833276": {
+              "name": "commander_cal_no_inputs",
+              "message": "No inputs, aborting RC trim calibration"
+            },
+            "697858": {
+              "name": "commander_cal_trim_param_set_failed",
+              "message": "RC trim calibration: failed to set parameters"
+            },
+            "6415112": {
+              "name": "commander_cal_trim_done",
+              "message": "RC trim calibration completed"
+            },
+            "8673473": {
+              "name": "mavlink_log_not_enough_bw",
+              "message": "Not enough bandwidth to enable log streaming ({1} \\< 5000)",
+              "arguments": [
+                {
+                  "type": "uint32_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "11552065": {
+              "name": "mavlink_rcv_sp_target_unsup_coord",
+              "message": "SET_POSITION_TARGET_LOCAL_NED: coordinate frame {1} unsupported",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "12815955": {
+              "name": "mavlink_rcv_sp_target_unsup_force",
+              "message": "SET_POSITION_TARGET_LOCAL_NED: FORCE is not supported"
+            },
+            "5650341": {
+              "name": "mavlink_rcv_sp_target_invalid",
+              "message": "SET_POSITION_TARGET_LOCAL_NED: invalid, missing position, velocity or acceleration"
+            },
+            "10962739": {
+              "name": "mavlink_rcv_sp_target_gl_invalid_coord",
+              "message": "SET_POSITION_TARGET_GLOBAL_INT invalid coordinate frame {1}",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "10658115": {
+              "name": "mavlink_rcv_sp_target_gl_unsup_force",
+              "message": "SET_POSITION_TARGET_GLOBAL_INT: FORCE is not supported"
+            },
+            "12221094": {
+              "name": "mavlink_rcv_lnd_target_unsup_coord",
+              "message": "landing target: unsupported coordinate frame {1}",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "15456613": {
+              "name": "vehicle_imu_accel_clipping",
+              "message": "Accel {1} clipping, not safe to fly!",
+              "description": "Land now, and check the vehicle setup. Clipping can lead to fly-aways.",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "5734437": {
+              "name": "commander_cal_cmd_denied",
+              "message": "Command denied during calibration: {1}",
+              "arguments": [
+                {
+                  "type": "uint32_t",
+                  "name": "arg0"
+                }
+              ]
             }
           }
         }

@@ -68,6 +68,7 @@ struct battery_status_s {
 	float discharged_mah;
 	float remaining;
 	float scale;
+	float time_remaining_s;
 	float temperature;
 	int32_t cell_count;
 	float voltage_cell_v[14];
@@ -79,7 +80,6 @@ struct battery_status_s {
 	float nominal_voltage;
 	uint16_t capacity;
 	uint16_t cycle_count;
-	uint16_t run_time_to_empty;
 	uint16_t average_time_to_empty;
 	uint16_t serial_number;
 	uint16_t manufacture_date;
@@ -94,7 +94,7 @@ struct battery_status_s {
 	uint8_t id;
 	bool is_powering_off;
 	uint8_t warning;
-	uint8_t _padding0[4]; // required for logger
+	uint8_t _padding0[2]; // required for logger
 
 
 #ifdef __cplusplus

@@ -98,7 +98,6 @@ src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/Flig
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/FlightModeManager.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Auto/FlightTaskAuto.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.hpp
- /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/FlightTaskAutoLineSmoothVel.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Descend/FlightTaskDescend.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Failsafe/FlightTaskFailsafe.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/FlightTask/FlightTask.hpp
@@ -241,7 +240,6 @@ src/modules/flight_mode_manager/CMakeFiles/modules__flight_mode_manager.dir/Flig
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/FlightModeManager.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Auto/FlightTaskAuto.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.hpp
- /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/FlightTaskAutoLineSmoothVel.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Descend/FlightTaskDescend.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Failsafe/FlightTaskFailsafe.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/FlightTask/FlightTask.hpp

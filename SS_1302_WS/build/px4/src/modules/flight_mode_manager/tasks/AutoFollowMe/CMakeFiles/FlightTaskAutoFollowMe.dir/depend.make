@@ -66,7 +66,10 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/helper_functions.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/math.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/stdlib_imports.hpp
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/PositionSmoothing.hpp
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/VelocitySmoothing.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/parameters/param.h
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/slew_rate/SlewRate.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/err.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/weather_vane/WeatherVane.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/px4_custom_mode.h
@@ -74,6 +77,9 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.cpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/FlightTask/FlightTask.hpp
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickAccelerationXY.hpp
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickYaw.hpp
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/Sticks.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: src/lib/parameters/px4_parameters.hpp
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/home_position.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/landing_gear.h
@@ -81,6 +87,7 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/position_controller_status.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/position_setpoint.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/position_setpoint_triplet.h
+src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/takeoff_status.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/trajectory_bezier.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/trajectory_waypoint.h
 src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir/FlightTaskAutoFollowMe.cpp.o: uORB/topics/uORBTopics.hpp

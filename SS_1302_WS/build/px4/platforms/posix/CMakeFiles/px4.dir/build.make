@@ -195,7 +195,6 @@ px4_EXTERNAL_OBJECTS =
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libEKF2Utility.a
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libWeatherVane.a
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoFollowMe.a
-/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAutoLineSmoothVel.a
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskAuto.a
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libavoidance.a
 /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/px4/px4: /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/px4/lib/libFlightTaskDescend.a

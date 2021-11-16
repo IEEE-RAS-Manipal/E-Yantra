@@ -109,7 +109,7 @@ external/Stamp/simulation-ignition/simulation-ignition-configure: external/Stamp
 
 external/Stamp/simulation-ignition/simulation-ignition-build: external/Stamp/simulation-ignition/simulation-ignition-configure
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'simulation-ignition'"
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_ign_gazebo && /usr/bin/cmake --build /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_ign_gazebo -- -j 7
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_ign_gazebo && /usr/bin/cmake --build /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_ign_gazebo -- -j 8
 
 simulation-ignition: platforms/posix/CMakeFiles/simulation-ignition
 simulation-ignition: platforms/posix/CMakeFiles/simulation-ignition-complete

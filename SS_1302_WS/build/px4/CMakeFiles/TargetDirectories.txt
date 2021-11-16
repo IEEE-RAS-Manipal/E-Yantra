@@ -1082,16 +1082,6 @@
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/package.dir
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/install/local.dir
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFollowMe.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/install/strip.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/install/local.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/edit_cache.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/test.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/package_source.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/install.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/list_install_components.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/rebuild_cache.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/package.dir
-/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/AutoLineSmoothVel/CMakeFiles/FlightTaskAutoLineSmoothVel.dir
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Descend/CMakeFiles/install/strip.dir
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Descend/CMakeFiles/install/local.dir
 /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/src/modules/flight_mode_manager/tasks/Descend/CMakeFiles/edit_cache.dir

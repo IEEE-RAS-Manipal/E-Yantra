@@ -43,8 +43,8 @@
 
 // include all required headers
 #include "FlightModeManager.hpp"
+#include "FlightTaskAuto.hpp"
 #include "FlightTaskAutoFollowMe.hpp"
-#include "FlightTaskAutoLineSmoothVel.hpp"
 #include "FlightTaskDescend.hpp"
 #include "FlightTaskFailsafe.hpp"
 #include "FlightTaskManualAcceleration.hpp"
@@ -57,8 +57,8 @@
 
 enum class FlightTaskIndex : int {
     None = -1,
+    Auto,
     AutoFollowMe,
-    AutoLineSmoothVel,
     Descend,
     Failsafe,
     ManualAcceleration,
@@ -76,15 +76,15 @@ union TaskUnion {
     TaskUnion() {}
     ~TaskUnion() {}
 
-    FlightTaskAutoFollowMe autoFollowMe;
-    FlightTaskAutoLineSmoothVel autoLineSmoothVel;
-    FlightTaskDescend descend;
-    FlightTaskFailsafe failsafe;
-    FlightTaskManualAcceleration manualAcceleration;
-    FlightTaskManualAltitude manualAltitude;
-    FlightTaskManualAltitudeSmoothVel manualAltitudeSmoothVel;
-    FlightTaskManualPosition manualPosition;
-    FlightTaskManualPositionSmoothVel manualPositionSmoothVel;
-    FlightTaskTransition transition;
-    FlightTaskOrbit orbit;
+    FlightTaskAuto Auto;
+    FlightTaskAutoFollowMe AutoFollowMe;
+    FlightTaskDescend Descend;
+    FlightTaskFailsafe Failsafe;
+    FlightTaskManualAcceleration ManualAcceleration;
+    FlightTaskManualAltitude ManualAltitude;
+    FlightTaskManualAltitudeSmoothVel ManualAltitudeSmoothVel;
+    FlightTaskManualPosition ManualPosition;
+    FlightTaskManualPositionSmoothVel ManualPositionSmoothVel;
+    FlightTaskTransition Transition;
+    FlightTaskOrbit Orbit;
 };

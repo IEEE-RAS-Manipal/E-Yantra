@@ -44,9 +44,9 @@
 #include <lib/matrix/matrix/math.hpp>
 #include <lib/mathlib/mathlib.h>
 
-constexpr char __orb_battery_status_fields[] = "\x89 timestamp;\x8a voltage_v;\x8a voltage_filtered_v;\x8a current_a;\x8a current_filtered_a;\x8a current_average_a;\x8a discharged_mah;\x8a remaining;\x8a scale;\x8a temperature;\x84 cell_count;\x8a[14] voltage_cell_v;\x8a max_cell_voltage_delta;\x8a average_power;\x8a available_energy;\x8a remaining_capacity;\x8a design_capacity;\x8a nominal_voltage;\x87 capacity;\x87 cycle_count;\x87 run_time_to_empty;\x87 average_time_to_empty;\x87 serial_number;\x87 manufacture_date;\x87 state_of_health;\x87 max_error;\x87 interface_error;\x87 average_time_to_full;\x87 over_discharge_count;\x8c connected;\x86 source;\x86 priority;\x86 id;\x8c is_powering_off;\x86 warning;\x86[4] _padding0;";
+constexpr char __orb_battery_status_fields[] = "\x89 timestamp;\x8a voltage_v;\x8a voltage_filtered_v;\x8a current_a;\x8a current_filtered_a;\x8a current_average_a;\x8a discharged_mah;\x8a remaining;\x8a scale;\x8a time_remaining_s;\x8a temperature;\x84 cell_count;\x8a[14] voltage_cell_v;\x8a max_cell_voltage_delta;\x8a average_power;\x8a available_energy;\x8a remaining_capacity;\x8a design_capacity;\x8a nominal_voltage;\x87 capacity;\x87 cycle_count;\x87 average_time_to_empty;\x87 serial_number;\x87 manufacture_date;\x87 state_of_health;\x87 max_error;\x87 interface_error;\x87 average_time_to_full;\x87 over_discharge_count;\x8c connected;\x86 source;\x86 priority;\x86 id;\x8c is_powering_off;\x86 warning;\x86[2] _padding0;";
 
-ORB_DEFINE(battery_status, struct battery_status_s, 156, __orb_battery_status_fields, static_cast<uint8_t>(ORB_ID::battery_status));
+ORB_DEFINE(battery_status, struct battery_status_s, 158, __orb_battery_status_fields, static_cast<uint8_t>(ORB_ID::battery_status));
 
 
 void print_message(const orb_metadata *meta, const battery_status_s& message)

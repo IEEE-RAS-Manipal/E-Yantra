@@ -57,48 +57,48 @@ int FlightModeManager::_initTask(FlightTaskIndex task_index)
 		// already disabled task
 		break;
 
-	case FlightTaskIndex::AutoFollowMe:
-		_current_task.task = new (&_task_union.autoFollowMe) FlightTaskAutoFollowMe();
+	case FlightTaskIndex::Auto:
+		_current_task.task = new (&_task_union.Auto) FlightTaskAuto();
 		break;
 
-	case FlightTaskIndex::AutoLineSmoothVel:
-		_current_task.task = new (&_task_union.autoLineSmoothVel) FlightTaskAutoLineSmoothVel();
+	case FlightTaskIndex::AutoFollowMe:
+		_current_task.task = new (&_task_union.AutoFollowMe) FlightTaskAutoFollowMe();
 		break;
 
 	case FlightTaskIndex::Descend:
-		_current_task.task = new (&_task_union.descend) FlightTaskDescend();
+		_current_task.task = new (&_task_union.Descend) FlightTaskDescend();
 		break;
 
 	case FlightTaskIndex::Failsafe:
-		_current_task.task = new (&_task_union.failsafe) FlightTaskFailsafe();
+		_current_task.task = new (&_task_union.Failsafe) FlightTaskFailsafe();
 		break;
 
 	case FlightTaskIndex::ManualAcceleration:
-		_current_task.task = new (&_task_union.manualAcceleration) FlightTaskManualAcceleration();
+		_current_task.task = new (&_task_union.ManualAcceleration) FlightTaskManualAcceleration();
 		break;
 
 	case FlightTaskIndex::ManualAltitude:
-		_current_task.task = new (&_task_union.manualAltitude) FlightTaskManualAltitude();
+		_current_task.task = new (&_task_union.ManualAltitude) FlightTaskManualAltitude();
 		break;
 
 	case FlightTaskIndex::ManualAltitudeSmoothVel:
-		_current_task.task = new (&_task_union.manualAltitudeSmoothVel) FlightTaskManualAltitudeSmoothVel();
+		_current_task.task = new (&_task_union.ManualAltitudeSmoothVel) FlightTaskManualAltitudeSmoothVel();
 		break;
 
 	case FlightTaskIndex::ManualPosition:
-		_current_task.task = new (&_task_union.manualPosition) FlightTaskManualPosition();
+		_current_task.task = new (&_task_union.ManualPosition) FlightTaskManualPosition();
 		break;
 
 	case FlightTaskIndex::ManualPositionSmoothVel:
-		_current_task.task = new (&_task_union.manualPositionSmoothVel) FlightTaskManualPositionSmoothVel();
+		_current_task.task = new (&_task_union.ManualPositionSmoothVel) FlightTaskManualPositionSmoothVel();
 		break;
 
 	case FlightTaskIndex::Transition:
-		_current_task.task = new (&_task_union.transition) FlightTaskTransition();
+		_current_task.task = new (&_task_union.Transition) FlightTaskTransition();
 		break;
 
 	case FlightTaskIndex::Orbit:
-		_current_task.task = new (&_task_union.orbit) FlightTaskOrbit();
+		_current_task.task = new (&_task_union.Orbit) FlightTaskOrbit();
 		break;
 
 	default:

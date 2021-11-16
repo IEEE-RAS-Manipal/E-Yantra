@@ -67,7 +67,10 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/helper_functions.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/math.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/matrix/matrix/stdlib_imports.hpp
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/PositionSmoothing.hpp
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/motion_planning/VelocitySmoothing.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/parameters/param.h
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/slew_rate/SlewRate.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/err.h
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/weather_vane/WeatherVane.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/px4_custom_mode.h
@@ -75,6 +78,9 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.cpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/AutoFollowMe/FlightTaskAutoFollowMe.hpp
  /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/FlightTask/FlightTask.hpp
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickAccelerationXY.hpp
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/StickYaw.hpp
+ /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/flight_mode_manager/tasks/Utility/Sticks.hpp
  src/lib/parameters/px4_parameters.hpp
  uORB/topics/home_position.h
  uORB/topics/landing_gear.h
@@ -82,6 +88,7 @@ src/modules/flight_mode_manager/tasks/AutoFollowMe/CMakeFiles/FlightTaskAutoFoll
  uORB/topics/position_controller_status.h
  uORB/topics/position_setpoint.h
  uORB/topics/position_setpoint_triplet.h
+ uORB/topics/takeoff_status.h
  uORB/topics/trajectory_bezier.h
  uORB/topics/trajectory_waypoint.h
  uORB/topics/uORBTopics.hpp

@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ch13f_1419/E-Yantra/SS_1302_WS/build/mavros_extras'
 export ROSLISP_PACKAGE_DIRECTORIES="/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/mavros_extras/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/ch13f_1419/E-Yantra/SS_1302_WS/src/mavros/mavros_extras:$ROS_PACKAGE_PATH"
