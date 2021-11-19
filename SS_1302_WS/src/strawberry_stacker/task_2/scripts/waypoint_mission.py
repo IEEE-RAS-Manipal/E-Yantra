@@ -139,20 +139,16 @@ def main():
 
     wps = []  # List to store waypoints
 
-    w = wayp0.set_way_points(3, 22, True, True, 0.0, 0.0,
-                           0.0, float('nan'), 19.134641, 72.911706, 10)
+    w = wayp0.set_way_points(3, 22, True, True, 0.0, 0.0, 0.0, float('nan'), 19.134641, 72.911706, 10)
     wps.append(w)
 
-    w = wayp1.set_way_points(3, 16, False, True, 0.0, 0.0,
-                           0.0, float('nan'), 19.134617, 72.911886, 10)
+    w = wayp1.set_way_points(3, 16, False, True, 0.0, 0.0, 0.0, float('nan'), 19.134617, 72.911886, 10)
     wps.append(w)
 
-    w = wayp2.set_way_points(3, 16, False, True, 0.0, 0.0,
-                           0.0, float('nan'), 19.134434, 72.911817, 10)
+    w = wayp2.set_way_points(3, 16, False, True, 0.0, 0.0, 0.0, float('nan'), 19.134434, 72.911817, 10)
     wps.append(w)
 
-    w = wayp3.set_way_points(3, 21, False, True, 0.0, 0.0,
-                           0.0, float('nan'), 19.134423, 72.911763, 10)
+    w = wayp3.set_way_points(3, 21, False, True, 0.0, 0.0, 0.0, float('nan'), 19.134423, 72.911763, 10)
     wps.append(w)
 
     print(wps)
@@ -177,6 +173,7 @@ def main():
 if __name__ == '__main__':
 
     try:
+        rospy.sleep(3) 
         main()
     except rospy.ROSInterruptException:
         pass
