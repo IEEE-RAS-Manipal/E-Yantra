@@ -624,16 +624,6 @@ uORB/uORB.h
 assert.h
 -
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.cpp
-TemperatureCompensation.h
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.h
-parameters/param.h
--
-px4_platform_common/defines.h
--
-px4_platform_common/log.h
--
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/temperature_compensation/TemperatureCompensation.h
 parameters/param.h
 -

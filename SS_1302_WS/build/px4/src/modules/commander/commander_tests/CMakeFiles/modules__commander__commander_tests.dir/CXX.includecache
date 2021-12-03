@@ -150,16 +150,6 @@ board_config.h
 px4_platform_common/log.h
 -
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/err.h
-px4_platform_common/log.h
--
-stdarg.h
--
-errno.h
--
-stdlib.h
--
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/systemlib/mavlink_log.h
 px4_log.h
 -
@@ -189,12 +179,6 @@ drivers/drv_led.h
 -
 drivers/drv_board_led.h
 -
-
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/commander_tests.cpp
-systemlib/err.h
--
-state_machine_helper_test.h
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.h
 
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/commander/commander_tests/state_machine_helper_test.cpp
 state_machine_helper_test.h
