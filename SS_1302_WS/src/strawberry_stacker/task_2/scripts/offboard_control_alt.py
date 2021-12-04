@@ -7,8 +7,8 @@ Task 2.2 module
 import threading
 import rospy
 from geometry_msgs.msg import PoseStamped, Twist
-from mavros_msgs.msg import State
-import mavros_msgs.srv
+from mavros_msgs.msg import State, ParamValue
+from mavros_msgs.srv import CommandBool, SetMode, ParamSet
 
 
 class StateMonitor:
@@ -27,10 +27,10 @@ class StateMonitor:
         of the drone, and the drone's current pose during operation.
         """
         self.current_state = State()  #   State object for tracking drone state
-        self.goal_pose = (
-            PoseStamped()
-        )  #   PoseStamped object to track current drone pose
+        self.goal_pose = PoseStamped()
         self.event_log = threading.Event()
+
+        rospy.logwarn("Publishers and Subscribers done!")
 
         """Initialising publishers"""
         #   Position publisher
@@ -49,7 +49,7 @@ class StateMonitor:
         )
         #   Pose subscriber
         self.pose_subscriber = rospy.Subscriber(
-            "mavros/local_position/pose", self.pose_callback, queue_size=10
+            "mavros/local_position/pose", PoseStamped, self.pose_callback, queue_size=10
         )
 
     def state_callback(self, state: State) -> None:
@@ -100,13 +100,13 @@ class DroneControl:
     """
 
     def __init__(self) -> None:
+        rospy.logwarn("Drone Control Active!")
         try:
-            data_stream = threading.Thread(target=drone_control.drone_data_stream)
+            data_stream = threading.Thread(target=self.drone_data_stream)
             data_stream.start()
         except Exception:
             rospy.logwarn("Error: Unable to start thread")
         self.done = False
-        self.goal_pose = PoseStamped()
 
     def arm_set_mode(self) -> None:
         """
@@ -118,9 +118,7 @@ class DroneControl:
         rospy.wait_for_service("mavros/cmd/arming")  # Waiting untill the service starts
 
         try:
-            arm_service = rospy.ServiceProxy(
-                "mavros/cmd/arming", mavros_msgs.srv.CommandBool
-            )
+            arm_service = rospy.ServiceProxy("mavros/cmd/arming", CommandBool)
             # Creating a proxy service for the rosservice named /mavros/cmd/arming to arm the drone
             arm_service(True)
         except rospy.ServiceException as exception:
@@ -136,7 +134,7 @@ class DroneControl:
         # Waiting untill the service starts
         rospy.wait_for_service("mavros/set_mode")
         try:
-            set_mode = rospy.ServiceProxy("mavros/set_mode", mavros_msgs.srv.SetMode)
+            set_mode = rospy.ServiceProxy("mavros/set_mode", SetMode)
             set_mode(custom_mode="OFFBOARD")
         # and print fail message on failure
         except rospy.ServiceException as exception:
@@ -144,6 +142,19 @@ class DroneControl:
             print(
                 "service set_mode call failed: %s. Check that GPS is enabled %s"
                 % exception
+            )
+
+    def failsafe_issue(self):
+        rospy.wait_for_service("/mavros/param/set")
+        try:
+            param_set = rospy.ServiceProxy("/mavros/param/set", ParamSet)
+            param_set(param_id="COM_RCL_EXCEPT", value="2")  #### CHECK THIS OUT
+        # and print fail message on failure
+        except rospy.ServiceException as e:
+            # and print fail message on failure
+            print(
+                "service set_mode call failed: %s. OFFBOARD Mode could not be set. Check that GPS is enabled %s"
+                % e
             )
 
     def drone_data_stream(self):
@@ -154,7 +165,7 @@ class DroneControl:
         """
 
         while not rospy.is_shutdown():
-            state_monitor.position_publisher.publish(self.goal_pose)
+            state_monitor.position_publisher.publish(state_monitor.goal_pose)
             RATE.sleep()
 
     def set_goal(self, setpt: list, wait=True):
@@ -175,9 +186,9 @@ class DroneControl:
         :type wait: bool, optional
         """
         self.done = False
-        self.goal_pose.pose.position.x = setpt[0]
-        self.goal_pose.pose.position.y = setpt[1]
-        self.goal_pose.pose.position.z = setpt[2]
+        state_monitor.goal_pose.pose.position.x = setpt[0]
+        state_monitor.goal_pose.pose.position.y = setpt[1]
+        state_monitor.goal_pose.pose.position.z = setpt[2]
 
         if wait:
             while not self.done and not rospy.is_shutdown():
@@ -187,11 +198,11 @@ class DroneControl:
 if __name__ == "__main__":
     try:
         rospy.init_node("offboard_control", anonymous=True)  # Initialising node
+        RATE = rospy.Rate(10.0)  # Setting rate
         state_monitor = (
             StateMonitor()
         )  # Initialising state monitor, publishers and subscribers
         drone_control = DroneControl()  # Initialising drone control
-        RATE = rospy.Rate(10.0)  # Setting rate
 
         # Defining the setpoints for travel
         setpoints = [[0, 0, 0], [1, 1, 1]]
@@ -206,8 +217,9 @@ if __name__ == "__main__":
         # Arming the drone
         while not state_monitor.current_state.armed:
             drone_control.arm_set_mode()
+            drone_control.failsafe_issue()
             RATE.sleep()
-        rospy.logwarn("Armed!!")
+        rospy.logwarn("Armed AND FAILSAFE DONE!!")
 
         # Switching the state to auto mode
         while not state_monitor.current_state.mode == "OFFBOARD":
