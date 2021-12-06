@@ -1,21 +1,28 @@
 #!/usr/bin/env python3
 
 """
-Task 2.2 module
+SS_1302 submission for Task 2.2
+
+This module controls the drone using OFFBORAD mode control.
+
+classes:
+StateMonitor    Monitors state and pose of drone
+DroneControl    Controls the drone using OFFBOARD
 """
 
+import sys
 import threading
 import rospy
 from geometry_msgs.msg import PoseStamped, Twist
-from mavros_msgs.msg import State, ParamValue
-from mavros_msgs.srv import CommandBool, SetMode, ParamSet
+from mavros_msgs.msg import State
+from mavros_msgs.srv import CommandBool, SetMode
 
 
 class StateMonitor:
     """
-    StateMonitor State monitor with callback functions
+    StateMonitor Monitors drone state and pose
 
-    This class contains callback functions of the subscriber of this node that track the state and
+    This class contains callback functions of the subscribers of this node that track the state and
     pose of the drone during operation.
     """
 
@@ -30,27 +37,7 @@ class StateMonitor:
         self.goal_pose = PoseStamped()
         self.event_log = threading.Event()
 
-        rospy.logwarn("Publishers and Subscribers done!")
-
-        """Initialising publishers"""
-        #   Position publisher
-        self.position_publisher = rospy.Publisher(
-            "mavros/setpoint_position/local", PoseStamped, queue_size=10
-        )
-        #   Velocity publisher
-        self.velocity_publisher = rospy.Publisher(
-            "mavros/setpoint_position/cmd_vel", Twist, queue_size=10
-        )
-
-        """Initialising subscriber"""
-        #   State subscriber
-        self.state_subscriber = rospy.Subscriber(
-            "mavros/state", State, self.state_callback, queue_size=10
-        )
-        #   Pose subscriber
-        self.pose_subscriber = rospy.Subscriber(
-            "mavros/local_position/pose", PoseStamped, self.pose_callback, queue_size=10
-        )
+        rospy.logwarn("State Monitor Active!")
 
     def state_callback(self, state: State) -> None:
         """
@@ -71,11 +58,25 @@ class StateMonitor:
         This is the callback function for the pose_subscriber Subscriber for the /mavros/
         local_position/pose topic.
 
-        :param pose: The current pose of the drone.
-        :type pose: PoseStamped
+        :param curr_pose: The current pose of the drone.
+        :type curr_pose: PoseStamped
         """
 
-        def is_near(pose, current, goal):
+        def is_near(pose: str, current: float, goal: float) -> bool:
+            """
+            is_near Setpoint tolerance checker
+
+            This nested function checks whether the drone has reached the setpoint within the accepted tolerance range.
+
+            :param pose: The pose variable being checked (X, Y or Z)
+            :type pose: str
+            :param current: Current pose variable
+            :type current: float
+            :param goal: Goal pose variable
+            :type goal: float
+            :return: Confirmation whether the drone is within tolerance or not
+            :rtype: bool
+            """
             rospy.logdebug(
                 "Position %s: local: %d, target: %d, abs diff: %d",
                 pose,
@@ -90,29 +91,31 @@ class StateMonitor:
             and is_near("Y", curr_pose.pose.position.y, self.goal_pose.pose.position.y)
             and is_near("Z", curr_pose.pose.position.z, self.goal_pose.pose.position.z)
         ):
-            drone_control.done = True
+            drone_control.reached = True
             self.event_log.set()
 
 
 class DroneControl:
     """
-    This class sends position targets to FCU's position controller
+    DroneControl Controls the drone
+
+    This class contains functions to control the drone by sending data to the FCU.
     """
 
     def __init__(self) -> None:
-        rospy.logwarn("Drone Control Active!")
         try:
-            data_stream = threading.Thread(target=self.drone_data_stream)
-            data_stream.start()
-        except Exception:
-            rospy.logwarn("Error: Unable to start thread")
-        self.done = False
+            self.data_stream = threading.Thread(target=self.drone_data_stream)
+            self.data_stream.start()
+        except:
+            rospy.logwarn("Unable to start thread!3")
+        self.reached = False
+        rospy.logwarn("Drone Control Active!")
 
     def arm_set_mode(self) -> None:
         """
         arm_set_mode Arms the drone
 
-        Arms the drone for control
+        Arms the drone for flight control
         """
         # Calling to /mavros/cmd/arming to arm the drone and print fail message on failure
         rospy.wait_for_service("mavros/cmd/arming")  # Waiting untill the service starts
@@ -122,39 +125,27 @@ class DroneControl:
             # Creating a proxy service for the rosservice named /mavros/cmd/arming to arm the drone
             arm_service(True)
         except rospy.ServiceException as exception:
-            print("Service arming call failed: %s" % exception)
+            rospy.logerr(f"Service arming call failed: {exception}")
 
-    def offboard_set_mode(self):
+    def drone_set_mode(self, mode: str):
         """
-        offboard_set_mode Initialise offboard mode
+        drone_set_mode Set mode for drone
 
-        Initialises offboard mode for the drone setpoint control
+        Sets the mode of operation for the drone based on input
+
+        :param mode: The mode to engage on the drone
+        :type mode: str
         """
-        # Call /mavros/set_mode to set the mode the drone to OFFBOARD
         # Waiting untill the service starts
         rospy.wait_for_service("mavros/set_mode")
         try:
             set_mode = rospy.ServiceProxy("mavros/set_mode", SetMode)
-            set_mode(custom_mode="OFFBOARD")
+            set_mode(custom_mode=mode)
         # and print fail message on failure
-        except rospy.ServiceException as exception:
+        except rospy.ServiceException:
             # and print fail message on failure
-            print(
-                "service set_mode call failed: %s. Check that GPS is enabled %s"
-                % exception
-            )
-
-    def failsafe_issue(self):
-        rospy.wait_for_service("/mavros/param/set")
-        try:
-            param_set = rospy.ServiceProxy("/mavros/param/set", ParamSet)
-            param_set(param_id="COM_RCL_EXCEPT", value="2")  #### CHECK THIS OUT
-        # and print fail message on failure
-        except rospy.ServiceException as e:
-            # and print fail message on failure
-            print(
-                "service set_mode call failed: %s. OFFBOARD Mode could not be set. Check that GPS is enabled %s"
-                % e
+            rospy.logerr(
+                f"service set_mode call failed. \n {mode} Mode not set. Check GPS is enabled"
             )
 
     def drone_data_stream(self):
@@ -165,10 +156,10 @@ class DroneControl:
         """
 
         while not rospy.is_shutdown():
-            state_monitor.position_publisher.publish(state_monitor.goal_pose)
+            position_publisher.publish(state_monitor.goal_pose)
             RATE.sleep()
 
-    def set_goal(self, setpt: list, wait=True):
+    def set_goal(self, setpt: list):
         """
         set [summary]
 
@@ -185,50 +176,101 @@ class DroneControl:
         :param wait: [description], defaults to True
         :type wait: bool, optional
         """
-        self.done = False
+        self.reached = False
         state_monitor.goal_pose.pose.position.x = setpt[0]
         state_monitor.goal_pose.pose.position.y = setpt[1]
         state_monitor.goal_pose.pose.position.z = setpt[2]
 
-        if wait:
-            while not self.done and not rospy.is_shutdown():
-                RATE.sleep()
+        while not self.reached and not rospy.is_shutdown():
+            RATE.sleep()
+
+        rospy.loginfo("Drone reached setpoint!")
 
 
 if __name__ == "__main__":
     try:
         rospy.init_node("offboard_control", anonymous=True)  # Initialising node
         RATE = rospy.Rate(10.0)  # Setting rate
-        state_monitor = (
-            StateMonitor()
-        )  # Initialising state monitor, publishers and subscribers
-        drone_control = DroneControl()  # Initialising drone control
+        rospy.logwarn("Node Started!")
+
+        # Initialising state monitor
+        state_monitor = StateMonitor()
 
         # Defining the setpoints for travel
-        setpoints = [[0, 0, 0], [1, 1, 1]]
+        setpoints = [
+            [0, 0, 10],
+            [10, 0, 10],
+            [10, 10, 10],
+            [0, 10, 10],
+            [0, 0, 10],
+        ]
+
+        """Initialising publishers and subscribers"""
+        #   Position publisher
+        position_publisher = rospy.Publisher(
+            "mavros/setpoint_position/local", PoseStamped, queue_size=10
+        )
+        #   Velocity publisher
+        velocity_publisher = rospy.Publisher(
+            "mavros/setpoint_position/cmd_vel", Twist, queue_size=10
+        )
+        rospy.loginfo("Publishers initialised!")
+
+        #   State subscriber
+        state_subscriber = rospy.Subscriber(
+            "mavros/state", State, state_monitor.state_callback, queue_size=10
+        )
+        #   Pose subscriber
+        pose_subscriber = rospy.Subscriber(
+            "mavros/local_position/pose",
+            PoseStamped,
+            state_monitor.pose_callback,
+            queue_size=10,
+        )
+        rospy.loginfo("Subscribers initialised!")
+
+        # Initialising drone control
+        drone_control = DroneControl()
 
         """
-        NOTE: To set the mode as OFFBOARD in px4, it needs atleast 100 setpoints at rate > 10 hz, so before changing the mode to OFFBOARD, send some dummy setpoints  
+        NOTE: To set the mode as OFFBOARD in px4, it needs atleast 100 setpoints at rate > 10 hz,
+        so before changing the mode to OFFBOARD, send some dummy setpoints
         """
         for i in range(100):
-            state_monitor.position_publisher.publish(state_monitor.goal_pose)
+            position_publisher.publish(state_monitor.goal_pose)
             RATE.sleep()
 
         # Arming the drone
         while not state_monitor.current_state.armed:
             drone_control.arm_set_mode()
-            drone_control.failsafe_issue()
             RATE.sleep()
-        rospy.logwarn("Armed AND FAILSAFE DONE!!")
+        rospy.logwarn("Drone Armed!")
 
         # Switching the state to auto mode
         while not state_monitor.current_state.mode == "OFFBOARD":
-            drone_control.offboard_set_mode()
+            drone_control.drone_set_mode("OFFBOARD")
             RATE.sleep()
-        rospy.logwarn("OFFBOARD mode activated")
+        rospy.logwarn("OFFBOARD Mode Activated!")
 
+        # Send setpoints for travel
         for i in setpoints[:]:
+            rospy.loginfo(f"New setpoint: {i}")
             drone_control.set_goal(i)
+
+        # Land the drone once done
+        while not state_monitor.current_state.mode == "AUTO.LAND":
+            drone_control.drone_set_mode("AUTO.LAND")
+            RATE.sleep()
+
+        # Waiting for drone to land and disarm
+        while state_monitor.current_state.armed:
+            pass
+        rospy.logwarn("Drone Landed!")
+
+        # End the node
+        rospy.logwarn("Node Ended!")
+        drone_control.data_stream.join()
+        sys.exit()
 
     except rospy.ROSInterruptException:
         pass
