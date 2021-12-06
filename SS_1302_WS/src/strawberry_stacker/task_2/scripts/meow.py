@@ -23,9 +23,7 @@ from geometry_msgs.msg import *
 from mavros_msgs.msg import *
 from mavros_msgs.srv import *
 import numpy as np
-import math
 from six.moves import xrange
-from threading import Thread
 
 
 class offboard_control:
@@ -48,20 +46,19 @@ class offboard_control:
 
         # Similarly delacre other service proxies
 
-    def offboard_set_mode(self):
-        pass
-
+    def set_mode_function(self, mode):
         # Call /mavros/set_mode to set the mode the drone to OFFBOARD
         # and print fail message on failure
         rospy.wait_for_service('mavros/set_mode')
         try:
-            set_mode = rospy.ServiceProxy(
+            set_mode_srv = rospy.ServiceProxy(
                 'mavros/set_mode', mavros_msgs.srv.SetMode)
-            set_mode(custom_mode='OFFBOARD')
+            set_mode_srv(custom_mode=mode)
         # and print fail message on failure
         except rospy.ServiceException as e:
             # and print fail message on failure
-            print("service set_mode call failed: %s. OFFBOARD Mode could not be set. Check that GPS is enabled %s" % e)
+            print(
+                "service set_mode call failed: %s. {0} Mode could not be set. Check that GPS is enabled %s" % e, mode)
 
 
 class stateMoniter:
@@ -81,7 +78,7 @@ class stateMoniter:
         self.from_drone.pose.position.z = msg.pose.position.z
 
     def proximity_checker(self, x, y, z):
-        # checks if the coordinates in the argument are close to the drone and returns True if it's close enough
+        ''' checks if the sent coordinates in the argument are close to the drone's real-time coordinates and returns True if it's close enough'''
         offset = 0.5  # offset is in metres
         desired = np.array((x, y, z))
         actual = np.array((self.from_drone.pose.position.x,
@@ -148,7 +145,7 @@ def main():
 
     # Switching the state to auto mode
     while not stateMt.state.mode == "OFFBOARD":
-        ofb_ctl.offboard_set_mode()
+        ofb_ctl.set_mode_function('OFFBOARD')
         rate.sleep()
     print("OFFBOARD mode activated")
 
@@ -178,6 +175,11 @@ def main():
 
             # publishing the next setpoint
             pass
+
+        # landing once the path is traced
+        ofb_ctl.set_mode_function("AUTO.LAND")
+
+        # The drone disarms automatically after landing
 
 
 if __name__ == '__main__':
