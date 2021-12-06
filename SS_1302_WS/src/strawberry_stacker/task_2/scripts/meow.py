@@ -133,16 +133,6 @@ def main():
     pos_pub = rospy.Subscriber(
         "/mavros/local_position/pose", PoseStamped, stateMt.posPub_cb)
 
-    # This function is gonna be threaded
-    def spam_cb(pos, vel):
-        local_pos_pub.publish(pos)
-        local_vel_pub.publish(vel)
-        rate.sleep()
-
-    # threading
-    pos_thread = Thread(target=spam_cb, args=(pos, vel))
-    pos_thread.daemon = True
-
     '''
     NOTE: To set the mode as OFFBOARD in px4, it needs atleast 100 setpoints at rate > 10 hz, so before changing the mode to OFFBOARD, send some dummy setpoints  
     '''
@@ -181,11 +171,13 @@ def main():
 
             # Wait till the drone reaches the point
             while not (stateMt.proximity_checker(pos.pose.position.x, pos.pose.position.y, pos.pose.position.z)):
-                # keeps looping till setpoint is reached
-                pass
+                # keeps publishing till setpoint is reached
+                local_pos_pub.publish(pos)
+                local_vel_pub.publish(vel)
+                rate.sleep()
 
             # publishing the next setpoint
-            spam_cb()
+            pass
 
 
 if __name__ == '__main__':
