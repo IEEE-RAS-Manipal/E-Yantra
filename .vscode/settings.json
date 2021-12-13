@@ -1,4 +1,6 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}/SS_1302_WS/build/catkin_tools_prebuild",
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "python.linting.banditEnabled": false,
+    "python.linting.pylintEnabled": true
 }

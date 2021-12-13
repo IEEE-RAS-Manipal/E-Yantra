@@ -510,10 +510,6 @@ errno.h
 stdlib.h
 -
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/landing_target_estimator/KalmanFilter.cpp
-KalmanFilter.h
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/landing_target_estimator/KalmanFilter.h
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/landing_target_estimator/KalmanFilter.h
 matrix/math.hpp
 -

@@ -356,14 +356,6 @@ set
 uORBCommunicator.hpp
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORBCommunicator.hpp
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORBUtils.cpp
-uORBUtils.hpp
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORBUtils.hpp
-stdio.h
--
-errno.h
--
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORBUtils.hpp
 uORBCommon.hpp
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/platforms/common/uORB/uORBCommon.hpp

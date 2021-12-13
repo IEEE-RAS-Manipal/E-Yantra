@@ -532,18 +532,6 @@ uORB/topics/actuator_controls.h
 uORB/topics/battery_status.h
 -
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/sensor_calibration/Utilities.cpp
-px4_platform_common/px4_config.h
--
-px4_platform_common/log.h
--
-lib/conversion/rotation.h
--
-lib/mathlib/mathlib.h
--
-lib/parameters/param.h
--
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/lib/sensor_calibration/Utilities.hpp
 px4_platform_common/px4_config.h
 -

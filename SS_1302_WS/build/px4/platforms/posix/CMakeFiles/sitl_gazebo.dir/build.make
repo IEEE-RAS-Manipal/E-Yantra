@@ -109,7 +109,7 @@ external/Stamp/sitl_gazebo/sitl_gazebo-configure: external/Stamp/sitl_gazebo/sit
 
 external/Stamp/sitl_gazebo/sitl_gazebo-build: external/Stamp/sitl_gazebo/sitl_gazebo-configure
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'sitl_gazebo'"
-	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_gazebo && /usr/bin/cmake --build /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_gazebo -- -j 8
+	cd /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_gazebo && /usr/bin/cmake --build /home/ch13f_1419/E-Yantra/SS_1302_WS/build/px4/build_gazebo -- -j 7
 
 sitl_gazebo: platforms/posix/CMakeFiles/sitl_gazebo
 sitl_gazebo: platforms/posix/CMakeFiles/sitl_gazebo-complete

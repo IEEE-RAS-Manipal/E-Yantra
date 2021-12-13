@@ -526,10 +526,6 @@ assert.h
 stdint.h
 -
 
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input.cpp
-input.h
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input.h
-
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input.h
 common.h
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/common.h
@@ -610,18 +606,6 @@ px4_platform_common/defines.h
 input.h
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input.h
 uORB/topics/manual_control_setpoint.h
--
-
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input_test.cpp
-input_test.h
-/home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input_test.h
-math.h
--
-px4_platform_common/posix.h
--
-lib/matrix/matrix/math.hpp
--
-lib/mathlib/mathlib.h
 -
 
 /home/ch13f_1419/E-Yantra/SS_1302_WS/src/PX4-Autopilot/src/modules/vmount/input_test.h
