@@ -66,7 +66,8 @@ class StateMonitor:
             """
             is_near Setpoint tolerance checker
 
-            This nested function checks whether the drone has reached the setpoint within the accepted tolerance range.
+            This nested function checks whether the drone has reached the setpoint within the
+            accepted tolerance range.
 
             :param pose: The pose variable being checked (X, Y or Z)
             :type pose: str
@@ -161,20 +162,14 @@ class DroneControl:
 
     def set_goal(self, setpt: list):
         """
-        set [summary]
+        set_goal Sets goal setpoint for drone
 
-        [extended_summary]
+        Internal pipeline function that feeds the setpoints to be set for the next traversal of
+        the drone. This goal will be checked with the current pose to determine whether it has
+        reached.
 
-        :param x: [description]
-        :type x: [type]
-        :param y: [description]
-        :type y: [type]
-        :param z: [description]
-        :type z: [type]
-        :param delay: [description], defaults to 0
-        :type delay: int, optional
-        :param wait: [description], defaults to True
-        :type wait: bool, optional
+        :param setpt: The goal setpoint to be sent to the drone.
+        :type setpt: list
         """
         self.reached = False
         state_monitor.goal_pose.pose.position.x = setpt[0]
@@ -263,14 +258,14 @@ if __name__ == "__main__":
             RATE.sleep()
 
         # Waiting for drone to land and disarm
-        while state_monitor.current_state.armed:
-            pass
-        rospy.logwarn("Drone Landed!")
+        # while state_monitor.current_state.armed:
+        #     pass
+        # rospy.logwarn("Drone Landed!")
 
-        # End the node
-        rospy.logwarn("Node Ended!")
-        drone_control.data_stream.join()
-        sys.exit()
+        # # End the node
+        # rospy.logwarn("Node Ended!")
+        # drone_control.data_stream.join()
+        # sys.exit()
 
     except rospy.ROSInterruptException:
         pass
