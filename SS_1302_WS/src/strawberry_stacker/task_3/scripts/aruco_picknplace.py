@@ -109,7 +109,7 @@ class StateMonitor:
         """
         self.gripper_state = grip_detect
 
-    def detect_ArUco(img):
+    def detect_ArUco_callback(img):
         '''
         Detecting the Arucos in the image and extracting ID and coordinate values.
         '''
@@ -119,24 +119,25 @@ class StateMonitor:
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250)
         parameters = aruco.DetectorParameters_create()
-        corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = parameters)
+        corners, ids, _ = aruco.detectMarkers(
+            gray, aruco_dict, parameters=parameters)
 
         # verify *at least* one ArUco marker was detected
-        if len(corners)>0 :
-                # flatten the ArUco IDs list
+        if len(corners) > 0:
+            # flatten the ArUco IDs list
             ids = ids.flatten()
-                # loop over the detected ArUCo corners
+            # loop over the detected ArUCo corners
             for (marker_corner, marker_id) in zip(corners, ids):
                 Detected_ArUco_markers[marker_id] = marker_corner
 
             for key, _ in Detected_ArUco_markers.items():
             x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
             x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
-            #calculating the centre point of aruco
+            # calculating the centre point of aruco
             c_x = int((x_0+x_2)/2)
             c_y = int((y_0+y_2)/2)
 
-        return c_x,c_y
+        return c_x, c_y
 
 
 class DroneControl:
@@ -323,9 +324,7 @@ if __name__ == "__main__":
         # Defining the setpoints for travel
         setpoints = [
             [0, 0, 3],
-            [3, 0, 3],  # Box picking setpoint
-            [3, 3, 3],  # Box placing setpoint
-            [0, 0, 3],
+            [9, 0, 3],  # Last setpoint
         ]
 
         # Initialising publishers and subscribers
@@ -354,6 +353,11 @@ if __name__ == "__main__":
         gripper_subscriber = rospy.Subscriber(
             "/gripper_check", String, state_monitor.gripper_callback
         )
+
+        # Camera input subscriber
+        cam_subscriber = rospy.Subscriber(
+            "/eDrone/camera/image_raw", Image, state_monitor.detect_ArUco_callback)
+
         rospy.loginfo("Subscribers initialised!")
 
         # Initialising drone control
