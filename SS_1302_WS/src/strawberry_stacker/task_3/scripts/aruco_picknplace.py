@@ -13,6 +13,8 @@ DroneControl    Controls the drone using OFFBOARD
 
 import sys
 import threading
+
+from yaml import cyaml
 import rospy
 from rospy.exceptions import ROSInterruptException
 from std_msgs.msg import String
@@ -45,6 +47,9 @@ class StateMonitor:
         self.event_log = threading.Event()  # Thread tracker for the data stream
         # State of the gripper (setting dummy initial value)
         self.gripper_state = None
+        self.aruco_check = False
+        self.c_x = None
+        self.c_y = None
 
         rospy.logwarn("State Monitor active!")
 
@@ -134,10 +139,10 @@ class StateMonitor:
             x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
             x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
             # calculating the centre point of aruco
-            c_x = int((x_0+x_2)/2)
-            c_y = int((y_0+y_2)/2)
-
-        return c_x, c_y
+            self.c_x = int((x_0+x_2)/2)
+            self.c_y = int((y_0+y_2)/2)
+            drone_control.drone_set_goal([c_x, c_y, 3])
+            self.aruco_check = True
 
 
 class DroneControl:
@@ -288,6 +293,7 @@ class DroneControl:
         # Wating for the drone to reach the setpoint
         while not self.reached:
             RATE.sleep()
+
         rospy.loginfo(f"Reached setpoint: \033[96m{setpt}\033[0m")
 
     def drone_gripper_attach(self, activation: bool) -> None:
@@ -324,7 +330,9 @@ if __name__ == "__main__":
         # Defining the setpoints for travel
         setpoints = [
             [0, 0, 3],
-            [9, 0, 3],  # Last setpoint
+            [9, 0, 3],
+            [0, 0, 3],
+            [0, 0, 0]  # Last setpoint
         ]
 
         # Initialising publishers and subscribers
@@ -374,15 +382,17 @@ if __name__ == "__main__":
             drone_control.drone_set_goal(i)
 
             # Beginning picking procedure
-            if i == [3, 0, 3]:
+            if state_monitor.aruco_check:
+                cx = state_monitor.c_x
+                cy = state_monitor.c_y
                 rospy.loginfo("\033[93mCommencing pickup of package...\033[0m")
                 # Using approach points for precision
                 rospy.loginfo(
                     "Using approach setpoint: \033[96m[3, 0, 1]\033[0m")
-                drone_control.drone_set_goal([3, 0, 1], 0.01)
+                drone_control.drone_set_goal([cx, cy, 1], 0.01)
                 rospy.loginfo(
                     "Using approach setpoint: \033[96m[3, 0, 0.1]\033[0m")
-                drone_control.drone_set_goal([3, 0, 0.1], 0.01)
+                drone_control.drone_set_goal([cx, cy, 0.1], 0.01)
                 # Landing the drone
                 drone_control.drone_shutdown()
 
