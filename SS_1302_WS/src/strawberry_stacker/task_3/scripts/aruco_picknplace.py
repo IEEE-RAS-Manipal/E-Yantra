@@ -14,6 +14,7 @@ DroneControl    Controls the drone using OFFBOARD
 import sys
 import threading
 from sensor_msgs.msg import Image
+
 from yaml import cyaml
 import rospy
 from rospy.exceptions import ROSInterruptException
@@ -114,7 +115,7 @@ class StateMonitor:
         """
         self.gripper_state = grip_detect
 
-    def detect_ArUco_callback(img):
+    def detect_ArUco_callback(img, meow):
         '''
         Detecting the Arucos in the image and extracting ID and coordinate values.
         '''
@@ -415,7 +416,8 @@ if __name__ == "__main__":
                 drone_control.drone_set_goal([9, 0, 3])
 
             # Beginning placing procedure
-            elif i == [3, 3, 3]:
+            # Enters the loop if the goal is 9,0,3 AND if the drone is holding the box
+            elif i == [9, 0, 3] and state_monitor.gripper_state:
                 rospy.loginfo(
                     "\033[93mCommencing placement of package...\033[0m")
                 # Using approach point for precision
