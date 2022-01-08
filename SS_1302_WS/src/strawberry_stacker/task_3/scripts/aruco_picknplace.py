@@ -49,8 +49,8 @@ class StateMonitor:
         # State of the gripper (setting dummy initial value)
         self.gripper_state = None
         self.aruco_check = False
-        self.c_x = None
-        self.c_y = None
+        self.xcor = None
+        self.ycor = None
         self.bridge = CvBridge()
 
         rospy.logwarn("State Monitor active!")
@@ -77,6 +77,9 @@ class StateMonitor:
         :param curr_pose: The current pose of the drone.
         :type curr_pose: PoseStamped
         """
+        self.curr_x = curr_pose.pose.position.x
+        self.curr_y = curr_pose.pose.position.y
+        self.curr_z = curr_pose.pose.position.z
 
         def is_near(current: float, goal: float) -> bool:
             """
@@ -123,7 +126,6 @@ class StateMonitor:
         try:
             # Converting the image to OpenCV standard image
             cv_img = self.bridge.imgmsg_to_cv2(img, "bgr8")
-
         except CvBridgeError as e:
             print(e)
         Detected_ArUco_markers = {}
@@ -137,25 +139,25 @@ class StateMonitor:
 
         # verify *at least* one ArUco marker was detected
         if len(corners) > 0:
-            print("aruco detected")
+            self.xcor = self.curr_x
+            self.ycor = self.curr_y
             # flatten the ArUco IDs list
             ids = ids.flatten()
             # loop over the detected ArUCo corners
             for (marker_corner, marker_id) in zip(corners, ids):
                 Detected_ArUco_markers[marker_id] = marker_corner
-            print("detected aruco corners: ")
-            for key, _ in Detected_ArUco_markers.items():
-                print(Detected_ArUco_markers[key][0][:])
+
             for key, _ in Detected_ArUco_markers.items():
                 x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
                 x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
             # calculating the centre point of aruco
-            self.c_x = int(((x_0+x_2)/2)*0.02)
-            self.c_y = int(((y_0+y_2)/2)*0.02)
-            print("calculated the center coordinates ", self.c_x)
-            print(self.c_y)
-            drone_control.drone_set_goal([self.c_x, self.c_y, 3])
-            self.aruco_check = True
+            self.c_x = int((x_0+x_2)/2)
+            self.c_y = int((y_0+y_2)/2)
+
+            if self.c_x in range(150, 250) and self.c_y in range(150, 250):
+                print("within the range!")
+                drone_control.drone_set_goal([self.xcor, self.ycor, 3])
+                self.aruco_check = True
 
 
 class DroneControl:
@@ -184,6 +186,7 @@ class DroneControl:
         self.gripper_service = rospy.ServiceProxy("/activate_gripper", Gripper)
         rospy.wait_for_service("/activate_gripper")
         rospy.loginfo("Services initialised.")
+        self.grip_status = False
 
         # Setting up data stream to the drone in a separate thread
         try:
@@ -304,7 +307,7 @@ class DroneControl:
         state_monitor.current_vel.linear.z = vel
 
         # Wating for the drone to reach the setpoint
-        while not self.reached:
+        while not self.reached and not state_monitor.aruco_check:
             RATE.sleep()
 
         rospy.loginfo(f"Reached setpoint: \033[96m{setpt}\033[0m")
@@ -318,14 +321,13 @@ class DroneControl:
         :param activation: Command sent to activate or deactivate the gripper
         :type activation: bool
         """
-        grip_status = False
         try:
-            while not grip_status:
+            while not self.grip_status:
                 if activation:
-                    grip_status = self.gripper_service(activation).result
+                    self.grip_status = self.gripper_service(activation).result
                 else:
                     self.gripper_service(activation)
-                    grip_status = True
+                    self.grip_status = True
         except rospy.ServiceException:
             pass
 
@@ -333,7 +335,7 @@ class DroneControl:
 if __name__ == "__main__":
     try:
         rospy.init_node("pick_n_place", anonymous=True)  # Initialising node
-        RATE = rospy.Rate(10.0)  # Setting rate of transmission
+        RATE = rospy.Rate(20.0)  # Setting rate of transmission
         rospy.logwarn("Node Started!")
 
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
@@ -396,15 +398,15 @@ if __name__ == "__main__":
 
             # Beginning picking procedure
             if state_monitor.aruco_check:
-                cx = state_monitor.c_x
-                cy = state_monitor.c_y
+                cx = state_monitor.xcor
+                cy = state_monitor.ycor
                 rospy.loginfo("\033[93mCommencing pickup of package...\033[0m")
                 # Using approach points for precision
                 rospy.loginfo(
-                    "Using approach setpoint: \033[96m[3, 0, 1]\033[0m")
+                    f"Using approach setpoint: \033[96m[{cx}, {cy}, 3]\033[0m")
                 drone_control.drone_set_goal([cx, cy, 1], 0.01)
                 rospy.loginfo(
-                    "Using approach setpoint: \033[96m[3, 0, 0.1]\033[0m")
+                    f"Using approach setpoint: \033[96m[{cx}, {cy}, 0.1]\033[0m")
                 drone_control.drone_set_goal([cx, cy, 0.1], 0.01)
                 # Landing the drone
                 drone_control.drone_shutdown()
@@ -424,12 +426,12 @@ if __name__ == "__main__":
 
                 # Taking off
                 drone_control.drone_startup()
-                rospy.loginfo("New setpoint: \033[96m[3, 0, 3]\033[0m")
+                rospy.loginfo("New setpoint: \033[96m[9, 0, 3]\033[0m")
                 drone_control.drone_set_goal([9, 0, 3])
 
             # Beginning placing procedure
             # Enters the loop if the goal is 9,0,3 AND if the drone is holding the box
-            elif i == [9, 0, 3] and state_monitor.gripper_state:
+            elif i == [9, 0, 3] and drone_control.grip_status:
                 rospy.loginfo(
                     "\033[93mCommencing placement of package...\033[0m")
                 # Using approach point for precision
