@@ -13,7 +13,7 @@ DroneControl    Controls the drone using OFFBOARD
 
 import sys
 import threading
-
+from sensor_msgs.msg import Image
 from yaml import cyaml
 import rospy
 from rospy.exceptions import ROSInterruptException
@@ -136,8 +136,8 @@ class StateMonitor:
                 Detected_ArUco_markers[marker_id] = marker_corner
 
             for key, _ in Detected_ArUco_markers.items():
-            x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
-            x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
+                x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
+                x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
             # calculating the centre point of aruco
             self.c_x = int((x_0+x_2)/2)
             self.c_y = int((y_0+y_2)/2)
@@ -407,11 +407,12 @@ if __name__ == "__main__":
                 rospy.loginfo(
                     "\033[92mPackage picked! Proceeding to dropoff point!\033[0m"
                 )
+                state_monitor.aruco_check = False
 
                 # Taking off
                 drone_control.drone_startup()
                 rospy.loginfo("New setpoint: \033[96m[3, 0, 3]\033[0m")
-                drone_control.drone_set_goal([3, 0, 3])
+                drone_control.drone_set_goal([9, 0, 3])
 
             # Beginning placing procedure
             elif i == [3, 3, 3]:
