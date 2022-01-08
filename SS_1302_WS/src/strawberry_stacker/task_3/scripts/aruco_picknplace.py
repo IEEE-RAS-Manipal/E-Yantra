@@ -14,7 +14,7 @@ DroneControl    Controls the drone using OFFBOARD
 import sys
 import threading
 from sensor_msgs.msg import Image
-
+from cv_bridge import CvBridge, CvBridgeError
 from yaml import cyaml
 import rospy
 from rospy.exceptions import ROSInterruptException
@@ -51,6 +51,7 @@ class StateMonitor:
         self.aruco_check = False
         self.c_x = None
         self.c_y = None
+        self.bridge = CvBridge()
 
         rospy.logwarn("State Monitor active!")
 
@@ -115,14 +116,20 @@ class StateMonitor:
         """
         self.gripper_state = grip_detect
 
-    def detect_ArUco_callback(img, meow):
+    def detect_ArUco_callback(self, img):
         '''
         Detecting the Arucos in the image and extracting ID and coordinate values.
         '''
+        try:
+            # Converting the image to OpenCV standard image
+            cv_img = self.bridge.imgmsg_to_cv2(img, "bgr8")
+
+        except CvBridgeError as e:
+            print(e)
         Detected_ArUco_markers = {}
         corners = []
         ids = []
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(cv_img, cv2.COLOR_BGR2GRAY)
         aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250)
         parameters = aruco.DetectorParameters_create()
         corners, ids, _ = aruco.detectMarkers(
@@ -130,19 +137,24 @@ class StateMonitor:
 
         # verify *at least* one ArUco marker was detected
         if len(corners) > 0:
+            print("aruco detected")
             # flatten the ArUco IDs list
             ids = ids.flatten()
             # loop over the detected ArUCo corners
             for (marker_corner, marker_id) in zip(corners, ids):
                 Detected_ArUco_markers[marker_id] = marker_corner
-
+            print("detected aruco corners: ")
+            for key, _ in Detected_ArUco_markers.items():
+                print(Detected_ArUco_markers[key][0][:])
             for key, _ in Detected_ArUco_markers.items():
                 x_0, y_0 = map(int, Detected_ArUco_markers[key][0][0])
                 x_2, y_2 = map(int, Detected_ArUco_markers[key][0][2])
             # calculating the centre point of aruco
-            self.c_x = int((x_0+x_2)/2)
-            self.c_y = int((y_0+y_2)/2)
-            drone_control.drone_set_goal([c_x, c_y, 3])
+            self.c_x = int(((x_0+x_2)/2)*0.02)
+            self.c_y = int(((y_0+y_2)/2)*0.02)
+            print("calculated the center coordinates ", self.c_x)
+            print(self.c_y)
+            drone_control.drone_set_goal([self.c_x, self.c_y, 3])
             self.aruco_check = True
 
 
