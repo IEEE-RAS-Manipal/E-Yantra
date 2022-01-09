@@ -139,6 +139,7 @@ class StateMonitor:
 
         # verify *at least* one ArUco marker was detected
         if len(corners) > 0:
+
             self.xcor = self.curr_x
             self.ycor = self.curr_y
             # flatten the ArUco IDs list
@@ -154,9 +155,8 @@ class StateMonitor:
             self.c_x = int((x_0+x_2)/2)
             self.c_y = int((y_0+y_2)/2)
 
-            if self.c_x in range(150, 250) and self.c_y in range(150, 250):
+            if self.c_x in range(160, 240) and self.c_y in range(160, 240):
                 print("within the range!")
-                drone_control.drone_set_goal([self.xcor, self.ycor, 3])
                 self.aruco_check = True
 
 
@@ -187,6 +187,8 @@ class DroneControl:
         rospy.wait_for_service("/activate_gripper")
         rospy.loginfo("Services initialised.")
         self.grip_status = False
+        self.stream_var = 0
+        self.count = 0
 
         # Setting up data stream to the drone in a separate thread
         try:
@@ -276,13 +278,22 @@ class DroneControl:
 
         while not rospy.is_shutdown():
             try:
-                position_publisher.publish(state_monitor.goal_pose)
-                # velocity_publisher.publish(state_monitor.current_vel)
-                RATE.sleep()
+                if self.stream_var == 1:
+                    try:
+                        velocity_publisher.publish(state_monitor.current_vel)
+                        RATE.sleep()
+                    except ROSInterruptException:
+                        rospy.loginfo("Velocity Stream terminated.")
+                else:
+                    try:
+                        position_publisher.publish(state_monitor.goal_pose)
+                        RATE.sleep()
+                    except ROSInterruptException:
+                        rospy.loginfo("Data Stream terminated.")
             except ROSInterruptException:
                 rospy.loginfo("Data Stream terminated.")
 
-    def drone_set_goal(self, setpt: list, vel: float = 5):
+    def drone_set_goal(self, setpt: list, vel: float = 1):
         """
         drone_set_goal Sets goal setpoint for drone
 
@@ -303,9 +314,12 @@ class DroneControl:
         state_monitor.goal_pose.pose.position.z = setpt[2]
         # Setting drone speed
         state_monitor.current_vel.linear.x = vel
-        state_monitor.current_vel.linear.y = vel
-        state_monitor.current_vel.linear.z = vel
+        state_monitor.current_vel.linear.y = 0
+        state_monitor.current_vel.linear.z = 0
 
+        if setpt == [9, 0, 3] and self.count == 0:
+            drone_control.stream_var = 1
+            self.count = self.count + 1
         # Wating for the drone to reach the setpoint
         while not self.reached and not state_monitor.aruco_check:
             RATE.sleep()
@@ -398,9 +412,12 @@ if __name__ == "__main__":
 
             # Beginning picking procedure
             if state_monitor.aruco_check:
+                drone_control.stream_var = 0  # Restarting setpoints datastream
                 cx = state_monitor.xcor
                 cy = state_monitor.ycor
-                rospy.loginfo("\033[93mCommencing pickup of package...\033[0m")
+                drone_control.drone_set_goal([cx, cy, 3])
+                rospy.loginfo(
+                    "\033[93mCommencing pickup of package...\033[0m")
                 # Using approach points for precision
                 rospy.loginfo(
                     f"Using approach setpoint: \033[96m[{cx}, {cy}, 3]\033[0m")
@@ -426,18 +443,20 @@ if __name__ == "__main__":
 
                 # Taking off
                 drone_control.drone_startup()
-                rospy.loginfo("New setpoint: \033[96m[9, 0, 3]\033[0m")
+                rospy.loginfo(f"New setpoint: \033[96m[{cx}, {cy}, 3]\033[0m")
+                drone_control.drone_set_goal([cx, cy, 3])
+                rospy.loginfo(f"New setpoint: \033[96m[9, 0, 3]\033[0m")
                 drone_control.drone_set_goal([9, 0, 3])
 
             # Beginning placing procedure
             # Enters the loop if the goal is 9,0,3 AND if the drone is holding the box
-            elif i == [9, 0, 3] and drone_control.grip_status:
+            if drone_control.grip_status:
                 rospy.loginfo(
                     "\033[93mCommencing placement of package...\033[0m")
                 # Using approach point for precision
                 rospy.loginfo(
-                    "Using approach setpoint: \033[96m[3, 3, 0.2]\033[0m")
-                drone_control.drone_set_goal([3, 3, 0.2], 0.01)
+                    "Using approach setpoint: \033[96m[9, 0, 0.2]\033[0m")
+                drone_control.drone_set_goal([9, 0, 0.2], 0.01)
                 # Landing the drone
                 drone_control.drone_shutdown()
 
@@ -450,8 +469,8 @@ if __name__ == "__main__":
 
                 # Taking off
                 drone_control.drone_startup()
-                rospy.loginfo("New setpoint: \033[96m[3, 3, 3]\033[0m")
-                drone_control.drone_set_goal([3, 3, 3])
+                rospy.loginfo("New setpoint: \033[96m[9, 0, 3]\033[0m")
+                drone_control.drone_set_goal([9, 0, 3])
 
         # Begin final post-flight landing procedure
         drone_control.drone_shutdown()
