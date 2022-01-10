@@ -139,9 +139,6 @@ class StateMonitor:
 
         # verify *at least* one ArUco marker was detected
         if len(corners) > 0:
-
-            self.xcor = self.curr_x
-            self.ycor = self.curr_y
             # flatten the ArUco IDs list
             ids = ids.flatten()
             # loop over the detected ArUCo corners
@@ -155,9 +152,46 @@ class StateMonitor:
             self.c_x = int((x_0+x_2)/2)
             self.c_y = int((y_0+y_2)/2)
 
-            if self.c_x in range(160, 240) and self.c_y in range(160, 240):
+            if self.c_x in range(100, 300) and self.c_y in range(100, 300):
                 print("within the range!")
                 self.aruco_check = True
+
+    def pos_adjust(self):
+        """
+        This function adjusts the position of the drone using the quadrant method
+        """
+        self.target_lock = False
+        self.xcor = self.curr_x
+        self.ycor = self.curr_y
+        v = 0.5
+        while self.aruco_check and not self.target_lock:
+            if self.c_x not in range(0, 400) or self.c_y not in range(0, 400):
+                self.aruco_check = False
+                rospy.logwarn(" Box out of sight!!!")
+            # Narrowing the range
+            if self.c_x in range(190, 210) and self.c_y in range(190, 210):
+                self.target_lock = True
+                rospy.loginfo("Target position locked!")
+            # First quadrant (top-right)
+            elif self.c_x > 200 and self.c_y < 200:
+                print("1st QUADRANT")
+                state_monitor.current_vel.linear.x = v
+                state_monitor.current_vel.linear.y = v
+            # Second quadrant (top-left)
+            elif self.c_x < 200 and self.c_y < 200:
+                print("2st QUADRANT")
+                state_monitor.current_vel.linear.x = -v
+                state_monitor.current_vel.linear.y = v
+            # Third quadrant (bottom-left)
+            elif self.c_x < 200 and self.c_y > 200:
+                print("3rd QUADRANT")
+                state_monitor.current_vel.linear.x = -v
+                state_monitor.current_vel.linear.y = -v
+            # Fourth quadrant (bottom-right)
+            elif self.c_x > 200 and self.c_y > 200:
+                print("4th QUADRANT")
+                state_monitor.current_vel.linear.x = v
+                state_monitor.current_vel.linear.y = -v
 
 
 class DroneControl:
@@ -293,7 +327,7 @@ class DroneControl:
             except ROSInterruptException:
                 rospy.loginfo("Data Stream terminated.")
 
-    def drone_set_goal(self, setpt: list, vel: float = 1):
+    def drone_set_goal(self, setpt: list, vel: float = 2):
         """
         drone_set_goal Sets goal setpoint for drone
 
@@ -412,6 +446,7 @@ if __name__ == "__main__":
 
             # Beginning picking procedure
             if state_monitor.aruco_check:
+                state_monitor.pos_adjust()
                 drone_control.stream_var = 0  # Restarting setpoints datastream
                 cx = state_monitor.xcor
                 cy = state_monitor.ycor
@@ -420,13 +455,13 @@ if __name__ == "__main__":
                     "\033[93mCommencing pickup of package...\033[0m")
                 # Using approach points for precision
                 rospy.loginfo(
-                    f"Using approach setpoint: \033[96m[{cx}, {cy}, 3]\033[0m")
-                drone_control.drone_set_goal([cx, cy, 1], 0.01)
+                    f"Using approach setpoint: \033[96m[{cx}, {cy}, 2]\033[0m")
+                drone_control.drone_set_goal([cx, cy, 2], 0.01)
                 rospy.loginfo(
                     f"Using approach setpoint: \033[96m[{cx}, {cy}, 0.1]\033[0m")
                 drone_control.drone_set_goal([cx, cy, 0.1], 0.01)
                 # Landing the drone
-                drone_control.drone_shutdown()
+                # drone_control.drone_shutdown()
 
                 # Performing gripping procedure
                 # Checking if the gripper is in position
@@ -442,7 +477,7 @@ if __name__ == "__main__":
                 state_monitor.aruco_check = False
 
                 # Taking off
-                drone_control.drone_startup()
+                # drone_control.drone_startup()
                 rospy.loginfo(f"New setpoint: \033[96m[{cx}, {cy}, 3]\033[0m")
                 drone_control.drone_set_goal([cx, cy, 3])
                 rospy.loginfo(f"New setpoint: \033[96m[9, 0, 3]\033[0m")
