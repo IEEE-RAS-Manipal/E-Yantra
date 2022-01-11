@@ -67,7 +67,8 @@ class StateMonitor:
         self.bridge = (
             CvBridge()
         )  # Conversion between ROS Image Messages and OpenCV Images
-        self.aruco_centre = [[]]  # Coordinates of centre of detected aruco markers
+        # Coordinates of centre of detected aruco markers
+        self.aruco_centre = [[]]
         self.aruco_check = False  # Marker detection confirmation flag
         self.callback_delay = 0  # Manual delay timer
 
@@ -371,7 +372,8 @@ class DroneControl:
         :type package_pos: list
         """
 
-        vel = [0.0, 0.0, 0.0]  # Velocity of the drone to be tweaked during approach
+        # Velocity of the drone to be tweaked during approach
+        vel = [0.0, 0.0, 0.0]
         rospy.loginfo("\033[93mCommencing pickup of package...\033[0m")
 
         drone_control.stream_switch = True  # Switch to velocity setpoint transmission
@@ -383,11 +385,13 @@ class DroneControl:
 
             # Tweaking velocity of the drone using the exp(0.4x-3) function
             vel[0] = exp(
-                0.4 * abs(package_pos[0] - state_monitor.current_pose.pose.position.x)
+                0.4 * abs(package_pos[0] -
+                          state_monitor.current_pose.pose.position.x)
                 - 3
             )
             vel[1] = exp(
-                0.4 * abs(package_pos[1] - state_monitor.current_pose.pose.position.y)
+                0.4 * abs(package_pos[1] -
+                          state_monitor.current_pose.pose.position.y)
                 - 3
             )
 
@@ -419,7 +423,7 @@ class DroneControl:
             if state_monitor.current_pose.pose.position.z < -0.2:
                 state_monitor.goal_vel.linear.z = -0.15
             if state_monitor.current_pose.pose.position.z < -0.3:
-                rospy.sleep(1)  # Manual delay for ensuring smooth transition
+                rospy.sleep(2)  # Manual delay for ensuring smooth transition
                 drone_control.drone_shutdown()
             RATE.sleep()
 
@@ -435,10 +439,13 @@ class DroneControl:
         rospy.loginfo("Attempting to grip...")
         # Activating the gripper
         drone_control.drone_gripper_attach(True)
-        rospy.loginfo("\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
+        rospy.loginfo(
+            "\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
 
         # Taking off from location
         drone_control.drone_startup()
+        package_pos.append(3)
+        drone_control.drone_set_goal(package_pos, True)
 
     def drone_package_place(self, place_pos: list) -> None:
         """
@@ -450,7 +457,7 @@ class DroneControl:
         :type place_pos: list
         """
         rospy.loginfo(
-            f"\033[93mCommencing placing of package at\033[92m{place_pos}\033[0m"
+            f"\033[93mCommencing placing of package at\033[96m{place_pos}\033[0m"
         )
         drone_control.drone_set_goal(place_pos, True)
 
@@ -460,10 +467,12 @@ class DroneControl:
         # Deactivating the gripper
         rospy.loginfo("Deactivating gripper...")
         drone_control.drone_gripper_attach(False)
-        rospy.loginfo("\033[92mPackage placed! Proceeding on original path!\033[0m")
+        rospy.loginfo(
+            "\033[92mPackage placed! Proceeding on original path!\033[0m")
 
         # Taking off
         drone_control.drone_startup()
+        drone_control.drone_set_goal(place_pos, True)
 
     def drone_gripper_attach(self, activation: bool) -> None:
         """
