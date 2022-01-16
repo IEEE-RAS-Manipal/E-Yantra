@@ -1,0 +1,8 @@
+prefix=/home/ch13f_1419/E-Yantra/SS_1302_WS/install
+
+Name: gazebo_ros_link_attacher
+Description: Description of gazebo_ros_link_attacher
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

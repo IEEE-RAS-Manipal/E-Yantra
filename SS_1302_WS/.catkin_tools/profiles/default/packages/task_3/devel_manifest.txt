@@ -1,0 +1,5 @@
+strawberry_stacker/task_3
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_3/cmake.lock /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/./cmake.lock
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_3/share/task_3/cmake/task_3Config-version.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_3/cmake/task_3Config-version.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_3/share/task_3/cmake/task_3Config.cmake /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/share/task_3/cmake/task_3Config.cmake
+/home/ch13f_1419/E-Yantra/SS_1302_WS/devel/.private/task_3/lib/pkgconfig/task_3.pc /home/ch13f_1419/E-Yantra/SS_1302_WS/devel/lib/pkgconfig/task_3.pc
