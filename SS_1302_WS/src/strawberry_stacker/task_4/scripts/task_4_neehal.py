@@ -394,8 +394,8 @@ class Drone:
             drone_set_goal Sets goal setpoint for drone
 
             Feeds the setpoints to be set for the next traversal of the drone. This goal will be
-            checked with the current state to determine whether it has reached. It will also check for
-            markers along the way (this can be overriden).
+            checked with the current state to determine whether it has reached. It will also check
+            for markers along the way (this can be overriden).
 
             :param goal_pose: The goal setpoint to be sent to the drone.
             :type goal_pose: list

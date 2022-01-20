@@ -39,6 +39,7 @@ from cv_bridge import (
     CvBridge,
     CvBridgeError,
 )  # Conversion between ROS and OpenCV Images
+
 REACHED = False
 
 
@@ -103,7 +104,7 @@ class Drone:
         )
         # ArUco detection camera subscriber
         self.cam_subscriber = rospy.Subscriber(
-            f"iris_{drone_id}/camera/image_raw",
+            f"edrone{drone_id}/camera/image_raw",
             Image,
             self.drone_monitor.aruco_callback,
         )
@@ -135,11 +136,9 @@ class Drone:
         while not rospy.is_shutdown():
             try:
                 if not self.stream_switch:  # Position setpoints
-                    self.position_publisher.publish(
-                        self.drone_monitor.goal_pose)
+                    self.position_publisher.publish(self.drone_monitor.goal_pose)
                 else:  # Velocity setpoints
-                    self.velocity_publisher.publish(
-                        self.drone_monitor.goal_vel)
+                    self.velocity_publisher.publish(self.drone_monitor.goal_vel)
                 RATE.sleep()
             except ROSInterruptException:
                 rospy.loginfo("Data Stream terminated.")
@@ -268,11 +267,10 @@ class Drone:
                 :return: Confirmation whether the drone is within tolerance or not
                 :rtype: bool
                 """
-                return abs(current - goal) < 0.2  # Tolerance radius = 0.2m
+                return abs(current - goal) < 1  # Tolerance radius = 0.2m
 
             if (
-                is_near(curr_pose.pose.position.x,
-                        self.goal_pose.pose.position.x)
+                is_near(curr_pose.pose.position.x, self.goal_pose.pose.position.x)
                 and is_near(curr_pose.pose.position.y, self.goal_pose.pose.position.y)
                 and is_near(curr_pose.pose.position.z, self.goal_pose.pose.position.z)
             ):
@@ -472,16 +470,16 @@ class Drone:
                 vel[0] = exp(
                     0.4
                     * abs(
-                        package_pos[0] -
-                        drone1.drone_monitor.current_pose.pose.position.x
+                        package_pos[0]
+                        - drone1.drone_monitor.current_pose.pose.position.x
                     )
                     - 3
                 )
                 vel[1] = exp(
                     0.4
                     * abs(
-                        package_pos[1] -
-                        drone1.drone_monitor.current_pose.pose.position.y
+                        package_pos[1]
+                        - drone1.drone_monitor.current_pose.pose.position.y
                     )
                     - 3
                 )
@@ -531,8 +529,7 @@ class Drone:
             rospy.loginfo("Attempting to grip...")
             # Activating the gripper
             drone1.drone_control.drone_gripper_attach(True)
-            rospy.loginfo(
-                "\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
+            rospy.loginfo("\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
 
             # Taking off from location
             drone1.drone_control.drone_startup()
@@ -560,8 +557,7 @@ class Drone:
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
             self.drone_control.drone_gripper_attach(False)
-            rospy.loginfo(
-                "\033[92mPackage placed! Proceeding on original path!\033[0m")
+            rospy.loginfo("\033[92mPackage placed! Proceeding on original path!\033[0m")
 
             # Taking off
             self.drone_control.drone_startup()
@@ -596,27 +592,27 @@ if __name__ == "__main__":
         rospy.logwarn("Node Started!")
 
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
-        #drone0 = Drone(0)
+        # drone0 = Drone(0)
         drone1 = Drone(1)
         rospy.loginfo("\033[92mReady for task! Commencing flight!\033[0m")
 
         # # Defining the setpoints for travel
         setpoints = [
             [0, 0, 3],
-            [20, -14, 3],
-            [20, -12, 0.5],
-            [57.5, 3.75, 5],
-            [57.5, 3.75, 1.7]
+            [0, -12, 3],
+            [20, -12, 3],
+            [40, -12, 3],
+            [60, -12, 3]
             #    [0, 0, 3],
         ]  # Box placing setpoint
 
         # Performing flight operations
         # Sending flight setpoints
-        drone1.drone_control.drone_set_goal(setpoints[0])
-        print("aaaaaaaaaaaaaaaaaaaaaa")
-        drone1.drone_control.drone_set_goal(setpoints[1])
-        drone1.drone_control.drone_set_goal(setpoints[2])
-
+        drone1.drone_control.drone_set_goal(setpoints[0], True)
+        drone1.drone_control.drone_set_goal(setpoints[1], True)
+        drone1.drone_control.drone_set_goal(setpoints[2], True)
+        drone1.drone_control.drone_set_goal(setpoints[3], True)
+        drone1.drone_control.drone_set_goal(setpoints[4], True)
         # # Will execute only if something has been picked, for debugging purposes
         # if self.drone_monitor.gripper_state:
         #     self.drone_control.drone_package_place(setpoints[1])  # Placing package
