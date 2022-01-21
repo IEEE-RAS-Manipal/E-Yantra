@@ -21,7 +21,7 @@ from math import exp  # Misc. math functions
 
 # Core ROS
 import rospy  # ROS Python libraries
-from rospy.exceptions import ROSInterruptException  # ROS Node execution
+from rospy.exceptions import ROSInterruptException, ROSException  # ROS Node execution
 
 # Drone control
 from std_msgs.msg import String  # Gripper status
@@ -46,7 +46,7 @@ class Drone:
     Drone Contains all logic for controlling a single drone
 
     This class contains higher logic for controlling a single drone entity. It lists DroneMonitor
-    and DroneControl as child classes to hold respective monitor data and control commands for a
+    and DroneControl as nested classes to hold respective monitor data and control commands for a
     single drone entity.
     """
 
@@ -55,26 +55,26 @@ class Drone:
         __init__ Initialises class attributes
 
         This method initialises the class attributes of the Drone class, namely initialising the
-        DroneMonitor and DroneControl classes for a single drone entity.
+        DroneMonitor and DroneControl classes for a single drone entity along with some higher
+        level parameters.
         """
         rospy.logwarn(f"Starting up Drone #{drone_id+1}...")
         self.drone_id = drone_id
 
-        # Initialising child classes
-        self.drone_monitor = self.DroneMonitor(drone_id)
-        self.drone_control = self.DroneControl(drone_id)
+        # Initialising control
+        self.drone_control = self.DroneControl(self.drone_id)
 
         # Initialising publishers and subscribers
         rospy.loginfo("Initialising publishers...")
         # Position publisher
         self.position_publisher = rospy.Publisher(
-            f"edrone{drone_id}/mavros/setpoint_position/local",
+            f"edrone{self.drone_id}/mavros/setpoint_position/local",
             PoseStamped,
             queue_size=10,
         )
         # Velocity publisher
         self.velocity_publisher = rospy.Publisher(
-            f"edrone{drone_id}/mavros/setpoint_velocity/cmd_vel_unstamped",
+            f"edrone{self.drone_id}/mavros/setpoint_velocity/cmd_vel_unstamped",
             Twist,
             queue_size=10,
         )
@@ -84,34 +84,32 @@ class Drone:
         self.state_subscriber = rospy.Subscriber(
             f"edrone{drone_id}/mavros/state",
             State,
-            self.drone_monitor.state_callback,
+            self.drone_control.drone_monitor.state_callback,
             queue_size=10,
         )
         # Pose subscriber
         self.pose_subscriber = rospy.Subscriber(
-            f"edrone{drone_id}/mavros/local_position/pose",
+            f"edrone{self.drone_id}/mavros/local_position/pose",
             PoseStamped,
-            self.drone_monitor.pose_callback,
+            self.drone_control.drone_monitor.pose_callback,
             queue_size=10,
         )
         # Drone Gripper Subscriber
         self.gripper_subscriber = rospy.Subscriber(
-            f"edrone{drone_id}/gripper_check",
+            f"edrone{self.drone_id}/gripper_check",
             String,
-            self.drone_monitor.gripper_callback,
+            self.drone_control.drone_monitor.gripper_callback,
         )
         # ArUco detection camera subscriber
         self.cam_subscriber = rospy.Subscriber(
-            f"edrone{drone_id}/camera/image_raw",
+            f"edrone{self.drone_id}/camera/image_raw",
             Image,
-            self.drone_monitor.aruco_callback,
+            self.drone_control.drone_monitor.aruco_callback,
         )
         rospy.loginfo("Subscribers initialised.")
 
         # Setting up data stream to the drone in a separate thread
         try:
-            # Stream switch flag to switch to velocity setpoint tramsission
-            self.stream_switch = False
             rospy.loginfo("Initialising data stream...")
             self.data_stream = threading.Thread(target=self.drone_data_stream)
             self.data_stream.start()
@@ -121,7 +119,7 @@ class Drone:
             sys.exit()
 
         # Starting up drone
-        self.drone_startup()
+        self.drone_control.drone_startup(self.drone_id)
 
     def drone_data_stream(self) -> None:
         """
@@ -133,91 +131,47 @@ class Drone:
 
         while not rospy.is_shutdown():
             try:
-                if not self.stream_switch:  # Position setpoints
-                    self.position_publisher.publish(self.drone_monitor.goal_pose)
+                if not self.drone_control.stream_switch:  # Position setpoints
+                    self.position_publisher.publish(
+                        self.drone_control.drone_monitor.goal_pose
+                    )
                 else:  # Velocity setpoints
-                    self.velocity_publisher.publish(self.drone_monitor.goal_vel)
+                    self.velocity_publisher.publish(
+                        self.drone_control.drone_monitor.goal_vel
+                    )
                 RATE.sleep()
             except ROSInterruptException:
                 rospy.loginfo("Data Stream terminated.")
-
-    def drone_startup(self) -> None:
-        """
-        drone_startup Activates drone for flight
-
-        This method arms the drone and sets OFFBOARD mode for flight.
-        """
-        # Arming the drone
-        rospy.loginfo("Arming Drone...")
-        while not self.drone_monitor.current_state.armed:
-            try:
-                self.drone_control.arm_service(True)
-            except rospy.ServiceException as exception:
-                rospy.logerr(f"Service arming call failed: {exception}")
-            RATE.sleep()
-        rospy.loginfo("Drone armed.")
-
-        # Switching state to OFFBOARD
-        rospy.loginfo("Switching to OFFBOARD mode...")
-        while not self.drone_monitor.current_state.mode == "OFFBOARD":
-            self.drone_control.drone_flight_mode("OFFBOARD")
-            RATE.sleep()
-        rospy.loginfo("OFFBOARD mode activated.")
-        rospy.logwarn(f"Drone #{self.drone_id+1} ready for flight.")
-
-    def drone_shutdown(self) -> None:
-        """
-        drone_shutdown Deactivates drone after flight
-
-        This method lands and disarms the drone by clubbing drone_flight_mode("AUTO.LAND") and
-        disarming for code conciseness.
-        """
-        # Land the drone
-        rospy.loginfo("Landing drone...")
-        while not self.drone_monitor.current_state.mode == "AUTO.LAND":
-            self.drone_control.drone_flight_mode("AUTO.LAND")
-            RATE.sleep()
-        # Waiting for drone to disarm after landing
-        while self.drone_monitor.current_state.armed:
-            RATE.sleep()
-        rospy.loginfo("Drone landed and disarmed.")
+            except ROSException:
+                rospy.loginfo("Data Stream terminated.")
 
     class DroneMonitor:
         """
         DroneMonitor Monitors drone state and pose
 
         This class contains callback functions of the subscribers of this node that track the
-        state and pose of the drone during operation.
+        the drone during operation.
         """
 
-        def __init__(self, drone_id) -> None:
+        def __init__(self) -> None:
             """
             __init__ Initialises class attributes
 
-            This method initialises the class attributes of the DroneMonitor class, namely the state
-            of the drone, and the drone's current pose during operation.
+            This method initialises the class attributes of the DroneMonitor class.
             """
             rospy.loginfo("Initialising drone monitor...")
 
             # Drone monitoring attributes
-            self.goal_vel = Twist()  # Velocity of the drone
-            self.current_state = State()  # State object for tracking drone state
+            self.current_state = State()  # Current state/flight mode of the drone
             self.current_pose = PoseStamped()  # Pose of the drone
-            self.goal_pose = PoseStamped()  # Goal pose for the drone
-            self.event_log = (
-                threading.Event()
-            )  # Thread tracker for the drone's data stream
+            self.goal_pose = PoseStamped()  # Goal pose of the drone
             self.gripper_state = None  # State of the gripper (dummy initial value)
-            self.reached = False  # Checks if the drone has reached a goal setpoint
+            self.goal_vel = Twist()  # Velocity of the drone
 
             # ArUco detection attributes
-            self.bridge = (
-                CvBridge()
-            )  # Conversion between ROS Image Messages and OpenCV Images
-            # Coordinates of centre of detected aruco markers
-            self.aruco_centre = [[]]
+            self.bridge = CvBridge()
+            self.aruco_centre = [[]]  # Coordinates of centre of detected aruco markers
             self.aruco_check = False  # Marker detection confirmation flag
-            self.callback_delay = 0  # Manual delay timer
 
             rospy.loginfo("Drone monitor initialised.")
 
@@ -238,47 +192,20 @@ class Drone:
             pose_callback Callback function for pose_subscriber
 
             This is the callback function for the pose_subscriber Subscriber for the
-            /mavros/local_position/pose topic.
+            /mavros/local_position/pose topic. The pose of the drone is used to track it's travel between setpoints.
 
             :param curr_pose: The current pose of the drone.
             :type curr_pose: PoseStamped
             """
-            # Recording current pose for usage in aruco_callback
             self.current_pose = curr_pose
-
-            # Nested function for tolerance radius checking
-            def is_near(current: float, goal: float) -> bool:
-                """
-                is_near Setpoint tolerance checker
-
-                This nested function inside pose_callback checks whether the drone has reached the
-                setpoint within the accepted tolerance range.
-
-                :param pose: The pose variable being checked (X, Y or Z)
-                :type pose: str
-                :param current: Current pose variable
-                :type current: float
-                :param goal: Goal pose variable
-                :type goal: float
-                :return: Confirmation whether the drone is within tolerance or not
-                :rtype: bool
-                """
-                return abs(current - goal) < 0.2  # Tolerance radius = 0.2m
-
-            if (
-                is_near(curr_pose.pose.position.x, self.goal_pose.pose.position.x)
-                and is_near(curr_pose.pose.position.y, self.goal_pose.pose.position.y)
-                and is_near(curr_pose.pose.position.z, self.goal_pose.pose.position.z)
-            ):
-                self.reached = True
-                self.event_log.set()
 
         def gripper_callback(self, grip_detect: String) -> None:
             """
             gripper_callback Callback function for gripper_subscriber
 
             This is the callback function for gripper_subscriber Subscriber for the /gripper_check
-            topic.
+            topic. The state of the gripper is checked before the drone is deemed capable of
+            picking up a package.
 
             :param grip_detect: Detects if gripper position is valid for gripping
             :type grip_detect: String
@@ -322,12 +249,11 @@ class Drone:
                 # Flatten the ArUco IDs list
                 ids = ids.flatten()
                 # Loop over the detected ArUCo corners
-                for (marker_corner, marker_id) in zip(corners, ids):
-                    detected_markers[marker_id] = marker_corner
+                detected_markers[ids] = corners
                 # Calculate the centre position of the detected aruco marker
                 for key, _ in detected_markers.items():
-                    x_0, y_0 = map(int, detected_markers[key][0][0])
-                    x_2, y_2 = map(int, detected_markers[key][0][2])
+                    x_0, y_0 = map(int, detected_markers[_][0][0])
+                    x_2, y_2 = map(int, detected_markers[_][0][2])
                     # print(detected_markers[key][0][:])
                     self.aruco_centre[key - 1] = [
                         int((x_0 + x_2) / 2),
@@ -339,16 +265,15 @@ class Drone:
         """
         DroneControl Controls the drone
 
-        This class contains functions to control the drone by sending data to the FCU.
+        This class contains low level functions to control the drone by sending data to the FCU.
         """
 
         def __init__(self, drone_id) -> None:
             """
             __init__ Initialises class attributes
 
-            Initiliases the class attributes for the DroneControl class, namely the setmode
-            services
-            and the data stream to the drone.
+            Initiliases the class attributes for the DroneControl class, namely all the ROS
+            services required for drone control.
             """
             rospy.loginfo("Initialising drone control.")
 
@@ -371,31 +296,73 @@ class Drone:
             rospy.wait_for_service(f"edrone{drone_id}/activate_gripper")
             rospy.loginfo("Services initialised.")
 
+            # Stream switch flag to switch between position and velocity setpoint tramsission
+            self.stream_switch = False
+
+            # Initialising drone monitor instance
+            self.drone_monitor = Drone.DroneMonitor()
+
             rospy.loginfo("Drone control initialised.")
 
-        def drone_flight_mode(self, mode: str):
+        def drone_startup(self, drone_id) -> None:
             """
-            drone_flight_mode Set flight mode for drone
+            drone_startup Activates drone for flight
 
-            Sets the mode of operation for the drone based on input.
-
-            :param mode: The mode to engage on the drone
-            :type mode: str
+            This method arms the drone and sets OFFBOARD mode for flight.
             """
-            try:
-                self.set_mode_service(custom_mode=mode)
-            except rospy.ServiceException:
-                rospy.logerr(
-                    f"service set_mode call failed. \n {mode} Mode not set. Check GPS is enabled"
-                )
+            # Arming the drone
+            rospy.loginfo("Arming Drone...")
+            while not self.drone_monitor.current_state.armed:
+                try:
+                    self.arm_service(True)
+                except rospy.ServiceException as exception:
+                    rospy.logerr(f"Service arming call failed: {exception}")
+                RATE.sleep()
+            rospy.loginfo("Drone armed.")
+
+            # Switching state to OFFBOARD
+            rospy.loginfo("Switching to OFFBOARD mode...")
+            while not self.drone_monitor.current_state.mode == "OFFBOARD":
+                try:
+                    self.set_mode_service(custom_mode="OFFBOARD")
+                except rospy.ServiceException as exception:
+                    rospy.logerr(f"Service arming call failed: {exception}")
+                RATE.sleep()
+            rospy.loginfo("OFFBOARD mode activated.")
+            rospy.logwarn(f"Drone #{drone_id+1} ready for flight.")
+
+        def drone_shutdown(self) -> None:
+            """
+            drone_shutdown Deactivates drone after flight
+
+            This method lands and disarms the drone, using the AUTO.LAND mode for the drone
+            landing.
+            """
+            # Land the drone
+            rospy.loginfo("Landing drone...")
+            while not self.drone_monitor.current_state.mode == "AUTO.LAND":
+                try:
+                    self.set_mode_service(custom_mode="AUTO.LAND")
+                except rospy.ServiceException as exception:
+                    rospy.logerr(f"Service arming call failed: {exception}")
+                RATE.sleep()
+            # Waiting for drone to disarm after landing
+            while self.drone_monitor.current_state.armed:
+                try:
+                    self.arm_service(False)
+                except rospy.ServiceException as exception:
+                    rospy.logerr(f"Service arming call failed: {exception}")
+                RATE.sleep()
+            rospy.loginfo("Drone landed and disarmed.")
 
         def drone_set_goal(self, goal_pose: list, override: bool = False) -> None:
             """
             drone_set_goal Sets goal setpoint for drone
 
-            Feeds the setpoints to be set for the next traversal of the drone. This goal will be
-            checked with the current state to determine whether it has reached. It will also check
-            for markers along the way (this can be overriden).
+            Feeds the setpoints to be set for the next traversal of the drone. The goal setpoint
+            will be checked with the current state to determine whether the drone has reached. The
+            drone will also check for markers along the way, although this criterion can be
+            overriden to make the drone ignore markers.
 
             :param goal_pose: The goal setpoint to be sent to the drone.
             :type goal_pose: list
@@ -403,21 +370,54 @@ class Drone:
             :type override: bool
             """
             # Resetting flags
-            self.reached = False
+            reached = False  # Checks whether drone has reach goal setpoint
             self.stream_switch = False
 
             rospy.loginfo(
                 f"New setpoint: \033[96m[{goal_pose[0]}, {goal_pose[1]}, {goal_pose[2]}]\033[0m"
             )
+
             # Setting goal position coordinates
             self.drone_monitor.goal_pose.pose.position.x = goal_pose[0]
             self.drone_monitor.goal_pose.pose.position.y = goal_pose[1]
             self.drone_monitor.goal_pose.pose.position.z = goal_pose[2]
 
+            # Nested function for tolerance radius checking
+            def is_near(current: float, goal: float) -> bool:
+                """
+                is_near Setpoint tolerance checker
+
+                This nested function checks whether the drone has reached the goal setpoint within
+                the accepted tolerance range defined within.
+
+                :param pose: The pose variable being checked (X, Y or Z)
+                :type pose: str
+                :param current: Current pose variable
+                :type current: float
+                :param goal: Goal pose variable
+                :type goal: float
+                :return: Confirmation whether the drone is within tolerance or not
+                :rtype: bool
+                """
+                return abs(current - goal) < 0.2  # Tolerance radius = 0.2m
+
             # Wating for the drone to reach the setpoint or detect a marker
-            while not self.reached:
+            while not reached:
                 if self.drone_monitor.aruco_check and not override:
                     break
+
+                if (
+                    is_near(
+                        self.drone_monitor.current_pose.pose.position.x, goal_pose[0]
+                    )
+                    and is_near(
+                        self.drone_monitor.current_pose.pose.position.y, goal_pose[1]
+                    )
+                    and is_near(
+                        self.drone_monitor.current_pose.pose.position.z, goal_pose[2]
+                    )
+                ):
+                    reached = True
                 RATE.sleep()
 
             rospy.loginfo(f"Reached setpoint: \033[96m{goal_pose}\033[0m")
@@ -433,7 +433,7 @@ class Drone:
                 self.drone_package_pick(package_pos)
 
             # Resetting flags
-            self.reached = False
+            reached = False  # Checks whether drone has reach goal setpoint
             self.stream_switch = False
 
         def drone_package_pick(self, package_pos: list) -> None:
@@ -582,29 +582,22 @@ if __name__ == "__main__":
         RATE = rospy.Rate(10)  # Setting rate of transmission
         rospy.logwarn("Node Started!")
 
+        # Defining the setpoints for travel
+        setpoints = [
+            [0, 0, 3],
+            [9, 0, 3],
+            [0, 0, 3],
+        ]
+
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
         drone1 = Drone(0)
+        drone1.drone_control.drone_set_goal(setpoints[0], override=True)
         drone2 = Drone(1)
+        drone2.drone_control.drone_set_goal(setpoints[0], override=True)
         rospy.loginfo("\033[92mReady for task! Commencing flight!\033[0m")
 
-        # # Defining the setpoints for travel
-        # setpoints = [
-        #     [0, 0, 3],
-        #     [9, 0, 3],
-        #     [0, 0, 3],
-        # ]  # Box placing setpoint
-
-        # # Initialising drone control
-        # self.drone_control = DroneControl()
-
-        # rospy.loginfo("\033[92mReady for task! Commencing flight!\033[0m")
-        # # Activating drone for flight
-        # self.drone_control.drone_startup()
-
-        # # Performing flight operations
-        # # Sending flight setpoints
-        # self.drone_control.drone_set_goal(setpoints[0])
-        # self.drone_control.drone_set_goal(setpoints[1])
+        # Performing flight operations
+        # Sending flight setpoints
         # # Will execute only if something has been picked, for debugging purposes
         # if self.drone_monitor.gripper_state:
         #     self.drone_control.drone_package_place(setpoints[1])  # Placing package
