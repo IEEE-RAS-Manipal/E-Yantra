@@ -385,13 +385,11 @@ class DroneControl:
 
             # Tweaking velocity of the drone using the exp(0.4x-3) function
             vel[0] = exp(
-                0.4 * abs(package_pos[0] -
-                          state_monitor.current_pose.pose.position.x)
+                0.4 * abs(package_pos[0] - state_monitor.current_pose.pose.position.x)
                 - 3
             )
             vel[1] = exp(
-                0.4 * abs(package_pos[1] -
-                          state_monitor.current_pose.pose.position.y)
+                0.4 * abs(package_pos[1] - state_monitor.current_pose.pose.position.y)
                 - 3
             )
 
@@ -439,8 +437,7 @@ class DroneControl:
         rospy.loginfo("Attempting to grip...")
         # Activating the gripper
         drone_control.drone_gripper_attach(True)
-        rospy.loginfo(
-            "\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
+        rospy.loginfo("\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
 
         # Taking off from location
         drone_control.drone_startup()
@@ -467,8 +464,7 @@ class DroneControl:
         # Deactivating the gripper
         rospy.loginfo("Deactivating gripper...")
         drone_control.drone_gripper_attach(False)
-        rospy.loginfo(
-            "\033[92mPackage placed! Proceeding on original path!\033[0m")
+        rospy.loginfo("\033[92mPackage placed! Proceeding on original path!\033[0m")
 
         # Taking off
         drone_control.drone_startup()

@@ -50,15 +50,18 @@ class Drone:
     single drone entity.
     """
 
-    def __init__(self, drone_id) -> None:
+    def __init__(self, drone_id: int) -> None:
         """
         __init__ Initialises class attributes
 
         This method initialises the class attributes of the Drone class, namely initialising the
         DroneMonitor and DroneControl classes for a single drone entity along with some higher
         level parameters.
+
+        :param drone_id: The drone number to initialise.
+        :type drone_id: int
         """
-        rospy.logwarn(f"Starting up Drone #{drone_id+1}...")
+        rospy.logwarn(f"Booting up Drone #{drone_id+1}...")
         self.drone_id = drone_id
 
         # Initialising control
@@ -119,7 +122,7 @@ class Drone:
             sys.exit()
 
         # Starting up drone
-        self.drone_control.drone_startup(self.drone_id)
+        self.drone_control.drone_startup()
 
     def drone_data_stream(self) -> None:
         """
@@ -141,9 +144,9 @@ class Drone:
                     )
                 RATE.sleep()
             except ROSInterruptException:
-                rospy.loginfo("Data Stream terminated.")
+                rospy.loginfo(f"Drone #{self.drone_id+1} data stream terminated.")
             except ROSException:
-                rospy.loginfo("Data Stream terminated.")
+                rospy.loginfo(f"Drone #{self.drone_id+1} data stream terminated.")
 
     class DroneMonitor:
         """
@@ -192,7 +195,8 @@ class Drone:
             pose_callback Callback function for pose_subscriber
 
             This is the callback function for the pose_subscriber Subscriber for the
-            /mavros/local_position/pose topic. The pose of the drone is used to track it's travel between setpoints.
+            /mavros/local_position/pose topic. The pose of the drone is used to track it's travel
+            between setpoints.
 
             :param curr_pose: The current pose of the drone.
             :type curr_pose: PoseStamped
@@ -249,11 +253,12 @@ class Drone:
                 # Flatten the ArUco IDs list
                 ids = ids.flatten()
                 # Loop over the detected ArUCo corners
-                detected_markers[ids] = corners
+                for (marker_corner, marker_id) in zip(corners, ids):
+                    detected_markers[marker_id] = marker_corner
                 # Calculate the centre position of the detected aruco marker
                 for key, _ in detected_markers.items():
-                    x_0, y_0 = map(int, detected_markers[_][0][0])
-                    x_2, y_2 = map(int, detected_markers[_][0][2])
+                    x_0, y_0 = map(int, detected_markers[key][0][0])
+                    x_2, y_2 = map(int, detected_markers[key][0][2])
                     # print(detected_markers[key][0][:])
                     self.aruco_centre[key - 1] = [
                         int((x_0 + x_2) / 2),
@@ -274,8 +279,17 @@ class Drone:
 
             Initiliases the class attributes for the DroneControl class, namely all the ROS
             services required for drone control.
+
+            :param drone_id: The drone number to initialise.
+            :type drone_id: int
             """
             rospy.loginfo("Initialising drone control.")
+
+            # Initialising drone monitor instance
+            self.drone_monitor = Drone.DroneMonitor()
+            self.drone_id = drone_id  # Drone number
+            # Stream switch flag to switch between position and velocity setpoint tramsission
+            self.stream_switch = False
 
             # Initialising proxy services for mode setting for the drone
             rospy.loginfo("Initialising Services...")
@@ -296,22 +310,18 @@ class Drone:
             rospy.wait_for_service(f"edrone{drone_id}/activate_gripper")
             rospy.loginfo("Services initialised.")
 
-            # Stream switch flag to switch between position and velocity setpoint tramsission
-            self.stream_switch = False
-
-            # Initialising drone monitor instance
-            self.drone_monitor = Drone.DroneMonitor()
-
             rospy.loginfo("Drone control initialised.")
 
-        def drone_startup(self, drone_id) -> None:
+        def drone_startup(self) -> None:
             """
             drone_startup Activates drone for flight
 
             This method arms the drone and sets OFFBOARD mode for flight.
             """
+            rospy.loginfo(f"\033[93mStarting Drone #{self.drone_id+1}...\033[0m")
+
             # Arming the drone
-            rospy.loginfo("Arming Drone...")
+            rospy.loginfo(f"Arming drone #{self.drone_id+1}...")
             while not self.drone_monitor.current_state.armed:
                 try:
                     self.arm_service(True)
@@ -321,15 +331,17 @@ class Drone:
             rospy.loginfo("Drone armed.")
 
             # Switching state to OFFBOARD
-            rospy.loginfo("Switching to OFFBOARD mode...")
+            rospy.loginfo(
+                f"Enabling OFFBOARD flight mode for Drone #{self.drone_id+1}..."
+            )
             while not self.drone_monitor.current_state.mode == "OFFBOARD":
                 try:
                     self.set_mode_service(custom_mode="OFFBOARD")
                 except rospy.ServiceException as exception:
                     rospy.logerr(f"Service arming call failed: {exception}")
                 RATE.sleep()
-            rospy.loginfo("OFFBOARD mode activated.")
-            rospy.logwarn(f"Drone #{drone_id+1} ready for flight.")
+            rospy.loginfo("OFFBOARD flight mode activated.")
+            rospy.loginfo(f"\033[92mDrone #{self.drone_id+1} ready for flight!\033[90m")
 
         def drone_shutdown(self) -> None:
             """
@@ -338,8 +350,10 @@ class Drone:
             This method lands and disarms the drone, using the AUTO.LAND mode for the drone
             landing.
             """
+            rospy.loginfo(f"\033[93mShutting down Drone #{self.drone_id+1}...\033[0m")
+
             # Land the drone
-            rospy.loginfo("Landing drone...")
+            rospy.logwarn(f"Landing Drone #{self.drone_id+1}...")
             while not self.drone_monitor.current_state.mode == "AUTO.LAND":
                 try:
                     self.set_mode_service(custom_mode="AUTO.LAND")
@@ -353,7 +367,9 @@ class Drone:
                 except rospy.ServiceException as exception:
                     rospy.logerr(f"Service arming call failed: {exception}")
                 RATE.sleep()
-            rospy.loginfo("Drone landed and disarmed.")
+            rospy.logwarn(f"Drone #{self.drone_id+1} landed and disarmed.")
+
+            rospy.loginfo(f"\033[92mDrone #{self.drone_id+1} shut down!\033[90m")
 
         def drone_set_goal(self, goal_pose: list, override: bool = False) -> None:
             """
@@ -374,7 +390,7 @@ class Drone:
             self.stream_switch = False
 
             rospy.loginfo(
-                f"New setpoint: \033[96m[{goal_pose[0]}, {goal_pose[1]}, {goal_pose[2]}]\033[0m"
+                f"Drone #{self.drone_id+1} travelling to \033[96m[{goal_pose[0]}, {goal_pose[1]}, {goal_pose[2]}]\033[0m"
             )
 
             # Setting goal position coordinates
@@ -420,16 +436,14 @@ class Drone:
                     reached = True
                 RATE.sleep()
 
-            rospy.loginfo(f"Reached setpoint: \033[96m{goal_pose}\033[0m")
+            rospy.loginfo(f"Drone #{self.drone_id+1} reached setpoint.")
 
             if self.drone_monitor.aruco_check and not override:
                 package_pos = [
                     self.drone_monitor.current_pose.pose.position.x,
                     self.drone_monitor.current_pose.pose.position.y,
                 ]
-                rospy.loginfo(
-                    f"\033[92mArUco marker detected at \033[96m{package_pos}\033[0m"
-                )
+                rospy.logwarn(f"ArUco marker detected at \033[96m{package_pos}")
                 self.drone_package_pick(package_pos)
 
             # Resetting flags
@@ -442,8 +456,9 @@ class Drone:
 
             This function performs approach and pickup of a detected package, which the last known
             position of the drone when the package was detected passed in arguments. This is used
-            along with the real-time position of the ArUco marker to adjust the velocity of the drone
-            on its approach. The function exits once the package has been successfully picked.
+            along with the real-time position of the ArUco marker to adjust the velocity of the
+            drone on its approach. The function exits once the package has been successfully
+            picked.
 
             :param package_pos: Last-known position of detected package, to be used as reference.
             :type package_pos: list
@@ -451,11 +466,12 @@ class Drone:
 
             # Velocity of the drone to be tweaked during approach
             vel = [0.0, 0.0, 0.0]
-            rospy.loginfo("\033[93mCommencing pickup of package...\033[0m")
+            rospy.loginfo(
+                f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
+            )
 
             self.stream_switch = True  # Switch to velocity setpoint transmission
 
-            rospy.loginfo("Performing adjustments...")
             while self.drone_monitor.current_state.armed:
                 # Real-time position of ArUco marker
                 [aruco_cx, aruco_cy] = self.drone_monitor.aruco_centre[0][:]
@@ -501,16 +517,12 @@ class Drone:
                     self.drone_monitor.goal_vel.linear.y = -vel[1]
 
                 # Slowing down when close to the ground
-                if self.drone_monitor.current_pose.pose.position.z < -0.2:
-                    self.drone_monitor.goal_vel.linear.z = -0.15
-                if self.drone_monitor.current_pose.pose.position.z < -0.3:
+                if self.drone_monitor.current_pose.pose.position.z < 0.3:
                     rospy.sleep(2)  # Manual delay for ensuring smooth transition
-                    self.drone_control.drone_shutdown()
+                    self.drone_shutdown()
                 RATE.sleep()
 
-            self.drone_control.stream_switch = (
-                False  # Switch back to normal setpoint tranmission
-            )
+            self.stream_switch = False  # Switch back to normal setpoint tranmission
 
             # Performing gripping procedure
             # Checking if the gripper is in position
@@ -519,40 +531,44 @@ class Drone:
                 RATE.sleep()
             rospy.loginfo("Attempting to grip...")
             # Activating the gripper
-            self.drone_control.drone_gripper_attach(True)
-            rospy.loginfo("\033[92mPackage picked! Proceeding to dropoff point!\033[0m")
+            self.drone_gripper_attach(True)
+            rospy.loginfo(
+                f"\033[92mDrone #{self.drone_id+1} package picked! Proceeding to dropoff point!\033[0m"
+            )
 
             # Taking off from location
-            self.drone_control.drone_startup()
+            self.drone_startup()
             package_pos.append(3)
-            self.drone_control.drone_set_goal(package_pos, True)
+            self.drone_set_goal(package_pos, True)
 
         def drone_package_place(self, place_pos: list) -> None:
             """
             drone_package_place Places a package at the designated location
 
-            This function places the package being carried by the drone at the designated location. It
-            is assumed that a package has been picked by the drone prior to executing this function.
+            This function places the package being carried by the drone at the designated
+            location. It is assumed that a package has been picked by the drone prior to executing
+            this function.
 
             :param place_pos: The location to place the package.
             :type place_pos: list
             """
             rospy.loginfo(
-                f"\033[93mCommencing placing of package at\033[96m{place_pos}\033[0m"
+                f"\033[93mDrone #{self.drone_id+1} commencing placement of package at\033[96m{place_pos}...\033[0m"
             )
-            self.drone_control.drone_set_goal(place_pos, True)
+            self.drone_set_goal(place_pos, True)
 
             # Landing the drone
-            self.drone_control.drone_shutdown()
+            self.drone_shutdown()
 
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
-            self.drone_control.drone_gripper_attach(False)
-            rospy.loginfo("\033[92mPackage placed! Proceeding on original path!\033[0m")
+            self.drone_gripper_attach(False)
+            rospy.loginfo("Gripper deactivated.")
+            rospy.loginfo(f"\033[92mDrone #{self.drone_id+1}Package placed!\033[0m")
 
             # Taking off
-            self.drone_control.drone_startup()
-            self.drone_control.drone_set_goal(place_pos, True)
+            self.drone_startup()
+            self.drone_set_goal(place_pos, True)
 
         def drone_gripper_attach(self, activation: bool) -> None:
             """
@@ -585,15 +601,18 @@ if __name__ == "__main__":
         # Defining the setpoints for travel
         setpoints = [
             [0, 0, 3],
-            [9, 0, 3],
+            [0, -12, 3],
+            [20, -12, 3],
             [0, 0, 3],
         ]
 
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
-        drone1 = Drone(0)
-        drone1.drone_control.drone_set_goal(setpoints[0], override=True)
+        # drone1 = Drone(0)
+        # drone1.drone_control.drone_set_goal(setpoints[0], override=True)
         drone2 = Drone(1)
         drone2.drone_control.drone_set_goal(setpoints[0], override=True)
+        drone2.drone_control.drone_set_goal(setpoints[1])
+        drone2.drone_control.drone_set_goal(setpoints[2])
         rospy.loginfo("\033[92mReady for task! Commencing flight!\033[0m")
 
         # Performing flight operations
