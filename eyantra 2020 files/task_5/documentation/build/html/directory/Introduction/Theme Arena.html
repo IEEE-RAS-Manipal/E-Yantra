@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Theme Arena &mdash; eYRC-VB#1202 Task 5 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Overview" href="../Implementation/Introduction.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> eYRC-VB#1202 Task 5
+          
+
+          
+            
+            <img src="../../_static/eyrc.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Vargi Bot Theme</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theme Arena</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ur5-robotic-arms">UR5 Robotic Arms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logical-camera">Logical Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camera">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shelf-and-conveyor-belt">Shelf and Conveyor Belt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sorting-bins-and-packages">Sorting Bins and Packages</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Introduction.html#simulation">Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Introduction.html#ros-and-gazebo">ROS and Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Introduction.html#moveit-and-rviz">MoveIt! and RViz</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Introduction.html#iot-communication">IoT Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Introduction.html#mqtt-protocol">MQTT Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Introduction.html#gsuite-sheets-and-email">Gsuite (Sheets and Email)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Introduction.html#dashboard">Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/ROS Gazebo.html">ROS and Gazebo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/ROS Gazebo.html#ros">ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/ROS Gazebo.html#gazebo">Gazebo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/ROS Gazebo.html#logical-camera">Logical Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/ROS Gazebo.html#vacuum-gripper">Vacuum Gripper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/Moveit.html">MoveIt! and RViz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Moveit.html#moveit">MoveIt!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Moveit.html#rviz">RViz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Moveit.html#scene-files">Scene Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Implementation/Moveit.html#tf-frames">TF Frames</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/MQTT.html">MQTT Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/MQTT.html#mqtt-publisher">MQTT Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/MQTT.html#mqtt-topics">MQTT Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/MQTT.html#mqtt-broker">MQTT Broker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/MQTT.html#mqtt-subscriber">MQTT Subscriber</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/Google.html">GSuite, Sheets and Gmail</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Google.html#google-sheets">Google Sheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Implementation/Google.html#gmail-integration">Gmail Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Implementation/Dashboard.html">Dashboard</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/API Doc.html">Documentation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/API Doc.html#pkg-task5">pkg_task5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#config">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#launch">launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#scripts">scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/API Doc.html#pkg-ros-iot-bridge">pkg_ros_iot_bridge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#id1">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#msg">msg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#id2">scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html">pkg_task5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#config">config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/config/rviz.html">rviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/config/saved_trajectories.html">saved_trajectories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#launch">launch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/launch/task5_solution.html">task5_solution.launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#scripts">scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/lib_task5.html">lib_task5.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_1.html">node_t5_ur5_1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_2.html">node_t5_ur5_2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_package_detect.html">node_package_detect.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_iot_action_client.html">node_iot_action_client.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html">pkg_ros_iot_bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#config">config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/config/config_pyiot.html">config_pyiot.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#msg">msg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/msg/msgMqttSub.html">msgMqttSub.msg</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#scripts">scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/scripts/node_action_server_ros_iot_bridge.html">node_action_server_ros_iot_bridge.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">eYRC-VB#1202 Task 5</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Theme Arena</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/directory/Introduction/Theme Arena.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theme-arena">
+<h1>Theme Arena<a class="headerlink" href="#theme-arena" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/Arena.png" src="../../_images/Arena.png" />
+<p class="caption"><span class="caption-text">The warehouse for the theme.</span></p>
+</div>
+<p>The arena for the theme implementation is a remote warehouse modeled in Gazebo, as shown in the figure. The following elements have been provided for the task:</p>
+<div class="section" id="ur5-robotic-arms">
+<h2>UR5 Robotic Arms<a class="headerlink" href="#ur5-robotic-arms" title="Permalink to this headline">¶</a></h2>
+<p>The warehouse contains two <a class="reference external" href="https://www.universal-robots.com/products/ur5-robot/">UR5 Robotic Arms from Universal Robots</a>, which are lightweight industrial robots tackling medium level industry operations with maximum flexibility:</p>
+<ul class="simple">
+<li>UR5_1: The first industrial robotic arm is used to pick up objects from the shelf of the warehouse and place it on a conveyor belt.</li>
+<li>UR5_2: The second industrial robotic arm is placed at the end of the conveyor belt, where there are also three coloured bins matching the colour of the package. The arm picks up the objects from the moving conveyor belt and segregates them in respective bins.</li>
+</ul>
+</div>
+<div class="section" id="logical-camera">
+<h2>Logical Camera<a class="headerlink" href="#logical-camera" title="Permalink to this headline">¶</a></h2>
+<p>The two blue cameras placed above the conveyor belt help the UR5s <a class="reference internal" href="../Implementation/ROS Gazebo.html#logicalcamera"><span class="std std-ref">identify the packages</span></a> and segregate them accordingly.</p>
+</div>
+<div class="section" id="camera">
+<h2>Camera<a class="headerlink" href="#camera" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/Camera.png" class="align-center" src="../../_images/Camera.png" />
+<p>This camera is a 2D camera facing the packages on the shelf. The role of this camera is to use <a class="reference internal" href="../API Doc/pkg_task5/scripts/node_package_detect.html"><span class="doc">Computer Vision techniques</span></a> to identify packages on the shelf.</p>
+</div>
+<div class="section" id="shelf-and-conveyor-belt">
+<h2>Shelf and Conveyor Belt<a class="headerlink" href="#shelf-and-conveyor-belt" title="Permalink to this headline">¶</a></h2>
+<p>The Shelf and Conveyor Belt are an abstraction of an inventory shelf and conveyor belt in a warehouse for this implementation.</p>
+</div>
+<div class="section" id="sorting-bins-and-packages">
+<h2>Sorting Bins and Packages<a class="headerlink" href="#sorting-bins-and-packages" title="Permalink to this headline">¶</a></h2>
+<p>The three sorting bins located around the UR5_2 are coloured according to the priority of the packages being put in it:</p>
+<ul class="simple">
+<li>Red: High Priority packages like Medicines</li>
+<li>Yellow: Medium Priority packages like Food</li>
+<li>Green: Low Priority packages like clothes</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../Implementation/Introduction.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Neehal Sharrma (Leader), Leander D&#39;Souza, Hiren Gupta, Arjun Hariharan.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

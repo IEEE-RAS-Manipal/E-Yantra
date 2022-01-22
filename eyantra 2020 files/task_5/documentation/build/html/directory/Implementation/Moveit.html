@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MoveIt! and RViz &mdash; eYRC-VB#1202 Task 5 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MQTT Protocol" href="MQTT.html" />
+    <link rel="prev" title="ROS and Gazebo" href="ROS Gazebo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> eYRC-VB#1202 Task 5
+          
+
+          
+            
+            <img src="../../_static/eyrc.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Vargi Bot Theme</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/Theme Arena.html">Theme Arena</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/Theme Arena.html#ur5-robotic-arms">UR5 Robotic Arms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/Theme Arena.html#logical-camera">Logical Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/Theme Arena.html#camera">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/Theme Arena.html#shelf-and-conveyor-belt">Shelf and Conveyor Belt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/Theme Arena.html#sorting-bins-and-packages">Sorting Bins and Packages</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#simulation">Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Introduction.html#ros-and-gazebo">ROS and Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Introduction.html#moveit-and-rviz">MoveIt! and RViz</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#iot-communication">IoT Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Introduction.html#mqtt-protocol">MQTT Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Introduction.html#gsuite-sheets-and-email">Gsuite (Sheets and Email)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#dashboard">Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ROS Gazebo.html">ROS and Gazebo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ROS Gazebo.html#ros">ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ROS Gazebo.html#gazebo">Gazebo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ROS Gazebo.html#logical-camera">Logical Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ROS Gazebo.html#vacuum-gripper">Vacuum Gripper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MoveIt! and RViz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#moveit">MoveIt!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rviz">RViz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scene-files">Scene Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tf-frames">TF Frames</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MQTT.html">MQTT Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="MQTT.html#mqtt-publisher">MQTT Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MQTT.html#mqtt-topics">MQTT Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MQTT.html#mqtt-broker">MQTT Broker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MQTT.html#mqtt-subscriber">MQTT Subscriber</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Google.html">GSuite, Sheets and Gmail</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Google.html#google-sheets">Google Sheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Google.html#gmail-integration">Gmail Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dashboard.html">Dashboard</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/API Doc.html">Documentation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/API Doc.html#pkg-task5">pkg_task5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#config">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#launch">launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#scripts">scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/API Doc.html#pkg-ros-iot-bridge">pkg_ros_iot_bridge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#id1">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#msg">msg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/API Doc.html#id2">scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html">pkg_task5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#config">config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/config/rviz.html">rviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/config/saved_trajectories.html">saved_trajectories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#launch">launch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/launch/task5_solution.html">task5_solution.launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_task5/pkg_task5.html#scripts">scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/lib_task5.html">lib_task5.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_1.html">node_t5_ur5_1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_2.html">node_t5_ur5_2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_package_detect.html">node_package_detect.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_task5/scripts/node_iot_action_client.html">node_iot_action_client.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html">pkg_ros_iot_bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#config">config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/config/config_pyiot.html">config_pyiot.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#msg">msg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/msg/msgMqttSub.html">msgMqttSub.msg</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/pkg_ros_iot_bridge.html#scripts">scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../API Doc/pkg_ros_iot_bridge/scripts/node_action_server_ros_iot_bridge.html">node_action_server_ros_iot_bridge.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">eYRC-VB#1202 Task 5</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>MoveIt! and RViz</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/directory/Implementation/Moveit.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="moveit-and-rviz">
+<h1>MoveIt! and RViz<a class="headerlink" href="#moveit-and-rviz" title="Permalink to this headline">¶</a></h1>
+<p>The MoveIt! + RViz platform for robotics visualisation and manipulation is the primary method for implementing many robotics applications. As a bundled package, it has robust integration with each other and easy to implement.</p>
+<hr class="docutils" />
+<div class="section" id="moveit">
+<h2>MoveIt!<a class="headerlink" href="#moveit" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/MoveIt.png" src="../../_images/MoveIt.png" />
+<p class="caption"><span class="caption-text">The MoveIt! Setup Assistant that generates controllers for the robot off its URDF.</span></p>
+</div>
+<p>The MoveIt! Motion Planning framework is a robotics manipulation platform that enables robots to perform operations on objects, conduct autonomous motion planning, etc. that can also be seen in simulation environment like Gazebo. The crux of MoveIt! is in the controllers generated by the pipeline with the help of the <a class="reference external" href="http://docs.ros.org/en/hydro/api/moveit_setup_assistant/html/doc/tutorial.html">MoveIt! Setup Assistant</a>, on providing a URDF file of the robot and specifying joints and preset poses.</p>
+<p>The MoveIt! robot controllers enable the robot to move in Gazebo according to the motion plan set in RViz. The default controllers provided were used for the implementation. The <code class="docutils literal notranslate"><span class="pre">FollowJointTrajectory</span></code> controller, which implements the joint trajectory method of joint interpolation for robotic joints, is the default controller used due to its easy implementation and fast compute times.</p>
+<p>The config.yml file for the controller was written thus:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>controller_manager_ns: /
+controller_list:
+- name: ur5_controller
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory                --&gt; Selecting the type of motion controller
+  joints:                                    --&gt; Designate the joints affected by this control scheme
+  - ur5_shoulder_pan_joint
+  - ur5_shoulder_lift_joint
+  - ur5_elbow_joint
+  - ur5_wrist_1_joint
+  - ur5_wrist_2_joint
+  - ur5_wrist_3_joint
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="rviz">
+<h2>RViz<a class="headerlink" href="#rviz" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/RViz1.png" src="../../_images/RViz1.png" />
+<p class="caption"><span class="caption-text">The RViz Planning Scenes for both UR5s.</span></p>
+</div>
+<p>RViz is the primary robot visualisation environment bundled with the MoveIt! pipeline that enables us to view the world as seen through the robot’s eyes, providing a greater insight into how it can react to stimuli and perform tasks.</p>
+<div class="section" id="scene-files">
+<span id="scene-file"></span><h3>Scene Files<a class="headerlink" href="#scene-files" title="Permalink to this headline">¶</a></h3>
+<p>The environments in RViz seen in the figure were built to replicate the Gazebo environment, by adding objects one-by-one and then <a class="reference external" href="https://groups.google.com/g/moveit-users/c/_3h3B_fNNao">exported to a scene file</a> that can be read from the next time RViz launches to bring the objects in the environment automatically. For example, the boxes on the shelf in the UR5_1’s environment are written in the scene file thus:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">packagen00</span>         <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">object</span>
+<span class="mi">1</span>                    <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">objects</span>
+<span class="n">box</span>                  <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">type</span> <span class="n">of</span> <span class="n">primitive</span> <span class="n">shape</span>
+<span class="mf">0.16</span> <span class="mf">0.16</span> <span class="mf">0.16</span>       <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">dimensions</span>
+<span class="mf">0.28</span> <span class="o">-</span><span class="mf">0.42</span> <span class="mf">1.91</span>      <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">postiion</span> <span class="n">in</span> <span class="n">metres</span> <span class="n">along</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>              <span class="o">--&gt;</span> <span class="n">The</span> <span class="n">orientation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">object</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tf-frames">
+<span id="tfframe"></span><h3>TF Frames<a class="headerlink" href="#tf-frames" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/TFframe.png" src="../../_images/TFframe.png" />
+<p class="caption"><span class="caption-text">The TF frame of a package in RViz, as seen by the logical camera in Gazebo.</span></p>
+</div>
+<p><a class="reference external" href="http://wiki.ros.org/tf">TF</a> is a package that enables us to keep track of coordinate frames of objects when detected through the logical camera in Gazebo. TF was used with the UR5_2 through the <a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_2.html#node_t5_ur5_2.UR5Two.camera_callback" title="node_t5_ur5_2.UR5Two.camera_callback"><code class="xref py py-meth docutils literal notranslate"><span class="pre">camera_callback()</span></code></a> method in <a class="reference internal" href="../API Doc/pkg_task5/scripts/node_t5_ur5_2.html#module-node_t5_ur5_2" title="node_t5_ur5_2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">node_t5_ur5_2</span></code></a> to detect the packages arriving on the conveyor to pinpoint the location so the arm can travel to the package to pick it up.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="MQTT.html" class="btn btn-neutral float-right" title="MQTT Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ROS Gazebo.html" class="btn btn-neutral float-left" title="ROS and Gazebo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Neehal Sharrma (Leader), Leander D&#39;Souza, Hiren Gupta, Arjun Hariharan.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

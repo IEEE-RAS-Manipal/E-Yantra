@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <node name="Turtle_Controller" pkg="pkg_task0" type="VB_1202.py" output="screen"/>
+  <node name="Turtle_Sim" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+
+  <arg name="record" default="true"/>
+  <arg name="duration" default="8"/>
+  <arg name="rec_name" default="VB_1202.bag"/>
+
+  <group if="$(arg record)">
+    <node name="Turtle_Recorder" pkg="rosbag" type="record"
+       args="record -O $(find pkg_task0)/bag_files/$(arg rec_name) --duration=$(arg duration) --chunksize=10 /turtle1/cmd_vel /turtle1/pose" output="screen"/>
+  </group>
+
+</launch>
