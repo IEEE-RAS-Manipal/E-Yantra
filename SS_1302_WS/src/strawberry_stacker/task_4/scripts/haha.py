@@ -487,13 +487,13 @@ class Drone:
                 # Real-time position of ArUco marker
                 [aruco_cx, aruco_cy] = self.drone_monitor.aruco_centre[0][:]
 
-                # Tweaking velocity of the drone using the exp(0.4xZ-3) function
+                # Tweaking velocity of the drone using the exp(0.4x-3) function
                 vel[0] = exp(
                     0.4
                     * abs(
                         package_pos[0] -
                         self.drone_monitor.current_pose.pose.position.x
-                    )*self.drone_monitor.current_pose.pose.position.z
+                    )
                     - 3
                 )
                 vel[1] = exp(
@@ -501,12 +501,10 @@ class Drone:
                     * abs(
                         package_pos[1] -
                         self.drone_monitor.current_pose.pose.position.y
-                    )*self.drone_monitor.current_pose.pose.position.z
+                    )
                     - 3
                 )
 
-                rospy.loginfo(
-                    f"\033[93mDrone #{self.drone_id+1} is about to perform self-adjustments\033[0m")
                 # If ArUco is in this range, begin descending
                 '''
                 if (aruco_cx in range(160, 240)) and (aruco_cy in range(230, 330)) and self.drone_monitor.current_pose.pose.position.z > 3:
@@ -514,34 +512,37 @@ class Drone:
                     package_pos[1] = self.drone_monitor.current_pose.pose.position.y
                     self.drone_monitor.goal_vel.linear.z = -0.2
                 '''
-                if (aruco_cx in range(180, 220)) and (aruco_cy in range(230, 250)) and self.drone_monitor.current_pose.pose.position.z > 0.4:
+                if (aruco_cx in range(180, 220)) and (aruco_cy in range(310, 330)) and self.drone_monitor.current_pose.pose.position.z > 0.4:
                     package_pos[0] = self.drone_monitor.current_pose.pose.position.x
                     package_pos[1] = self.drone_monitor.current_pose.pose.position.y
                     self.drone_monitor.goal_vel.linear.z = -0.4
+                else:
+                    self.drone_monitor.goal_vel.linear.z = 0
 
                 # Positional adjustment based on relative quadrant-based approach
                 # First quadrant (top-right)
-                if aruco_cx > 200 and aruco_cy < 240:
+                if aruco_cx > 200 and aruco_cy < 320:
                     self.drone_monitor.goal_vel.linear.x = vel[0]
                     self.drone_monitor.goal_vel.linear.y = vel[1]
                 # Second quadrant (top-left)
-                elif aruco_cx < 200 and aruco_cy < 240:
+                elif aruco_cx < 200 and aruco_cy < 320:
                     self.drone_monitor.goal_vel.linear.x = -vel[0]
                     self.drone_monitor.goal_vel.linear.y = vel[1]
                 # Third quadrant (bottom-left)
-                elif aruco_cx < 200 and aruco_cy > 240:
+                elif aruco_cx < 200 and aruco_cy > 320:
                     self.drone_monitor.goal_vel.linear.x = -vel[0]
                     self.drone_monitor.goal_vel.linear.y = -vel[1]
                 # Fourth quadrant (bottom-right)
-                elif aruco_cx > 200 and aruco_cy > 240:
+                elif aruco_cx > 200 and aruco_cy > 320:
                     self.drone_monitor.goal_vel.linear.x = vel[0]
                     self.drone_monitor.goal_vel.linear.y = -vel[1]
 
-                if self.drone_monitor.current_pose.pose.position.z <= 0.4:
+                if self.drone_monitor.current_pose.pose.position.z <= 0.3:
                     self.drone_monitor.goal_vel.linear.x = 0
                     self.drone_monitor.goal_vel.linear.y = 0
+
                 # Slowing down when close to the ground
-                if self.drone_monitor.current_pose.pose.position.z < 0.3:
+                if self.drone_monitor.current_pose.pose.position.z < 0.2:
 
                     # Manual delay for ensuring smooth transition
                     rospy.sleep(3)
@@ -652,14 +653,15 @@ if __name__ == "__main__":
             drone2.drone_control.drone_set_goal([58.5, -2, 4], True)
             drone2.drone_control.drone_set_goal([58.5, 2.75, 3], True)
             drone2.drone_control.drone_package_place(
-                [57.8, 3.75, 2])  # Placing package
+                [58.5, 3.75, 2])  # Placing package
         rospy.loginfo("Back to scanning...")
-        drone2.drone_control.drone_set_goal([3, -29, 4], True)
+        drone2.drone_control.drone_set_goal([3, -30, 4], True)
+        drone2.drone_control.drone_set_goal([20, -30, 4])
         if drone2.drone_control.drone_monitor.gripper_state:
             drone2.drone_control.drone_set_goal([57.5, 0, 4], True)
             drone2.drone_control.drone_set_goal([58.5, 3.6, 2], True)
             drone2.drone_control.drone_package_place(
-                [59.73, 3.75, 2])  # Placing package
+                [60.5, 3.75, 2])  # Placing package
         # rospy.sleep(1)
         # self.drone_control.drone_set_goal(setpoints[2], True)
 
