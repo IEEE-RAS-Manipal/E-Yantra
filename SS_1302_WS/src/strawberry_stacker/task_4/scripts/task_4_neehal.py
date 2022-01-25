@@ -15,6 +15,8 @@ DroneControl    Contains various control commands for the drone to run
 
 # Importing essential packages and libraries
 # Module control and core Python librarios
+from concurrent.futures import thread
+import multiprocessing
 import sys  # Main system thread control
 import threading  # Multithreading
 from math import exp  # Misc. math functions
@@ -260,7 +262,7 @@ class Drone:
                     x_0, y_0 = map(int, detected_markers[key][0][0])
                     x_2, y_2 = map(int, detected_markers[key][0][2])
                     # print(detected_markers[key][0][:])
-                    self.aruco_centre[key - 1] = [
+                    self.aruco_centre[0] = [
                         int((x_0 + x_2) / 2),
                         int((y_0 + y_2) / 2),
                     ]
@@ -341,6 +343,7 @@ class Drone:
                     rospy.logerr(f"Service arming call failed: {exception}")
                 RATE.sleep()
             rospy.loginfo("OFFBOARD flight mode activated.")
+
             rospy.loginfo(f"\033[92mDrone #{self.drone_id+1} ready for flight!\033[90m")
 
         def drone_shutdown(self) -> None:
@@ -592,12 +595,39 @@ class Drone:
                 pass
 
 
-if __name__ == "__main__":
-    try:
-        rospy.init_node("ss1302_task4", anonymous=True)  # Initialising node
-        RATE = rospy.Rate(10)  # Setting rate of transmission
-        rospy.logwarn("Node Started!")
+def drone1ops() -> None:
+    """
+    drone1ops Multithreaded function for Drone #1 operations
 
+    This function runs in a separate thread from the main module thread, and performs the operations required of Drone #1.
+    """
+    try:
+        drone1 = Drone(0)
+
+        # Defining the setpoints for travel
+        setpoints = [
+            [0, 0, 3],
+            [0, 17, 3],
+            [10, 17, 3],
+            [0, 0, 3],
+        ]
+        drone1.drone_control.drone_set_goal(setpoints[0], override=True)
+        drone1.drone_control.drone_set_goal(setpoints[1], override=True)
+        drone1.drone_control.drone_set_goal(setpoints[2])
+        ok[0] = True
+        rospy.loginfo("\033[92mDrone #1 completed flight!\033[0m")
+    except ROSInterruptException:
+        pass
+
+
+def drone2ops() -> None:
+    """
+    drone2ops Multithreaded function for Drone #2 operations
+
+    This function runs in a separate thread from the main module thread, and performs the operations required of Drone #2.
+    """
+    try:
+        drone2 = Drone(1)
         # Defining the setpoints for travel
         setpoints = [
             [0, 0, 3],
@@ -606,26 +636,35 @@ if __name__ == "__main__":
             [0, 0, 3],
         ]
 
-        rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
-        # drone1 = Drone(0)
-        # drone1.drone_control.drone_set_goal(setpoints[0], override=True)
-        drone2 = Drone(1)
         drone2.drone_control.drone_set_goal(setpoints[0], override=True)
-        drone2.drone_control.drone_set_goal(setpoints[1])
+        drone2.drone_control.drone_set_goal(setpoints[1], override=True)
         drone2.drone_control.drone_set_goal(setpoints[2])
-        rospy.loginfo("\033[92mReady for task! Commencing flight!\033[0m")
 
-        # Performing flight operations
-        # Sending flight setpoints
-        # # Will execute only if something has been picked, for debugging purposes
-        # if self.drone_monitor.gripper_state:
-        #     self.drone_control.drone_package_place(setpoints[1])  # Placing package
-        # rospy.loginfo("Proceeding to home position.")
-        # rospy.sleep(1)
-        # self.drone_control.drone_set_goal(setpoints[2], True)
+        ok[1] = True
+        rospy.loginfo("\033[92mDrone #2 completed flight!\033[0m")
+    except ROSInterruptException:
+        pass
 
-        # # Begin final post-flight landing procedure
-        # self.drone_control.drone_shutdown()
+
+if __name__ == "__main__":
+    try:
+        rospy.init_node("ss1302_task4", anonymous=True)  # Initialising node
+        RATE = rospy.Rate(10)  # Setting rate of transmission
+        rospy.logwarn("Node Started!")
+        ok = [False, False]
+
+        rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
+        try:
+            drone1thread = threading.Thread(target=drone1ops)
+            drone2thread = threading.Thread(target=drone2ops)
+            drone1thread.start()
+            drone2thread.start()
+        except threading.ThreadError:
+            rospy.signal_shutdown("Unable to start Drones! Restart!")
+            sys.exit()
+
+        while ok[0] is False or ok[1] is False:
+            pass
 
         # Ending Operations
         rospy.loginfo("\033[92mTask complete! Shutting down Node!\033[0m")
