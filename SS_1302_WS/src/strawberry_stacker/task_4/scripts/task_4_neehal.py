@@ -14,9 +14,7 @@ DroneControl    Contains various control commands for the drone to run
 """
 
 # Importing essential packages and libraries
-# Module control and core Python librarios
-from concurrent.futures import thread
-import multiprocessing
+# Module control and core Python libraries
 import sys  # Main system thread control
 import threading  # Multithreading
 from math import exp  # Misc. math functions
@@ -614,7 +612,7 @@ def drone1ops() -> None:
         drone1.drone_control.drone_set_goal(setpoints[0], override=True)
         drone1.drone_control.drone_set_goal(setpoints[1], override=True)
         drone1.drone_control.drone_set_goal(setpoints[2])
-        ok[0] = True
+
         rospy.loginfo("\033[92mDrone #1 completed flight!\033[0m")
     except ROSInterruptException:
         pass
@@ -640,7 +638,6 @@ def drone2ops() -> None:
         drone2.drone_control.drone_set_goal(setpoints[1], override=True)
         drone2.drone_control.drone_set_goal(setpoints[2])
 
-        ok[1] = True
         rospy.loginfo("\033[92mDrone #2 completed flight!\033[0m")
     except ROSInterruptException:
         pass
@@ -651,7 +648,9 @@ if __name__ == "__main__":
         rospy.init_node("ss1302_task4", anonymous=True)  # Initialising node
         RATE = rospy.Rate(10)  # Setting rate of transmission
         rospy.logwarn("Node Started!")
-        ok = [False, False]
+
+        # Truck inventory data
+        truck = [[[56.5, 62.75], [0, 2]], [[14.85, -8.4], [0, 0]]]
 
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
         try:
@@ -659,12 +658,11 @@ if __name__ == "__main__":
             drone2thread = threading.Thread(target=drone2ops)
             drone1thread.start()
             drone2thread.start()
+            drone1thread.join()
+            drone2thread.join()
         except threading.ThreadError:
             rospy.signal_shutdown("Unable to start Drones! Restart!")
             sys.exit()
-
-        while ok[0] is False or ok[1] is False:
-            pass
 
         # Ending Operations
         rospy.loginfo("\033[92mTask complete! Shutting down Node!\033[0m")
