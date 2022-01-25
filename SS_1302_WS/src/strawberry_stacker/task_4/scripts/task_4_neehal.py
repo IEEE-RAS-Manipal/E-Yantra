@@ -17,7 +17,8 @@ DroneControl    Contains various control commands for the drone to run
 # Module control and core Python libraries
 import sys  # Main system thread control
 import threading  # Multithreading
-from math import exp  # Misc. math functions
+from math import exp
+from typing import List  # Misc. math functions
 
 # Core ROS
 import rospy  # ROS Python libraries
@@ -643,26 +644,65 @@ def drone2ops() -> None:
         pass
 
 
+def truck_inventory(choice: int) -> List[float]:
+    """
+    truck_inventory Update truck inventory
+
+    Based on the choice of truck, this function calculates the cell that is currently free for a
+    package to be placed. The cell coordinates are returned for the drone to place the package at.
+
+    :param choice: The choice of red or blue truck.
+    :type choice: int
+    :return: The coordinates of the free cell of the selected truck.
+    :rtype: List[float]
+    """
+    # Local cell counter variables for operations
+    i = TRUCK[choice][1][0]
+    j = TRUCK[choice][1][1]
+
+    # Calculating the cell coordinates [x+i, y+j, z]
+    cell = [TRUCK[choice][0][0] + i * 0.85, TRUCK[choice][0][1] + j * 1.23, 1.7]
+
+    # Incrementing local counter and updating global counter
+    j += 1
+    if j >= 2:
+        j = 0
+        i += 1
+    TRUCK[choice][1][0] = i
+    TRUCK[choice][1][1] = j
+
+    return cell
+
+
 if __name__ == "__main__":
     try:
         rospy.init_node("ss1302_task4", anonymous=True)  # Initialising node
         RATE = rospy.Rate(10)  # Setting rate of transmission
         rospy.logwarn("Node Started!")
 
-        # Truck inventory data
-        truck = [[[56.5, 62.75], [0, 2]], [[14.85, -8.4], [0, 0]]]
+        # Truck inventory data [red_truck, blue_truck]
+        TRUCK = [[[56.5, 62.75], [0, 2]], [[14.85, -8.4], [0, 0]]]
 
-        rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
-        try:
-            drone1thread = threading.Thread(target=drone1ops)
-            drone2thread = threading.Thread(target=drone2ops)
-            drone1thread.start()
-            drone2thread.start()
-            drone1thread.join()
-            drone2thread.join()
-        except threading.ThreadError:
-            rospy.signal_shutdown("Unable to start Drones! Restart!")
-            sys.exit()
+        # DEBUGGING
+        # for _ in range(7):
+        #     cell = truck_inventory(0)
+        #     print("red:", cell)
+
+        # for _ in range(7):
+        #     cell = truck_inventory(1)
+        #     print("blue:", cell)
+
+        # rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
+        # try:
+        #     drone1thread = threading.Thread(target=drone1ops)
+        #     drone2thread = threading.Thread(target=drone2ops)
+        #     drone1thread.start()
+        #     drone2thread.start()
+        #     drone1thread.join()
+        #     drone2thread.join()
+        # except threading.ThreadError:
+        #     rospy.signal_shutdown("Unable to start Drones! Restart!")
+        #     sys.exit()
 
         # Ending Operations
         rospy.loginfo("\033[92mTask complete! Shutting down Node!\033[0m")
