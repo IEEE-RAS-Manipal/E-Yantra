@@ -715,7 +715,7 @@ class Drone:
                 1, 32, z], [1, 36, z], [1, 40, z], [1, 44, z], [1, 48, z], [1, 52, z], [1, 56, z], [1, 60, z]]
 
             row_coord = start[rownum-1]
-            while not self.drone_monitor.aruco_check and row_coord[0] <= 60:
+            while not self.drone_monitor.aruco_check and row_coord[0] <= 62:
                 self.drone_set_goal(row_coord, val)
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
