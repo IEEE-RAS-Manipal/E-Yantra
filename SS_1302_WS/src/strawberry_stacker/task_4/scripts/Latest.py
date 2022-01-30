@@ -715,7 +715,7 @@ class Drone:
                 1, 32, z], [1, 36, z], [1, 40, z], [1, 44, z], [1, 48, z], [1, 52, z], [1, 56, z], [1, 60, z]]
 
             row_coord = start[rownum-1]
-            while not self.drone_monitor.aruco_check and row_coord[0] <= 62:
+            while not self.drone_monitor.aruco_check and row_coord[0] <= 60:
                 self.drone_set_goal(row_coord, val)
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
@@ -757,6 +757,7 @@ def drone1ops() -> None:
         drone1.drone_control.drone_set_goal(
             [15.55, 1, 3], True)  # turning point
         drone1.drone_control.drone_set_goal([1, 24, 3], True)
+        rospy.sleep(5)  # Delay to correct its tilting position
         drone1.drone_control.drone_set_goal([20, 24, 3])
         if drone1.drone_control.drone_monitor.gripper_state:
             drone1.drone_control.drone_set_goal([15.55, 1, 3], True)
@@ -805,6 +806,7 @@ def drone2ops() -> None:
         drone2.drone_control.drone_set_goal(
             [57.35, 62, 4], True)  # Turning point
         drone2.drone_control.drone_set_goal([1, 29, 4], True)
+        rospy.sleep(5)  # Delay to correct its tilting position
         drone2.drone_control.drone_set_goal([20, 29, 4])
         if drone2.drone_control.drone_monitor.gripper_state:
             drone2.drone_control.drone_set_goal(
