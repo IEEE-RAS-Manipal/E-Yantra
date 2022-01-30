@@ -32,6 +32,7 @@ from geometry_msgs.msg import PoseStamped, Twist  # Pose and velocity data
 from mavros_msgs.msg import State  # Current drone state
 from mavros_msgs.srv import CommandBool, SetMode  # Setting drone flight mode
 from gazebo_ros_link_attacher.srv import Gripper  # Gripper commands
+import tf.transformations  # for quaternion
 
 # ArUco detection
 import cv2  # Main OpenCV libraries
@@ -208,7 +209,21 @@ class Drone:
             :param curr_pose: The current pose of the drone.
             :type curr_pose: PoseStamped
             """
+
+            q = [0, 0, 0, 0]
             self.current_pose = curr_pose
+            '''
+            q[0] = self.current_pose.pose.orientation.w  # Quaternion
+            q[1] = self.current_pose.pose.orientation.x
+            q[2] = self.current_pose.pose.orientation.y
+            q[3] = self.current_pose.pose.orientation.z
+            euler = tf.transformations.euler_from_quaternion(q)
+            roll = euler[0]
+            pitch = euler[1]
+            yaw = euler[2]
+            print("roll= " + str(roll) + "; pitch= " +
+                  str(pitch) + "; yaw= "+str(yaw))
+                  '''
 
         def gripper_callback(self, grip_detect: String) -> None:
             """
@@ -271,6 +286,8 @@ class Drone:
                         int((x_0 + x_2) / 2),
                         int((y_0 + y_2) / 2),
                     ]
+
+                    # if self.current_pose.pose.orientation.
                     self.aruco_check = True  # Announcing detection of marker
 
     class DroneControl:
@@ -383,7 +400,7 @@ class Drone:
             rospy.loginfo(
                 f"\033[92mDrone #{self.drone_id+1} shut down!\033[90m")
 
-        def drone_set_goal(self, goal_pose: list, override: bool = False, relative: bool = False) -> None:
+        def drone_set_goal(self, goal_pose: list, override: bool = False, relative: bool = False, tolerance: float = 0.2) -> None:
             """
             drone_set_goal Sets goal setpoint for drone
 
@@ -432,7 +449,7 @@ class Drone:
                 :return: Confirmation whether the drone is within tolerance or not
                 :rtype: bool
                 """
-                return abs(current - goal) < 0.2  # Tolerance radius = 0.2m
+                return abs(current - goal) < tolerance  # Tolerance radius = 0.2m
 
             # Wating for the drone to reach the setpoint or detect a marker
             while not reached:
@@ -481,13 +498,14 @@ class Drone:
             :param package_pos: Last-known position of detected package, to be used as reference.
             :type package_pos: list
             """
+            package_pos.append(4)
 
             # Velocity of the drone to be tweaked during approach
             vel = [0.0, 0.0, 0.0]
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
             )
-
+            self.drone_set_goal(package_pos, True, True)
             self.stream_switch = True  # Switch to velocity setpoint transmission
 
             while self.drone_monitor.current_state.armed:
@@ -512,38 +530,45 @@ class Drone:
                     - 2.5
                 )
                 # Velocity along the Z axis follows exp(0.4z-1) curve
-                '''vel[2] = exp(
+                vel[2] = exp(
                     (0.4
                      * self.drone_monitor.current_pose.pose.position.z) - 1)
-                     '''
 
                 # If ArUco is in this range, begin descending
                 quad_x = 200
                 quad_y = 200
 
-                if (aruco_cx in range(180, 220)) and (aruco_cy in range(180, 220)) and self.drone_monitor.current_pose.pose.position.z > 2:
-                    self.drone_monitor.goal_vel.linear.z = -0.4
-                    print("Going downnnnnnnn............")
+                if (aruco_cx in range(170, 230)) and (aruco_cy in range(170, 230)) and self.drone_monitor.current_pose.pose.position.z > 2:
+                    self.drone_monitor.goal_vel.linear.z = -vel[2]
 
-                if self.drone_monitor.current_pose.pose.position.z <= 1.6:
-                    print("below 1.6m")
+                if self.drone_monitor.current_pose.pose.position.z <= 2:
+                    print("below 2m")
                     self.drone_monitor.goal_vel.linear.z = 0
                     # Checking the coordinates again and locking the position
                     if (aruco_cx in range(195, 205)) and (aruco_cy in range(195, 205)):
-                        package_pos[0] = self.drone_monitor.current_pose.pose.position.x
+                        package_pos[0] = self.drone_monitor.current_pose.pose.position.x + 0.2
                         # adding offset
-                        package_pos[1] = self.drone_monitor.current_pose.pose.position.y + 0.3
+                        package_pos[1] = self.drone_monitor.current_pose.pose.position.y + 0.4
                         self.drone_monitor.goal_vel.linear.x = 0
                         self.drone_monitor.goal_vel.linear.y = 0
                         print(" Insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-                        package_pos.append(1)
+                        package_pos[2] = 2
 
                         self.stream_switch = False  # beginning to transmit setpoints
-                        self.drone_set_goal(package_pos, True, True)
-                        package_pos[2] = 0.5  # approaching...
-                        self.drone_set_goal(package_pos, True, True)
-                        package_pos[2] = 0.2  # approaching...
-                        self.drone_set_goal(package_pos, True, True)
+                        self.drone_set_goal(package_pos, True, True, 0.1)
+                        self.stream_switch = True
+                        #
+
+                        # package_pos[2] = 0.5  # approaching...
+                        #self.drone_set_goal(package_pos, True, True)
+                        # package_pos[2] = 0  # approaching...
+                        # RATE.sleep()
+                        #self.drone_set_goal(package_pos, True, True)
+                        while self.drone_monitor.current_pose.pose.position.z > 0.4:
+                            self.drone_monitor.goal_vel.linear.z = -exp(
+                                (0.4
+                                 * self.drone_monitor.current_pose.pose.position.z) - 2)
+
                         self.drone_shutdown()
 
                 # Positional adjustment based on relative quadrant-based approach
@@ -628,7 +653,7 @@ class Drone:
 
             # Taking off from location
             self.drone_startup()
-            package_pos.append(3)
+            package_pos[2] = 3
             self.drone_set_goal(package_pos, True, True)
 
         def drone_package_place(self, place_pos: list) -> None:
@@ -682,6 +707,19 @@ class Drone:
             except rospy.ServiceException:
                 pass
 
+        def drone_row_patrol(self, rownum: int):
+            z = 4
+            div = 4
+            val = True  # Used as the 'Override' variable
+            start = [[1, 0.0, z], [1, 4, z], [1, 8, z], [1, 12, z], [1, 16, z], [1, 20, z], [1, 24, z], [1, 28, z], [
+                1, 32, z], [1, 36, z], [1, 40, z], [1, 44, z], [1, 48, z], [1, 52, z], [1, 56, z], [1, 60, z]]
+
+            row_coord = start[rownum-1]
+            while not self.drone_monitor.aruco_check and row_coord[0] <= 60:
+                self.drone_set_goal(row_coord, val)
+                row_coord[0] = row_coord[0] + (60/div)
+                val = False  # Override variable becomes False once the drone enters the row
+
 
 def drone1ops() -> None:
     """
@@ -695,21 +733,24 @@ def drone1ops() -> None:
 
         # Defining the setpoints for travel
         setpoints = [
-            [-1, 1, 3],
-            [2, 16, 3],
-            [15, 16, 3],
-            [40, 16, 3],
-            [60, 15, 3],
+            [-1, 1, 4],
+            [2, 17, 4],
+            [15, 17, 4],
+            [30, 17, 4],
+            [45, 17, 4],
+            [60, 17, 4],
             [-1, 1, 3],
         ]
         drone1.drone_control.drone_set_goal(setpoints[0], override=True)
+        drone1.drone_control.drone_row_patrol(5)
+        '''
         drone1.drone_control.drone_set_goal(setpoints[1], override=True)
         drone1.drone_control.drone_set_goal(setpoints[2])
-
+        '''
         if drone1.drone_control.drone_monitor.gripper_state:  # truck
             drone1.drone_control.drone_set_goal(
-                [15.55, 1, 3], True)  # turning point
-            drone1.drone_control.drone_set_goal([14.7, -4.94, 3], True)
+                [15.55, 0, 4], True)  # turning point
+            drone1.drone_control.drone_set_goal([14.7, -3.94, 3], True)
             drone1.drone_control.drone_package_place(
                 [14.7, -4.94, 2])  # Placing package
         rospy.loginfo("Back to scanning...")
@@ -741,10 +782,13 @@ def drone2ops() -> None:
         drone2 = Drone(1)
         # Defining the setpoints for travel
         setpoints = [
-            [-1, 61, 3],
-            [1, 49, 3],
-            [20, 49, 3],
-            [0, 0, 3],
+            [-1, 61, 4],
+            [1, 49, 4],
+            [15, 49, 4],
+            [30, 49, 4],
+            [45, 49, 4],
+            [60, 49, 4],
+            [0, 0, 4],
         ]
 
         drone2.drone_control.drone_set_goal(setpoints[0], override=True)
@@ -753,23 +797,23 @@ def drone2ops() -> None:
 
         if drone2.drone_control.drone_monitor.gripper_state:
             drone2.drone_control.drone_set_goal(
-                [57.35, -1, 3], True)  # Turning point
+                [57.35, 62, 4], True)  # Turning point
             drone2.drone_control.drone_set_goal([57.35, 64.75, 3], True)
             drone2.drone_control.drone_package_place(
                 [57.35, 64.75, 2])  # Placing package
         rospy.loginfo("Back to scanning...")
         drone2.drone_control.drone_set_goal(
-            [57.35, -1, 3], True)  # Turning point
-        drone2.drone_control.drone_set_goal([1, 29, 3], True)
-        drone2.drone_control.drone_set_goal([20, 29, 3])
+            [57.35, 62, 4], True)  # Turning point
+        drone2.drone_control.drone_set_goal([1, 29, 4], True)
+        drone2.drone_control.drone_set_goal([20, 29, 4])
         if drone2.drone_control.drone_monitor.gripper_state:
             drone2.drone_control.drone_set_goal(
-                [57.35, -1, 3], True)  # Turning point
+                [57.35, 62, 3], True)  # Turning point
             drone2.drone_control.drone_set_goal([58.2, 64.75, 3], True)
             drone2.drone_control.drone_package_place(
                 [58.2, 64.75, 2])
         drone2.drone_control.drone_set_goal(
-            [57.35, -1, 3], True)  # Turning point
+            [57.35, 62, 3], True)  # Turning point
         drone2.drone_control.drone_set_goal(setpoints[0], True)
 
         rospy.loginfo("\033[92mDrone #2 completed flight!\033[0m")
