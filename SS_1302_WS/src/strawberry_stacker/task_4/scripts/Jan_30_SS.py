@@ -71,7 +71,6 @@ class Drone:
         # Initialising control
         self.drone_control = self.DroneControl(self.drone_id)
 
-        self.stop_spam = False
         # Initialising publishers and subscribers
         rospy.loginfo("Initialising publishers...")
         # Position publisher
@@ -139,18 +138,16 @@ class Drone:
 
         while not rospy.is_shutdown():
             try:
-                if self.stop_spam is False:
-                    if not self.drone_control.stream_switch:  # Position setpoints
-                        self.position_publisher.publish(
-                            self.drone_control.drone_monitor.goal_pose
-                        )
-                    else:  # Velocity setpoints
-                        self.velocity_publisher.publish(
-                            self.drone_control.drone_monitor.goal_vel
-                        )
-                    RATE.sleep()
-                else:
-                    pass
+
+                if not self.drone_control.stream_switch:  # Position setpoints
+                    self.position_publisher.publish(
+                        self.drone_control.drone_monitor.goal_pose
+                    )
+                else:  # Velocity setpoints
+                    self.velocity_publisher.publish(
+                        self.drone_control.drone_monitor.goal_vel
+                    )
+                RATE.sleep()
 
             except ROSInterruptException:
                 rospy.loginfo(
@@ -558,7 +555,7 @@ class Drone:
                         (0.4
                          * self.drone_monitor.current_pose.pose.position.z) - 3)
 
-                    if ((aruco_cx in range(192, 208)) and (aruco_cy in range(252, 268)) and self.drone_monitor.current_pose.pose.position.z < 1.5) or self.drone_monitor.current_pose.pose.position.z <= 0.5:
+                    if ((aruco_cx in range(192, 208)) and (aruco_cy in range(252, 268)) and self.drone_monitor.current_pose.pose.position.z < 1.7) or self.drone_monitor.current_pose.pose.position.z <= 0.5:
                         self.drone_monitor.goal_vel.linear.x = 0
                         self.drone_monitor.goal_vel.linear.y = 0
                         while self.drone_monitor.current_pose.pose.position.z > 0.3:
@@ -702,21 +699,22 @@ class Drone:
             self.drone_set_goal(place_pos, True)
 
             # Landing the drone
-            self.drone_shutdown()
-            time.sleep(3)
+            # self.drone_shutdown()
+            place_pos[2] = 1.8
+            self.drone_set_goal(place_pos, True)
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
-            self.stop_spam = True
             self.drone_gripper_attach(False)
             rospy.loginfo("Gripper deactivated.")
             rospy.loginfo(
-                f"\033[92mDrone #{self.drone_id+1}Package placed!\033[0m")
-            self.stop_spam = False
+                f"\033[92mD  Drone #{self.drone_id+1}Package placed!\033[0m")
             # Taking off
-            self.drone_startup()
+
+            place_pos[2] = 3
             self.drone_set_goal(place_pos, True)
             self.drone_monitor.aruco_check = False
             self.drone_monitor.aruco_centre[0] = [0, 0]
+            print(" End of package place function! ")
 
         def drone_gripper_attach(self, activation: bool) -> None:
             """
@@ -735,13 +733,15 @@ class Drone:
                         grip_status = self.gripper_service(activation).result
                         RATE.sleep
                     else:
-                        print(" received False - gripper")
+                        self.gripper_service(activation)
+                        grip_status = True
+                        '''
                         while self.drone_monitor.gripper_state is True:
+                            print(" False - gripper")
                             self.gripper_service(activation)
                             RATE.sleep
                         grip_status = True
-
-                grip_status = False
+                        '''
             except rospy.ServiceException:
                 pass
 
@@ -790,11 +790,21 @@ def drone1ops() -> None:
             #drone1.drone_control.drone_set_goal([14.7, -3.94, 3], True)
             drone1.drone_control.drone_package_place(
                 [14.7, -4.94, 3])  # Placing package
-        rospy.loginfo("Back to scanning...")
+            drone1.drone_control.drone_monitor.gripper_state = False
+
+        rospy.loginfo("Drone1 Back to scanning...")
         drone1.drone_control.drone_set_goal(
-            [15.55, 1, 3], True)  # turning point
+            [15.55, 2, 3], True)  # turning point
         #drone1.drone_control.drone_set_goal([1, 24, 3], True)
-        drone1.drone_control.drone_row_patrol(7)
+        print("Drone1 - row patrol..........")
+        row_coord = [1, 29, 4]
+        drone1.drone_control.drone_set_goal(
+            row_coord, True)
+        while not drone1.drone_control.drone_monitor.aruco_check and row_coord[0] <= 60:
+            row_coord[0] = row_coord[0] + (60/6)
+            drone1.drone_control.drone_set_goal(row_coord)
+
+        # drone1.drone_control.drone_row_patrol(7)
         '''
         drone1.drone_control.drone_set_goal([20, 24, 3])
         '''
@@ -846,12 +856,20 @@ def drone2ops() -> None:
             #drone2.drone_control.drone_set_goal([57.35, 64.75, 3], True)
             drone2.drone_control.drone_package_place(
                 [57.35, 64.75, 3])  # Placing package
+            drone2.drone_control.drone_monitor.gripper_state = False
         rospy.loginfo("Back to scanning...")
         drone2.drone_control.drone_set_goal(
             [57.35, 62, 4], True)  # Turning point
 
+        row_coord = [1, 49, 4]
+        drone2.drone_control.drone_set_goal(
+            row_coord, True)
+        while not drone2.drone_control.drone_monitor.aruco_check and row_coord[0] <= 60:
+            row_coord[0] = row_coord[0] + (60/6)
+            drone2.drone_control.drone_set_goal(row_coord)
+
         #drone2.drone_control.drone_set_goal([1, 29, 4], True)
-        drone2.drone_control.drone_row_patrol(13)
+        # drone2.drone_control.drone_row_patrol(13)
         '''
         drone2.drone_control.drone_set_goal([20, 29, 4])
         '''
