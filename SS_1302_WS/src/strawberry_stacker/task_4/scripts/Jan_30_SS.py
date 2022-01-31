@@ -501,7 +501,7 @@ class Drone:
             :param package_pos: Last-known position of detected package, to be used as reference.
             :type package_pos: list
             """
-            package_pos.append(3)
+            package_pos.append(3.5)
 
             # Velocity of the drone to be tweaked during approach
             vel = [0.0, 0.0, 0.0]
@@ -715,6 +715,7 @@ class Drone:
             self.drone_monitor.aruco_check = False
             self.drone_monitor.aruco_centre[0] = [0, 0]
             print(" End of package place function! ")
+            self.drone_monitor.aruco_check = False
 
         def drone_gripper_attach(self, activation: bool) -> None:
             """
@@ -746,6 +747,7 @@ class Drone:
                 pass
 
         def drone_row_patrol(self, rownum: int):
+            print("Inside row patroooooooooooooooooooooooool")
             z = 4
             div = 6
             val = True  # Used as the 'Override' variable
@@ -753,10 +755,11 @@ class Drone:
                 1, 33, z], [1, 37, z], [1, 41, z], [1, 45, z], [1, 49, z], [1, 53, z], [1, 57, z], [1, 61, z]]
 
             row_coord = start[rownum-1]
-            while not self.drone_monitor.aruco_check and row_coord[0] <= 60:
+            while not self.drone_monitor.aruco_check and row_coord[0] <= 62:
                 self.drone_set_goal(row_coord, val)
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
+            print("Out of row patrol!")
 
 
 def drone1ops() -> None:
@@ -791,11 +794,12 @@ def drone1ops() -> None:
             drone1.drone_control.drone_package_place(
                 [14.7, -4.94, 3])  # Placing package
             drone1.drone_control.drone_monitor.gripper_state = False
+            drone1.drone_control.drone_set_goal(
+                [15.55, 2, 3], True)  # turning point
 
-        rospy.loginfo("Drone1 Back to scanning...")
-        drone1.drone_control.drone_set_goal(
-            [15.55, 2, 3], True)  # turning point
+        rospy.loginfo("Drone1 - Back to scanning...")
         #drone1.drone_control.drone_set_goal([1, 24, 3], True)
+        '''
         print("Drone1 - row patrol..........")
         row_coord = [1, 29, 4]
         drone1.drone_control.drone_set_goal(
@@ -803,8 +807,10 @@ def drone1ops() -> None:
         while not drone1.drone_control.drone_monitor.aruco_check and row_coord[0] <= 60:
             row_coord[0] = row_coord[0] + (60/6)
             drone1.drone_control.drone_set_goal(row_coord)
-
-        # drone1.drone_control.drone_row_patrol(7)
+        '''
+        drone1.drone_control.drone_monitor.gripper_state = False
+        drone1.drone_control.drone_monitor.aruco_check = False
+        drone1.drone_control.drone_row_patrol(7)
         '''
         drone1.drone_control.drone_set_goal([20, 24, 3])
         '''
@@ -813,9 +819,9 @@ def drone1ops() -> None:
             drone1.drone_control.drone_set_goal([15.55, -4.94, 3], True)
             drone1.drone_control.drone_package_place(
                 [15.55, -4.94, 3])  # Placing package
+            drone1.drone_control.drone_set_goal(
+                [15.55, 1, 3], True)  # turning point
 
-        drone1.drone_control.drone_set_goal(
-            [15.55, 1, 3], True)  # turning point
         drone1.drone_control.drone_set_goal(setpoints[6], True)
         drone1.drone_control.drone_shutdown()
 
@@ -857,19 +863,24 @@ def drone2ops() -> None:
             drone2.drone_control.drone_package_place(
                 [57.35, 64.75, 3])  # Placing package
             drone2.drone_control.drone_monitor.gripper_state = False
-        rospy.loginfo("Back to scanning...")
-        drone2.drone_control.drone_set_goal(
-            [57.35, 62, 4], True)  # Turning point
+            drone2.drone_control.drone_set_goal(
+                [57.35, 62, 4], True)  # Turning point
 
+        rospy.loginfo("Drone 2 - Back to scanning...")
+        drone2.drone_control.drone_monitor.gripper_state = False
+        drone2.drone_control.drone_monitor.aruco_check = False
+        drone2.drone_control.drone_row_patrol(13)
+
+        '''
         row_coord = [1, 49, 4]
         drone2.drone_control.drone_set_goal(
             row_coord, True)
         while not drone2.drone_control.drone_monitor.aruco_check and row_coord[0] <= 60:
             row_coord[0] = row_coord[0] + (60/6)
             drone2.drone_control.drone_set_goal(row_coord)
-
+        '''
         #drone2.drone_control.drone_set_goal([1, 29, 4], True)
-        # drone2.drone_control.drone_row_patrol(13)
+
         '''
         drone2.drone_control.drone_set_goal([20, 29, 4])
         '''
@@ -879,8 +890,9 @@ def drone2ops() -> None:
             drone2.drone_control.drone_set_goal([58.2, 64.75, 3], True)
             drone2.drone_control.drone_package_place(
                 [58.2, 64.75, 2])
-        drone2.drone_control.drone_set_goal(
-            [57.35, 62, 3], True)  # Turning point
+            drone2.drone_control.drone_set_goal(
+                [57.35, 62, 3], True)  # Turning point
+
         drone2.drone_control.drone_set_goal(setpoints[0], True)
 
         drone2.drone_control.drone_shutdown()
