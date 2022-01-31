@@ -559,8 +559,16 @@ class Drone:
                             self.drone_monitor.goal_vel.linear.z = -exp(
                                 (0.4
                                  * self.drone_monitor.current_pose.pose.position.z) - 2)
-
-                        self.drone_shutdown()
+                        while not self.drone_monitor.gripper_state:
+                            print(self.drone_monitor.gripper_state)
+                            RATE.sleep()
+                        rospy.loginfo("Attempting to grip...")
+                        # Activating the gripper
+                        self.drone_gripper_attach(True)
+                        rospy.loginfo(
+                            f"\033[92mDrone #{self.drone_id+1} package picked! Proceeding to dropoff point!\033[0m"
+                        )
+                        # self.drone_shutdown()
 
                 if self.drone_monitor.current_pose.pose.position.z in range(1, 2):
                     self.drone_monitor.goal_vel.linear.z = 0
@@ -652,7 +660,7 @@ class Drone:
                 RATE.sleep()
 
             self.stream_switch = False  # Switch back to normal setpoint tranmission
-
+            '''
             # Performing gripping procedure
             # Checking if the gripper is in position
             while not self.drone_monitor.gripper_state:
@@ -664,6 +672,7 @@ class Drone:
             rospy.loginfo(
                 f"\033[92mDrone #{self.drone_id+1} package picked! Proceeding to dropoff point!\033[0m"
             )
+            '''
             self.stream_switch = False
             # Taking off from location
             self.drone_startup()
@@ -716,8 +725,10 @@ class Drone:
                 while not grip_status:
                     if activation:
                         grip_status = self.gripper_service(activation).result
+                        RATE.sleep
                     else:
                         self.gripper_service(activation)
+                        RATE.sleep
                         grip_status = True
                 grip_status = False
             except rospy.ServiceException:
@@ -725,7 +736,7 @@ class Drone:
 
         def drone_row_patrol(self, rownum: int):
             z = 4
-            div = 5
+            div = 6
             val = True  # Used as the 'Override' variable
             start = [[1, 1, z], [1, 5, z], [1, 9, z], [1, 13, z], [1, 17, z], [1, 21, z], [1, 25, z], [1, 29, z], [
                 1, 33, z], [1, 37, z], [1, 41, z], [1, 45, z], [1, 49, z], [1, 53, z], [1, 57, z], [1, 61, z]]
