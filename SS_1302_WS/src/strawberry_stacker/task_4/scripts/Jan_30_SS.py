@@ -71,6 +71,7 @@ class Drone:
         # Initialising control
         self.drone_control = self.DroneControl(self.drone_id)
 
+        self.stop_spam = False
         # Initialising publishers and subscribers
         rospy.loginfo("Initialising publishers...")
         # Position publisher
@@ -138,15 +139,19 @@ class Drone:
 
         while not rospy.is_shutdown():
             try:
-                if not self.drone_control.stream_switch:  # Position setpoints
-                    self.position_publisher.publish(
-                        self.drone_control.drone_monitor.goal_pose
-                    )
-                else:  # Velocity setpoints
-                    self.velocity_publisher.publish(
-                        self.drone_control.drone_monitor.goal_vel
-                    )
-                RATE.sleep()
+                if self.stop_spam is False:
+                    if not self.drone_control.stream_switch:  # Position setpoints
+                        self.position_publisher.publish(
+                            self.drone_control.drone_monitor.goal_pose
+                        )
+                    else:  # Velocity setpoints
+                        self.velocity_publisher.publish(
+                            self.drone_control.drone_monitor.goal_vel
+                        )
+                    RATE.sleep()
+                else:
+                    pass
+
             except ROSInterruptException:
                 rospy.loginfo(
                     f"Drone #{self.drone_id+1} data stream terminated.")
@@ -385,6 +390,7 @@ class Drone:
             while not self.drone_monitor.current_state.mode == "AUTO.LAND":
                 try:
                     self.set_mode_service(custom_mode="AUTO.LAND")
+                    RATE.sleep
                 except rospy.ServiceException as exception:
                     rospy.logerr(f"Service arming call failed: {exception}")
             time.sleep(5)
@@ -552,7 +558,7 @@ class Drone:
                         (0.4
                          * self.drone_monitor.current_pose.pose.position.z) - 3)
 
-                    if ((aruco_cx in range(190, 210)) and (aruco_cy in range(250, 270))) or self.drone_monitor.current_pose.pose.position.z <= 0.5:
+                    if ((aruco_cx in range(192, 208)) and (aruco_cy in range(252, 268)) and self.drone_monitor.current_pose.pose.position.z < 1.5) or self.drone_monitor.current_pose.pose.position.z <= 0.5:
                         self.drone_monitor.goal_vel.linear.x = 0
                         self.drone_monitor.goal_vel.linear.y = 0
                         while self.drone_monitor.current_pose.pose.position.z > 0.3:
@@ -697,14 +703,15 @@ class Drone:
 
             # Landing the drone
             self.drone_shutdown()
-
+            time.sleep(3)
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
+            self.stop_spam = True
             self.drone_gripper_attach(False)
             rospy.loginfo("Gripper deactivated.")
             rospy.loginfo(
                 f"\033[92mDrone #{self.drone_id+1}Package placed!\033[0m")
-
+            self.stop_spam = False
             # Taking off
             self.drone_startup()
             self.drone_set_goal(place_pos, True)
@@ -721,15 +728,19 @@ class Drone:
             :type activation: bool
             """
             grip_status = False
+            #response = None
             try:
                 while not grip_status:
                     if activation:
                         grip_status = self.gripper_service(activation).result
                         RATE.sleep
                     else:
-                        self.gripper_service(activation)
-                        RATE.sleep
+                        print(" received False - gripper")
+                        while self.drone_monitor.gripper_state is True:
+                            self.gripper_service(activation)
+                            RATE.sleep
                         grip_status = True
+
                 grip_status = False
             except rospy.ServiceException:
                 pass
@@ -775,14 +786,14 @@ def drone1ops() -> None:
         '''
         if drone1.drone_control.drone_monitor.gripper_state:  # truck
             drone1.drone_control.drone_set_goal(
-                [15.55, 0, 4], True)  # turning point
-            drone1.drone_control.drone_set_goal([14.7, -3.94, 3], True)
+                [15.55, 0, 3], True)  # turning point
+            #drone1.drone_control.drone_set_goal([14.7, -3.94, 3], True)
             drone1.drone_control.drone_package_place(
                 [14.7, -4.94, 3])  # Placing package
         rospy.loginfo("Back to scanning...")
         drone1.drone_control.drone_set_goal(
             [15.55, 1, 3], True)  # turning point
-        drone1.drone_control.drone_set_goal([1, 24, 3], True)
+        #drone1.drone_control.drone_set_goal([1, 24, 3], True)
         drone1.drone_control.drone_row_patrol(7)
         '''
         drone1.drone_control.drone_set_goal([20, 24, 3])
@@ -793,7 +804,10 @@ def drone1ops() -> None:
             drone1.drone_control.drone_package_place(
                 [15.55, -4.94, 3])  # Placing package
 
-        drone1.drone_control.drone_set_goal(setpoints[5], True)
+        drone1.drone_control.drone_set_goal(
+            [15.55, 1, 3], True)  # turning point
+        drone1.drone_control.drone_set_goal(setpoints[6], True)
+        drone1.drone_control.drone_shutdown()
 
         rospy.loginfo("\033[92mDrone #1 completed flight!\033[0m")
     except ROSInterruptException:
@@ -829,14 +843,14 @@ def drone2ops() -> None:
         if drone2.drone_control.drone_monitor.gripper_state:
             drone2.drone_control.drone_set_goal(
                 [57.35, 62, 4], True)  # Turning point
-            drone2.drone_control.drone_set_goal([57.35, 64.75, 3], True)
+            #drone2.drone_control.drone_set_goal([57.35, 64.75, 3], True)
             drone2.drone_control.drone_package_place(
-                [57.35, 64.75, 2])  # Placing package
+                [57.35, 64.75, 3])  # Placing package
         rospy.loginfo("Back to scanning...")
         drone2.drone_control.drone_set_goal(
             [57.35, 62, 4], True)  # Turning point
 
-        drone2.drone_control.drone_set_goal([1, 29, 4], True)
+        #drone2.drone_control.drone_set_goal([1, 29, 4], True)
         drone2.drone_control.drone_row_patrol(13)
         '''
         drone2.drone_control.drone_set_goal([20, 29, 4])
@@ -851,6 +865,7 @@ def drone2ops() -> None:
             [57.35, 62, 3], True)  # Turning point
         drone2.drone_control.drone_set_goal(setpoints[0], True)
 
+        drone2.drone_control.drone_shutdown()
         rospy.loginfo("\033[92mDrone #2 completed flight!\033[0m")
     except ROSInterruptException:
         pass
