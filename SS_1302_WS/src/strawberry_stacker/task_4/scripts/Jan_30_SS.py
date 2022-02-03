@@ -306,6 +306,8 @@ class Drone:
             self.drone_id = drone_id  # Drone number
             # Stream switch flag to switch between position and velocity setpoint tramsission
             self.stream_switch = False
+            self.i = 0
+            self.j = 0
 
             # Initialising proxy services for mode setting for the drone
             rospy.loginfo("Initialising Services...")
@@ -502,8 +504,11 @@ class Drone:
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} going back...\033[0m"
             )
-            package_pos[0] = package_pos[0] + 1
+            package_pos[0] = package_pos[0] + 0.5
             self.drone_set_goal(package_pos, True, True, 0.3)
+            if self.drone_monitor.aruco_check == False:
+                package_pos[0] = package_pos[0]+2
+                self.drone_set_goal(package_pos, True, True, 0.3)
 
             self.stream_switch = True  # Switch to velocity setpoint transmission
 
@@ -518,7 +523,7 @@ class Drone:
                         package_pos[0] -
                         self.drone_monitor.current_pose.pose.position.x
                     )
-                    - 3
+                    - 2.7
                 )
                 vel[1] = exp(
                     0.4
@@ -526,28 +531,29 @@ class Drone:
                         package_pos[1] -
                         self.drone_monitor.current_pose.pose.position.y
                     )
-                    - 3
+                    - 2.7
                 )
-                # Velocity along the Z axis follows exp(0.4z-1) curve
+                # Velocity along the Z axis follows exp(0.5z-2) curve
                 vel[2] = exp(
-                    (0.4
-                     * self.drone_monitor.current_pose.pose.position.z) - 1)
+                    (0.5
+                     * self.drone_monitor.current_pose.pose.position.z) - 2)
 
                 # If ArUco is in this range, begin descending
                 quad_x = 200
                 quad_y = 200
 
-                if (aruco_cx in range(170, 230)) and (aruco_cy in range(170, 230)) and self.drone_monitor.current_pose.pose.position.z > 1.5:
+                if (aruco_cx in range(180, 220)) and (aruco_cy in range(180, 220)) and self.drone_monitor.current_pose.pose.position.z > 1.1:
                     self.drone_monitor.goal_vel.linear.z = -vel[2]
 
                 if self.drone_monitor.current_pose.pose.position.z < 2:
                     quad_x = 200
-                    quad_y = 270
+                    quad_y = 311
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.4
                          * self.drone_monitor.current_pose.pose.position.z) - 3)
-
-                    if ((aruco_cx in range(192, 208)) and (aruco_cy in range(262, 278)) and self.drone_monitor.current_pose.pose.position.z > 1) or self.drone_monitor.current_pose.pose.position.z <= 0.5:
+                    '''
+                    if ((aruco_cx in range(194, 206)) and (aruco_cy in range(264, 276)) and self.drone_monitor.current_pose.pose.position.z > 1) or self.drone_monitor.current_pose.pose.position.z <= 0.4: '''
+                    if self.drone_monitor.current_pose.pose.position.z <= 0.4:
                         self.drone_monitor.goal_vel.linear.x = 0
                         self.drone_monitor.goal_vel.linear.y = 0
                         while self.drone_monitor.current_pose.pose.position.z > 0.3:
@@ -560,9 +566,16 @@ class Drone:
                         rospy.loginfo("Attempting to grip...")
                         # Activating the gripper
                         self.drone_gripper_attach(True)
-                        rospy.loginfo(
-                            f"\033[92mDrone #{self.drone_id+1} package picked! Proceeding to dropoff point!\033[0m"
-                        )
+                        flag = self.drone_monitor.gripper_state
+                        if flag == True:
+                            rospy.loginfo(
+                                f"\033[92mDrone #{self.drone_id+1} package picked! Proceeding to dropoff point!\033[0m")
+                        else:
+                            package_pos[2] = 1.5
+                            # DEBUG
+                            self.drone_monitor.goal_vel.linear.z = 2
+
+                            continue
                         # self.drone_shutdown()
 
                 if self.drone_monitor.current_pose.pose.position.z in range(1, 3):
@@ -601,11 +614,12 @@ class Drone:
             if self.drone_id == 0:
                 self.drone_set_goal([15.55, 0, 3], True,
                                     False, 1)  # turning point
-                self.drone_package_place(truck_inventory(1))
+                self.drone_package_place(self.truck_inventory(1))
             elif self.drone_id == 1:
                 self.drone_set_goal(
                     [57.35, 62, 4], True, False, 1)  # Turning point
-                self.drone_package_place(truck_inventory(0))  # Placing package
+                self.drone_package_place(
+                    self.truck_inventory(0))  # Placing package
 
         def drone_package_place(self, place_pos: list) -> None:
             """
@@ -625,8 +639,8 @@ class Drone:
 
             # Landing the drone
             # self.drone_shutdown()
-            place_pos[2] = 1.8
-            self.drone_set_goal(place_pos, True, False)
+            place_pos[2] = 1.7
+            self.drone_set_goal(place_pos, True, False, 0.3)
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
             self.drone_gripper_attach(False)
@@ -648,7 +662,7 @@ class Drone:
                     [57.35, 62, 4], True, False, 0.5)  # Turning point
             self.done_with_row = True
 
-        def drone_gripper_attach(self, activation: bool) -> None:
+        def drone_gripper_attach(self, activation: bool):
             """
             drone_gripper_attach Drone Gripper Control
 
@@ -660,13 +674,16 @@ class Drone:
             grip_status = False
             #response = None
             try:
-                while not grip_status:
+                counter = 0
+                while not grip_status and counter < 500:
                     if activation:
                         grip_status = self.gripper_service(activation).result
                         RATE.sleep
                     else:
                         self.gripper_service(activation)
                         grip_status = True
+                    counter = counter + 1
+                    print(counter)
             except rospy.ServiceException:
                 pass
 
@@ -686,6 +703,40 @@ class Drone:
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
             print("Out of row patrol!")
+
+        def truck_inventory(self, choice: int) -> List[float]:
+            """
+            truck_inventory Update truck inventory
+
+            Based on the choice of truck, this function calculates the cell that is currently free for a
+            package to be placed. The cell coordinates are returned for the drone to place the package at.
+
+            :param choice: The choice of red or blue truck.
+            :type choice: int
+            :return: The coordinates of the free cell of the selected truck.
+            :rtype: List[float]
+            """
+            '''
+            red = [[57.35, 64.75, 3], [57.35, 65.98, 3],[0,0,0]]
+            blue = [[14.7, -4.94, 3], [15.55, -4.94, 3],[0,0,0]]
+            if choice == 0:  # red
+                cell = red[0]
+                red[0] = red[1]
+            if choice == 1:  # blue
+                cell = blue[0]
+                blue[0] = blue[1]
+            '''
+
+            red = [[57.35, 64.75, 3], [57.35, 65.98, 3]]
+            blue = [[14.7, -4.94, 3], [15.55, -4.94, 3]]
+            if choice == 0:  # red
+                cell = red[self.i]
+                self.i = self.i+1
+            if choice == 1:  # blue
+                cell = blue[self.j]
+                self.j = self.j+1
+
+            return cell
 
 
 def drone1ops() -> None:
@@ -717,7 +768,7 @@ def drone1ops() -> None:
 
         drone1.drone_control.drone_row_patrol(7)
 
-        drone1.drone_control.drone_set_goal(setpoints[6], True)
+        drone1.drone_control.drone_set_goal(setpoints[6], True, False, 1)
         drone1.drone_control.drone_shutdown()
 
         rospy.loginfo("\033[92mDrone #1 completed flight!\033[0m")
@@ -752,56 +803,12 @@ def drone2ops() -> None:
 
         drone2.drone_control.drone_row_patrol(13)
 
-        drone2.drone_control.drone_set_goal(setpoints[0], True)
+        drone2.drone_control.drone_set_goal(setpoints[0], True, False, 1)
 
         drone2.drone_control.drone_shutdown()
         rospy.loginfo("\033[92mDrone #2 completed flight!\033[0m")
     except ROSInterruptException:
         pass
-
-
-def truck_inventory(choice: int) -> List[float]:
-    """
-    truck_inventory Update truck inventory
-
-    Based on the choice of truck, this function calculates the cell that is currently free for a
-    package to be placed. The cell coordinates are returned for the drone to place the package at.
-
-    :param choice: The choice of red or blue truck.
-    :type choice: int
-    :return: The coordinates of the free cell of the selected truck.
-    :rtype: List[float]
-    """
-    i = 0
-    j = 0
-    red = [[57.35, 64.75, 3], [58.2, 64.75, 3]]
-    blue = [[14.7, -4.94, 3], [15.55, -4.94, 3]]
-    if choice == 0:  # red
-        cell = red[i]
-        i = i+1
-    if choice == 1:  # blue
-        cell = blue[j]
-        j = j+1
-
-    '''
-    # Local cell counter variables for operations
-    i = TRUCK[choice][1][0]
-    j = TRUCK[choice][1][1]
-
-    # Calculating the cell coordinates [x+i, y+j, z]
-    cell = [TRUCK[choice][0][0] + i * 0.85,
-            TRUCK[choice][0][1] + j * 1.23, 2.5]
-
-    # Incrementing local counter and updating global counter
-    j += 1
-    if j >= 2:
-        j = 0
-        i += 1
-    TRUCK[choice][1][0] = i
-    TRUCK[choice][1][1] = j
-    '''
-
-    return cell
 
 
 if __name__ == "__main__":
