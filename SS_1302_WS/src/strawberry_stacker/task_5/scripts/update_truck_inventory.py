@@ -3,9 +3,11 @@
 truck=[[[56.5,62.75],[1,0]],
 		   [[14.85,-8.4],[1,0]]]
 
-def truck_inventory(n): #0 for red truck 1 blue truck
+def truck_inventory(n): # n=0 for red truck n=1 for blue truck
 	global truck
-	
+	#truck[n][1][0] is i for "n" truck
+	#truck[n][1][1] is j for "n" truck
+	#where i is row number and j is column number of truck
 
 	if(truck[n][1][0]==4):
 		truck[n][1][0]=1
