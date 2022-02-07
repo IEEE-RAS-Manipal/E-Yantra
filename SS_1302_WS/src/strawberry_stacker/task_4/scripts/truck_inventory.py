@@ -1,19 +1,21 @@
-truck=[[[56.5,62.75],[0,2]],
+truck=[[[56.5,62.75],[0,0]],
 		   [[14.85,-8.4],[0,0]]]
 
-def truck_inventory(choice): #0 for red truck 1 blue truck
+def truck_inventory(n): #0 for red truck 1 blue truck
 	global truck
-	ri=truck[choice][1][0]
-	rj=truck[choice][1][1]
+	ri=truck[n][1][0]
+	rj=truck[n][1][1]
 
-	cell=[truck[choice][0][0]+ri*0.85,truck[choice][0][1]+rj*1.23,1.7]
-	rj+=1
-	if(rj==2):
-		rj=0
-		ri+=1
+	cell=[truck[n][0][0]+ri*0.85,truck[n][0][1]+rj*1.23,1.7]
+	
+	if(truck[n][1][1]==2):
+		truck[n][1][1]=0
+		truck[n][1][0]+=1
+	else:
+		truck[n][1][1]+=1
+	print(ri)
+	print(rj)
 	print(cell)
-	truck[choice][1][0]=ri
-	truck[choice][1][0]=rj
 	
 
 
