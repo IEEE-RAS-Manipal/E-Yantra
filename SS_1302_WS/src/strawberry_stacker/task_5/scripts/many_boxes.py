@@ -16,6 +16,7 @@ DroneControl    Contains various control commands for the drone to run
 # Importing essential packages and libraries
 # Module control and core Python librarios
 from concurrent.futures import thread
+from dataclasses import dataclass
 from pickletools import uint8
 import sys  # Main system thread control
 import threading  # Multithreading
@@ -28,7 +29,7 @@ import rospy  # ROS Python libraries
 from rospy.exceptions import ROSInterruptException, ROSException  # ROS Node execution
 
 # Drone control
-from std_msgs.msg import String  # Gripper status
+from std_msgs.msg import String, UInt8  # Gripper status
 from geometry_msgs.msg import PoseStamped, Twist  # Pose and velocity data
 from mavros_msgs.msg import State  # Current drone state
 from mavros_msgs.srv import CommandBool, SetMode  # Setting drone flight mode
@@ -44,6 +45,24 @@ from cv_bridge import (
     CvBridge,
     CvBridgeError,
 )  # Conversion between ROS and OpenCV Images
+
+
+rowlist = {1: 0,
+           2: 0,
+           3: 0,
+           4: 0,
+           5: 0,
+           6: 0,
+           7: 0,
+           8: 0,
+           9: 0,
+           10: 0,
+           11: 0,
+           12: 0,
+           13: 0,
+           14: 0,
+           15: 0
+           }
 
 
 class Drone:
@@ -113,6 +132,12 @@ class Drone:
             f"edrone{self.drone_id}/camera/image_raw",
             Image,
             self.drone_control.drone_monitor.aruco_callback,
+        )
+        # Row number subscriber
+        self.row_subscriber = rospy.Subscriber(
+            "/spawn_info", UInt8,
+            self.drone_control.drone_monitor.row_callback,
+            queue_size=10,
         )
         rospy.loginfo("Subscribers initialised.")
 
@@ -229,6 +254,17 @@ class Drone:
             """
             self.gripper_state = grip_detect
 
+        def update_rowlist(self, rno):
+            global rowlist
+            if rno in rowlist.keys():
+                rowlist[rno] += 1
+
+        def row_callback(self, row_num: uint8) -> None:
+            """Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary of the boxes in each row"""
+            # if drone = drone1 :
+            print(row_num.data)
+            self.update_rowlist(int(row_num.data))
+
         def aruco_callback(self, img: numpy.array) -> None:
             """
             aruco_callback Callback function for aruco_subscriber
@@ -268,7 +304,6 @@ class Drone:
                 # Loop over the detected ArUCo corners
                 for (marker_corner, marker_id) in zip(corners, ids):
                     detected_markers[marker_id] = marker_corner
-                    print(marker_id)
                 # Calculate the centre position of the detected aruco marker
                 for key, _ in detected_markers.items():
                     x_0, y_0 = map(int, detected_markers[key][0][0])
@@ -483,6 +518,18 @@ class Drone:
             reached = False  # Checks whether drone has reach goal setpoint
             self.stream_switch = False
 
+        def drone_row_to_search(self):
+            print("inside row_searching function")
+            if self.drone_id == 0:
+                for i in range(1, 15):
+                    print(" drone-1 searching . . . .")
+                    if rowlist[i] > 0:
+                        return i
+            else:
+                for i in range(15, 1):
+                    if rowlist[i] > 0:
+                        return i
+
         def drone_package_pick(self, package_pos: list) -> None:
             """
             drone_package_pick Picks up a package lying at the designated location
@@ -647,7 +694,7 @@ class Drone:
 
             # Landing the drone
             # self.drone_shutdown()
-    
+
             self.drone_set_goal(place_pos, True, False, 0.3)
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
@@ -701,7 +748,7 @@ class Drone:
         def drone_row_patrol(self, rownum: int):
             print("Inside row patroooooooooooooooooooooooool")
             self.done_with_row = False
-            self.row
+
             z = 4
             div = 6
             val = True  # Used as the 'Override' variable
@@ -715,51 +762,44 @@ class Drone:
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
             print("Out of row patrol!")
-            
-
-        def truck_inventory(self, choice: int) -> List[float]:
-            """
-            truck_inventory Update truck inventory
-
-            Based on the choice of truck, this function calculates the cell that is currently free for a
-            package to be placed. The cell coordinates are returned for the drone to place the package at.
-
-            :param choice: The choice of red or blue truck.
-            :type choice: int
-            :return: The coordinates of the free cell of the selected truck.
-            :rtype: List[float]
-            """
-            '''
-            red = [[57.35, 64.75, 3], [57.35, 65.98, 3],[0,0,0]]
-            blue = [[14.7, -4.94, 3], [15.55, -4.94, 3],[0,0,0]]
-            if choice == 0:  # red
-                cell = red[0]
-                red[0] = red[1]
-            if choice == 1:  # blue
-                cell = blue[0]
-                blue[0] = blue[1]
-            '''
-            z = 0
-
-            red = [[57.6, 64.75, 1.7 + z], [57.6, 65.98, z]]
-            blue = [[14.7, -5, z], [15.55, -5, z]]
-            if choice == 0:  # red
-                cell = red[self.i]
-                self.i = self.i+1
-            if choice == 1:  # blue
-                cell = blue[self.j]
-                self.j = self.j+1
-
-            return cell
 
 
-def row_callback(row: uint8):
+truck = [[[56.5, 62.75], [1, 0]],
+         [[14.85, -8.4], [1, 0]]]
+stack_height = 1.7
+
+
+def truck_inventory(n: int) -> List[float]:
     """
-    Callback for row topic
+    truck_inventory Update truck inventory
+
+    Based on the choice of truck, this function calculates the cell that is currently free for a
+    package to be placed. The cell coordinates are returned for the drone to place the package at.
+
+    :param n: The choice of red- 0 or blue-1 truck.
+    :type n: int
+    :return: The coordinates of the free cell of the selected truck.
+    :rtype: List[float]
     """
-    row_list = []
-    row_list.append(row)
-    i = 3
+
+    # n=0 for red truck  and n=1 blue truck
+    global truck, stack_height
+
+    if(truck[n][1][0] == 4):
+        truck[n][1][0] = 1
+        truck[n][1][1] = 0
+        stack_height = stack_height+1.7
+
+    ri = truck[n][1][0]
+    rj = truck[n][1][1]
+
+    cell = [truck[n][0][0]+ri*0.85, truck[n][0][1]+rj*1.23, stack_height]
+    truck[n][1][1] += 1
+
+    if(truck[n][1][1] > 2):
+        truck[n][1][1] = 0
+        truck[n][1][0] += 1
+    return cell
 
 
 def drone1ops() -> None:
@@ -782,7 +822,9 @@ def drone1ops() -> None:
             [-1, 1, 3],
         ]
         drone1.drone_control.drone_set_goal(setpoints[0], override=True)
-        drone1.drone_control.drone_row_patrol(5)
+
+        drone1.drone_control.drone_row_patrol(
+            drone1.drone_control.drone_row_to_search())
 
         rospy.loginfo("Drone1 - Back to scanning...")
         #drone1.drone_control.drone_set_goal([1, 24, 3], True)
@@ -819,7 +861,9 @@ def drone2ops() -> None:
         ]
 
         drone2.drone_control.drone_set_goal(setpoints[0], override=True)
-        drone2.drone_control.drone_row_patrol(8)
+
+        drone2.drone_control.drone_row_patrol(
+            drone2.drone_control.drone_row_to_search())
 
         rospy.loginfo("Drone 2 - Back to scanning...")
         drone2.drone_control.drone_monitor.gripper_state = False
@@ -842,17 +886,9 @@ if __name__ == "__main__":
         # Specify the initial positions of the drones
         DRONE_HOME = [[-1, 1, 0], [-1, 61, 0]]
 
-        # Truck inventory data [red_truck, blue_truck]
-        TRUCK = [[[56.5, 62.75], [1, 0]], [[14.85, -8.4], [1, 2]]]
-
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
         try:
-            # Row number subscriber
-            row_subscriber = rospy.Subscriber(
-                "/spawn_info", uint8,
-                row_callback,
-                queue_size=10,
-            )
+
             drone1thread = threading.Thread(target=drone1ops)
             drone2thread = threading.Thread(target=drone2ops)
             drone1thread.start()
