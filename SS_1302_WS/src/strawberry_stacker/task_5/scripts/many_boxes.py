@@ -258,6 +258,7 @@ class Drone:
             global rowlist
             if rno in rowlist.keys():
                 rowlist[rno] += 1
+            print(rowlist)
 
         def row_callback(self, row_num: uint8) -> None:
             """Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary of the boxes in each row"""
@@ -308,7 +309,7 @@ class Drone:
                 for key, _ in detected_markers.items():
                     x_0, y_0 = map(int, detected_markers[key][0][0])
                     x_2, y_2 = map(int, detected_markers[key][0][2])
-                    # print(detected_markers[key][0][:])
+
                     self.aruco_centre[0] = [
                         int((x_0 + x_2) / 2),
                         int((y_0 + y_2) / 2),
@@ -345,6 +346,7 @@ class Drone:
             self.stream_switch = False
             self.i = 0
             self.j = 0
+            self.current_row = None  # The row being traversed by the drone
 
             # Initialising proxy services for mode setting for the drone
             rospy.loginfo("Initialising Services...")
@@ -669,12 +671,12 @@ class Drone:
             if self.drone_id == 0:
                 self.drone_set_goal([15.55, 0, 3], True,
                                     False, 1)  # turning point
-                self.drone_package_place(self.truck_inventory(1))
+                self.drone_package_place(truck_inventory(1))
             elif self.drone_id == 1:
                 self.drone_set_goal(
                     [57.35, 62, 4], True, False, 1)  # Turning point
                 self.drone_package_place(
-                    self.truck_inventory(0))  # Placing package
+                    truck_inventory(0))  # Placing package
 
         def drone_package_place(self, place_pos: list) -> None:
             """
@@ -748,6 +750,10 @@ class Drone:
         def drone_row_patrol(self, rownum: int):
             print("Inside row patroooooooooooooooooooooooool")
             self.done_with_row = False
+            self.current_row = rownum
+            global rowlist
+            # Decrementing - updating the row - box table
+            rowlist[self.current_row] = rowlist[self.current_row] - 1
 
             z = 4
             div = 6
@@ -762,6 +768,7 @@ class Drone:
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
             print("Out of row patrol!")
+            self.current_row = None
 
 
 truck = [[[56.5, 62.75], [1, 0]],
