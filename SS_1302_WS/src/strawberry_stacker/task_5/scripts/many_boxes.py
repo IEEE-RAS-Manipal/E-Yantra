@@ -290,6 +290,7 @@ class Drone:
                 for key, _ in detected_markers.items():
                     x_0, y_0 = map(int, detected_markers[key][0][0])
                     x_2, y_2 = map(int, detected_markers[key][0][2])
+                    print(detected_markers[key])
 
                     self.aruco_centre[0] = [
                         int((x_0 + x_2) / 2),
@@ -507,10 +508,13 @@ class Drone:
                 for i in range(1, 15):
                     print(" drone-1 searching . . . .")
                     if rowlist[i] > 0:
+                        print(f"Drone 1 is going to row - {i}")
                         return i
             else:
-                for i in range(15, 1):
+                print("drone 2 is inside row-to-search function")
+                for i in range(15, 1, -1):
                     if rowlist[i] > 0:
+                        print(f"Drone 2 is going to row - {i}")
                         return i
 
         def drone_package_pick(self, package_pos: list) -> None:
@@ -723,13 +727,15 @@ class Drone:
                         grip_flag = self.gripper_service(activation).result
                         grip_status = True
                     counter = counter + 1
-                    print(counter)
                 return grip_flag
             except rospy.ServiceException:
                 pass
 
         def drone_row_patrol(self, rownum: int):
             print("Inside row patroooooooooooooooooooooooool")
+            while rownum is None:
+                rownum = self.drone_row_to_search()
+
             self.done_with_row = False
             self.current_row = rownum
             global rowlist
@@ -739,8 +745,8 @@ class Drone:
             z = 4
             div = 6
             val = True  # Used as the 'Override' variable
-            start = [[1, 1, z], [1, 5, z], [1, 9, z], [1, 13, z], [1, 17, z], [1, 21, z], [1, 25, z], [1, 29, z], [
-                1, 33, z], [1, 37, z], [1, 41, z], [1, 45, z], [1, 49, z], [1, 53, z], [1, 57, z], [1, 61, z]]
+            start = [[0, 1, z], [0, 5, z], [0, 9, z], [0, 13, z], [0, 17, z], [0, 21, z], [0, 25, z], [0, 29, z], [
+                0, 33, z], [0, 37, z], [0, 41, z], [0, 45, z], [0, 49, z], [0, 53, z], [0, 57, z], [0, 61, z]]
 
             row_coord = start[rownum-1]
             while row_coord[0] <= 62 and not self.done_with_row:
@@ -772,14 +778,19 @@ class Field:
         rospy.loginfo("Row-info subscriber initialised.")
 
     def update_rowlist(self, rno):
+        """
+        This function takes in the row_number from the subscriber-callback and increments the number of boxes in the specified row_number in our global dictionary
+
+        :param rno: row number
+        :type rno: int
+        """
         global rowlist
         if rno in rowlist.keys():
             rowlist[rno] += 1
-        print(rowlist)
 
     def row_callback(self, row_num: uint8) -> None:
         """
-        Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary of boxes in each row
+        Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary that stores the number of boxes in every row.
         """
         # if drone = drone1 :
         print(row_num.data)
@@ -848,7 +859,11 @@ def drone1ops() -> None:
 
         drone1.drone_control.drone_monitor.gripper_state = False
 
-        drone1.drone_control.drone_row_patrol(7)
+        drone1.drone_control.drone_row_patrol(
+            drone1.drone_control.drone_row_to_search())
+
+        drone1.drone_control.drone_row_patrol(
+            drone1.drone_control.drone_row_to_search())
 
         drone1.drone_control.drone_set_goal(setpoints[6], True, False, 1)
         drone1.drone_control.drone_shutdown()
