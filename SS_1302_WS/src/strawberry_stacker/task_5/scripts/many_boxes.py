@@ -133,13 +133,6 @@ class Drone:
             Image,
             self.drone_control.drone_monitor.aruco_callback,
         )
-        # Row number subscriber
-        self.row_subscriber = rospy.Subscriber(
-            "/spawn_info", UInt8,
-            self.drone_control.drone_monitor.row_callback,
-            queue_size=10,
-        )
-        rospy.loginfo("Subscribers initialised.")
 
         # Setting up data stream to the drone in a separate thread
         try:
@@ -253,18 +246,6 @@ class Drone:
             :type grip_detect: String
             """
             self.gripper_state = grip_detect
-
-        def update_rowlist(self, rno):
-            global rowlist
-            if rno in rowlist.keys():
-                rowlist[rno] += 1
-            print(rowlist)
-
-        def row_callback(self, row_num: uint8) -> None:
-            """Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary of the boxes in each row"""
-            # if drone = drone1 :
-            print(row_num.data)
-            self.update_rowlist(int(row_num.data))
 
         def aruco_callback(self, img: numpy.array) -> None:
             """
@@ -776,6 +757,35 @@ truck = [[[56.5, 62.75], [1, 0]],
 stack_height = 1.7
 
 
+class Field:
+    """
+    This class has info and functions related to the farm-field.
+    """
+
+    def __init__(self) -> None:
+        # Row number subscriber
+        self.row_subscriber = rospy.Subscriber(
+            "/spawn_info", UInt8,
+            self.row_callback,
+            queue_size=10,
+        )
+        rospy.loginfo("Row-info subscriber initialised.")
+
+    def update_rowlist(self, rno):
+        global rowlist
+        if rno in rowlist.keys():
+            rowlist[rno] += 1
+        print(rowlist)
+
+    def row_callback(self, row_num: uint8) -> None:
+        """
+        Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary of boxes in each row
+        """
+        # if drone = drone1 :
+        print(row_num.data)
+        self.update_rowlist(int(row_num.data))
+
+
 def truck_inventory(n: int) -> List[float]:
     """
     truck_inventory Update truck inventory
@@ -895,7 +905,7 @@ if __name__ == "__main__":
 
         rospy.loginfo("\033[93mPerforming pre-flight startup...\033[0m")
         try:
-
+            field_info = Field()
             drone1thread = threading.Thread(target=drone1ops)
             drone2thread = threading.Thread(target=drone2ops)
             drone1thread.start()
