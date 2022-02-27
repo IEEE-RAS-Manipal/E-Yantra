@@ -677,6 +677,8 @@ class Drone:
 
             :param place_pos: The location to place the package.
             :type place_pos: list
+            :param aruco_id: Stores Aruco ID
+            :type aruco_id : Integer
             """
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} commencing placement of package at\033[96m{place_pos}...\033[0m"
@@ -746,7 +748,14 @@ class Drone:
                 pass
 
         def drone_row_patrol(self, rownum: int):
-            while rownum is None:
+            """
+            drone_row_patrol Updates current row for drone
+            This function updates the current row to a row with detected box.Also divides the row into multiple segments for easier patrol.
+            
+            :param rownum:current row number with detected Aruco id, row where drone needs to go next.
+            :type rownum :integer
+            """
+                    while rownum is None:
                 rownum = self.drone_row_to_search()
 
             self.done_with_row = False
