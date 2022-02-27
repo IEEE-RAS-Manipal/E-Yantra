@@ -311,23 +311,20 @@ class Drone:
 
         def __init__(self, drone_id) -> None:
             """
-            __init__ Initialises class attributes
-
-            Initiliases the class attributes for the DroneControl class, namely all the ROS
+            __init__ Initialises class attributes for the DroneControl class, namely all the ROS
             services required for drone control.
 
             :param drone_id: The drone number to initialise.
             :type drone_id: int
             """
-            rospy.loginfo("Initialising drone control.")
+            rospy.loginfo("Initialising drone control..")
 
             # Initialising drone monitor instance
             self.drone_monitor = Drone.DroneMonitor()
             self.drone_id = drone_id  # Drone number
+
             # Stream switch flag to switch between position and velocity setpoint tramsission
             self.stream_switch = False
-            self.i = 0
-            self.j = 0
             self.current_row = None  # The row being traversed by the drone
 
             # Initialising proxy services for mode setting for the drone
@@ -420,15 +417,16 @@ class Drone:
             """
             drone_set_goal Sets goal setpoint for drone
 
-            Feeds the setpoints to be set for the next traversal of the drone. The goal setpoint
-            will be checked with the current state to determine whether the drone has reached. The
-            drone will also check for markers along the way, although this criterion can be
-            overriden to make the drone ignore markers.
+            Receives both absolute or relative setpoints to be set for the next traversal of the drone. The goal setpoint will be checked with the current position to determine whether the drone has reached. The drone will also check for boxes along the way, although this criterion can be overridden to make the drone ignore aruco markers.
 
             :param goal_pose: The goal setpoint to be sent to the drone.
             :type goal_pose: list
-            :param override: Overrides the marker detection criteria.
+            :param override: Overrides the aruco marker detection criteria
             :type override: bool
+            :param relative: Flag for absolute setpoints to enable conversion to absolute
+            :type relative: bool
+            :param tolerance: The buffer difference between the actual pose and the desired pose
+            :type tolerance: float
             """
             # Resetting flags
             reached = False  # Checks whether drone has reach goal setpoint
@@ -436,7 +434,7 @@ class Drone:
             # Calculating the goal coordinates relative to the drone's position
 
             if not relative:
-                print(f" drone #{self.drone_id +1}: subtractign coordinates")
+                # Converting absolute coordinates to relative
                 goal_pose = [x1-x2 for x1,
                              x2 in zip(goal_pose, DRONE_HOME[self.drone_id])]
 
@@ -466,7 +464,7 @@ class Drone:
                 :return: Confirmation whether the drone is within tolerance or not
                 :rtype: bool
                 """
-                return abs(current - goal) < tolerance  # Tolerance radius = 0.2m
+                return abs(current - goal) < tolerance
 
             # Wating for the drone to reach the setpoint or detect a marker
             while not reached:
@@ -503,18 +501,20 @@ class Drone:
             self.stream_switch = False
 
         def drone_row_to_search(self):
-            print("inside row_searching function")
+            """
+            drone_row_to_search accesses the global row-box dictionary, scans through it from the most closest row to the least closest w.r.t. the drone's home position and returns the closest row having a box
+
+            :return: Number of the row having box to be picked up
+            :rtype: int
+            """
             if self.drone_id == 0:
                 for i in range(1, 15):
-                    print(" drone-1 searching . . . .")
-                    if rowlist[i] > 0:
-                        print(f"Drone 1 is going to row - {i}")
+                    if rowlist[i] > 0:  # Checking if there's atleast one box in a row
                         return i
             else:
-                print("drone 2 is inside row-to-search function")
+                # Drone 2 executes the below snippet
                 for i in range(15, 1, -1):
                     if rowlist[i] > 0:
-                        print(f"Drone 2 is going to row - {i}")
                         return i
 
         def drone_package_pick(self, package_pos: list) -> None:
@@ -524,39 +524,30 @@ class Drone:
             This function performs approach and pickup of a detected package, which the last known
             position of the drone when the package was detected passed in arguments. This is used
             along with the real-time position of the ArUco marker to adjust the velocity of the
-            drone on its approach. The function exits once the package has been successfully
-            picked.
+            drone on its approach.
 
-            :param package_pos: Last-known position of detected package, to be used as reference.
+            :param package_pos: Last-known (x,y) position of detected package, to be used as reference.
             :type package_pos: list
             """
-            package_pos.append(3)
+            package_pos.append(3)  # setting the height for drone
 
             # Velocity of the drone to be tweaked during approach
             vel = [0.0, 0.0, 0.0]
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
             )
-            rospy.loginfo(
-                f"\033[93mDrone #{self.drone_id+1} going back...\033[0m"
-            )
             package_pos[0] = package_pos[0] - 0.2
             self.drone_set_goal(package_pos, True, True, 0.2)
-            '''
-            if self.drone_monitor.aruco_check == False:
-                package_pos[0] = package_pos[0]+2
-                self.drone_set_goal(package_pos, True, True, 0.3)
-            '''
+
+            # Switch to velocity command transmission
             self.drone_monitor.goal_vel.linear.z = 0
-            self.stream_switch = True  # Switch to velocity setpoint transmission
+            self.stream_switch = True
 
             while self.drone_monitor.current_state.armed and self.drone_monitor.current_pose.pose.position.z > 0.3:
                 # Real-time position of ArUco marker
                 [aruco_cx, aruco_cy] = self.drone_monitor.aruco_centre[0][:]
-                print(
-                    f"drone{self.drone_id+1} : x = {aruco_cx};; y = {aruco_cy}")
 
-                # Tweaking velocity of the drone using the exp(0.4x-3) function
+                # Using 2 sets of error-proportional-exponential curves based on drone height for better landing.
                 if self.drone_monitor.current_pose.pose.position.z > 2.8:
                     vel[0] = exp(
                         0.4
@@ -597,32 +588,37 @@ class Drone:
                     (0.8
                      * self.drone_monitor.current_pose.pose.position.z) - 1.8)
 
-                # If ArUco is in this range, begin descending
+                # Setting the desired position of the aruco in the image
                 quad_x = 200
                 quad_y = 200
 
+                # Quadrant logic is used for position correction.
                 if (aruco_cx in range(170, 230)) and (aruco_cy in range(170, 230)) and self.drone_monitor.current_pose.pose.position.z > 0.8:
                     self.drone_monitor.goal_vel.linear.z = -vel[2]
 
                 if self.drone_monitor.current_pose.pose.position.z < 2:
+                    # Changing the desired position of the box in image accouting for camera offset
                     quad_x = 200
                     quad_y = 260
+                    # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
                          * self.drone_monitor.current_pose.pose.position.z) - 2.2)
+                    # Capturing the color of the box
                     box_id = self.drone_monitor.aruco_ID
 
                     if self.drone_monitor.current_pose.pose.position.z < 1.05:
                         self.drone_monitor.goal_vel.linear.z = 0
-
                         if ((aruco_cx in range(193, 205)) and (aruco_cy in range(258, 265)) and self.drone_monitor.current_pose.pose.position.z > 0.8) or self.drone_monitor.current_pose.pose.position.z <= 0.4:
                             print(" Turning off X and Y velocities..")
                             self.drone_monitor.goal_vel.linear.x = 0
                             self.drone_monitor.goal_vel.linear.y = 0
+
                             while self.drone_monitor.current_pose.pose.position.z > 0.3:
                                 self.drone_monitor.goal_vel.linear.z = -exp(
                                     (0.5
                                      * self.drone_monitor.current_pose.pose.position.z) - 1.5)
+
                             while not self.drone_monitor.gripper_state:
                                 print(self.drone_monitor.gripper_state)
                                 RATE.sleep()
@@ -630,6 +626,7 @@ class Drone:
                             # Activating the gripper
                             self.drone_gripper_attach(True)
 
+                # Dividing the image in 4 quadrants and assigning correction velocities accordingly
                 if aruco_cx > quad_x:
                     self.drone_monitor.goal_vel.linear.x = vel[0]
                 elif aruco_cx < quad_x:
@@ -644,24 +641,24 @@ class Drone:
             self.stream_switch = False  # Switch back to normal setpoint tranmission
 
             # Taking off from location
-            if self.drone_monitor.gripper_state == False:
-                print(" LANDING FAILED!!!")
-                package_pos[2] = 3
-                self.drone_set_goal(package_pos, False, True, 0.5)
-                self.drone_row_patrol(self.current_row)
-
             self.drone_startup()
             package_pos[2] = 3
             self.drone_set_goal(package_pos, True, True)
+            if self.drone_monitor.gripper_state == False:
+                print(" Landing failed! Attempting to re-land")
+                self.drone_package_pick(package_pos[0], package_pos[1])
+
+            # Setting different heights for drones so that they don't collide while going to the turning point
             if self.drone_id == 0:
                 z = 3
             else:
                 z = 4
             if box_id == 2:
+                # turning points prevent drone-truck collision unlike flying directly
                 self.drone_set_goal([15.55, 0, z], True,
-                                    False, 1)  # turning point
+                                    False, 1)
                 self.drone_package_place(truck_inventory(1, self.drone_id), 2)
-            elif box_id == 1:  # red -box
+            elif box_id == 1:  # red-box
                 self.drone_set_goal(
                     [57.35, 62, z], True, False, 1)  # Turning point
                 self.drone_package_place(
@@ -685,9 +682,6 @@ class Drone:
             )
             self.drone_set_goal([place_pos[0], place_pos[1], 3], True)
 
-            # Landing the drone
-            # self.drone_shutdown()
-
             self.drone_set_goal(place_pos, True, False, 0.3)
             # Deactivating the gripper
             rospy.loginfo("Deactivating gripper...")
@@ -695,25 +689,25 @@ class Drone:
             rospy.loginfo("Gripper deactivated.")
             rospy.loginfo(
                 f"\033[92mD  Drone #{self.drone_id+1}Package placed!\033[0m")
-            # Taking off
 
             place_pos[2] = 3
             self.drone_set_goal(place_pos, True, False)
             self.drone_monitor.aruco_check = False
             self.drone_monitor.aruco_centre[0] = [0, 0]
-            print(" End of package place function! ")
+
+            # Going back to turning point
             if self.drone_id == 0:
+                # drone1 flies at a height of 3m while turning
                 z = 3
             else:
                 z = 4
             if aruco_id == 2:
-                print(" Drone moving towards TURNING POINT ")
                 self.drone_set_goal([15.55, 0, z], True,
                                     False, 0.5)  # turning point
             elif aruco_id == 1:
-                print(" Drone moving towards TURNING POINT ")
                 self.drone_set_goal(
                     [57.35, 62, z], True, False, 0.5)  # Turning point
+            # current pick-place finished
             self.done_with_row = True
 
         def drone_gripper_attach(self, activation: bool):
@@ -727,17 +721,18 @@ class Drone:
             """
             grip_status = False
             grip_flag = False
-            #response = None
+            # response = None
             try:
                 counter = 0
-                while not grip_status and counter < 1700:
+                # The counter takes the drone out of this loop if the gripper doesnt work for a few seconds
+                while not grip_status and counter < 1600:
                     if activation:
                         grip_status = self.gripper_service(activation).result
                         grip_flag = grip_status
                         RATE.sleep
                     else:
                         i = 0
-                        while i < 2:
+                        while i < 2:  # Sending detach request twice as it was failing in a few runs in the simulation - related to the Gazebo-process-died error
                             grip_flag = self.gripper_service(activation).result
                             RATE.sleep
                             i = i+1
@@ -750,12 +745,14 @@ class Drone:
         def drone_row_patrol(self, rownum: int):
             """
             drone_row_patrol Updates current row for drone
-            This function updates the current row to a row with detected box.Also divides the row into multiple segments for easier patrol.
-            
+            This function updates the current row to a row with detected box. This function divides the row in multiple segments and sends the setpoints to the drone for easier patrolling.
+
             :param rownum:current row number with detected Aruco id, row where drone needs to go next.
             :type rownum :integer
             """
-                    while rownum is None:
+
+            # In case the spawn_info doesn't publish anything at the beginning, this loop will wait till it gets a row to patrol - A cautionary measure
+            while rownum is None:
                 rownum = self.drone_row_to_search()
 
             self.done_with_row = False
@@ -764,9 +761,10 @@ class Drone:
             # Decrementing - updating the row - box table
             rowlist[self.current_row] = rowlist[self.current_row] - 1
 
-            z = 3
-            div = 7
+            z = 3  # The height at which we want the drones to patrol
+            div = 7  # Number of divisions we want in a row for better patrolling
             val = True  # Used as the 'Override' variable
+
             start = [[0, 1, z], [0, 5, z], [0, 9, z], [0, 13, z], [0, 17, z], [0, 21, z], [0, 25, z], [0, 29, z], [
                 0, 33, z], [0, 37, z], [0, 41, z], [0, 45, z], [0, 49, z], [0, 53, z], [0, 57, z], [0, 61, z]]
 
