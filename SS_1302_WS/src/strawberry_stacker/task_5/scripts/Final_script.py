@@ -229,7 +229,6 @@ class Drone:
             :type curr_pose: PoseStamped
             """
 
-            q = [0, 0, 0, 0]
             self.current_pose = curr_pose
 
         def gripper_callback(self, grip_detect: String) -> None:
