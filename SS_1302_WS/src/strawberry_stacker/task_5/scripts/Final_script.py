@@ -45,7 +45,8 @@ from cv_bridge import (
     CvBridgeError,
 )  # Conversion between ROS and OpenCV Images
 
-# Initilising a dictionary to map each row with the number of boxes present
+
+# Initialising a global dictionary to map each row with the number of boxes present
 rowlist = {1: 0,
            2: 0,
            3: 0,
@@ -62,6 +63,12 @@ rowlist = {1: 0,
            14: 0,
            15: 0
            }
+
+# Given initial cell coordinates of the trucks
+truck = [[[56.7, 64.5], [0, 0]],
+         [[14.1, -7.8], [0, 0]]]
+# Height at which the box must be dropped
+stack_height = 1.7
 
 
 class Drone:
@@ -166,6 +173,7 @@ class Drone:
                         self.drone_control.drone_monitor.goal_vel
                     )
                 RATE.sleep()
+
             except ROSInterruptException:
                 rospy.loginfo(
                     f"Drone #{self.drone_id+1} data stream terminated.")
@@ -228,7 +236,6 @@ class Drone:
             :param curr_pose: The current pose of the drone.
             :type curr_pose: PoseStamped
             """
-
             self.current_pose = curr_pose
 
         def gripper_callback(self, grip_detect: String) -> None:
@@ -534,7 +541,6 @@ class Drone:
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
             )
-            package_pos[0] = package_pos[0] - 0.2
             self.drone_set_goal(package_pos, True, True, 0.2)
 
             # Switch to velocity command transmission
@@ -553,7 +559,7 @@ class Drone:
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 1
+                        - 1.2
                     )
                     vel[1] = exp(
                         0.4
@@ -570,7 +576,7 @@ class Drone:
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 3
+                        - 2.8
                     )
                     vel[1] = exp(
                         0.5
@@ -578,13 +584,13 @@ class Drone:
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 3
+                        - 2.8
                     )
 
-                # Velocity along the Z axis follows exp(0.7z-2) curve
+                # Velocity along the Z axis follows exp(0.8z-1.7) curve
                 vel[2] = exp(
                     (0.8
-                     * self.drone_monitor.current_pose.pose.position.z) - 1.8)
+                     * self.drone_monitor.current_pose.pose.position.z) - 1.6)
 
                 # Setting the desired position of the aruco in the image
                 quad_x = 200
@@ -593,11 +599,13 @@ class Drone:
                 # Quadrant logic is used for position correction.
                 if (aruco_cx in range(170, 230)) and (aruco_cy in range(170, 230)) and self.drone_monitor.current_pose.pose.position.z > 0.8:
                     self.drone_monitor.goal_vel.linear.z = -vel[2]
+                    package_pos[0] = self.drone_monitor.current_pose.pose.position.x
+                    package_pos[1] = self.drone_monitor.current_pose.pose.position.y
 
                 if self.drone_monitor.current_pose.pose.position.z < 2:
                     # Changing the desired position of the box in image accouting for camera offset
                     quad_x = 200
-                    quad_y = 260
+                    quad_y = 265
                     # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
@@ -760,7 +768,7 @@ class Drone:
             rowlist[self.current_row] = rowlist[self.current_row] - 1
 
             z = 3  # The height at which we want the drones to patrol
-            div = 7  # Number of divisions we want in a row for better patrolling
+            div = 6  # Number of divisions we want in a row for better patrolling
             val = True  # Used as the 'Override' variable
 
             start = [[0, 1, z], [0, 5, z], [0, 9, z], [0, 13, z], [0, 17, z], [0, 21, z], [0, 25, z], [0, 29, z], [
@@ -774,11 +782,6 @@ class Drone:
                 val = False  # Override variable becomes False once the drone enters the row
             print("Out of row patrol!")
             self.current_row = None
-
-
-truck = [[[56.7, 64.5], [0, 0]],
-         [[14.1, -7.8], [0, 0]]]
-stack_height = 1.7
 
 
 class Field:
@@ -810,8 +813,6 @@ class Field:
         """
         Row callback is the callback function for the row subscriber. This function is responsible for maintaing a dictionary that stores the number of boxes in every row.
         """
-        # if drone = drone1 :
-        print(row_num.data)
         self.update_rowlist(int(row_num.data))
 
 
