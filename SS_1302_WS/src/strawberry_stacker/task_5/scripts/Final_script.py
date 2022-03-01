@@ -45,7 +45,7 @@ from cv_bridge import (
     CvBridgeError,
 )  # Conversion between ROS and OpenCV Images
 
-
+# Initilising a dictionary to map each row with the number of boxes present
 rowlist = {1: 0,
            2: 0,
            3: 0,
@@ -166,7 +166,6 @@ class Drone:
                         self.drone_control.drone_monitor.goal_vel
                     )
                 RATE.sleep()
-
             except ROSInterruptException:
                 rospy.loginfo(
                     f"Drone #{self.drone_id+1} data stream terminated.")
