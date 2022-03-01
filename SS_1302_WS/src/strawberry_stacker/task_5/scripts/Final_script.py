@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-SS_1302 submission for Task 4
+SS_1302 submission for Task 5
 
 This module controls multiple drones using OFFBOARD mode control. Each drone detects an ArUco
 marker pasted on a box on the ground using OpenCV, while travelling between defined setpoints, and
