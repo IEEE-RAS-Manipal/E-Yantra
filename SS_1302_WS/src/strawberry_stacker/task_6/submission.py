@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-SS_1302 submission for Task 6
+SS_1302 submission for Task 4
 
 This module controls multiple drones using OFFBOARD mode control. Each drone detects an ArUco
 marker pasted on a box on the ground using OpenCV, while travelling between defined setpoints, and
@@ -15,6 +15,7 @@ DroneControl    Contains various control commands for the drone to run
 
 # Importing essential packages and libraries
 # Module control and core Python libraries
+from json import tool
 from pickletools import uint8
 import sys  # Main system thread control
 import threading  # Multithreading
@@ -577,7 +578,7 @@ class Drone:
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 1.7
+                        - 1.3
                     )
                 else:
                     vel[0] = exp(
@@ -594,7 +595,7 @@ class Drone:
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 2.7
+                        - 2.4
                     )
 
                 # Velocity along the Z axis follows exp(0.8z-1.6) curve
@@ -607,7 +608,7 @@ class Drone:
                 quad_y = 200
 
                 # Quadrant logic is used for position correction.
-                if ((aruco_cx in range(170, 230)) and (aruco_cy in range(170, 230))
+                if ((aruco_cx in range(165, 235)) and (aruco_cy in range(165, 235))
                         and self.drone_monitor.current_pose.pose.position.z > 0.8):
                     self.drone_monitor.goal_vel.linear.z = -vel[2]
                     package_pos[0] = self.drone_monitor.current_pose.pose.position.x
@@ -620,7 +621,7 @@ class Drone:
                     # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
-                         * self.drone_monitor.current_pose.pose.position.z) - 2.2)
+                         * self.drone_monitor.current_pose.pose.position.z) - 2.3)
                     # Capturing the color of the box
                     box_id = self.drone_monitor.aruco_ID
 
@@ -635,7 +636,7 @@ class Drone:
                             while self.drone_monitor.current_pose.pose.position.z > 0.3:
                                 self.drone_monitor.goal_vel.linear.z = -exp(
                                     (0.5
-                                     * self.drone_monitor.current_pose.pose.position.z) - 1.5)
+                                     * self.drone_monitor.current_pose.pose.position.z) - 1.3)
 
                             while not self.drone_monitor.gripper_state:
                                 print(self.drone_monitor.gripper_state)
@@ -784,18 +785,20 @@ class Drone:
             z = 3  # The height at which we want the drones to patrol
             div = 6  # Number of divisions we want in a row for better patrolling
             val = True  # Used as the 'Override' variable
+            tol = 0.12  # coordinate error tolerance
 
-            start = [[0, 1, z], [0, 5, z], [0, 9, z], [0, 13, z], [0, 17, z], [0, 21, z],
-                     [0, 25, z], [0, 29, z], [0, 33, z], [
-                         0, 37, z], [0, 41, z], [0, 45, z],
-                     [0, 49, z], [0, 53, z], [0, 57, z], [0, 61, z]]
+            start = [[1, 1, z], [1, 5, z], [1, 9, z], [1, 13, z], [1, 17, z], [1, 21, z],
+                     [1, 25, z], [1, 29, z], [1, 33, z], [
+                         1, 37, z], [1, 41, z], [1, 45, z],
+                     [1, 49, z], [1, 53, z], [1, 57, z], [1, 61, z]]
 
             row_coord = start[rownum-1]
             while row_coord[0] <= 62 and not self.done_with_row:
                 print(row_coord[0])
-                self.drone_set_goal(row_coord, val, False, 0.1)
+                self.drone_set_goal(row_coord, val, False, tol)
                 row_coord[0] = row_coord[0] + (60/div)
                 val = False  # Override variable becomes False once the drone enters the row
+                tol = 0.4  # for faster patrolling
             print("Out of row patrol!")
             self.current_row = None
 
@@ -861,7 +864,7 @@ def truck_inventory(n: int, drone_id: int) -> List[float]:
 
         if TRUCK[n][1][1] > 2:
             TRUCK[n][1][1] = 0
-            STACK_HEIGHT += 1.7
+            STACK_HEIGHT += 0.3
 
     elif drone_id == 1:
         TRUCK[n][1][0] = 3
@@ -872,7 +875,7 @@ def truck_inventory(n: int, drone_id: int) -> List[float]:
 
         if TRUCK[n][1][1] > 2:
             TRUCK[n][1][1] = 0
-            STACK_HEIGHT += 1.7
+            STACK_HEIGHT += 0.3
 
     rospy.loginfo(
         f"Drone{drone_id + 1} is placing the box at {r_i}{r_j} i.e. {cell} ")
@@ -893,7 +896,8 @@ def drone1ops() -> None:
         setpoints = [
             [-1, 1, 3]
         ]
-        drone1.drone_control.drone_set_goal(setpoints[0], override=True)
+        drone1.drone_control.drone_set_goal(
+            setpoints[0], override=True, relative=False, tolerance=0.5)
         drone1.drone_control.drone_row_patrol(
             drone1.drone_control.drone_row_to_search())
 
@@ -926,7 +930,8 @@ def drone2ops() -> None:
             [-1, 61, 3]
         ]
 
-        drone2.drone_control.drone_set_goal(setpoints[0], override=True)
+        drone2.drone_control.drone_set_goal(
+            setpoints[0], override=True, relative=False, tolerance=0.5)
         drone2.drone_control.drone_row_patrol(
             drone2.drone_control.drone_row_to_search())
 
