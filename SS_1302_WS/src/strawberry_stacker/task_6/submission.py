@@ -45,29 +45,29 @@ from cv_bridge import (
 )  # Conversion between ROS and OpenCV Images
 
 
-# Initialising a global dictionary to map each row with the number of boxes present
-ROWLIST = {1: 0,
-           2: 0,
-           3: 0,
-           4: 0,
-           5: 0,
-           6: 0,
-           7: 0,
-           8: 0,
-           9: 0,
-           10: 0,
-           11: 0,
-           12: 0,
-           13: 0,
-           14: 0,
-           15: 0
+# Initialising a global dictionary to map each row with the number of boxes present and the number of boxes picked
+ROWLIST = {1: [0, 0],
+           2: [0, 0],
+           3: [0, 0],
+           4: [0, 0],
+           5: [0, 0],
+           6: [0, 0],
+           7: [0, 0],
+           8: [0, 0],
+           9: [0, 0],
+           10: [0, 0],
+           11: [0, 0],
+           12: [0, 0],
+           13: [0, 0],
+           14: [0, 0],
+           15: [0, 0]
            }
 
 # Given initial cell coordinates of the trucks
 TRUCK = [[[56.7, 64.6], [0, 0]],
          [[14.1, -7.8], [0, 0]]]
 # Height at which the box must be dropped
-STACK_HEIGHT = 1.7
+STACK_HEIGHT = 1.9
 
 
 class Drone:
@@ -523,12 +523,12 @@ class Drone:
             """
             if self.drone_id == 0:
                 for i in range(1, 15):
-                    if ROWLIST[i] > 0:  # Checking if there's atleast one box in a row
+                    if ROWLIST[i][0] > 0:  # Checking if there's atleast one box in a row
                         return i
             else:
                 # Drone 2 executes the below snippet
                 for i in range(15, 1, -1):
-                    if ROWLIST[i] > 0:
+                    if ROWLIST[i][0] > 0:
                         return i
 
         def drone_package_pick(self, package_pos: list) -> None:
@@ -551,7 +551,7 @@ class Drone:
                 f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
             )
 
-            self.drone_set_goal(package_pos, True, True, 0.2)
+            self.drone_set_goal(package_pos, True, True, 0.4)
 
             # Switch to velocity command transmission
             self.drone_monitor.goal_vel.linear.z = 0
@@ -582,12 +582,12 @@ class Drone:
                     )
                 else:
                     vel[0] = exp(
-                        0.62
+                        0.64
                         * abs(
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 2.9
+                        - 3
                     )
                     vel[1] = exp(
                         0.6
@@ -595,13 +595,13 @@ class Drone:
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 2.6
+                        - 2.4
                     )
 
-                # Velocity along the Z axis follows exp(0.8z-1.6) curve
+                # Velocity along the Z axis follows exp(0.75z-1.5) curve
                 vel[2] = exp(
                     (0.75
-                     * self.drone_monitor.current_pose.pose.position.z) - 1.6)
+                     * self.drone_monitor.current_pose.pose.position.z) - 1.5)
 
                 # Setting the desired position of the aruco in the image
                 quad_x = 200
@@ -621,13 +621,20 @@ class Drone:
                     # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
-                         * self.drone_monitor.current_pose.pose.position.z) - 2.3)
-                    # Capturing the color of the box
-                    box_id = self.drone_monitor.aruco_ID
+                         * self.drone_monitor.current_pose.pose.position.z) - 2.2)
+
+                    if (aruco_cx in range(190, 210)) and (aruco_cy in range(190, 210)):
+                        # Updating package pos
+                        package_pos[0] = self.drone_monitor.current_pose.pose.position.x
+                        package_pos[1] = self.drone_monitor.current_pose.pose.position.y
 
                     if self.drone_monitor.current_pose.pose.position.z < 1.05:
                         self.drone_monitor.goal_vel.linear.z = 0
-                        if (((aruco_cx in range(192, 204)) and (aruco_cy in range(254, 262))
+                        # Capturing the color of the box
+                        box_id = self.drone_monitor.aruco_ID
+                        # Updating package pos again
+
+                        if (((aruco_cx in range(191, 204)) and (aruco_cy in range(258, 263))
                              and self.drone_monitor.current_pose.pose.position.z > 0.8) or self.drone_monitor.current_pose.pose.position.z <= 0.4):
                             print(" Turning off X and Y velocities..")
                             self.drone_monitor.goal_vel.linear.x = 0
@@ -636,7 +643,7 @@ class Drone:
                             while self.drone_monitor.current_pose.pose.position.z > 0.3:
                                 self.drone_monitor.goal_vel.linear.z = -exp(
                                     (0.5
-                                     * self.drone_monitor.current_pose.pose.position.z) - 1.3)
+                                     * self.drone_monitor.current_pose.pose.position.z) - 0.7)
 
                             while not self.drone_monitor.gripper_state:
                                 print(self.drone_monitor.gripper_state)
@@ -707,7 +714,7 @@ class Drone:
             self.drone_gripper_attach(False)
             rospy.loginfo("Gripper deactivated.")
             rospy.loginfo(
-                f"\033[92mD  Drone #{self.drone_id+1}Package placed!\033[0m")
+                f"\033[92mDrone #{self.drone_id+1}Package placed!\033[0m")
 
             place_pos[2] = 3
             self.drone_set_goal(place_pos, True, False)
@@ -744,7 +751,7 @@ class Drone:
                 counter = 0
                 # The counter takes the drone out of this loop if the gripper
                 # doesn't work for a few seconds
-                while not grip_status and counter < 1600:
+                while not grip_status and counter < 1400:
                     if activation:
                         grip_status = self.gripper_service(activation).result
                         RATE.sleep
@@ -780,19 +787,27 @@ class Drone:
             self.done_with_row = False
             self.current_row = rownum
             # Decrementing - updating the row - box table
-            ROWLIST[self.current_row] = ROWLIST[self.current_row] - 1
+            ROWLIST[self.current_row][0] = ROWLIST[self.current_row][0] - 1
 
             z = 3  # The height at which we want the drones to patrol
-            div = 5  # Number of divisions we want in a row for better patrolling
+            div = 6  # Number of divisions we want in a row for better patrolling
             val = True  # Used as the 'Override' variable
             tol = 0.13  # coordinate error tolerance
 
-            start = [[0.5, 1, z], [0.5, 5, z], [0.5, 9, z], [0.5, 13, z], [0.5, 17, z], [0.5, 21, z],
+            start = [[0.5, 2, z], [0.5, 5, z], [0.5, 9, z], [0.5, 13, z], [0.5, 17, z], [0.5, 21, z],
                      [0.5, 25, z], [0.5, 29, z], [0.5, 33, z], [
-                         0.5, 37, z], [0.5, 40, z], [0.5, 44, z],
-                     [0.5, 48, z], [0.5, 53, z], [0.5, 57, z], [0.5, 61, z]]
+                0.5, 37, z], [0.5, 40, z], [0.5, 44, z],
+                [0.5, 48, z], [0.5, 54, z], [0.5, 57, z], [0.5, 61, z]]
 
+            # The drone should enter un-patrolled area - saving time
+            start[rownum-1][0] = start[rownum-1][0] + \
+                ((60/div)*0.8*ROWLIST[rownum][1])
+            # The above line equates the row beginning to the beginning of the non-scanned part of the row
             row_coord = start[rownum-1]
+
+            # Updating the global dictionary that the current box will be picked up
+            ROWLIST[self.current_row][1] = ROWLIST[self.current_row][1] + 1
+
             while row_coord[0] <= 62 and not self.done_with_row:
                 print(row_coord[0])
                 self.drone_set_goal(row_coord, val, False, tol)
@@ -827,7 +842,7 @@ class Field:
         :type rno: int
         """
         if rno in ROWLIST.keys():
-            ROWLIST[rno] += 1
+            ROWLIST[rno][0] += 1
 
     def row_callback(self, row_num: uint8) -> None:
         """
