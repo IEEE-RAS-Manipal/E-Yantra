@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-SS_1302 submission for Task 4
+SS_1302 submission for Task 6
 
 This module controls multiple drones using OFFBOARD mode control. Each drone detects an ArUco
 marker pasted on a box on the ground using OpenCV, while travelling between defined setpoints, and
@@ -565,42 +565,42 @@ class Drone:
                 # Using 2 sets of error-proportional-exponential curves based on drone height
                 if self.drone_monitor.current_pose.pose.position.z > 2.8:
                     vel[0] = exp(
-                        0.4
+                        0.5
                         * abs(
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 1.3
+                        - 1.5
                     )
                     vel[1] = exp(
-                        0.4
+                        0.5
                         * abs(
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 1.3
+                        - 1.5
                     )
                 else:
                     vel[0] = exp(
-                        0.5
+                        0.62
                         * abs(
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 2.7
+                        - 2.9
                     )
                     vel[1] = exp(
-                        0.5
+                        0.6
                         * abs(
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 2.4
+                        - 2.6
                     )
 
                 # Velocity along the Z axis follows exp(0.8z-1.6) curve
                 vel[2] = exp(
-                    (0.8
+                    (0.75
                      * self.drone_monitor.current_pose.pose.position.z) - 1.6)
 
                 # Setting the desired position of the aruco in the image
@@ -627,7 +627,7 @@ class Drone:
 
                     if self.drone_monitor.current_pose.pose.position.z < 1.05:
                         self.drone_monitor.goal_vel.linear.z = 0
-                        if (((aruco_cx in range(193, 205)) and (aruco_cy in range(258, 265))
+                        if (((aruco_cx in range(192, 204)) and (aruco_cy in range(254, 262))
                              and self.drone_monitor.current_pose.pose.position.z > 0.8) or self.drone_monitor.current_pose.pose.position.z <= 0.4):
                             print(" Turning off X and Y velocities..")
                             self.drone_monitor.goal_vel.linear.x = 0
@@ -783,14 +783,14 @@ class Drone:
             ROWLIST[self.current_row] = ROWLIST[self.current_row] - 1
 
             z = 3  # The height at which we want the drones to patrol
-            div = 6  # Number of divisions we want in a row for better patrolling
+            div = 5  # Number of divisions we want in a row for better patrolling
             val = True  # Used as the 'Override' variable
-            tol = 0.12  # coordinate error tolerance
+            tol = 0.13  # coordinate error tolerance
 
-            start = [[1, 1, z], [1, 5, z], [1, 9, z], [1, 13, z], [1, 17, z], [1, 21, z],
-                     [1, 25, z], [1, 29, z], [1, 33, z], [
-                         1, 37, z], [1, 41, z], [1, 45, z],
-                     [1, 49, z], [1, 53, z], [1, 57, z], [1, 61, z]]
+            start = [[0.5, 1, z], [0.5, 5, z], [0.5, 9, z], [0.5, 13, z], [0.5, 17, z], [0.5, 21, z],
+                     [0.5, 25, z], [0.5, 29, z], [0.5, 33, z], [
+                         0.5, 37, z], [0.5, 40, z], [0.5, 44, z],
+                     [0.5, 48, z], [0.5, 53, z], [0.5, 57, z], [0.5, 61, z]]
 
             row_coord = start[rownum-1]
             while row_coord[0] <= 62 and not self.done_with_row:
@@ -931,7 +931,7 @@ def drone2ops() -> None:
         ]
 
         drone2.drone_control.drone_set_goal(
-            setpoints[0], override=True, relative=False, tolerance=0.5)
+            setpoints[0], override=True, relative=False, tolerance=0.3)
         drone2.drone_control.drone_row_patrol(
             drone2.drone_control.drone_row_to_search())
 
