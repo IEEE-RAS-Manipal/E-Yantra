@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-SS_1302 submission for Task 4
+SS_1302 submission for Task 6
 
 This module controls multiple drones using OFFBOARD mode control. Each drone detects an ArUco
 marker pasted on a box on the ground using OpenCV, while travelling between defined setpoints, and
@@ -616,7 +616,7 @@ class Drone:
                 if self.drone_monitor.current_pose.pose.position.z < 2:
                     # Changing the desired position of the box in image accouting for camera offset
                     quad_x = 198
-                    quad_y = 263
+                    quad_y = 260
                     # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
