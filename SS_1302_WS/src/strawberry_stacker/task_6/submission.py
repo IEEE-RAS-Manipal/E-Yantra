@@ -44,7 +44,7 @@ from cv_bridge import (
     CvBridgeError,
 )  # Conversion between ROS and OpenCV Images
 
-
+# Global section
 # Initialising a global dictionary to map each row with the number of boxes present and the number of boxes picked
 ROWLIST = {1: [0, 0],
            2: [0, 0],
@@ -67,7 +67,7 @@ ROWLIST = {1: [0, 0],
 TRUCK = [[[56.7, 64.6], [0, 0]],
          [[14.1, -7.8], [0, 0]]]
 # Height at which the box must be dropped
-STACK_HEIGHT = 1.9
+STACK_HEIGHT = 2
 
 
 class Drone:
@@ -551,7 +551,7 @@ class Drone:
                 f"\033[93mDrone #{self.drone_id+1} commencing pickup of package near \033[96m{package_pos}...\033[0m"
             )
 
-            self.drone_set_goal(package_pos, True, True, 0.4)
+            self.drone_set_goal(package_pos, True, True, 0.2)
 
             # Switch to velocity command transmission
             self.drone_monitor.goal_vel.linear.z = 0
@@ -565,24 +565,24 @@ class Drone:
                 # Using 2 sets of error-proportional-exponential curves based on drone height
                 if self.drone_monitor.current_pose.pose.position.z > 2.8:
                     vel[0] = exp(
-                        0.5
+                        0.6
                         * abs(
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
                         )
-                        - 1.5
+                        - 1.7
                     )
                     vel[1] = exp(
-                        0.5
+                        0.6
                         * abs(
                             package_pos[1] -
                             self.drone_monitor.current_pose.pose.position.y
                         )
-                        - 1.5
+                        - 1.7
                     )
                 else:
                     vel[0] = exp(
-                        0.64
+                        0.656
                         * abs(
                             package_pos[0] -
                             self.drone_monitor.current_pose.pose.position.x
@@ -608,7 +608,7 @@ class Drone:
                 quad_y = 200
 
                 # Quadrant logic is used for position correction.
-                if ((aruco_cx in range(165, 235)) and (aruco_cy in range(165, 235))
+                if ((aruco_cx in range(175, 225)) and (aruco_cy in range(175, 225))
                         and self.drone_monitor.current_pose.pose.position.z > 0.8):
                     self.drone_monitor.goal_vel.linear.z = -vel[2]
                     package_pos[0] = self.drone_monitor.current_pose.pose.position.x
@@ -617,7 +617,7 @@ class Drone:
                 if self.drone_monitor.current_pose.pose.position.z < 2:
                     # Changing the desired position of the box in image accouting for camera offset
                     quad_x = 198
-                    quad_y = 260
+                    quad_y = 261
                     # Slower curve for Z velocity as we approach the box
                     self.drone_monitor.goal_vel.linear.z = -exp(
                         (0.5
@@ -634,7 +634,7 @@ class Drone:
                         box_id = self.drone_monitor.aruco_ID
                         # Updating package pos again
 
-                        if (((aruco_cx in range(191, 204)) and (aruco_cy in range(258, 263))
+                        if (((aruco_cx in range(191, 204)) and (aruco_cy in range(256, 264))
                              and self.drone_monitor.current_pose.pose.position.z > 0.8) or self.drone_monitor.current_pose.pose.position.z <= 0.4):
                             print(" Turning off X and Y velocities..")
                             self.drone_monitor.goal_vel.linear.x = 0
@@ -643,7 +643,7 @@ class Drone:
                             while self.drone_monitor.current_pose.pose.position.z > 0.3:
                                 self.drone_monitor.goal_vel.linear.z = -exp(
                                     (0.5
-                                     * self.drone_monitor.current_pose.pose.position.z) - 0.7)
+                                     * self.drone_monitor.current_pose.pose.position.z) - 0.6)
 
                             while not self.drone_monitor.gripper_state:
                                 print(self.drone_monitor.gripper_state)
@@ -706,7 +706,8 @@ class Drone:
             rospy.loginfo(
                 f"\033[93mDrone #{self.drone_id+1} commencing placement of package at\033[96m{place_pos}...\033[0m"
             )
-            self.drone_set_goal([place_pos[0], place_pos[1], 3], True)
+            self.drone_set_goal(
+                [place_pos[0], place_pos[1], 3], True, False, 0.4)
 
             self.drone_set_goal(place_pos, True, False, 0.3)
             # Deactivating the gripper
@@ -751,7 +752,7 @@ class Drone:
                 counter = 0
                 # The counter takes the drone out of this loop if the gripper
                 # doesn't work for a few seconds
-                while not grip_status and counter < 1400:
+                while not grip_status and counter < 1300:
                     if activation:
                         grip_status = self.gripper_service(activation).result
                         RATE.sleep
@@ -791,17 +792,18 @@ class Drone:
 
             z = 3  # The height at which we want the drones to patrol
             div = 6  # Number of divisions we want in a row for better patrolling
+            beg = 0.7  # beginning point of each row - x value
             val = True  # Used as the 'Override' variable
-            tol = 0.13  # coordinate error tolerance
+            tol = 0.12  # coordinate error tolerance
 
-            start = [[0.5, 2, z], [0.5, 5, z], [0.5, 9, z], [0.5, 13, z], [0.5, 17, z], [0.5, 21, z],
-                     [0.5, 25, z], [0.5, 29, z], [0.5, 33, z], [
-                0.5, 37, z], [0.5, 40, z], [0.5, 44, z],
-                [0.5, 48, z], [0.5, 54, z], [0.5, 57, z], [0.5, 61, z]]
+            start = [[beg, 1, z], [beg, 5, z], [beg, 9, z], [beg, 13, z], [beg, 17, z], [beg, 21, z],
+                     [beg, 25, z], [beg, 29, z], [beg, 33, z], [
+                beg, 37, z], [beg, 40, z], [beg, 44, z],
+                [beg, 48, z], [beg, 51, z], [beg, 55, z], [beg, 60, z]]
 
             # The drone should enter un-patrolled area - saving time
             start[rownum-1][0] = start[rownum-1][0] + \
-                ((60/div)*0.8*ROWLIST[rownum][1])
+                ((60/div)*0.82*ROWLIST[rownum][1])
             # The above line equates the row beginning to the beginning of the non-scanned part of the row
             row_coord = start[rownum-1]
 
@@ -879,7 +881,7 @@ def truck_inventory(n: int, drone_id: int) -> List[float]:
 
         if TRUCK[n][1][1] > 2:
             TRUCK[n][1][1] = 0
-            STACK_HEIGHT += 0.3
+            STACK_HEIGHT += 0.2
 
     elif drone_id == 1:
         TRUCK[n][1][0] = 3
@@ -890,7 +892,7 @@ def truck_inventory(n: int, drone_id: int) -> List[float]:
 
         if TRUCK[n][1][1] > 2:
             TRUCK[n][1][1] = 0
-            STACK_HEIGHT += 0.3
+            STACK_HEIGHT += 0.2
 
     rospy.loginfo(
         f"Drone{drone_id + 1} is placing the box at {r_i}{r_j} i.e. {cell} ")
@@ -912,7 +914,7 @@ def drone1ops() -> None:
             [-1, 1, 3]
         ]
         drone1.drone_control.drone_set_goal(
-            setpoints[0], override=True, relative=False, tolerance=0.5)
+            setpoints[0], override=True, relative=False, tolerance=0.3)
         drone1.drone_control.drone_row_patrol(
             drone1.drone_control.drone_row_to_search())
 
@@ -946,7 +948,7 @@ def drone2ops() -> None:
         ]
 
         drone2.drone_control.drone_set_goal(
-            setpoints[0], override=True, relative=False, tolerance=0.3)
+            setpoints[0], override=True, relative=False, tolerance=0.5)
         drone2.drone_control.drone_row_patrol(
             drone2.drone_control.drone_row_to_search())
 
